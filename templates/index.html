@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block fullbody %}
+<div class="whitebox">
+
+  <div class="lefthalf">
+  <h1 style="text-align: center; margin-top: .5em">Ren'Py</h1>
+
+  <p>
+    The Ren'Py visual novel engine helps you use words, images, and sounds
+    to tell stories with the computer. These can be both visual novels and
+    life simulation games. The easy to learn script language allows you
+    to efficiently write large visual novels, while its Python scripting
+    is enough for complex simulation games.
+  </p>
+
+  <p>
+    Ren'Py is open source and free for commercial use. It supports three
+    computer platforms: Windows, Mac OS X, and Linux.
+  </p>
+
+  <a href="whyrenpy.html" class="abutton">Learn More</a>
+
+  <p>
+    The latest release of Ren'Py is 6.11.0 "It Goes to Eleven", released on
+    August 15, 2010.
+  </p>
+
+  <a href="download.html" class="abutton">Download</a>
+
+  <p style="font-size: 90%">
+    Releases are announced on <a href="http://twitter.com/renpytom">Twitter</a> and <a href="https://launchpad.net/renpy/+announcements">Launchpad</a>.
+  </p>
+    
+  </div>
+  
+  <div class="righthalf">
+    <a href="http://games.renpy.org/game/realistair"><img src="/static/realistair.jpg" style="width: 100%;"></a>
+    
+    <a href="http://games.renpy.org/game/realistair">RE: Alistair++</a>
+    is one of the <b>more than 200</b> visual novels and simulation games
+    that have been made with Ren'Py. Find them all in the <a href="http://games.renpy.org">Ren'Py games list</a>.
+  </div>
+  
+  
+</div>
+
+<div class="whitebox">
+
+  <div class="leftthird">
+
+    <p>
+      A comprehensive manual, including a quickstart guide, is included
+      with Ren'Py and available <a href="/doc/html/">online</a>.
+    </p>
+
+    <hr>
+    
+    <p>
+      Our <a href="/wiki/renpy/Wiki_Home">wiki</a> includes user-contributed
+      documentation, including a <a href="/wiki/renpy/FAQ">FAQ</a>,
+      <a href="/wiki/renpy/doc/cookbook/Cookbook">code examples</a>,
+      and <a href="/wiki/renpy/doc/translations/Translations">interface translations</a>.
+    </p>
+
+    <hr>
+    
+    <p>
+      The best place to ask questions about Ren'Py is the
+      <a href="http://lemmasoft.renai.us/forums/">Lemma Soft Forums</a>. We also
+      have an <a href="/contact.html#irc">IRC channel</a>,
+      and a <a href="https://bugs.launchpad.net/renpy">bug tracker</a>.
+    </p>
+
+    <hr>
+    
+    <p>
+      You can also <a href="/contact.html#email">contact us</a> via email.
+    </p>
+
+  </div>
+
+  <div class="rightthird">
+    <a href="/shop/"><img src="/static/flowershop.jpg" style="width: 100%"></a>
+
+    <p>
+      <a href="#">The Flower Shop</a> is one of the [dozen] commerical games
+      available from the <a href="/shop/">Ren'Py shop</a>. Your purchases help
+      to support Ren'Py development.
+    </p>
+
+    <p>
+      <a href="/contact.html#donate">Donations</a> are also gladly accepted.
+    </p>
+      
+  </div>
+
+  <div class="midthird">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 5,
+  interval: 6000,
+  width: 'auto',
+  height: 300,
+  theme: {
+    shell: {
+      background: '#aaccdd',
+      color: '#000000'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#000000',
+      links: '#003287'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    hashtags: true,
+    timestamp: true,
+    avatars: false,
+    behavior: 'all'
+  }
+}).render().setUser('renpytom').start();
+</script>
+  </div>
+</div>
+
+{% endblock %}
+

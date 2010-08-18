@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Molengo);
+
+HTML {
+    font-family: 'Molengo', arial, sans-serif;
+    text-align: center;
+    background: #acd;
+}
+
+BODY {
+    margin: 0 auto;
+    width: 58em;
+    text-align: left;
+}
+
+#topnav {
+    font-size: 120%;
+    margin-left: -.5em;
+    margin-top: .25em;
+    margin-bottom: .5em;
+}
+
+#topnav A {
+    color: #000;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #eee;
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+#topnav A:hover {
+    color: #00f;
+}
+
+#navlogo {
+    height: 1.5em;
+    vertical-align: text-bottom;
+    margin-right: .25em;
+}
+
+#cse {
+    width: 15em;
+    float: right;
+}
+
+.whitebox {
+    width: 100%;
+    border: 1px solid #888;
+    background: #fff;
+    padding: .5em;
+    padding-bottom: .1em;
+    margin-bottom: .5em;
+    overflow: auto;
+}
+
+.lefthalf {
+    float: left;
+    width: 49%;
+}
+
+.righthalf {
+    float: right;
+    width: 49%;
+}
+
+.leftthird {
+    float: left;
+    width: 32%;
+}
+
+.rightthird {
+    float: right;
+    width: 32%; 
+}
+
+.midthird {
+    margin: 0 auto;
+    width: 32%;
+}
+
+IMG {
+    border: 0px;
+}
+
+.abutton {
+    text-align: center;
+    width: 40%;
+    display: block;
+    color: #fff;
+    text-shadow: -1px -1px 1px #444;
+    font-size: 120%;
+    border: 1px solid black;
+    background: #88c;
+    text-decoration: none;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    border-radius: .25em;
+    -webkit-box-shadow: 0px 5px 5px #ccc;
+    margin: 0 auto;
+}
+
+.abutton:hover {
+    background: #aad;
+}
+

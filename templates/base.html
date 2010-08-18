@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ren'Py - {% block title %}title{% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load('search', '1', {language : 'en'});
+      google.setOnLoadCallback(function() {
+      var customSearchControl = new google.search.CustomSearchControl('012476843541036121001:nkceszzwr38');
+          customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+          customSearchControl.draw('cse');
+          }, true);
+    </script>
+  </head>
+
+  <body>
+    <div id="topnav">
+      <a href="/"><img src="/static/logo.png" id="navlogo">Ren'Py</a>
+      <a href="/download.html">Download</a>
+      <a href="/doc/html/">Documentation</a>
+      <a href="/contact.html">Support</a>
+      <a href="http://games.renpy.org">Games</a>
+      <a href="/shop/">Shop</a>
+
+      <div id="cse"></div> 
+    </div>
+
+    {% block fullbody %}    
+    <div class="whitebox">
+      {% block body %}
+      <H1>Hello, World.</H1>
+
+      <p>Ladies and Gentlemen, start your lorem ipsums!</p>
+      {% endblock %}
+    </div>
+    {% endblock %}
+  </body>
+</html>
+
