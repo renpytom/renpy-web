@@ -1,0 +1,213 @@
+/**
+ * Eric Meyer's CSS Reset v1.0 | 20080212
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**
+ * Ren'Py Main CSS
+ */
+body {
+    font: 1em "Molengo", "Arial", sans-serif;
+    line-height: 1.4em;
+}
+
+h2 {
+    font-size: 1.75em;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ACD;
+}
+
+#header {
+    background: #ACD;
+    margin-bottom: 15px;
+}
+
+#menu {
+    text-align: right;
+
+    margin: 0 auto;
+    width: 1000px;
+    height: 120px;
+}
+
+.menu-item {
+    display: inline;
+
+    height: 120px;
+    line-height: 120px;
+
+    margin: 0 0 0 22.5px;
+}
+
+.menu-item a {
+    color: #000;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #EEE;
+    font-size: 1.2em;
+}
+
+.menu-item a:hover {
+    color: #00F;
+}
+
+.logo {
+    float: left;
+
+    font-size: 2.25em;
+    background: url('logo.png') no-repeat left center;
+    padding-left: 75px;
+    text-align: left;
+    margin: 0;
+}
+
+.section {
+    clear: left;
+    margin: 0 auto 35px;
+}
+
+.section p {
+    margin: 10px auto;
+}
+
+.with-showcase {
+    width: 600px;
+    margin-right: 400px;
+}
+
+a.button {
+    display: inline-block;
+
+    min-width: 150px;
+
+    color: #000;
+    background: #ACD;
+    font-size: 1.2em;
+
+    text-align: center;
+    text-decoration: none;
+    text-shadow: -1px -1px 1px #FFF;
+
+    margin: 5px auto;
+    padding: .3em .35em .5em;
+    border: 1px solid black;
+    border-radius: .25em;
+    -moz-border-radius: .25em;
+    -webkit-box-shadow: 0px 5px 5px #CCC;
+    -moz-box-shadow: 0px 5px 5px #CCC;
+}
+
+a.button:hover {
+    background: #BCAD9D;
+}
+
+#showcase {
+    float: right;
+    display: inline-block;
+    width: 380px;
+    margin-left: 15px;
+}
+
+#showcase p {
+    margin: 5px auto 25px;
+}
+
+#start-tips ul li {
+    display: inline-block;
+    width: 287px;
+
+    vertical-align: top;
+
+    margin: 10px 10px 10px auto;
+}
+
+#content, #footer {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#footer {
+    border-top: 1px solid #DDD;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+#footer ul li {
+    margin: 0 auto 5px;
+    line-height: 1.1em;
+}
+
+#footer ul li.header {
+    font-weight: bold;
+}
+
+#footer .col {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+#footer .col-right {
+    float: right;
+    width: 200px;
+}
+
+#footer .twitter-widget {
+    width: 300px;
+}
+
+#footer #copyright {
+    clear: both;
+    padding-top: 20px;
+}
+
+.center { text-align: center; }
+.clear { clear: both; height: 0px; }

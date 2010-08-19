@@ -1,40 +1,109 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ren'Py - {% block title %}title{% endblock %}</title>
-    <link rel="stylesheet" href="/static/style.css" type="text/css">
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">
-      google.load('search', '1', {language : 'en'});
-      google.setOnLoadCallback(function() {
-      var customSearchControl = new google.search.CustomSearchControl('012476843541036121001:nkceszzwr38');
-          customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-          customSearchControl.draw('cse');
-          }, true);
-    </script>
-  </head>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  <body>
-    <div id="topnav">
-      <a href="/"><img src="/static/logo.png" id="navlogo">Ren'Py</a>
-      <a href="/download.html">Download</a>
-      <a href="/doc/html/">Documentation</a>
-      <a href="/contact.html">Support</a>
-      <a href="http://games.renpy.org">Games</a>
-      <a href="/shop/">Shop</a>
+        <title>{% block title %}Home{% endblock %} - Ren'Py</title>
 
-      <div id="cse"></div> 
-    </div>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Molengo">
+        <link rel="stylesheet" href="static/style.css">
+        <!--[if lte IE 8]><link rel="stylesheet" href="static/style-ie.css"><![endif]-->
+    </head>
+    <body>
+        {% block header %}
+        <div id="header">
+            <ul id="menu">
+                <li class="menu-item logo"><a href="/">Ren'Py</a></li>
 
-    {% block fullbody %}    
-    <div class="whitebox">
-      {% block body %}
-      <H1>Hello, World.</H1>
+                <li class="menu-item"><a href="/download.html">Download</a></li>
+                <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
+                <li class="menu-item"><a href="/support.html">Support</a></li>
+                <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
+                <li class="menu-item"><a href="/shop.html">Shop</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        {% endblock %}
 
-      <p>Ladies and Gentlemen, start your lorem ipsums!</p>
-      {% endblock %}
-    </div>
-    {% endblock %}
-  </body>
+        <div id="content">
+            {% block content %}
+            <p>I can has base? :3</p>
+            {% endblock %}
+
+            <div class="clear"></div>
+        </div>
+
+        {% block footer %}
+        <div id="footer">
+            <div class="col" id="footer-links">
+                <ul id="quick-links">
+                    <li class="header">Quick Links</li>
+                    <li>Home</li>
+                    <li>Download</li>
+                    <li>Documentation</li>
+                    <li>Support</li>
+                    <li>Games</li>
+                    <li>Shop</li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul id="latest-forum-posts">
+                    <li class="header">Latest Forum Posts</li>
+                    <li>Something with stuff doesn't do things</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                </ul>
+            </div>
+            <div id="footer-releases" class="col">
+                <ul id="latest-shop-additions">
+                    <li class="header">Latest Shop Additions</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                    <li>Something</li>
+                </ul>
+            </div>
+            <div id="footer-twitter" class="col-right twitter-widget">
+                <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                <script>
+                    new TWTR.Widget({
+                      version: 2,
+                      type: 'profile',
+                      rpp: 1,
+                      interval: 6000,
+                      width: 'auto',
+                      height: 200,
+                      theme: {
+                        shell: {
+                          background: '#aaccdd',
+                          color: '#000000'
+                        },
+                        tweets: {
+                          background: '#ffffff',
+                          color: '#000000',
+                          links: '#003287'
+                        }
+                      },
+                      features: {
+                        scrollbar: false,
+                        loop: false,
+                        live: false,
+                        hashtags: true,
+                        timestamp: true,
+                        avatars: false,
+                        behavior: 'all'
+                      }
+                    }).render().setUser('renpytom').start();
+                </script>
+            </div>
+
+            <p id="copyright">Copyright &copy; PyTom</p>
+        </div>
+        {% endblock %}
+    </body>
 </html>
-

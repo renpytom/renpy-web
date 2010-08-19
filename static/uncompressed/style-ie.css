@@ -1,0 +1,26 @@
+/**
+ * IE overrides for Ren'Py Main CSS
+ */
+
+.section {
+    /* IE6 is really stupid about margins */
+    _margin: 0 0 35px 0;
+}
+
+.with-showcase {
+    /* Fix IE6 displaying content under showcase */
+    _width: 575px;
+}
+
+a.button {
+    /* IE6 can't take a hint about the width */
+    _width: 200px;
+
+    /* Tweak padding so the text doesn't look off center without the shadow */
+    padding-bottom: .3em;
+}
+
+#start-tips ul li {
+    /* Force IE6/7 to wrap the content */
+    *float: left;
+}
