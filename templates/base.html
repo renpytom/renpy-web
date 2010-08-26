@@ -15,6 +15,7 @@
             <ul id="menu">
                 <li class="menu-item logo"><a href="/">Ren'Py</a></li>
 
+                <li class="menu-item"><a href="/why.html" title="Why Ren'Py?">Why</a></li>
                 <li class="menu-item"><a href="/download.html">Download</a></li>
                 <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
                 <li class="menu-item"><a href="/support.html">Support</a></li>
@@ -35,10 +36,11 @@
 
         {% block footer %}
         <div id="footer">
-            <div class="col" id="footer-links">
+            <div class="col">
                 <ul id="quick-links">
                     <li class="header">Quick Links</li>
                     <li>Home</li>
+                    <li>Why</li>
                     <li>Download</li>
                     <li>Documentation</li>
                     <li>Support</li>
@@ -57,7 +59,7 @@
                     <li>Something</li>
                 </ul>
             </div>
-            <div id="footer-releases" class="col">
+            <div class="col">
                 <ul id="latest-shop-additions">
                     <li class="header">Latest Shop Additions</li>
                     <li>Something</li>
@@ -68,7 +70,7 @@
                     <li>Something</li>
                 </ul>
             </div>
-            <div id="footer-twitter" class="col-right twitter-widget">
+            <div class="col-right twitter-widget">
                 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
                 <script>
                     new TWTR.Widget({
