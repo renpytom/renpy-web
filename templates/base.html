@@ -3,17 +3,20 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-        <title>{% block title %}Home{% endblock %} - Ren'Py</title>
+        <title>{% block title %}Home - Ren'Py{% endblock %}</title>
+
+        <link rel="icon" href="/static/favicon.ico">
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Molengo">
-        <link rel="stylesheet" href="static/style.css">
-        <!--[if lte IE 8]><link rel="stylesheet" href="static/style-ie.css"><![endif]-->
+        <link rel="stylesheet" href="/static/style.css">
+        <!--[if lte IE 8]><link rel="stylesheet" href="/static/style-ie.css"><![endif]-->
     </head>
     <body>
         {% block header %}
         <div id="header">
+            <p id="nav-header"><strong>Navigation</strong></p>
             <ul id="menu">
-                <li class="menu-item logo"><a href="/">Ren'Py</a></li>
+                <li class="menu-item logo"><a id="top" href="/">Ren'Py</a></li>
 
                 <li class="menu-item"><a href="/why.html" title="Why Ren'Py?">Why</a></li>
                 <li class="menu-item"><a href="/download.html">Download</a></li>
@@ -37,8 +40,8 @@
         {% block footer %}
         <div id="footer">
             <div class="col">
+                <p><strong>Quick Links</strong></p>
                 <ul id="quick-links">
-                    <li class="header">Quick Links</li>
                     <li>Home</li>
                     <li>Why</li>
                     <li>Download</li>
@@ -49,8 +52,8 @@
                 </ul>
             </div>
             <div class="col">
+                <p><strong>Latest Forum Posts</strong></p>
                 <ul id="latest-forum-posts">
-                    <li class="header">Latest Forum Posts</li>
                     <li>Something with stuff doesn't do things</li>
                     <li>Something</li>
                     <li>Something</li>
@@ -60,8 +63,8 @@
                 </ul>
             </div>
             <div class="col">
+                <p><strong>Latest Shop Additions</strong></p>
                 <ul id="latest-shop-additions">
-                    <li class="header">Latest Shop Additions</li>
                     <li>Something</li>
                     <li>Something</li>
                     <li>Something</li>
@@ -104,7 +107,10 @@
                 </script>
             </div>
 
-            <p id="copyright">Copyright &copy; PyTom</p>
+            <p id="copyright">
+                Copyright &copy; PyTom
+                <span><a href="#top">Return to Top</a></span>
+            </p>
         </div>
         {% endblock %}
     </body>

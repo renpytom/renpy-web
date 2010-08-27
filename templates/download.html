@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Download Ren'Py{% endblock %}
+
+{% block content %}
+<div class="section">
+    <h1>Download Ren'Py</h1>
+
+    <div class="showcase" style="margin-top: 10px;">
+        <object width="380" height="238">
+            <param name="movie" value="http://www.youtube.com/v/gMDwc2owtmk?fs=1&amp;hl=en_US&amp;rel=0"></param>
+            <param name="allowFullScreen" value="true"></param>
+            <param name="allowscriptaccess" value="always"></param>
+            <embed src="http://www.youtube.com/v/gMDwc2owtmk?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
+        </object>
+    </div>
+
+    <p>Ren'Py is free to download and use for commercial and non-commercial purposes. It may be modified and distributed under the terms of its <a href="/license.html">License</a>.</p>
+
+    <!-- <h2>Ren'Py 6.11.0 "It Goes to Eleven"</h2> -->
+    <p><strong>Ren'Py 6.11.0 "It Goes to Eleven"</strong> was released on August 19, 2010. The main distributions are:</p>
+    <ul class="downloads">
+        <li><a href="#" class="button download-button">Download SDK <span>7z.exe - 20 MiB</span></a></li>
+        <li><a href="#" class="button download-button">Download SDK <span>zip - 25 MiB</span></a></li>
+        <li><a href="#" class="button download-button">Download SDK <span>tar.bz2 - 24 MiB</span></small></a></li>
+    </ul>
+    <!-- <p>For your convenience, we've posted the Release Announcement and Changelog.</p> -->
+<!-- </div>
+
+<div class="section"> -->
+    <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows 2000 and up, Mac OS X 10.4 and up, and Linux x86. The development environment contains the files needed to produce games for all three platforms. Each file also includes the jEdit text editor, the Ren'Py demo, and "The Question", an example game.</p>
+    <p><strong>Java Requirement.</strong> Java 1.5 or later is required to run the jEdit text editor. If it's not installed on your computer, you'll need to download it from java.com. Java is not required to run Ren'Py games, only to develop your own.</p>
+    <p><strong>License.</strong> Ren'Py is licensed under a very liberal license, that allows for free commercial and non-commercial use. Read the full license for details, but a short summary is that you can distribute Ren'Py games however you want, as long as you include LICENSE.txt.</p>
+</div>
+
+<div class="section">
+    <h2>Release History and Updates</h2>
+    <dl>
+        <dt>2010-08-24</dt>
+        <dd>Replacing renpy-6.11.0/renpy/display/core.py (from here) fixes a bug when loading saves created with older versions of Ren'Py.</dd>
+
+        <dt>2010-08-19</dt>
+        <dd>Final release. (6.11.0l) Includes three small bug fixes.</dd>
+
+        <dt>2010-08-17</dt>
+        <dd>Eleventh pre-release. (6.11.0k) Improvements based on practical use of the new screen system, and fixes bugs with same.</dd>
+
+        <dt>2010-08-14</dt>
+        <dd>Tenth pre-release (6.11.0j). A new "graphics acceleration" menu accessed by starting with shift held down, a change to the way state is migrated between screens, and a new default screen language statement. Also, bug fixes and error reporting improvements.</dd>
+
+        <dt>2010-08-08</dt>
+        <dd>Ninth pre-release (6.11.0i). Bug fixes.</dd>
+
+        <dt>2010-08-07</dt>
+        <dd>Eighth pre-release (6.11.0h). Bug fixes and compatibility improvements.</dd>
+
+        <dt>2010-07-31</dt>
+        <dd>Seventh pre-release (6.11.0g). Bug fixes, compatibility improvements, and documentation. (Again.)</dd>
+
+        <dt>2010-07-25</dt>
+        <dd>Sixth pre-release (6.11.0f). Bug fixes, compatibility improvements, and documentation for the screen system.</dd>
+
+        <dt>2010-07-18</dt>
+        <dd>Fifth pre-release (6.11.0e). More bug fixes and compatibility improvements, as we try to work with the broadest range of hardware possible.</dd>
+
+        <dt>2010-07-14</dt>
+        <dd>Fourth pre-release (6.11.0d). This release fixes more bugs, and is compatible with more hardware.</dd>
+
+        <dt>2010-07-10</dt>
+        <dd>Third pre-release (6.11.0c). This release fixes more bugs, and is more conservative when it comes to using hardware. It also includes improved diagnostic capabilities.</dd>
+
+        <dt>2010-07-07</dt>
+        <dd>Second pre-release (6.11.0b). This should substantially increase stability, and allows 6.11 to run on Mac OS X.</dd>
+
+        <dt>2010-07-06</dt>
+        <dd>Initial pre-release (6.11.0a).</dd>
+    </dl>
+</div>
+<div class="section"></div>
+    <p>For a complete list of Ren'Py releases, see the <a href="http://renpy.org/wiki/renpy/releases">wiki</a>.</p>
+</div>
+{% endblock %}

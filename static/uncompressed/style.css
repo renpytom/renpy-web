@@ -56,19 +56,67 @@ table {
  * Ren'Py Main CSS
  */
 body {
-    font: 1em "Molengo", "Arial", sans-serif;
+    font: 1em "Molengo", "Helvetica", sans-serif;
     line-height: 1.4em;
 }
 
-h2 {
-    font-size: 1.75em;
-    padding-bottom: 3px;
+h1, h2 {
+    font-size: 1.85em;
+    padding: 1px 0 5px;
     border-bottom: 1px solid #ACD;
 }
 
+h2 {
+    font-size: 1.5em;
+    padding-bottom: 2px;
+    margin: 20px auto 10px;
+}
+
+h3 {
+    font-size: 1.35em;
+    margin: 20px auto 10px;
+}
+
+pre {
+    overflow: auto;
+
+    width: 1000px;
+}
+
+a {
+    color: #3183A3;
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+dt {
+    margin: 10px auto 0;
+}
+
+dd {
+    margin-left: 2em;
+}
+
+sup {
+    font-size: .7em;
+    vertical-align: top;
+}
+
+.sup-description, .sup-description sup {
+    font-size: .8em;
+}
+
+/* Header Styling */
 #header {
     background: #ACD;
     margin-bottom: 15px;
+}
+
+#nav-header {
+    display: none;
 }
 
 #menu {
@@ -76,14 +124,14 @@ h2 {
 
     margin: 0 auto;
     width: 1000px;
-    height: 120px;
+    height: 95px;
 }
 
 .menu-item {
     display: inline;
 
-    height: 120px;
-    line-height: 120px;
+    height: 95px;
+    line-height: 95px;
 
     margin: 0 0 0 22.5px;
 }
@@ -91,84 +139,34 @@ h2 {
 .menu-item a {
     color: #000;
     text-decoration: none;
-    text-shadow: 1px 1px 1px #EEE;
+    text-shadow: 2px 2px 2px #9CBECF;
     font-size: 1.2em;
 }
 
 .menu-item a:hover {
-    color: #00F;
+    text-shadow: 2px 2px 2px #5A7D8E;
 }
 
 .logo {
     float: left;
 
-    font-size: 2.25em;
+    margin: 3px 0 -13px;
+    font-size: 1.85em;
+    height: 100px;
+    line-height: 87px;
+}
+
+.logo a {
+    display: inline; /* IE */
+    display: inline-block;
+
+    height: 100px;
     background: url('logo.png') no-repeat left center;
     padding-left: 75px;
     text-align: left;
-    margin: 0;
 }
 
-.section {
-    clear: left;
-    margin: 0 auto 35px;
-}
-
-.section p {
-    margin: 10px auto;
-}
-
-.with-showcase {
-    width: 600px;
-    margin-right: 400px;
-}
-
-a.button {
-    display: inline-block;
-
-    min-width: 150px;
-
-    color: #000;
-    background: #ACD;
-    font-size: 1.2em;
-
-    text-align: center;
-    text-decoration: none;
-    text-shadow: -1px -1px 1px #FFF;
-
-    margin: 5px auto;
-    padding: .3em .35em .5em;
-    border: 1px solid black;
-    border-radius: .25em;
-    -moz-border-radius: .25em;
-    -webkit-box-shadow: 0px 5px 5px #CCC;
-    -moz-box-shadow: 0px 5px 5px #CCC;
-}
-
-a.button:hover {
-    background: #BCAD9D;
-}
-
-#showcase {
-    float: right;
-    display: inline-block;
-    width: 380px;
-    margin-left: 15px;
-}
-
-#showcase p {
-    margin: 5px auto 25px;
-}
-
-#start-tips ul li {
-    display: inline-block;
-    width: 287px;
-
-    vertical-align: top;
-
-    margin: 10px 10px 10px auto;
-}
-
+/* Footer Styling */
 #content, #footer {
     margin: 0 auto;
     width: 1000px;
@@ -176,17 +174,14 @@ a.button:hover {
 
 #footer {
     border-top: 1px solid #DDD;
-    margin-top: 40px;
+    margin-top: 20px;
     padding-top: 20px;
 }
 
+#footer p,
 #footer ul li {
     margin: 0 auto 5px;
     line-height: 1.1em;
-}
-
-#footer ul li.header {
-    font-weight: bold;
 }
 
 #footer .col {
@@ -204,10 +199,110 @@ a.button:hover {
     width: 300px;
 }
 
-#footer #copyright {
+#copyright {
     clear: both;
     padding-top: 20px;
 }
 
+#copyright span {
+    float: right;
+}
+
+/* Content Styling */
+.section {
+    clear: left;
+
+    margin: 0 auto 35px;
+}
+
+.with-showcase {
+    width: 600px;
+    margin-right: 400px;
+}
+
+.showcase {
+    float: right;
+    /*display: inline-block;*/
+    width: 380px;
+
+    /* Fix overlap issue when floating next to an h(1-6) element */
+    background: #FFF;
+    padding: 0 0 10px 15px;
+    margin: 0;
+}
+
+.showcase p {
+    margin: 5px auto 25px;
+}
+
+.section p,
+.section ul,
+.section dl,
+.section pre {
+    margin: 10px;
+}
+
+a.button {
+    display: inline-block;
+
+    min-width: 150px;
+
+    color: #000;
+    background: #ACD;
+    font-size: 1.2em;
+
+    text-align: center;
+    text-decoration: none;
+    text-shadow: -1px -1px 1px #D0F2FF;
+
+    margin: 5px auto;
+    padding: .3em .35em .5em;
+    border: 1px solid black;
+    -moz-border-radius: .25em;
+    border-radius: .25em;
+    -webkit-box-shadow: 0px 5px 5px #CCC;
+    -moz-box-shadow: 0px 5px 5px #CCC;
+    box-shadow: 0px 5px 5px #CCC;
+}
+
+a.button:hover {
+    background: #BCAD9D;
+    text-shadow: -1px -1px 1px #FED;
+    -webkit-box-shadow: 0px 5px 5px #999;
+    -moz-box-shadow: 0px 5px 5px #999;
+    box-shadow: 0px 5px 5px #999;
+}
+
 .center { text-align: center; }
 .clear { clear: both; height: 0px; }
+.no-clear { clear: none; }
+
+.real-list {
+    list-style: square inside;
+}
+
+/* Main Page Styling */
+#start-tips ul li {
+    display: inline-block;
+    width: 277px;
+
+    vertical-align: top;
+
+    margin: 0px 10px 15px auto;
+}
+
+/* Download Page Styling */
+ul.downloads {
+    text-align: center;
+}
+
+ul.downloads li {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+a.download-button span {
+    display: block;
+    font-size: .75em;
+    line-height: 1em;
+}
