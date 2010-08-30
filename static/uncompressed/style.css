@@ -222,7 +222,6 @@ sup {
 
 .showcase {
     float: right;
-    /*display: inline-block;*/
     width: 380px;
 
     /* Fix overlap issue when floating next to an h(1-6) element */
@@ -294,6 +293,7 @@ a.button:hover {
 /* Download Page Styling */
 ul.downloads {
     text-align: center;
+    margin: 15px 0 20px;
 }
 
 ul.downloads li {
