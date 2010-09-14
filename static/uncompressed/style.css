@@ -157,7 +157,6 @@ sup {
 }
 
 .logo a {
-    display: inline; /* IE */
     display: inline-block;
 
     height: 100px;
@@ -291,12 +290,12 @@ a.button:hover {
 }
 
 /* Download Page Styling */
-ul.downloads {
+.downloads {
     text-align: center;
     margin: 15px 0 20px;
 }
 
-ul.downloads li {
+.downloads li {
     display: inline-block;
     margin: 0 8px;
 }

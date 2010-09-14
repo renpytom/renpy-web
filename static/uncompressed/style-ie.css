@@ -17,19 +17,29 @@
 }
 
 a.button {
+    /* Fix inline-block display in IE6/7 */
+    *display: inline;
+
     /* IE6 can't take a hint about the width */
     _width: 200px;
-
-    /* Tweak padding so the text doesn't look off center without the shadow */
-    padding-bottom: .3em;
 }
 
 #start-tips ul li {
-    /* Force IE6/7 to wrap the content */
-    *float: left;
+    /* Fix inline-block display in IE6/7 */
+    *display: inline;
 }
 
 pre {
     /* Fix vertical scrollbar in IE6/7 */
     *padding-bottom: 25px;
+}
+
+.logo a {
+    /* Fix inline-block display in IE6/7 */
+    *display: inline;
+}
+
+.downloads li {
+    /* Fix inline-block display in IE6/7 */
+    *display: inline;
 }
