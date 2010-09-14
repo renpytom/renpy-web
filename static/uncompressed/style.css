@@ -80,7 +80,7 @@ h3 {
 pre {
     overflow: auto;
 
-    width: 980px;
+    max-width: 980px;
 }
 
 a {
@@ -229,8 +229,20 @@ sup {
     margin: 0;
 }
 
+.small-showcase {
+    width: 240px;
+}
+
 .showcase p {
-    margin: 5px auto 25px;
+    margin: 5px auto 25px !important;
+}
+
+.small-showcase p {
+    margin: 5px auto !important;
+}
+
+.after-header {
+    margin-top: 10px;
 }
 
 .section p,
@@ -287,6 +299,11 @@ a.button:hover {
     vertical-align: top;
 
     margin: 0px 10px 15px auto;
+}
+
+/* Why Page Styling */
+.os-icons {
+    float: right;
 }
 
 /* Download Page Styling */

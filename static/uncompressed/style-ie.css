@@ -32,6 +32,9 @@ a.button {
 pre {
     /* Fix vertical scrollbar in IE6/7 */
     *padding-bottom: 25px;
+
+    /* Specify a width in IE6 */
+    _width: 980px;
 }
 
 .logo a {
