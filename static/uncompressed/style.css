@@ -225,7 +225,7 @@ sup {
 
     /* Fix overlap issue when floating next to an h(1-6) element */
     background: #FFF;
-    padding: 0 0 10px 15px;
+    padding: 0 0 10px 20px;
     margin: 0;
 }
 
@@ -233,12 +233,16 @@ sup {
     width: 240px;
 }
 
+.section .showcase {
+    padding-right: 10px;
+}
+
 .showcase p {
     margin: 5px auto 25px !important;
 }
 
 .small-showcase p {
-    margin: 5px auto !important;
+    margin: 5px auto 15px !important;
 }
 
 .after-header {
@@ -304,6 +308,7 @@ a.button:hover {
 /* Why Page Styling */
 .os-icons {
     float: right;
+    margin-right: 10px;
 }
 
 /* Download Page Styling */
