@@ -208,6 +208,10 @@ sup {
 }
 
 /* Content Styling */
+#content ul {
+    list-style: square inside;
+}
+
 .section {
     clear: left;
 
@@ -291,11 +295,11 @@ a.button:hover {
 .clear { clear: both; height: 0px; }
 .no-clear { clear: none; }
 
-.real-list {
-    list-style: square inside;
+/* Main Page Styling */
+#start-tips ul {
+    list-style: none;
 }
 
-/* Main Page Styling */
 #start-tips ul li {
     display: inline-block;
     width: 277px;
@@ -313,6 +317,7 @@ a.button:hover {
 
 /* Download Page Styling */
 .downloads {
+    list-style: none;
     text-align: center;
     margin: 15px 0 20px;
 }
