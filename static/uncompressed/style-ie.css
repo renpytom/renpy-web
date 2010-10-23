@@ -11,11 +11,6 @@ section {
     _margin: 0 0 35px 0;
 }
 
-.with-showcase {
-    /* Fix IE6 displaying content under showcase */
-    _width: 575px;
-}
-
 a.button {
     /* Fix inline-block display in IE6/7 */
     *display: inline;

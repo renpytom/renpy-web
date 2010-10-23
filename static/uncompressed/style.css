@@ -186,23 +186,23 @@ footer {
 }
 
 footer p,
-footer ul li {
+footer li {
     margin: 0 auto 5px;
     line-height: 1.1em;
 }
 
-footer .col {
+.col {
     float: left;
     width: 200px;
     margin-right: 20px;
 }
 
-footer .col-right {
+.col-right {
     float: right;
     width: 200px;
 }
 
-footer .twitter-widget {
+.twitter-widget {
     width: 300px;
 }
 
@@ -224,11 +224,6 @@ section {
     clear: left;
 
     margin: 0 auto 35px;
-}
-
-.with-showcase {
-    width: 600px;
-    margin-right: 400px;
 }
 
 aside {
@@ -308,7 +303,7 @@ a.button:hover {
     list-style: none;
 }
 
-#start-tips ul li {
+#start-tips li {
     display: inline-block;
     width: 277px;
 
