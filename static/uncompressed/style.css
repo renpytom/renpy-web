@@ -10,7 +10,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-header, footer,section, nav {
+header, nav, aside, section, footer,
+figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -54,7 +55,8 @@ table {
 }
 
 /* html5 tags */
-header, footer,section, nav {
+header, nav, aside, section, footer,
+figure, figcaption {
     display: block;
 }
 
@@ -229,7 +231,7 @@ section {
     margin-right: 400px;
 }
 
-.showcase {
+aside {
     float: right;
     width: 380px;
 
@@ -239,19 +241,19 @@ section {
     margin: 0;
 }
 
-.small-showcase {
+aside.small {
     width: 240px;
 }
 
-section .showcase {
+section aside {
     padding-right: 10px;
 }
 
-.showcase p {
+aside figcaption {
     margin: 5px auto 25px !important;
 }
 
-.small-showcase p {
+aside.small figcaption {
     margin: 5px auto 15px !important;
 }
 
