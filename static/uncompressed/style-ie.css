@@ -46,3 +46,11 @@ pre {
     /* Fix inline-block display in IE6/7 */
     *display: inline;
 }
+
+/* Fix an issue with IE6/7 and floated elements */
+.copyright a {
+    *margin-top: -1em;
+}
+.copyright {
+    *padding-top: 0;
+}
