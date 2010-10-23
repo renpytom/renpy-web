@@ -64,7 +64,7 @@ figure, figcaption {
  * Ren'Py Main CSS
  */
 body {
-    font: 1em "Molengo", "Helvetica", sans-serif;
+    font: 1em "PT Sans", "Helvetica", sans-serif;
     line-height: 1.4em;
 }
 
@@ -260,7 +260,7 @@ section p,
 section ul,
 section dl,
 section pre {
-    margin: 10px;
+    margin: 10px 0;
 }
 
 a.button {
