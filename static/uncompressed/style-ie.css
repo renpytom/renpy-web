@@ -6,7 +6,7 @@
     text-decoration: underline;
 }
 
-.section {
+section {
     /* IE6 is really stupid about margins */
     _margin: 0 0 35px 0;
 }

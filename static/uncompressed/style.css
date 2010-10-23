@@ -9,7 +9,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table, caption, tbody, tfoot, thead, tr, th, td,
+header, footer,section, nav {
     margin: 0;
     padding: 0;
     border: 0;
@@ -50,6 +51,11 @@ del {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+/* html5 tags */
+header, footer,section, nav {
+    display: block;
 }
 
 /**
@@ -110,7 +116,7 @@ sup {
 }
 
 /* Header Styling */
-#header {
+header {
     background: #ACD;
     margin-bottom: 15px;
 }
@@ -166,44 +172,44 @@ sup {
 }
 
 /* Footer Styling */
-#content, #footer {
+#content, footer {
     margin: 0 auto;
     width: 1000px;
 }
 
-#footer {
+footer {
     border-top: 1px solid #DDD;
     margin-top: 20px;
     padding-top: 20px;
 }
 
-#footer p,
-#footer ul li {
+footer p,
+footer ul li {
     margin: 0 auto 5px;
     line-height: 1.1em;
 }
 
-#footer .col {
+footer .col {
     float: left;
     width: 200px;
     margin-right: 20px;
 }
 
-#footer .col-right {
+footer .col-right {
     float: right;
     width: 200px;
 }
 
-#footer .twitter-widget {
+footer .twitter-widget {
     width: 300px;
 }
 
-#copyright {
+.copyright {
     clear: both;
     padding-top: 20px;
 }
 
-#copyright span {
+.copyright a {
     float: right;
 }
 
@@ -212,7 +218,7 @@ sup {
     list-style: square inside;
 }
 
-.section {
+section {
     clear: left;
 
     margin: 0 auto 35px;
@@ -237,7 +243,7 @@ sup {
     width: 240px;
 }
 
-.section .showcase {
+section .showcase {
     padding-right: 10px;
 }
 
@@ -253,10 +259,10 @@ sup {
     margin-top: 10px;
 }
 
-.section p,
-.section ul,
-.section dl,
-.section pre {
+section p,
+section ul,
+section dl,
+section pre {
     margin: 10px;
 }
 

@@ -9,11 +9,17 @@
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Molengo">
         <link rel="stylesheet" href="/static/style.css">
-        <!--[if lte IE 8]><link rel="stylesheet" href="/static/style-ie.css"><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="/static/style-ie.css">
+        <script type="text/javascript">
+            // TODO: Move to external JS
+            document.createElement('header');
+            document.createElement('footer');
+            document.createElement('section');
+        </script><![endif]-->
     </head>
     <body>
         {% block header %}
-        <div id="header">
+        <header>
             <p id="nav-header"><strong>Navigation</strong></p>
             <ul id="menu">
                 <li class="menu-item logo"><a id="top" href="/">Ren'Py</a></li>
@@ -26,7 +32,7 @@
                 <li class="menu-item"><a href="/shop.html">Shop</a></li>
             </ul>
             <div class="clear"></div>
-        </div>
+        </header>
         {% endblock %}
 
         <div id="content">
@@ -38,7 +44,7 @@
         </div>
 
         {% block footer %}
-        <div id="footer">
+        <footer>
             <div class="col">
                 <p><strong>Quick Links</strong></p>
                 <ul id="quick-links">
@@ -107,11 +113,11 @@
                 </script>
             </div>
 
-            <p id="copyright">
+            <p class="copyright">
                 Copyright &copy; PyTom
-                <span><a href="#top">Return to Top</a></span>
+                <a href="#top">Return to Top</a>
             </p>
-        </div>
+        </footer>
         {% endblock %}
     </body>
 </html>
