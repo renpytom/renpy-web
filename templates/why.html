@@ -5,43 +5,36 @@
 {% block content %}
 <section>
     <h1>Why Ren'Py?</h1>
-    <p>Ren'Py is a visual novel engine that helps you use words, images, and sounds to tell stories with the computer. These can be both visual novels and life simulation games. The easy to learn script language allows you to efficiently write large visual novels, while its Python scripting is enough for complex simulation games.</p>
+    <p>Ren'Py is a free and cross platform engine for digital storytelling. It makes it easy to combine words, images, and sounds to create visual novels and life simulation games.</p>
+    <p><strong>Visual novels</strong> are computer-based stories that are told through words, images, sounds, and music. Many visual novels also present the player with menu choices that allow the player to control how the story is told.</p>
+    <p>Ren'Py's script language makes it easy to write visual novels, and other writing-heavy games. It's easy to learn, and scales well to the largest projects. Even without customization, Ren'Py provides the features players have come to expect from their visual novels.</p>
+    <p><strong>Life Simulation</strong> games, such as management and dating sims, are more interactive games that mix story with gameplay. Ren'Py's screen language allows one to create complex interfaces, while its support for the Python scripting language makes allows for complex game logic, if that's what your project requires.</p>
 </section>
 
 <section>
-    <h2>It's free.</h2>
-    <aside class="small">
-        <figure>
-            <img src="/static/summersession-thumb.jpg">
-            <figcaption><a href="http://games.renpy.org/game/summersession">Summer Session</a> is one of many commercial games made with Ren'Py.</figcaption>
-        </figure>
-    </aside>
-    <p>Ren'Py is free to use with commercial and non-commercial games. While Ren'Py and the libraries it depends on are all open source, they are licensed in ways that let you choose if your game will be open-source or closed-source. There is no need to pay a fee to us or anyone else<sup>1</sup> to distribute your Ren'Py game. Ren'Py has already been used with a half-dozen commercial games, and more are on the way.</p>
-    <p>Of course, if you make money off of a Ren'Py game and feel like supporting further development, a donation would be nice.</p>
-    <p class="sup-description"><sup>1</sup> Unless you use mpeg or mp3 support, in which case you're responsible for paying for the patent license. We don't recommend using these formats in commercial games.</p>
+    <h2>Free and Open Source</h2>
+    <p>Ren'Py is free to use with commercial and non-commercial games. There is no need to pay a fee to us or anyone else<sup><a href="#note-1">1</a></sup> to distribute your Ren'Py game. Ren'Py has already been used with a half-dozen commercial games, and more are on the way.</p>
+    <p>Ren'Py doesn't tie your work to a particular company, web service, or business model. Ren'Py games have been digitally downloaded millions of times, can be moved on USB drives, and have been burned to CD and sold at conventions from Texas to Tokyo. We think it's important the maker can choose how his or her work is distributed.</p>
+    <p>Ren'Py is open source, which means that everyone is allowed to change it, in order to fix bugs or add features. Of course, with a record of over <strong>six years</strong> of improvements, it likely won't be necessary --- but the option is there if your project needs it.</p>
+    <p id="note-1" class="sup-description"><sup>1</sup> Unless you use mpeg or mp3 support, in which case you're responsible for paying for the patent license. We don't recommend using these formats in commercial games.</p>
 </section>
 
 <section>
-    <h2 style="clear: both">It's cross-platform.</h2>
-    <div class="os-icons">
-        <img src="/static/windows-small.jpg">
-        <img src="/static/apple-small.jpg">
-        <img src="/static/linux-small.png">
-    </div>
-    <p>One of Ren'Py's biggest advantages is that it is cross platform. There are three primary platforms we support:</p>
+    <h2>Cross Platform</h2>
+    <p>One of Ren'Py's biggest advantages is that runs on almost every computer. There are three primary platforms we support:</p>
     <ul>
         <li>Windows 2000+ (x86)</li>
         <li>Mac OS X 10.4+ (x86 and ppc)</li>
         <li>Linux (x86, glibc 2.3+)</li>
     </ul>
     <p>The Ren'Py launcher makes it possible to build versions of Ren'Py games for all three platforms from any of these three platforms, making it possible to develop (for example) Mac and Linux versions on Windows.</p>
-    <p>Another advantage is that Ren'Py games are not dependent on any other software on these platforms. There's no need for your users to download runtimes, drivers, codecs, or anything like that. If a user has one of the supported platforms, Ren'Py will run.</p>
-    <p>Ren'Py can also be made to run on other platforms that support pygame, provided they have a reasonable amount of memory.</p>
+    <p>Ren'Py games are not dependent on any other software on these platforms. There's no need for your users to download runtimes, drivers, codecs, or anything like that. If a user has one of the supported platforms, Ren'Py will run. (Even if not, Ren'Py is written using portable technologies like pygame, and so can probably be made to run.)</p>
 </section>
 
 <section>
-    <h2>It's powerful yet easy to use.</h2>
-    <p>Ren'Py uses a simple text-based script language to write games in. Here's a small excerpt from a game:</p>
+    <h2>Simple Scripting Language</h2>
+    <p>Ren'Py allows visual novels to be written in a simple scripting language. Here's a small excerpt from a game:</p>
+
     <pre>label family:
     scene bg beach2
     with dissolve
@@ -56,132 +49,79 @@
     p "When I'm on the island here, I live with my aunt and uncle, but back home, I live with my mother, father, and sister."
 
     m "A sister? Is she older or younger?"</pre>
-    <aside class="small">
-        <figure>
-            <a href="/static/moonlightwalks.jpg"><img src="/static/moonlightwalks-thumb.jpg"></a>
-            <figcaption><a href="http://games.renpy.org/game/mwalks">Moonlight Walks 2.0</a> is a remake of one of the first Ren'Py games ever made.</figcaption>
-        </figure>
-    </aside>
-    <p>As you can see, this example, taken from a working Ren'Py script doesn't require much extra typing when compared just simply typing in the script for the game. It even lets you abbreviate character names, letting you write <code>m</code> instead of <code>"Mary"</code>.</p>
-    <p>Ren'Py lets you define characters and images in a central place. This makes it easy to make changes, without having to change the entire game. Another benefit of using a script is consistency, as it makes it easy to ensure that the placement of text and images does not inadvertently change throughout the game.</p>
-    <p>Being text-based, the Ren'Py script language can work with whatever text editors or other tools you choose. While we include the jEdit text editor, there's nothing forcing you to use it if you have another editor you like better. Other third-party tools can check your game's spelling, or show you the differences between two versions of the game.</p>
-    <p>Some of the things you can do from the script language include:</p>
-    <ul>
-        <li>Display dialogue and thoughts.</li>
-        <li>Let the user pick choices from a menu, with no limit on menu length.</li>
-        <li>Show and hide pictures and images.</li>
-        <li>Perform transitions between screens.</li>
-        <li>Play music, sound effects, and voices.</li>
-        <li>Jump to, call, and return from labels.</li>
-        <li>Set variables, and branch or loop on the value of those variables.</li>
-        <li>Use Python to perform more complicated tasks.</li>
-    </ul>
+    <p>As you can see, this example, taken from a working Ren'Py script doesn't require much extra typing when compared just simply typing in the script for the game. It even lets you abbreviate character names, letting you write <code>m</code> instead of "Mary".</p>
+    <p>Ren'Py lets you define characters and images in a central place, making it easy to change the game. Scripts also provide consistency, ensuring that the placement of text and images does not inadvertently change throughout the game.</p>
+    <p>Unlike other engines that force you to use particular tools, the Ren'Py script language works with whatever text editors and other tools you choose. While we include the jEdit text editor, there's nothing forcing you to use it if you have another editor you like better. Other third-party tools can check your game's spelling, or show you the differences between two versions of the game.</p>
+    <p>Since Ren'Py's scripting language is text based, it can be typed out on any keyboard. Not having to switch back and forth between the keyboard and mouse helps increase productivity, especially when producing large projects.</p>
 </section>
 
 <section>
-    <h2>It's packed with features.</h2>
-    <aside class="small">
-        <figure>
-            <a href="/static/demo-prefs.png"><img src="/static/demo-prefs-thumb.png"></a>
-            <figcaption>Preferences Screen</figcaption>
-        </figure>
-    </aside>
-    <p>Ren'Py includes, by default, all of the features a user expects from a visual novel game. While most of these features can be turned off if desired, by default each new game has:</p>
+    <h2>Features Players Want</h2>
+    <p>Ren'Py includes, by default, all of the features a user expects from a visual novel game. While most of these features can be customized or disabled if desired, by default each new game has:</p>
     <ul>
-        <li>A main menu that is shown before the game starts.</li>
+        <li>A main menu that lets the user start a new game, load a game, or adjust settings.</li>
         <li>A game menu that lets the user load, save, and adjust settings.</li>
-        <li>Automatic saving of games every once in a while.</li>
-        <li>The ability to pick if the game runs in a window or in fullscreen mode.</li>
-        <li>The ability to independently change music, sound effect, and voice volume.</li>
-        <li>The ability to skip text, including the ability to skip only text that's been read.</li>
-        <li>The ability to auto-advance text without having to hit the keyboard. This adjusts to the amount of text being shown, so longer text sticks around longer.</li>
-        <li>The ability to hide text, so that the user can see the pictures behind it.</li>
+        <li>Automatic saving of games.</li>
         <li>Rollback, the ability to go back in time to see previously shown screens. The user can even make different choices the second time around.</li>
         <li>Predictive image loading, which loads images in the background. This prevents the user from having to wait around while images are being loaded from disk.</li>
+        <li>Support for controlling the game using the mouse, keyboard, or gamepad.</li>
+        <li>The ability to pick if the game runs in fullscreen mode, or in a rescalable window.</li>
+        <li>The ability to skip through text when replaying, including the ability to skip only text that's been read.</li>
+        <li>The ability to auto-advance text without having to hit the keyboard. This adjusts to the amount of text being shown, so longer text sticks around longer.</li>
+        <li>The ability to hide text, so that the user can see the pictures behind it.</li>
+        <li>The ability to independently change music, sound effect, and voice volume.</li>
     </ul>
 </section>
 
 <section>
-    <h2>It's easy to customize and localize.</h2>
-    <aside class="small">
-        <figure>
-            <a href="/static/ks-nvl.png"><img src="/static/ks-nvl-thumb.png"></a>
-            <figcaption><a href="http://games.renpy.org/game/katawashoujoact1">Katawa Shoujo</a> is an example of a game which uses NVL-mode.</figcaption>
-        </figure>
-
-        <figure>
-            <a href="/static/tfq-prefs.jpg"><img src="/static/tfq-prefs-thumb.jpg"></a>
-            <figcaption><a href="http://games.renpy.org/game/tfq">TFQ</a> uses a lot of imagemap-based menus.</figcaption>
-        </figure>
-    </aside>
-    <p>There are many ways a game-maker can customize Ren'Py. A few of them are:</p>
+    <h2>Easy to Customize and Localize</h2>
+    <p>There are many ways a creator can customize the look and feel of Ren'Py:</p>
     <ul>
-        <li>The game-maker can choose to present things in NVL-mode, which shows more than one block of text on the screen at once.</li>
-        <li>Themes and Layouts can change the look and feel of the various menus.</li>
-        <li>Styles can change the look of just about everything in the game.</li>
-        <li>One can change the font, size, color, underline, outline, and boldness of text. Text tags let many of these properties change even within a block of text.</li>
+        <li>Dialogue can be presented in the default ADV-style mode, or in NVL-mode, where more than one block of text is on the screen at once.</li>
+        <li>The style system allows the creator to customize the look of text, buttons, bars, and other interface components.</li>
+        <li>Ren'Py's screen language makes it possible to control the layout and behavior of every screen of the user interface.</li>
+        <li>The same functionality is made available to Python code, for games that might choose to change their interface at runtime.</li>
     </ul>
-    <p>Ren'Py games have been made in or translated to the following languages:</p>
-    <ul>
-        <li>Brazilian Portuguese</li>
-        <li>Czech</li>
-        <li>English</li>
-        <li>French</li>
-        <li>German</li>
-        <li>Italian</li>
-        <li>Indonesian</li>
-        <li>Japanese</li>
-        <li>Russian</li>
-        <li>Spanish</li>
-    </ul>
-    <p>With proper fonts, Ren'Py should support any left-to-right language that does not require ligatures.</p>
+    <p>Ren'Py game have been made in or translated to Arabic, Brazilian Portuguese, Czech, English, French, German, Italian, Indonesian, Japanese, Russian, and Spanish. With proper fonts, it supports any language that doesn't require ligatures, and some that do.</p>
 </section>
 
 <section>
-    <h2>It supports modern media.</h2>
-    <aside class="small">
-        <figure>
-            <a href="/static/osx-dev.jpg"><img src="/static/osx-dev-thumb.jpg"></a>
-            <figcaption>The Ren'Py Launcher, jEdit and the Ren'Py Tutorial running on OS X.</figcaption>
-        </figure>
-    </aside>
-    <p>Ren'Py can display the following image formats:</p>
+    <h2>Powerful Effects</h2>
+    <p>Ren'Py can take advantage of hardware acceleration on supported computers, while falling back to software support when it's not. This acceleration makes it possible to apply sophisticated effects to high definition images.</p>
+    <p>The Animation and Transformation Language included with Ren'Py makes it possible to animate images, move them around the screen, rotate them, adjust their scaling, and adjust their opacity. All of these can easily be changed over time.</p>
+    <p>Ren'Py ships with dozens of customizable transitions that can be invoked when a scene changes. In addition to a full set of slides, wipes, and moves, this includes:</p>
     <ul>
-        <li>JPEG/JPG</li>
-        <li>PNG</li>
-        <li>BMP</li>
-        <li>GIF</li>
+        <li>Pixellation of the old scene, and unpixellation of the new one.</li>
+        <li>Fades to black (or another color), and then to the new scene.</li>
+        <li>Dissolves of the whole screen from one scene to another.</li>
+        <li>Image-controlled dissolves, which use an image to control which portions of the screen dissolve in first. This has been used as the basis for a variety of powerful effects, from blood spatters to transporter beams.</li>
     </ul>
-
-    <p>Ren'Py can play the following audio formats:</p>
-    <ul>
-        <li>OGG Vorbis</li>
-        <li>WAV (uncompressed PCM only)</li>
-        <li>MP3<sup>2</sup></li>
-        <li>MP2<sup>2</sup></li>
-    </ul>
-
-    <p>Ren'Py can play the following movie formats:</p>
-    <ul>
-        <li>Theora</li>
-        <li>MPEG 4<sup>2</sup></li>
-        <li>MPEG 2<sup>2</sup></li>
-        <li>MPEG 1<sup>2</sup></li>
-    </ul>
-
-    <p>Ren'Py supports TrueType fonts, and a variety of image-based font formats. Ren'Py can archive files into its own archive file format, RPA. This protects files from casual access.</p>
-    <p class="sup-description"><sup>2</sup> These formats may be patented, and so may not be suitable for use in commercial games.</p>
+    <p>Ren'Py also supports the playback of movie files.</p>
 </section>
 
 <section>
-    <h2>It's well supported.</h2>
-    <p>More than 180 games have been released with Ren'Py.</p>
-    <p>This means that there are now a large number of people with Ren'Py experience, many of whom are willing to support new users. The best place to go for support is the Ren'Py forum at the Lemma Soft Forums, which has more than 17,000 posts in 2,100 threads. (Figures accurate as of August 29, 2009.)</p>
+    <h2>Compatible Formats</h2>
+    <p>Ren'Py is compatible with assets in a variety of popular formats:</p>
+    <ul>
+        <li>Images: JPEG/JPG, PNG, BMP, GIF</li>
+        <li>Sound/Music: OGG Vorbis, WAV, MP3<sup><a href="#note-2">2</a></sup>, MP2<sup><a href="#note-2">2</a></sup></li>
+        <li>Movies: OGG Theora, MPEG 4, MPEG 2, MPEG 1</li>
+        <li>Scalable Fonts: TrueType</li>
+        <li>Image-based Fonts: SFont, BMFont, MudgeFont</li>
+    </ul>
+    <p id="note-2" class="sup-description"><sup>2</sup> These formats may be patented, and so may not be suitable for use in commercial games.</p>
 </section>
 
 <section>
-    <h2>Where do I start?</h2>
-    <p>Hopefully, this has convinced you to use Ren'Py to make your next story-based game. Once you've downloaded Ren'Py, the best place to get started is with the Quickstart Manual.</p>
-    <p>We can't wait to see what you do with it!</p>
+    <h2>Well Supported</h2>
+    <p>Hundreds of games have been released with Ren'Py, making it one of the most widely used visual novel engines in the world.</p>
+    <p>There are now a large number of creators with Ren'Py experience, many of whom are willing to help fellow creators. The best place to go for support is the Ren'Py forum at the Lemma Soft Forums, which has more than 23,000 posts in over 3,100 threads. (Figures accurate as of October, 2010.)</p>
+</section>
+
+<section>
+    <h2>What Next?</h2>
+    <p>When you're ready to start using Ren'Py, you'll want to download it from our download page, and then take a look at the Quickstart Guide.</p>
+    <p>We can't wait to see what you create!</p>
+    <div class="center"><a href="/download.html" class="button">Get Started</a></div>
 </section>
 {% endblock %}
