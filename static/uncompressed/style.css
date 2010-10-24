@@ -88,7 +88,7 @@ h3 {
 pre {
     overflow: auto;
 
-    max-width: 980px;
+    max-width: 1000px;
 }
 
 a {
@@ -160,8 +160,8 @@ header {
 
     margin: 3px 0 -13px;
     font-size: 1.85em;
-    height: 100px;
-    line-height: 87px;
+    height: 89px;
+    line-height: 89px;
 }
 
 .logo a {
@@ -240,10 +240,6 @@ aside.small {
     width: 240px;
 }
 
-section aside {
-    padding-right: 10px;
-}
-
 aside figcaption {
     margin: 5px auto 25px !important;
 }
@@ -277,7 +273,7 @@ a.button {
     text-shadow: -1px -1px 1px #D0F2FF;
 
     margin: 5px auto;
-    padding: .3em .35em .5em;
+    padding: .3em .35em .4em;
     border: 1px solid black;
     -moz-border-radius: .25em;
     border-radius: .25em;
@@ -305,7 +301,7 @@ a.button:hover {
 
 #start-tips li {
     display: inline-block;
-    width: 277px;
+    width: 287px;
 
     vertical-align: top;
 
@@ -315,7 +311,6 @@ a.button:hover {
 /* Why Page Styling */
 .os-icons {
     float: right;
-    margin-right: 10px;
 }
 
 /* Download Page Styling */
