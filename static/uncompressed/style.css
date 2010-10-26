@@ -9,7 +9,9 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+table, caption, tbody, tfoot, thead, tr, th, td,
+header, nav, aside, section, footer,
+figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -52,11 +54,17 @@ table {
     border-spacing: 0;
 }
 
+/* html5 tags */
+header, nav, aside, section, footer,
+figure, figcaption {
+    display: block;
+}
+
 /**
  * Ren'Py Main CSS
  */
 body {
-    font: 1em "Molengo", "Helvetica", sans-serif;
+    font: 1em "PT Sans", "Helvetica", sans-serif;
     line-height: 1.4em;
 }
 
@@ -80,7 +88,7 @@ h3 {
 pre {
     overflow: auto;
 
-    max-width: 980px;
+    max-width: 1000px;
 }
 
 a {
@@ -110,7 +118,7 @@ sup {
 }
 
 /* Header Styling */
-#header {
+header {
     background: #ACD;
     margin-bottom: 15px;
 }
@@ -152,8 +160,8 @@ sup {
 
     margin: 3px 0 -13px;
     font-size: 1.85em;
-    height: 100px;
-    line-height: 87px;
+    height: 89px;
+    line-height: 89px;
 }
 
 .logo a {
@@ -166,44 +174,44 @@ sup {
 }
 
 /* Footer Styling */
-#content, #footer {
+#content, footer {
     margin: 0 auto;
     width: 1000px;
 }
 
-#footer {
+footer {
     border-top: 1px solid #DDD;
     margin-top: 20px;
     padding-top: 20px;
 }
 
-#footer p,
-#footer ul li {
+footer p,
+footer li {
     margin: 0 auto 5px;
     line-height: 1.1em;
 }
 
-#footer .col {
+.col {
     float: left;
     width: 200px;
     margin-right: 20px;
 }
 
-#footer .col-right {
+.col-right {
     float: right;
     width: 200px;
 }
 
-#footer .twitter-widget {
+.twitter-widget {
     width: 300px;
 }
 
-#copyright {
+.copyright {
     clear: both;
     padding-top: 20px;
 }
 
-#copyright span {
+.copyright a {
     float: right;
 }
 
@@ -212,18 +220,13 @@ sup {
     list-style: square inside;
 }
 
-.section {
+section {
     clear: left;
 
     margin: 0 auto 35px;
 }
 
-.with-showcase {
-    width: 600px;
-    margin-right: 400px;
-}
-
-.showcase {
+aside {
     float: right;
     width: 380px;
 
@@ -233,19 +236,15 @@ sup {
     margin: 0;
 }
 
-.small-showcase {
+aside.small {
     width: 240px;
 }
 
-.section .showcase {
-    padding-right: 10px;
-}
-
-.showcase p {
+aside figcaption {
     margin: 5px auto 25px !important;
 }
 
-.small-showcase p {
+aside.small figcaption {
     margin: 5px auto 15px !important;
 }
 
@@ -253,11 +252,11 @@ sup {
     margin-top: 10px;
 }
 
-.section p,
-.section ul,
-.section dl,
-.section pre {
-    margin: 10px;
+section p,
+section ul,
+section dl,
+section pre {
+    margin: 10px 0;
 }
 
 a.button {
@@ -274,7 +273,7 @@ a.button {
     text-shadow: -1px -1px 1px #D0F2FF;
 
     margin: 5px auto;
-    padding: .3em .35em .5em;
+    padding: .3em .35em .4em;
     border: 1px solid black;
     -moz-border-radius: .25em;
     border-radius: .25em;
@@ -300,9 +299,9 @@ a.button:hover {
     list-style: none;
 }
 
-#start-tips ul li {
+#start-tips li {
     display: inline-block;
-    width: 277px;
+    width: 287px;
 
     vertical-align: top;
 
@@ -312,7 +311,6 @@ a.button:hover {
 /* Why Page Styling */
 .os-icons {
     float: right;
-    margin-right: 10px;
 }
 
 /* Download Page Styling */

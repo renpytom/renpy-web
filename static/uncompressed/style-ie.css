@@ -6,14 +6,9 @@
     text-decoration: underline;
 }
 
-.section {
+section {
     /* IE6 is really stupid about margins */
     _margin: 0 0 35px 0;
-}
-
-.with-showcase {
-    /* Fix IE6 displaying content under showcase */
-    _width: 575px;
 }
 
 a.button {
@@ -45,4 +40,12 @@ pre {
 .downloads li {
     /* Fix inline-block display in IE6/7 */
     *display: inline;
+}
+
+/* Fix an issue with IE6/7 and floated elements */
+.copyright a {
+    *margin-top: -1em;
+}
+.copyright {
+    *padding-top: 0;
 }
