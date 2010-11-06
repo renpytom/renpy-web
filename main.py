@@ -8,7 +8,7 @@ def page(name):
     Matches html-like pages and renders them using a template.
     """
 
-    return render_template(name + ".html")
+    return render_template(name + ".html", name=name)
 
 @app.route("/")
 def index():

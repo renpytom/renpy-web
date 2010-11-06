@@ -2,9 +2,9 @@
  * IE overrides for Ren'Py Main CSS
  */
 
-.menu-item a:hover {
+/*.menu-item a:hover {
     text-decoration: underline;
-}
+}*/
 
 section {
     /* IE6 is really stupid about margins */
@@ -40,12 +40,4 @@ pre {
 .downloads li {
     /* Fix inline-block display in IE6/7 */
     *display: inline;
-}
-
-/* Fix an issue with IE6/7 and floated elements */
-.copyright a {
-    *margin-top: -1em;
-}
-.copyright {
-    *padding-top: 0;
 }

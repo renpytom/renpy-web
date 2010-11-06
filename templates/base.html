@@ -17,14 +17,14 @@
         <header>
             <p id="nav-header"><strong>Navigation</strong></p>
             <ul id="menu">
-                <li class="menu-item logo"><a id="top" href="/">Ren'Py</a></li>
+                <li id="logo" class="menu-item"><a id="top" href="/" title="What is Ren'Py?">Ren'Py</a></li>
 
-                <li class="menu-item"><a href="/why.html" title="Why Ren'Py?">Why</a></li>
-                <li class="menu-item"><a href="/download.html">Download</a></li>
+                <li class="menu-item"><a {% if name == 'why' %}class="selected" {% endif %}href="/why.html" title="Why Ren'Py?">Why</a></li>
+                <li class="menu-item"><a {% if name == 'download' %}class="selected" {% endif %}href="/download.html" title="Download Ren'Py">Download</a></li>
                 <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
-                <li class="menu-item"><a href="/support.html">Support</a></li>
+                <li class="menu-item"><a {% if name == 'support' %}class="selected" {% endif %}href="/support.html">Support</a></li>
                 <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
-                <li class="menu-item"><a href="/shop.html">Shop</a></li>
+                <li class="menu-item"><a href="/shop/">Shop</a></li>
             </ul>
             <div class="clear"></div>
         </header>
@@ -40,78 +40,16 @@
 
         {% block footer %}
         <footer>
-            <div class="col">
-                <p><strong>Quick Links</strong></p>
-                <ul id="quick-links">
-                    <li>Home</li>
-                    <li>Why</li>
-                    <li>Download</li>
-                    <li>Documentation</li>
-                    <li>Support</li>
-                    <li>Games</li>
-                    <li>Shop</li>
-                </ul>
-            </div>
-            <div class="col">
-                <p><strong>Latest Forum Posts</strong></p>
-                <ul id="latest-forum-posts">
-                    <li>Something with stuff doesn't do things</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                </ul>
-            </div>
-            <div class="col">
-                <p><strong>Latest Shop Additions</strong></p>
-                <ul id="latest-shop-additions">
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                    <li>Something</li>
-                </ul>
-            </div>
-            <div class="col-right twitter-widget">
-                <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-                <script>
-                    new TWTR.Widget({
-                      version: 2,
-                      type: 'profile',
-                      rpp: 1,
-                      interval: 6000,
-                      width: 'auto',
-                      height: 200,
-                      theme: {
-                        shell: {
-                          background: '#aaccdd',
-                          color: '#000000'
-                        },
-                        tweets: {
-                          background: '#ffffff',
-                          color: '#000000',
-                          links: '#003287'
-                        }
-                      },
-                      features: {
-                        scrollbar: false,
-                        loop: false,
-                        live: false,
-                        hashtags: true,
-                        timestamp: true,
-                        avatars: false,
-                        behavior: 'all'
-                      }
-                    }).render().setUser('renpytom').start();
-                </script>
-            </div>
-
-            <p class="copyright">
-                Copyright &copy; PyTom
-                <a href="#top">Return to Top</a>
-            </p>
+            <ul id="quick-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/why.html">Why</a></li>
+                <li><a href="/download.html">Download</a></li>
+                <li><a href="/doc/html/">Documentation</a></li>
+                <li><a href="/support.html">Support</a></li>
+                <li><a href="http://games.renpy.org/">Games</a></li>
+                <li><a href="/shop/">Shop</a></li>
+            </ul>
+            <p>Copyright &copy; PyTom</p>
         </footer>
         {% endblock %}
     </body>
