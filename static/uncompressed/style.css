@@ -332,6 +332,14 @@ a.button:hover {
     float: right;
 }
 
+.rpy-keyword {
+    color: #640;
+}
+
+.rpy-string {
+    color: #060;
+}
+
 /* Download Page Styling */
 .downloads {
     list-style: none;
