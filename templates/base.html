@@ -16,16 +16,21 @@
         {% block header %}
         <header>
             <p id="nav-header"><strong>Navigation</strong></p>
-            <ul id="menu">
-                <li id="logo" class="menu-item"><a id="top" href="/" title="What is Ren'Py?">Ren'Py</a></li>
-
-                <li class="menu-item"><a {% if name == 'why' %}class="selected" {% endif %}href="/why.html" title="Why Ren'Py?">Why</a></li>
-                <li class="menu-item"><a {% if name == 'download' %}class="selected" {% endif %}href="/download.html" title="Download Ren'Py">Download</a></li>
-                <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
-                <li class="menu-item"><a {% if name == 'support' %}class="selected" {% endif %}href="/support.html">Support</a></li>
-                <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
-                <li class="menu-item"><a href="/shop/">Shop</a></li>
-            </ul>
+            <a id="logo" href="/" title="What is Ren'Py?">Ren'Py</a>
+            <nav>
+                <ul id="menu">
+                    <li class="menu-item"><a {% if name == 'why' %}class="selected" {% endif %}href="/why.html" title="Why Ren'Py?">Why</a></li>
+                    <li class="menu-item"><a {% if name == 'download' %}class="selected" {% endif %}href="/download.html" title="Download Ren'Py">Download</a></li>
+                    <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
+                    <li class="menu-item"><a {% if name == 'support' %}class="selected" {% endif %}href="/support.html">Support</a></li>
+                    <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
+                    <li class="menu-item"><a href="/shop/">Shop</a></li>
+                </ul>
+            </nav>
+            <!-- <form method="get" action="http://google.com/search">
+                <input type="text" name="q">
+                <button type="submit" title="Search Ren'Py">Search</button>
+            </form> -->
             <div class="clear"></div>
         </header>
         {% endblock %}

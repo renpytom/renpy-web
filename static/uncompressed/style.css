@@ -1,5 +1,5 @@
 /**
- * Eric Meyer's CSS Reset v1.0 | 20080212
+ * Ren'Py Main CSS (w/ Reset)
  */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -20,15 +20,42 @@ figure, figcaption {
     vertical-align: baseline;
     background: transparent;
 }
+
 body {
     line-height: 1;
+    font: 1em "PT Sans", "Helvetica", sans-serif;
+    line-height: 1.4em;
+    background: #ACD;
 }
+
+h1, h2 {
+    padding: 1px 0 5px;
+    border-bottom: 1px solid #ACD;
+}
+
+h1 {
+    font-size: 1.85em;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding-bottom: 2px;
+    margin: 20px auto 10px;
+}
+
+h3 {
+    font-size: 1.35em;
+    margin: 20px auto 10px;
+}
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
@@ -44,6 +71,7 @@ q:before, q:after {
 ins {
     text-decoration: none;
 }
+
 del {
     text-decoration: line-through;
 }
@@ -60,35 +88,9 @@ figure, figcaption {
     display: block;
 }
 
-/**
- * Ren'Py Main CSS
- */
-body {
-    font: 1em "PT Sans", "Helvetica", sans-serif;
-    line-height: 1.4em;
-}
-
-h1, h2 {
-    font-size: 1.85em;
-    padding: 1px 0 5px;
-    border-bottom: 1px solid #ACD;
-}
-
-h2 {
-    font-size: 1.5em;
-    padding-bottom: 2px;
-    margin: 20px auto 10px;
-}
-
-h3 {
-    font-size: 1.35em;
-    margin: 20px auto 10px;
-}
-
 pre {
     overflow: auto;
-
-    max-width: 1000px;
+    max-width: 970px;
 }
 
 a {
@@ -117,108 +119,125 @@ sup {
     font-size: .8em;
 }
 
-/* Header Styling */
-header {
-    background: #ACD;
-    margin-bottom: 15px;
-}
-
 #nav-header, #nav-footer {
     display: none;
 }
 
-#menu {
-    text-align: right;
+/* Header Styling */
+header, nav {
+    position: relative;
+}
 
-    margin: 0 auto;
+header {
+    height: 100px;
     width: 1000px;
-    height: 95px;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+#logo {
+    position: absolute;
+    left: 15px;
+
+    display: inline-block;
+    height: 100px;
+    padding-left: 75px;
+
+    color: #000;
+    background: url(/static/logo.png) no-repeat left center;
+    text-decoration: none;
+    font-size: 3.5em;
+    line-height: 100px;
+}
+
+#logo:hover {
+    text-shadow: 2px 2px 2px #5A7D8E;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+#menu {
+    display: inline-block;
 }
 
 .menu-item {
     display: inline;
-
-    height: 95px;
-    line-height: 155px;
-
-    margin: 0 0 0 12.5px;
 }
 
 .menu-item a {
+    padding: 5px 15px 15px;
+
     color: #000;
     text-decoration: none;
     font-size: 1.2em;
-
-    padding: 5px 10px 6px;
 }
-
-.menu-item a:hover {
+.menu-item a:hover, header button:hover {
     color: #F16838;
+}
+
+.menu-item a:hover, .menu-item a.selected {
     background: #FFF;
+
+    -moz-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
-.menu-item a.selected {
+
+header form {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    padding: 5px 10px;
+
     background: #FFF;
+    -moz-border-bottom-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    -moz-border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+header input, header button {
+    font: 1em "PT Sans", "Helvetica", sans-serif;
 }
 
-#logo {
-    float: left;
-
-    margin: 3px 0 -13px;
-    font-size: 1.85em;
-    height: 89px;
-    line-height: 95px;
+header input {
+    width: 220px;
+    border: 0;
 }
 
-#logo a {
-    display: inline-block;
-
-    height: 100px;
-    font-size: 2em;
-    background: url('logo.png') no-repeat left center;
-    text-shadow: 2px 2px 2px #9CBECF;
-    padding-left: 75px;
-    padding: 0 0 0 75px;
-    text-align: left;
-}
-
-#logo a:hover {
-    color: #000;
-    padding-bottom: 0px;
-    text-shadow: 2px 2px 2px #5A7D8E;
+header button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
 }
 
 /* Footer Styling */
 #content, footer {
+    background: #FFF;
     margin: 0 auto;
-    width: 1000px;
+    width: 970px;
+    padding: 15px;
+
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 footer {
-    border-top: 1px solid #DDD;
-    margin-top: 20px;
-    padding-top: 10px;
+    margin: 20px auto;
+    padding: 10px 15px;
 }
 
 footer p,
 footer ul,
 footer li {
-    margin: 0 auto 5px;
     line-height: 1.1em;
-}
-
-.col {
-    float: left;
-    width: 200px;
-    margin-right: 20px;
-}
-
-.col-right {
-    float: right;
-    width: 200px;
-}
-
-.twitter-widget {
-    width: 300px;
 }
 
 #quick-links {
@@ -320,7 +339,7 @@ a.button:hover {
 
 #start-tips li {
     display: inline-block;
-    width: 287px;
+    width: 272px;
 
     vertical-align: top;
 

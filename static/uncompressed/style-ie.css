@@ -1,14 +1,29 @@
 /**
  * IE overrides for Ren'Py Main CSS
  */
-
-/*.menu-item a:hover {
-    text-decoration: underline;
-}*/
-
 section {
     /* IE6 is really stupid about margins */
     _margin: 0 0 35px 0;
+}
+
+header {
+    _width: 970px;
+}
+
+nav {
+    /* IE6/7 position by box, not content */
+    *bottom: 0;
+}
+
+#menu {
+    /* Get IE6 to display the menu on the right */
+    _display: inline;
+}
+
+.menu-item a {
+    /* Get IE6/7 to show the tabs properly */
+    *display: inline-block;
+    *padding: 5px 15px;
 }
 
 a.button {
@@ -29,7 +44,7 @@ pre {
     *padding-bottom: 25px;
 
     /* Specify a width in IE6 */
-    _width: 980px;
+    _width: 940px;
 }
 
 .logo a {
