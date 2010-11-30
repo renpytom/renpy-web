@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:regular,bold&amp;subset=latin">
         <link rel="stylesheet" href="/static/style.css">
         <!--[if lte IE 8]><link rel="stylesheet" href="/static/style-ie.css">
-        <script type="text/javascript" src="/static/iepp.1-6-1.min.js"></script><![endif]-->
+        <script type="text/javascript" src="/static/iepp.1-6-2.min.js"></script><![endif]-->
     </head>
     <body>
         {% block header %}
@@ -24,13 +24,15 @@
                     <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
                     <li class="menu-item"><a {% if name == 'support' %}class="selected" {% endif %}href="/support.html">Support</a></li>
                     <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
-                    <li class="menu-item"><a href="/shop/">Shop</a></li>
+                    <li class="menu-item"><a href="/wiki/">Wiki</a></li>
                 </ul>
             </nav>
-            <!-- <form method="get" action="http://google.com/search">
-                <input type="text" name="q">
+            <form action="http://www.google.com/cse">
+                <input type="hidden" name="cx" value="000797277883883151475:iiwpz4lr2zw" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input id="search" type="text" name="q" title="Search Ren'Py">
                 <button type="submit" title="Search Ren'Py">Search</button>
-            </form> -->
+            </form>
             <div class="clear"></div>
         </header>
         {% endblock %}
@@ -53,10 +55,12 @@
                 <li><a href="/doc/html/">Documentation</a></li>
                 <li><a href="/support.html">Support</a></li>
                 <li><a href="http://games.renpy.org/">Games</a></li>
-                <li><a href="/shop/">Shop</a></li>
+                <li><a href="/wiki/">Wiki</a></li>
             </ul>
             <p>Copyright &copy; PyTom</p>
         </footer>
+
+        <script type="text/javascript" src="/static/main.js" defer async></script>
         {% endblock %}
     </body>
 </html>

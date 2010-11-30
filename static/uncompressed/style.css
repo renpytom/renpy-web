@@ -22,7 +22,6 @@ figure, figcaption {
 }
 
 body {
-    line-height: 1;
     font: 1em "PT Sans", "Helvetica", sans-serif;
     line-height: 1.4em;
     background: #ACD;
@@ -96,6 +95,10 @@ pre {
 a {
     color: #3183A3;
     text-decoration: underline;
+    -o-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
 }
 
 a:hover {
@@ -174,18 +177,24 @@ nav {
     color: #000;
     text-decoration: none;
     font-size: 1.2em;
-}
-.menu-item a:hover, header button:hover {
-    color: #F16838;
-}
-
-.menu-item a:hover, .menu-item a.selected {
-    background: #FFF;
 
     -moz-border-top-left-radius: 5px;
     border-top-left-radius: 5px;
     -moz-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
+
+    -o-transition-property: background-color, color;
+    -moz-transition-property: background-color, color;
+    -webkit-transition-property: background-color, color;
+    transition-property: background-color, color;
+}
+
+.menu-item a:hover {
+    color: #F16838;
+}
+
+.menu-item a:hover, .menu-item a.selected {
+    background-color: #FFF;
 }
 
 header form {
@@ -193,7 +202,7 @@ header form {
     right: 0;
     top: 0;
 
-    padding: 5px 10px;
+    padding: 5px 7px;
 
     background: #FFF;
     -moz-border-bottom-left-radius: 8px;
@@ -201,21 +210,17 @@ header form {
     -moz-border-bottom-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-header input, header button {
-    font: 1em "PT Sans", "Helvetica", sans-serif;
+
+header input, header button, .overTxtLabel {
+    font: .9em "PT Sans", "Helvetica", sans-serif;
 }
 
 header input {
     width: 220px;
-    border: 0;
 }
 
-header button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: none;
-    cursor: pointer;
+.overTxtLabel {
+    color: #AAA;
 }
 
 /* Footer Styling */
@@ -254,6 +259,10 @@ footer li {
 }
 
 /* Content Styling */
+#content {
+    padding: 1px 15px;
+}
+
 #content ul {
     list-style: square inside;
 }
@@ -261,7 +270,7 @@ footer li {
 section {
     clear: left;
 
-    margin: 0 auto 35px;
+    margin: 15px auto;
 }
 
 aside {
@@ -270,12 +279,13 @@ aside {
 
     /* Fix overlap issue when floating next to an h(1-6) element */
     background: #FFF;
-    padding: 0 0 10px 20px;
-    margin: 0;
+    padding: 0 0 0 20px;
+    margin: 15px 0 0;
 }
 
 aside.small {
     width: 240px;
+    margin: 0;
 }
 
 aside figcaption {
@@ -360,18 +370,28 @@ a.button:hover {
 }
 
 /* Download Page Styling */
-.downloads {
+#downloads {
     list-style: none;
     text-align: center;
     margin: 15px 0 20px;
 }
 
-.downloads li {
+#downloads li {
     display: inline-block;
     margin: 0 8px;
 }
 
-a.download-button span {
+.inactive {
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+.inactive:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.download-button span {
     display: block;
     font-size: .75em;
     line-height: 1em;
