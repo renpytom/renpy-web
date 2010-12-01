@@ -1,8 +1,14 @@
 #!/bin/sh
 dir=$(dirname $0)
+yui="java -jar ../../bin/yuicompressor-2.4.2.jar"
 
 cd $dir/../static/uncompressed
 
+# Minify CSS
 for f in $(ls *.css); do
-    java -jar ../../bin/yuicompressor-2.4.2.jar $f > "../$f"
+    $yui $f > "../$f"
 done
+
+# Minify JS (and merge it into 1 file)
+$yui mootools.js > ../main.js
+$yui site.js >> ../main.js
