@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Download Ren'Py {{release.version}}{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Download Ren'Py {{release.version}}</h1>
+
+    {% if release.aside_html %}
+    <aside class="after-header">
+      {{ release.aside_html|safe }}
+    </aside>
+    {% endif %}
+
+    <p>Ren'Py is free to download and use for commercial and non-commercial purposes. It may be modified and distributed under the terms of its <a href="http://www.renpy.org/doc/html/license.html">license</a>.</p>
+
+    <p><strong>Ren'Py {{release.version}} "{{release.name}}"</strong> was released on {{release.date}}. The main distributions are:</p>
+
+    <ul id="downloads">
+        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.7z.exe" class="button download-button win">Download SDK <span>7z.exe - 20 MiB</span></a></li>
+        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.zip" class="button download-button mac">Download SDK <span>zip - 25 MiB</span></a></li>
+        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.tar.bz2" class="button download-button linux">Download SDK <span>tar.bz2 - 24 MiB</span></small></a></li>
+    </ul>
+
+    <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows 2000 and up, Mac OS X 10.4 and up, and Linux x86. The development environment contains the files needed to produce games for all three platforms. Each file also includes the jEdit text editor, the Ren'Py demo, and "The Question", an example game.</p>
+    <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
+</section>
+
+<section>
+    <h2>Release History and Updates</h2>
+    {{release.history|rst|safe}}
+</section>
+
+<section>
+    <h2>Announcement</h2>
+    {{release.announcement|rst|safe}}
+
+    <p>Downloads of {{release.version}} can be found at:</p>
+
+    <dl>
+      <dd>
+        <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+      </dd>
+    </dl>
+
+    
+    <p>A full list of changes to Ren'Py can be found at:</p>
+
+    <dl>
+      <dd>
+        <a href="http://www.renpy.org/doc/html/changelog">http://www.renpy.org/doc/html/changelog</a>
+      </dd>
+    </dl>
+</section>
+
+<section>
+    <h2>Additional Downloads</h2>
+
+    <p>These downloads aren't of much interest to users of Ren'Py, but are here for people who want to port to a new platform, or to build and distribute a package.</p>
+    
+    <dl>
+      <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-source.tar.bz2">renpy-{{release.version}}-source.tar.bz2</a></dt>
+      <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
+      <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
+      <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
+    </dl>
+
+      
+      
+
+    <p>A complete list of releases can be found on the  <a href="/downloads.html">downloads page</a>.</p>
+</section>
+{% endblock %}
