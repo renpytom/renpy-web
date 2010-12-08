@@ -153,10 +153,6 @@ header {
     line-height: 100px;
 }
 
-#logo:hover {
-    text-shadow: 2px 2px 2px #5A7D8E;
-}
-
 nav {
     position: absolute;
     right: 0;
@@ -400,17 +396,15 @@ a.button:hover {
 /* Release List Page Styling */
 
 .release-list {
-    border: 1px solid #c0c0c0;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
-.release-list td {
-    border-top: 1px solid #c0c0c0;
-    padding: .25em;
-}
-
+.release-list td,
 .release-list th {
     padding: .25em;
     text-align: left;
+}
+
+.release-list .off {
+    background: #E0E0E0;
 }

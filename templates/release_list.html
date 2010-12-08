@@ -23,7 +23,7 @@
 
       {% for r in data.final_releases %}
 
-      <tr>
+      <tr class="{% if r.ordinal is even %}off{% else %}on{% endif %}">
         <td>{{ r.ordinal }}</td>
 
         {% if r.wiki %}
