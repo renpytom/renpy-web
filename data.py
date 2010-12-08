@@ -43,7 +43,6 @@ four new themes, and updates the included jEdit text editor.
     )
 
 # Pre-web releases.
-WikiRelease(version="6.11.2", name="It Takes Two", date="October 31, 2010")
 WikiRelease(version="6.11.1", name="Done in One", date="September 17, 2010")
 WikiRelease(version="6.11.0", name="It Goes to Eleven", date="August 19, 2010")
 WikiRelease(version="6.10.2", name="Fixing a Hole", date="January 24, 2010")
@@ -142,13 +141,18 @@ current = None
 # a particular release.
 release_version = { }
 
+# All final releases.
+final_releases = [ ]
+
 for i in releases:
     if i.prerelease:
         prerelease = prerelease or i
     else:
         current = current or i
-
+        final_releases.append(i)
+        
     if not i.wiki:
         release_version[i.version] = i
         
-        
+for n, i in enumerate(final_releases):
+    i.ordinal = len(final_releases) - n

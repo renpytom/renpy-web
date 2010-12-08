@@ -20,6 +20,10 @@ def release(name):
         
     return render_template('release.html', release=release, data=data)
 
+@app.route("/latest.html")
+def latest():
+    return render_template('release.html', name='latest', release=data.current, data=data)
+
 @app.route("/<name>.html")
 def page(name):
     """
@@ -36,7 +40,17 @@ def index():
 
     return render_template("index.html", data=data)
 
+
 if __name__ == "__main__":
-    # app.run(debug=True)
-    app.run(host='0.0.0.0', port=8008)
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--public", action='store_true', default=False)
+    ap.add_argument("--port", action='store', type=int, default=5000)
+    args = ap.parse_args()
+
+
+    if args.public:
+        app.run(host='0.0.0.0', port=args.port)
+    else:
+        app.run(debug=True, port=args.port)
     

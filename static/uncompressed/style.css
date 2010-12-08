@@ -396,3 +396,21 @@ a.button:hover {
     font-size: .75em;
     line-height: 1em;
 }
+
+/* Release List Page Styling */
+
+.release-list {
+    border: 1px solid #c0c0c0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.release-list td {
+    border-top: 1px solid #c0c0c0;
+    padding: .25em;
+}
+
+.release-list th {
+    padding: .25em;
+    text-align: left;
+}

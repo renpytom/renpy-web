@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Ren'Py Release List{% endblock %}
+
+{% block content %}
+<section>
+    <h1>Ren'Py Release List</h1>
+
+    <p>
+      The current Ren'Py codebase has been updated {{ data.final_releases|length }}
+      times since it was first release in 2004. While we encourage using
+      the <a href="/latest.html">latest release</a> whenever possible,
+      this page has links to all of our final releases.
+    </p>
+
+    <table class="release-list">
+      <tr>
+        <th>#</th>
+        <th>Version</th>
+        <th>Name</th>
+        <th>Date</th>
+      </tr>
+
+      {% for r in data.final_releases %}
+
+      <tr>
+        <td>{{ r.ordinal }}</td>
+
+        {% if r.wiki %}
+        <td><a href="/wiki/renpy/releases/{{ r.version }}">Ren'Py {{ r.version }}</a></td>
+        {% else %}
+        <td><a href="/release/{{ r.version }}">Ren'Py {{ r.version }}</a></td>
+        {% endif %}        
+
+        <td>{% if r.name %}"{{ r.name }}"{% endif %}</td>
+        <td>{{ r.date }}</td>
+      </tr>
+
+      {% endfor %}
+      
+    </table>
+
+    <p>
+      The very oldest releases, which do not share any code with the
+      current Ren'Py, can be found
+      <a href="http://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=4638">here (version 1)</a>
+      and <a href="http://www.bishoujo.us/old-renpy/">here (versions 2 &amp; 3)</a>.
+    </p>
+    
+{% endblock %}
