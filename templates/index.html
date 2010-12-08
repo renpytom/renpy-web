@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block title %}What is Ren'Py?{% endblock %}
+{% block extra_head %}
+<link rel="alternate" href="http://feeds.launchpad.net/renpy/announcements.atom" title="Atom feed" type="application/atom+xml"> 
+{% endblock %}
 
 {% block content %}
 <aside>
@@ -23,7 +26,7 @@
 
 <section id="getting-renpy">
     <h2>How do I get Ren'Py?</h2>
-    <p>The latest release of Ren'Py is 6.11.2 "It Takes Two", released on October 31, 2010. Releases are announced on <a href="http://twitter.com/renpytom">Twitter</a> and <a href="https://launchpad.net/renpy/+announcements">Launchpad</a>.</p>
+    <p>The latest release of Ren'Py is 6.11.2 "It Takes Two", released on October 31, 2010. Releases are announced on <a href="http://twitter.com/renpytom">Twitter</a> and <a href="https://launchpad.net/renpy/+announcements">Launchpad</a> (<a href="http://feeds.launchpad.net/renpy/announcements.atom">feed</a>).</p>
     <div class="center"><a href="/download.html" class="button">Download</a></div>
 </section>
 
