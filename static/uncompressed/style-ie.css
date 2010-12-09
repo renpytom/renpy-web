@@ -52,7 +52,7 @@ pre {
     *display: inline;
 }
 
-.downloads li {
+#downloads li {
     /* Fix inline-block display in IE6/7 */
     *display: inline;
 }
