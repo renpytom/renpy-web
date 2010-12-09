@@ -40,6 +40,8 @@ def index():
 
     return render_template("index.html", data=data)
 
+# For use under mod wsgi.
+application = app
 
 if __name__ == "__main__":
     import argparse
@@ -53,4 +55,4 @@ if __name__ == "__main__":
         app.run(host='0.0.0.0', port=args.port)
     else:
         app.run(debug=True, port=args.port)
-    
+
