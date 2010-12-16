@@ -17,8 +17,8 @@ var Site = this.Site = {
         $$('.download-button').each(function(item) {
             if (!showAll && !item.hasClass(Browser.Platform.name)) item.addClass('inactive');
         }).addEvent('click', function() {
-            //if (window.console && console.log) console.log('_trackPageview: ' + this.get('href'));
-            _gaq.push(['_trackPageview', this.get('href')]);
+            var pageTracker = _gat._getTracker("UA-1855234-1-1");
+            pageTracker._trackEvent('File', 'Download', this.get('href'));
         });
     },
 
