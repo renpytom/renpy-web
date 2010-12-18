@@ -1,11 +1,5 @@
 (function() {
 
-// analytics queue
-var _gaq = this._gaq = _gaq || [
-    ['_setAccount', 'UA-1855234-1'],
-    ['_trackPageview']
-];
-
 var Site = this.Site = {
     start: function() {
         if ($('search')) this.fixSearch();
