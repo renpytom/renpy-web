@@ -1,4 +1,7 @@
-#!./bin/python
+#!bin/python
+
+import sys, os
+sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, render_template, abort
 from docutils.core import publish_parts
