@@ -1,6 +1,10 @@
 #!/usr/bin/env python2.6
 import os; activate_this=os.path.join(os.path.dirname(__file__), 'activate_this.py'); execfile(activate_this, dict(__file__=activate_this)); del os, activate_this
-# EASY-INSTALL-SCRIPT: 'pip==0.6','pip'
-__requires__ = 'pip==0.6'
-import pkg_resources
-pkg_resources.run_script('pip==0.6', 'pip')
+# EASY-INSTALL-ENTRY-SCRIPT: 'pip==0.8.2','console_scripts','pip'
+__requires__ = 'pip==0.8.2'
+import sys
+from pkg_resources import load_entry_point
+
+sys.exit(
+   load_entry_point('pip==0.8.2', 'console_scripts', 'pip')()
+)
