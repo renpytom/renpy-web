@@ -1,7 +1,4 @@
-#!/usr/bin/python
-
-import sys
-sys.path.insert(0, '/home/tom/renpy-web-2011')
+#!./bin/python
 
 from flask import Flask, render_template, abort
 from docutils.core import publish_parts
