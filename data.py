@@ -9,6 +9,40 @@ from model import *
 releases = [ ]
 
 Release(
+    prerelease=True,
+    version="6.12.0",
+    name="Positronic Brain",
+    revision="a",
+    date="February xx, 2010",
+    exe=21,
+    zip=27,
+    bz2=25,
+    android=True,
+    deps="6.11.0",
+    announcement="""\
+Ren'Py 6.12.0 "Positronic Brain" is a major release of Ren'Py. This
+release adds suport for the Android platform, allowing Ren'Py games to
+run on millions of smartphones and tablets. It's possible to package
+Ren'Py games and distribute them through the Android market.
+
+On all platforms, this release benefits from improved performance in
+the areas of image prediction and OpenGL rendering. New functionality
+includes sprites, mouse hover areas, and drag-and-drop. The screen
+support added in 6.11 has been improved, and new games now use screens
+by default.
+""",
+    history="""\
+**2011-01-29**
+    Initial pre-release (6.12.0a).
+""",
+    aside_html="""\
+<img src="/static/6.12.0small.jpg" width="380" height="295">
+"""
+    
+    )
+
+
+Release(
     version="6.11.2",
     name="It Takes Two",
     revision="b",
@@ -16,6 +50,7 @@ Release(
     exe=20,
     zip=25,
     bz2=24,
+    android=True,
     deps="6.11.0",
     announcement="""\
 Ren'Py 6.11.2 "It Takes Two" is the second

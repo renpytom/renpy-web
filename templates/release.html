@@ -23,10 +23,24 @@
     </ul>
 
     <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows 2000 and up, Mac OS X 10.4 and up, and Linux x86. The development environment contains the files needed to produce games for all three platforms. Each file also includes the jEdit text editor, the Ren'Py demo, and "The Question", an example game.</p>
+
+    {% if release.android %}
+    <p style="clear: both"><strong>Android.</strong>
+      {% if release.prerelease %}
+        <img align="right" src="/static/qr-beta.png" width="175" height="175">
+        To get the latest pre-release of Ren'Py from the Android Market, <a href="market://details?id=org.renpy.android_beta">follow this link</a> on your Android device, or scan the QR code.
+      {% else %}
+        <img align="right" src="/static/qr.png" width="175" height="175">
+        To get the latest release of Ren'Py from the Android Market, <a href="market://details?id=org.renpy.android">follow this link</a> on your Android device, or scan the QR code. 
+    {% endif %}
+
+  If you don't have access to the market, or you want an older release, <a href="http://www.renpy.org/dl/android/">package files are available here.</a>
+</p>
+    {% endif %}
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 </section>
 
-<section>
+<section style="clear: both">
     <h2>Release History and Updates</h2>
     {{release.history|rst|safe}}
 </section>
