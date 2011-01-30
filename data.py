@@ -50,7 +50,6 @@ Release(
     exe=20,
     zip=25,
     bz2=24,
-    android=True,
     deps="6.11.0",
     announcement="""\
 Ren'Py 6.11.2 "It Takes Two" is the second
