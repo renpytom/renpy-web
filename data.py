@@ -12,7 +12,7 @@ Release(
     prerelease=True,
     version="6.12.0",
     name="Positronic Brain",
-    revision="a",
+    revision="b",
     date="February xx, 2010",
     exe=21,
     zip=27,
@@ -32,6 +32,14 @@ support added in 6.11 has been improved, and new games now use screens
 by default.
 """,
     history="""\
+**2011-01-30**
+    Second pre-release (6.12.0b). Fixes the following bugs:
+
+    * Ren'Py did not work for non-ASCII languages.
+    * libGLEW was not distributed on Linux.
+    * Could not load savegames that had Renders leak to them.
+    * Frames had visual artifacts on the software renderer.
+
 **2011-01-29**
     Initial pre-release (6.12.0a).
 """,
