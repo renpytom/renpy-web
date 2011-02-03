@@ -7,12 +7,12 @@
   {% if release.prerelease %}
   <p style="color: #800; text-align: center;">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</p>
   {% endif %}
-  
+
     <h1>Download Ren'Py {{release.version}}</h1>
 
     {% if release.aside_html %}
     <aside class="after-header">
-      {{ release.aside_html|safe }}
+        {{ release.aside_html|safe }}
     </aside>
     {% endif %}
 
@@ -30,16 +30,16 @@
 
     {% if release.android %}
     <p style="clear: both"><strong>Android.</strong>
-      {% if release.prerelease %}
+        {% if release.prerelease %}
         <img align="right" src="/static/qr-beta.png" width="175" height="175">
         To get the latest pre-release of Ren'Py from the Android Market, <a href="market://details?id=org.renpy.android_beta">follow this link</a> on your Android device, or scan the QR code.
-      {% else %}
+        {% else %}
         <img align="right" src="/static/qr.png" width="175" height="175">
-        To get the latest release of Ren'Py from the Android Market, <a href="market://details?id=org.renpy.android">follow this link</a> on your Android device, or scan the QR code. 
-    {% endif %}
+        To get the latest release of Ren'Py from the Android Market, <a href="market://details?id=org.renpy.android">follow this link</a> on your Android device, or scan the QR code.
+        {% endif %}
 
-  If you don't have access to the market, or you want an older release, <a href="http://www.renpy.org/dl/android/">package files are available here.</a>
-</p>
+        If you don't have access to the market, or you want an older release, <a href="http://www.renpy.org/dl/android/">package files are available here.</a>
+    </p>
     {% endif %}
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 </section>
@@ -56,18 +56,18 @@
     <p>Downloads of {{release.version}} can be found at:</p>
 
     <dl>
-      <dd>
-        <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
-      </dd>
+        <dd>
+            <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+        </dd>
     </dl>
 
-    
+
     <p>A full list of changes to Ren'Py can be found at:</p>
 
     <dl>
-      <dd>
-        <a href="http://www.renpy.org/doc/html/changelog.html">http://www.renpy.org/doc/html/changelog.html</a>
-      </dd>
+        <dd>
+            <a href="http://www.renpy.org/doc/html/changelog.html">http://www.renpy.org/doc/html/changelog.html</a>
+        </dd>
     </dl>
 </section>
 
@@ -75,12 +75,12 @@
     <h2>Additional Downloads</h2>
 
     <p>These downloads aren't of much interest to users of Ren'Py, but are here for people who want to port to a new platform, or to build and distribute a package.</p>
-    
+
     <dl>
-      <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-source.tar.bz2">renpy-{{release.version}}-source.tar.bz2</a></dt>
-      <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
-      <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
-      <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
+        <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-source.tar.bz2">renpy-{{release.version}}-source.tar.bz2</a></dt>
+        <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
+        <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
+        <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
     </dl>
 
     <p>We also maintain a <a href="/release_list.html">complete list of releases</a>.
