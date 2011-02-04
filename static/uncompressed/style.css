@@ -95,7 +95,6 @@ pre {
 a {
     color: #3183A3;
     text-decoration: underline;
-    -o-transition-duration: 200ms;
     -moz-transition-duration: 200ms;
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
@@ -179,7 +178,6 @@ nav {
     -moz-border-top-right-radius: 5px;
     border-top-right-radius: 5px;
 
-    -o-transition-property: background-color, color;
     -moz-transition-property: background-color, color;
     -webkit-transition-property: background-color, color;
     transition-property: background-color, color;
