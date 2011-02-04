@@ -1,0 +1,25 @@
+/**
+ * Custom Fonts
+ * This file should be left uncompressed for compatibility reasons (*cough* IE *cough*).
+ **/
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT_Sans-Regular.eot#') format('embedded-opentype'),
+         url('fonts/PT_Sans-Regular.woff') format('woff'),
+         url('fonts/PT_Sans-Regular.ttf') format('truetype'),
+         url('fonts/PT_Sans-Regular.svg#webfontakBUUg6U') format('svg');
+    font-weight: normal;
+    font-style: normal;
+;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('fonts/PT_Sans-Bold.eot#') format('embedded-opentype'),
+         url('fonts/PT_Sans-Bold.woff') format('woff'),
+         url('fonts/PT_Sans-Bold.ttf') format('truetype'),
+         url('fonts/PT_Sans-Bold.svg#webfontaW07W6NV') format('svg');
+    font-weight: bold;
+    font-style: normal;
+;
+}
