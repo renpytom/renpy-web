@@ -12,7 +12,7 @@ Release(
     prerelease=True,
     version="6.12.0",
     name="Positronic Brain",
-    revision="b",
+    revision="c",
     date="February xx, 2010",
     exe=21,
     zip=27,
@@ -32,6 +32,9 @@ support added in 6.11 has been improved, and new games now use screens
 by default.
 """,
     history="""\
+**2011-02-03**
+    Third pre-release (6.12.0c). Updates are documented `here <http://lemmasoft.renai.us/forums/viewtopic.php?f=32&t=9207&p=121140#p121140>`_.
+
 **2011-01-30**
     Second pre-release (6.12.0b). Fixes the following bugs:
 
