@@ -9,11 +9,11 @@ from model import *
 releases = [ ]
 
 Release(
-    prerelease=True,
+    prerelease=False,
     version="6.12.0",
     name="Positronic Brain",
-    revision="d",
-    date="February xx, 2010",
+    revision="e",
+    date="February 7, 2011",
     exe=21,
     zip=27,
     bz2=25,
@@ -32,6 +32,10 @@ support added in 6.11 has been improved, and new games now use screens
 by default.
 """,
     history="""\
+**2011-02-07**
+    Final release (6.12.0e). Improves the default screen and fixes
+    bugs.
+
 **2011-02-05**
     Fourth pre-release (6.12.0d). Adds main menu prediction, fixes
     screen bugs, improves the default screens, and fixes documentation.
@@ -52,8 +56,7 @@ by default.
 """,
     aside_html="""\
 <img src="/static/6.12.0small.jpg" width="380" height="295">
-"""
-    
+"""    
     )
 
 
