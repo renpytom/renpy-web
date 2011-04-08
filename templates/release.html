@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set doclink = "http://www.renpy.org/dev-doc/html" if release.prerelease else "http://www.renpy.org/doc/html" %}
 
 {% block title %}Download Ren'Py {{release.version}}{% endblock %}
 
@@ -44,12 +45,14 @@
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 </section>
 
+{% if release.history %}
 <section style="clear: both">
     <h2>Release History and Updates</h2>
     {{release.history|rst|safe}}
 </section>
+{% endif %}
 
-<section>
+<section style="clear: both">
     <h2>Announcement</h2>
     {{release.announcement|rst|safe}}
 
@@ -66,7 +69,7 @@
 
     <dl>
         <dd>
-            <a href="http://www.renpy.org/doc/html/changelog.html">http://www.renpy.org/doc/html/changelog.html</a>
+            <a href="{{ doclink }}/changelog.html">{{ doclink }}/changelog.html</a>
         </dd>
     </dl>
 
@@ -74,7 +77,7 @@
 
     <dl>
         <dd>
-            <a href="http://www.renpy.org/doc/html/incompatible.html">http://www.renpy.org/doc/html/incompatible.html</a>
+            <a href="{{ doclink }}/incompatible.html">{{ doclink }}/incompatible.html</a>
         </dd>
     </dl>
 </section>

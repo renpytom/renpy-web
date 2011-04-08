@@ -8,6 +8,49 @@ from model import *
 # Release and WikiRelease statement-commands, below.
 releases = [ ]
 
+Release(    
+    prerelease=True,
+    invisible=True,
+    version="6.12.1",
+    name="Human Factor",
+    revision="",
+    date="April XX, 2011",
+    exe=21,
+    zip=27,
+    bz2=25,
+    android=True,
+    deps="6.11.0",
+    announcement="""\
+Ren'Py 6.12.1 "Human Factor" is the first of a series of minor releases
+focusing on improving the experience of visual novel makers. This release
+features several improvements to the process of showing images:
+
+* Image attributes make it no longer necessary to specify every part
+  of a changed image.
+* The say statement can change image attributes when a character speaks.
+* Side images can be specified with the image statement, and can be used
+  with NVL-mode dialogue.
+* Sticky transforms allow a transform to continue through an image change.
+
+As these new features can change the behavior of existing games, it may be
+convenient to disable them for in-development projects. Please see the list of
+incompatible changes for instructions on how to do this.
+
+The other major improvement is in error handling. Where previous versions of
+Ren'Py would terminate on errors, 6.12.1 will display a screen that allows the
+maker to edit problematic files and reload the game, and the user to rollback or
+ignore the problem.
+
+Ren'Py 6.12.1 also includes many other minor features and bug fixes, please 
+see the full changelog for more details.
+""",
+    history="""\
+""",
+    aside_html="""\
+"""    
+    )
+
+
 Release(
     prerelease=False,
     version="6.12.0",
@@ -198,7 +241,8 @@ final_releases = [ ]
 
 for i in releases:
     if i.prerelease:
-        prerelease = prerelease or i
+        if not i.invisible:
+            prerelease = prerelease or i
     else:
         current = current or i
         final_releases.append(i)
