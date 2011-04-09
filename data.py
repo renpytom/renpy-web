@@ -13,7 +13,7 @@ Release(
     invisible=True,
     version="6.12.1",
     name="Human Factor",
-    revision="",
+    revision="1460",
     date="April XX, 2011",
     exe=21,
     zip=27,
