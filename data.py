@@ -10,10 +10,10 @@ releases = [ ]
 
 Release(    
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.12.1",
     name="Human Factor",
-    revision="1460",
+    revision="",
     date="April XX, 2011",
     exe=21,
     zip=27,
@@ -45,6 +45,8 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
+**6.12.1.1487**: April 24, 2011
+    First public pre-release.
 """,
     aside_html="""\
 """    
