@@ -45,6 +45,12 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
+**6.12.1.1493**: April 24, 2001
+    Bug fixes involving say with image attributes.
+    Added config.say_attribute_transition as a way to invoke a transition 
+    when the image is changed by a say with image attributes, in response
+    to feedback from the first users of the feature.
+
 **6.12.1.1487**: April 24, 2011
     First public pre-release.
 """,
