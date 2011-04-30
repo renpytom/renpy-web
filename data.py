@@ -14,7 +14,7 @@ Release(
     version="6.12.1",
     name="Human Factor",
     revision="",
-    date="April XX, 2011",
+    date="May XX, 2011",
     exe=21,
     zip=27,
     bz2=25,
@@ -45,7 +45,12 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
-**6.12.1.1493**: April 24, 2001
+**6.12.1.1497**: April 30, 2011
+    Fixes display of exceptions during init code. Allows the contents of 
+    viewports to be displayed by the shift+I style inspector. Populates
+    config.archives in ascii order.
+
+**6.12.1.1493**: April 24, 2011
     Bug fixes involving say with image attributes.
     Added config.say_attribute_transition as a way to invoke a transition 
     when the image is changed by a say with image attributes, in response
