@@ -9,7 +9,7 @@ from model import *
 releases = [ ]
 
 Release(    
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.12.1",
     name="Human Factor",
