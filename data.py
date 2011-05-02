@@ -14,7 +14,7 @@ Release(
     version="6.12.1",
     name="Human Factor",
     revision="",
-    date="May XX, 2011",
+    date="May 02, 2011",
     exe=21,
     zip=27,
     bz2=25,
@@ -45,6 +45,9 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
+**6.12.1.1499**: May 02, 2011
+    Final release. Fixes a bug with screenshots.
+    
 **6.12.1.1497**: April 30, 2011
     Fixes display of exceptions during init code. Allows the contents of 
     viewports to be displayed by the shift+I style inspector. Populates
