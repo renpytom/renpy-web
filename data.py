@@ -45,6 +45,10 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
+**6.12.1.1500**: May 03, 2011
+    Updated release. This fixes a bug that prevented Ren'Py from running on
+    systems with very old ATI drivers.
+
 **6.12.1.1499**: May 02, 2011
     Final release. Fixes a bug with screenshots.
     
