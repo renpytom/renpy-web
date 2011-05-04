@@ -67,6 +67,14 @@ see the full changelog for more details.
     First public pre-release.
 """,
     aside_html="""\
+        <object width="380" height="238">
+            <param name="movie" value="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0"></param>
+            <param name="allowFullScreen" value="true"></param>
+            <param name="allowscriptaccess" value="always"></param>
+            <embed src="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
+        </object>
+
+    <i><a href="http://sonia-leong.livejournal.com/200681.html">Let Me Save You! Your Faithful Companion</a></i> time-lapse creation screencast. Courtesy Sonia Leong.
 """    
     )
 
@@ -148,10 +156,10 @@ four new themes, and updates the included jEdit text editor.
 """,
     aside_html="""\
         <object width="380" height="238">
-            <param name="movie" value="http://www.youtube.com/v/gMDwc2owtmk?fs=1&amp;hl=en_US&amp;rel=0"></param>
+            <param name="movie" value="http://www.youtube.com/v/2qrPIdRhv_Y?fs=1&amp;hl=en_US&amp;rel=0"></param>
             <param name="allowFullScreen" value="true"></param>
             <param name="allowscriptaccess" value="always"></param>
-            <embed src="http://www.youtube.com/v/gMDwc2owtmk?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
+            <embed src="http://www.youtube.com/v/2qrPIdRhv_Y?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
         </object>
 """
     
