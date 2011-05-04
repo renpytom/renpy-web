@@ -45,6 +45,11 @@ Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
     history="""\
+**6.12.1.1501**: May 04, 2001
+    Updated release. Mistakes were made in the update release process, leading
+    to a version of Ren'Py that could not switch between windowed and fullscreen
+    modes. (Among other problems.) Those problems have been fixed.
+
 **6.12.1.1500**: May 03, 2011
     Updated release. This fixes a bug that prevented Ren'Py from running on
     systems with very old ATI drivers.
