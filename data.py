@@ -44,8 +44,15 @@ ignore the problem.
 Ren'Py 6.12.1 also includes many other minor features and bug fixes, please 
 see the full changelog for more details.
 """,
+    
     history="""\
-**6.12.1.1501**: May 04, 2001
+**6.12.1.1502**: May 16, 2011
+    Compatibility fixes for Android. This release only consisted of
+    new versions of Ren'Py for Android and renpy-apk. If you're only
+    developing for desktop platforms, there's no need to update 
+    Ren'Py.
+    
+**6.12.1.1501**: May 04, 2011
     Updated release. Mistakes were made in the update release process, leading
     to a version of Ren'Py that could not switch between windowed and fullscreen
     modes. (Among other problems.) Those problems have been fixed.
@@ -71,6 +78,7 @@ see the full changelog for more details.
 **6.12.1.1487**: April 24, 2011
     First public pre-release.
 """,
+    
     aside_html="""\
         <object width="380" height="238">
             <param name="movie" value="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0"></param>
