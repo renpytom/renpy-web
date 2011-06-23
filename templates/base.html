@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta property="fb:page_id" content="179822028707441" >
+        <meta property="og:image" content="http://www.renpy.org/static/logo.png" >   
 
         <title>{% block title %}Home - Ren'Py{% endblock %}</title>
 
@@ -44,10 +46,12 @@
             {% endblock %}
 
             <div class="clear"></div>
+            
         </div>
 
         {% block footer %}
         <footer>
+ 
             <p id="nav-footer"><strong>Quick Links</strong></p>
             <ul id="quick-links">
                 <li><a href="/">Home</a></li>
@@ -59,6 +63,12 @@
                 <li><a href="/wiki/">Wiki</a></li>
             </ul>
             <p>Copyright &copy; PyTom</p>
+ 
+            <p id="social">
+            <g:plusone size="medium" href="http://www.renpy.org"></g:plusone>
+            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.renpy.org/" data-text="The Ren'Py Visual Novel Engine" data-count="horizontal" data-via="renpytom">Tweet</a>
+            <iframe src="http://www.facebook.com/plugins/like.php?app_id=175740402485772&amp;href=http%3A%2F%2Fwww.renpy.org&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+            </p>
         </footer>
 
         <script type="text/javascript">
@@ -66,6 +76,8 @@
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         </script>
         <script type="text/javascript" src="/static/main.js" async defer></script>
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>        
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         {% endblock %}
     </body>
 </html>

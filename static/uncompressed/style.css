@@ -406,3 +406,8 @@ a.button:hover {
 .release-list .off {
     background: #E0E0E0;
 }
+
+#social {
+    text-align: right;	
+    margin-top: .5em;
+}

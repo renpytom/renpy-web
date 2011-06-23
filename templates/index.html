@@ -27,7 +27,16 @@
 <section id="getting-renpy">
     <h2>How do I get Ren'Py?</h2>
     <p>
-        The latest release of Ren'Py is {{data.current.version}} "{{data.current.name}}", released on {{data.current.date}}.
+
+        The latest release of Ren'Py is {{data.current.version}}
+        "{{data.current.name}}", originally released on {{data.current.date}}.
+
+        {% if data.current.bugfix_revision %}
+        It was updated to version {{data.current.version}}.{{data.current.bugfix_revision}} on 
+        {{data.current.bugfix_date}}.
+        {% endif %}
+        
+
         Releases are announced on <a href="http://twitter.com/renpytom">Twitter</a> and <a href="https://launchpad.net/renpy/+announcements">Launchpad</a>.
     </p>
 
