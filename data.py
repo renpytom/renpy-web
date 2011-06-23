@@ -47,6 +47,15 @@ see the full changelog for more details.
 """,
     
     history="""\
+**6.12.1.1520**: June 23, 2011
+    A major bugfix release, including:
+    
+    * Fixed a problem with texture upload that made games noticeably slower.
+    * A better default size for windows on small monitors, like netbooks.
+    * xfill and yfill now work for vbox and hbox, respectively.
+    * Click-to-continue fixes.
+    * Side image fixes.
+    
 **6.12.1.1502**: May 16, 2011
     Compatibility fixes for Android. This release only consisted of
     new versions of Ren'Py for Android and renpy-apk. If you're only
