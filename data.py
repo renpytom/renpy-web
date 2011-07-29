@@ -11,6 +11,44 @@ releases = [ ]
 Release(    
     prerelease=False,
     invisible=False,
+    version="6.12.2",
+    name="Human Factor II",
+    date="July 30, 2011",
+    exe=21,
+    zip=27,
+    bz2=25,
+    android=True,
+    deps="6.11.0",
+    announcement="""\
+Ren'Py 6.12.2 "Human Factor II" is an update that fixes several bugs
+found in Ren'Py 6.12.1. Please see its changelog for a list of bug 
+fixes in this version.
+
+Please see the `Ren'Py 6.12.1 page <http://www.renpy.org/release/6.12.1>`_ for 
+information about recent changes to Ren'Py.
+""",
+    
+    history="""\
+**6.12.2.1531**: July 30, 2011
+    Initial release.
+""",
+    
+    aside_html="""\
+        <object width="380" height="238">
+            <param name="movie" value="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0"></param>
+            <param name="allowFullScreen" value="true"></param>
+            <param name="allowscriptaccess" value="always"></param>
+            <embed src="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
+        </object>
+
+    <i><a href="http://sonia-leong.livejournal.com/200681.html">Let Me Save You! Your Faithful Companion</a></i> time-lapse creation screencast. Courtesy Sonia Leong.
+"""    
+    )
+
+
+Release(    
+    prerelease=False,
+    invisible=False,
     version="6.12.1",
     name="Human Factor",
     date="May 02, 2011",
