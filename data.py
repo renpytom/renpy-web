@@ -21,11 +21,7 @@ Release(
     deps="6.11.0",
     announcement="""\
 Ren'Py 6.12.2 "Human Factor II" is an update that fixes several bugs
-found in Ren'Py 6.12.1. Please see its changelog for a list of bug 
-fixes in this version.
-
-Please see the `Ren'Py 6.12.1 page <http://www.renpy.org/release/6.12.1>`_ for 
-information about recent changes to Ren'Py.
+found in Ren'Py 6.12.1.
 """,
     
     history="""\
