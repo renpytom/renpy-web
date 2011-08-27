@@ -22,10 +22,8 @@
     <p>
         
         <strong>Ren'Py {{release.version}} "{{release.name}}"</strong> was released on {{release.date}}. 
-
-        {% if data.current.bugfix_revision %}
-        It was updated to version {{data.current.version}}.{{data.current.bugfix_revision}} on 
-        {{data.current.bugfix_date}}.
+        {% if release.patch_date %}
+        It was updated to {{ release.full_version }} on {{ release.patch_date }}.
         {% endif %}
 
         The main distributions are:
@@ -33,9 +31,9 @@
     </p>
 
     <ul id="downloads">
-        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.7z.exe" class="button download-button win">Download SDK <span>7z.exe - 20 MiB</span></a></li>
-        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.zip" class="button download-button mac">Download SDK <span>zip - 25 MiB</span></a></li>
-        <li><a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-sdk.tar.bz2" class="button download-button linux">Download SDK <span>tar.bz2 - 24 MiB</span></small></a></li>
+        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.7z.exe" class="button download-button win">Download SDK <span>7z.exe - {{ release.exe }} MiB</span></a></li>
+        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.zip" class="button download-button mac">Download SDK <span>zip  {{ release.zip }} MiB</span></a></li>
+        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.tar.bz2" class="button download-button linux">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
     </ul>
 
     <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows 2000 and up, Mac OS X 10.4 and up, and Linux x86. The development environment contains the files needed to produce games for all three platforms. Each file also includes the jEdit text editor, the Ren'Py demo, and "The Question", an example game.</p>
@@ -96,10 +94,12 @@
 <section>
     <h2>Additional Downloads</h2>
 
-    <p>These downloads aren't of much interest to users of Ren'Py, but are here for people who want to port to a new platform, or to build and distribute a package.</p>
-
     <dl>
-        <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.version}}/renpy-{{release.version}}-source.tar.bz2">renpy-{{release.version}}-source.tar.bz2</a></dt>
+        {% if release.powerpc %}
+        <dt><strong>PowerPC Support:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
+        <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
+        {% endif %}
+        <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-source.tar.bz2">renpy-{{release.full_version}}-source.tar.bz2</a></dt>
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
         <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
         <dd>Contains source code for the libraries that Ren'Py depends on.</dd>

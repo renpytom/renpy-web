@@ -13,6 +13,7 @@ class Data(object):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
+
 class Release(Data):
     """
     A non-wiki release.
@@ -22,8 +23,21 @@ class Release(Data):
     wiki = False
 
     def __init__(self, **kwargs):
+
+        self.patch = None
+        self.patch_date = None
+        
         super(Release, self).__init__(**kwargs)
+        
         data.releases.append(self)
+
+    def get_full_version(self):
+        if self.patch is not None:
+            return "{0}.{1}".format(self.version, self.patch)
+        else:
+            return self.version
+        
+    full_version = property(get_full_version)
 
 class WikiRelease(Data):
     """
@@ -36,4 +50,6 @@ class WikiRelease(Data):
     def __init__(self, **kwargs):
         super(WikiRelease, self).__init__(**kwargs)
         data.releases.append(self)
-    
+        
+        self.full_version = self.version
+        

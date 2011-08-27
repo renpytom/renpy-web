@@ -9,6 +9,43 @@ from model import *
 releases = [ ]
 
 Release(    
+    prerelease=True,
+    invisible=True,
+    version="6.13",
+    date="September xx, 2011",
+    patch=0,
+    patch_date=None,
+    name="Low-Carb",
+    exe=21,
+    zip=26,
+    bz2=28,
+    android=True,
+    powerpc=True,
+    deps="6.13.0",
+    announcement="""\
+Ren'Py 6.13 "Low-Carb" includes two fundamental improvements to Ren'Py. The
+first is a complete rewrite of the text display code. In addition to supporting
+new features such as interpolation of fields, kerning, ruby text, the new
+display code is far faster than the previous code.
+
+Ren'Py 6.13 also adds a DirectX rendering path. This new renderer should lead to
+faster and more functional text display on Windows system with DirectX support
+
+In addition to these major features, 6.13 adds a style preferences system, new 
+actions - including actions for image galleries and music rooms - and new 
+themes.
+""",
+    
+    history="""\
+**6.13.0.1569**: August 26, 2011
+    First pre-release.
+""",
+    
+    aside_html="""\
+"""    
+    )
+
+Release(    
     prerelease=False,
     invisible=False,
     version="6.12.2",
