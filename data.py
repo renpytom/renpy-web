@@ -10,12 +10,12 @@ releases = [ ]
 
 Release(    
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.13",
     date="September xx, 2011",
     patch=0,
     patch_date=None,
-    name="Low-Carb",
+    name="Eye of the Storm",
     exe=21,
     zip=26,
     bz2=28,
@@ -23,7 +23,7 @@ Release(
     powerpc=True,
     deps="6.13.0",
     announcement="""\
-Ren'Py 6.13 "Low-Carb" includes two fundamental improvements to Ren'Py. The
+Ren'Py 6.13 "Eye of the Storm" includes two fundamental improvements to Ren'Py. The
 first is a complete rewrite of the text display code. In addition to supporting
 new features such as interpolation of fields, kerning, ruby text, the new
 display code is far faster than the previous code.
@@ -37,8 +37,8 @@ themes.
 """,
     
     history="""\
-**6.13.0.1569**: August 26, 2011
-    First pre-release.
+**6.13.0.1594**: September 4, 2011
+    First public pre-release.
 """,
     
     aside_html="""\
