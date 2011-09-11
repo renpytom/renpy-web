@@ -37,6 +37,15 @@ themes.
 """,
     
     history="""\
+**6.13.0.1601**: September 11, 2011
+    Support reading files out of an Android package. User-defined statements can
+    take blocks. A fix to lint with non-ASCII characters. A fix to error
+    handling.
+    
+**6.13.0.1598**: September 5, 2011
+    Adds error reporting when a non-string is used as text, fixes sound problems
+    by moving to libav, and various other fixes.
+    
 **6.13.0.1594**: September 4, 2011
     First public pre-release.
 """,
