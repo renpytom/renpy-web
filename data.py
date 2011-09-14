@@ -9,10 +9,10 @@ from model import *
 releases = [ ]
 
 Release(    
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.13",
-    date="September xx, 2011",
+    date="September 14, 2011",
     patch=0,
     patch_date=None,
     name="Eye of the Storm",
@@ -34,9 +34,21 @@ faster and more functional text display on Windows system with DirectX support
 In addition to these major features, 6.13 adds a style preferences system, new 
 actions - including actions for image galleries and music rooms - and new 
 themes.
+
+Some notes for upgraders:
+
+* The change in interpolation may cause your old scripts to stop working. Please
+  see the incompatible changes documentation for information on how to upgrade 
+  your script or enable a compatibility mode.
+  
+* The shift+U updater is not capable of upgrading 6.12.2 to this release. Please
+  download 6.13 from the website.
 """,
     
     history="""\
+**6.13.0.1601**: September 14, 2011
+    Official release.
+    
 **6.13.0.1601**: September 11, 2011
     Support reading files out of an Android package. User-defined statements can
     take blocks. A fix to lint with non-ASCII characters. A fix to error
