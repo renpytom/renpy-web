@@ -63,7 +63,13 @@ Some notes for upgraders:
 """,
     
     aside_html="""\
-"""    
+""",    
+    top_html="""\
+<div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
+Ren'Py 6.13 has been reported to be incompatible with many users's systems.<br>
+Please download and use <a href="/release/6.12.2">6.12.2</a> until we can fix these problems.
+</div>
+"""
     )
 
 Release(    

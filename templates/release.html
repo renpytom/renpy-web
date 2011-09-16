@@ -8,6 +8,8 @@
   {% if release.prerelease %}
   <p style="color: #800; text-align: center;">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</p>
   {% endif %}
+  
+  {% if release.top_html %}{{ release.top_html|safe }}{% endif %}
 
     <h1>Download Ren'Py {{release.version}}</h1>
 
