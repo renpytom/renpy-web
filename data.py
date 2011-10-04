@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=0,
-    patch_date=None,
+    patch=1,
+    patch_date="October 3, 2011",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -46,6 +46,9 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.1.1629**: October 3, 2011
+    Released bugfix release 6.13.1.
+    
 **6.13.0.1601**: September 14, 2011
     Official release.
     
@@ -64,12 +67,14 @@ Some notes for upgraders:
     
     aside_html="""\
 """,    
-    top_html="""\
-<div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
-Ren'Py 6.13 has been reported to be incompatible with many users's systems.<br>
-Please download and use <a href="/release/6.12.2">6.12.2</a> until we can fix these problems.
-</div>
-"""
+################################################################################
+#    top_html="""\
+# <div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
+# Ren'Py 6.13 has been reported to be incompatible with many users's systems.<br>
+# Please download and use <a href="/release/6.12.2">6.12.2</a> until we can fix these problems.
+# </div>
+# """
+################################################################################
     )
 
 Release(    

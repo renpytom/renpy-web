@@ -48,11 +48,11 @@
     <h2>How do I get Ren'Py?</h2>
     <p>
 
-        The latest release of Ren'Py is {{data.current.version}}
-        "{{data.current.name}}", originally released on {{data.current.date}}.
-
         {% if data.current.patch_date %}
-        It was updated to version {{data.current.full_version}} on {{data.current.patch_date}}.
+        The latest version of Ren'Py is {{data.current.full_version}}, released on {{data.current.patch_date}}. This release fixes bugs 
+        found in Ren'Py {{data.current.version}} "{{data.current.name}}".
+        {% else %}
+        The latest version of Ren'Py is {{data.current.version}} "{{data.current.name}}", released on {{data.current.date}}.
         {% endif %}
         
 
