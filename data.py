@@ -29,7 +29,8 @@ new features such as interpolation of fields, kerning, ruby text, the new
 display code is far faster than the previous code.
 
 Ren'Py 6.13 also adds a DirectX rendering path. This new renderer should lead to
-faster and more functional text display on Windows system with DirectX support
+faster and more functional graphics display on Windows systems lacking OpenGL
+support.
 
 In addition to these major features, 6.13 adds a style preferences system, new 
 actions - including actions for image galleries and music rooms - and new 
