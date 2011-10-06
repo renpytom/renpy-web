@@ -48,7 +48,7 @@ Some notes for upgraders:
     
     history="""\
 **6.13.1.1629**: October 3, 2011
-    Released bugfix release 6.13.2, which allows Text objects to be 
+    Released bugfix release 6.13.2, which allows Text displayables to be 
     instantiated in init blocks, and fixes error handling.
 
 **6.13.1.1629**: October 3, 2011
