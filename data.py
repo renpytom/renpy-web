@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=1,
-    patch_date="October 3, 2011",
+    patch=2,
+    patch_date="October 5, 2011",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -48,7 +48,11 @@ Some notes for upgraders:
     
     history="""\
 **6.13.1.1629**: October 3, 2011
-    Released bugfix release 6.13.1.
+    Released bugfix release 6.13.2, which allows Text objects to be 
+    instantiated in init blocks, and fixes error handling.
+
+**6.13.1.1629**: October 3, 2011
+    Released bugfix release 6.13.1, which makes Ren'Py run stably.
     
 **6.13.0.1601**: September 14, 2011
     Official release.
