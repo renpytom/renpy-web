@@ -13,7 +13,7 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=2,
+    patch=4,
     patch_date="October 5, 2011",
     name="Eye of the Storm",
     exe=21,
@@ -47,7 +47,15 @@ Some notes for upgraders:
 """,
     
     history="""\
-**6.13.2.1629**: October 5, 2011
+**6.13.4.1637**: October 8, 2011
+    Bugfix release 6.13.4 includes the following fixes:
+    
+    * Jumps from called screens now work. This fixes the developer menu.
+    * Hitting shift+G in-game brings the user to the renderer selection menu.
+    * Include all source required to rebuild Ren'Py.
+    * Fix the renpy-ppc packaging.
+    
+**6.13.2.1632**: October 5, 2011
     Released bugfix release 6.13.2, which allows Text displayables to be 
     instantiated in init blocks, and fixes error handling.
 
