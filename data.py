@@ -13,7 +13,7 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=4,
+    patch=5,
     patch_date="October 5, 2011",
     name="Eye of the Storm",
     exe=21,
@@ -47,6 +47,9 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.5.1638**: October 10, 2011
+    Fixes slow text.
+
 **6.13.4.1637**: October 8, 2011
     Bugfix release 6.13.4 includes the following fixes:
     
