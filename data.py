@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=5,
-    patch_date="October 5, 2011",
+    patch=6,
+    patch_date="October 13, 2011",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -47,6 +47,17 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.6.1642**: October 13, 2011
+    Fixes a crash when loading automatically-created styles. Fixes a problem
+    with quick saving not taking a screenshot. Fixes a problem with small solid
+    textures not showing up, on the software renderer. Fixes a crash when 
+    playing back movies on Linux.
+    
+    This release introduces two new actions, QuickSave and QuickLoad, which
+    are used for quick save and qick load functionality. If your game uses
+    the new quick menu, please update it with the new code found in 
+    template/game/screens.rpy.
+    
 **6.13.5.1638**: October 10, 2011
     Fixes slow text.
 
