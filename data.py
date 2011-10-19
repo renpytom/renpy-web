@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=6,
-    patch_date="October 13, 2011",
+    patch=7,
+    patch_date="October 18, 2011",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -47,6 +47,11 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.7.1646**: October 18, 2011
+    Fixes a problem with substitutions in the launcher. Fixes a crash on font
+    searching. On Android, merges multiple taps so as not to overwhelm the 
+    event queue.
+    
 **6.13.6.1642**: October 13, 2011
     Fixes a crash when loading automatically-created styles. Fixes a problem
     with quick saving not taking a screenshot. Fixes a problem with small solid
