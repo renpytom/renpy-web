@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=7,
-    patch_date="October 18, 2011",
+    patch=8,
+    patch_date="January 17, 2012",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -47,6 +47,15 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.8.1675**: January 17, 2012
+    This release fixes a number of bugs and hardware compatibility problems in
+    Ren'Py. It also includes improvements to new-style side image support, and
+    adds the ability to run a callback after each Python block.
+    
+    It has one incompatible change - it reverts the removal of old-style
+    substitution support. Please see the list of incompatible changes for
+    more information.
+    
 **6.13.7.1646**: October 18, 2011
     Fixes a problem with substitutions in the launcher. Fixes a crash on font
     searching. On Android, merges multiple taps so as not to overwhelm the 
