@@ -42,17 +42,10 @@
 
     {% if release.android %}
     <p style="clear: both"><strong>Android.</strong>
-        {% if release.prerelease %}
-        <img align="right" src="/static/qr-beta.png" width="175" height="175">
-        The latest pre-release of Ren'Py is available from <a href="https://market.android.com/details?id=org.renpy.android_beta">the Android Market</a>, or by scanning the QR code.
-        {% else %}
-        <img align="right" src="/static/qr.png" width="175" height="175">
-        The latest release of Ren'Py is available from <a href="https://market.android.com/details?id=org.renpy.android">the Android Market</a>, or by scanning the QR code.
-        {% endif %}
-
-        Android package files and the renpy-apk packaging tool <a href="http://www.renpy.org/dl/android/">are available here.</a> 
+        To package a Ren'Py game for Android, please use RAPT - the Ren'Py Android Packaging Tool. RAPT can be downloaded <a href="/dl/android">here</a>, and is documented in the <a href="/doc/html/android.html">Ren'Py Documentation</a>.
     </p>
     {% endif %}
+
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 </section>
 
