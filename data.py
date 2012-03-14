@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=8,
-    patch_date="January 17, 2012",
+    patch=9,
+    patch_date="March 14, 2012",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -47,6 +47,16 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.9.1702**: March 14, 2012
+    This release introduces the RAPT tool, a new way of packaging your Ren'Py 
+    game for use with Android. It fixes several bugs, including problems with
+    hardware compatibility, non-ASCII filenames, and save file size. 
+    
+    It introduces a new text editor documentation, backported from 
+    Ren'Py 6.14. If you use an editor other than jEdit, you'll need to
+    check out the new text editor section of the Ren'Py documentation.
+
+
 **6.13.8.1675**: January 17, 2012
     This release fixes a number of bugs and hardware compatibility problems in
     Ren'Py. It also includes improvements to new-style side image support, and
