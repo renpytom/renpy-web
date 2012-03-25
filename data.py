@@ -52,7 +52,7 @@ Some notes for upgraders:
     not work on the software renderer. Other changes include more aggressive
     pruning of the rollback log to reduce memory consumption, improved handling
     of display initialization errors, and fixes to the loading of pure-python
-    packages includes as part of a game.
+    packages included as part of a game.
     
 **6.13.9.1702**: March 14, 2012
     This release introduces the RAPT tool, a new way of packaging your Ren'Py 
