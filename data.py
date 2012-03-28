@@ -47,6 +47,10 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.11.1715**: March 27, 2012
+    This fixes a bug triggered (in some circumstances) by minimizing and 
+    restoring the game on Windows.
+    
 **6.13.10.1710**: March 25, 2012
     This release fixes a bug that can cause image buttons and image maps to
     not work on the software renderer. Other changes include more aggressive
