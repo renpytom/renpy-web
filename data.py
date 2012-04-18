@@ -13,8 +13,8 @@ Release(
     invisible=False,
     version="6.13",
     date="September 14, 2011",
-    patch=11,
-    patch_date="March 27, 2012",
+    patch=12,
+    patch_date="April 17, 2012",
     name="Eye of the Storm",
     exe=21,
     zip=26,
@@ -47,6 +47,21 @@ Some notes for upgraders:
 """,
     
     history="""\
+**6.13.12.1728**: April 17, 2012
+    This release:
+    
+    * Fixes a related minimize and restore bug. 
+    * Improves compatibility with games that replace config.keymap.
+    * Allows StylePreference and Language to work together.
+    * Logs to the system temp directory if it can't writhe to the current
+      directory.
+    * Allows the screenshot filename to be configured by the creator.
+    * Fixes keyboard adjustment of bars.
+    * Updates the preferences screen when the window resizes.
+    * Clears keyboard modifiers (like alt) when the window gains focus. This
+      fixes a problem where the alt from an alt-tab would be remembered by
+      Ren'Py, even after the key has been released. 
+
 **6.13.11.1715**: March 27, 2012
     This fixes a bug triggered (in some circumstances) by minimizing and 
     restoring the game on Windows.
