@@ -258,7 +258,7 @@ footer li {
 }
 
 #content ul {
-    list-style: square inside;
+    list-style: square;
 }
 
 section {
@@ -295,7 +295,6 @@ aside.small figcaption {
 }
 
 section p,
-section ul,
 section dl,
 section pre {
     margin: 10px 0;
@@ -415,4 +414,8 @@ a.button:hover {
 .blurb {
     text-align: center;
     margin-bottom: .5em;	
+}
+
+section ul {
+    margin: 1.2em;   
 }

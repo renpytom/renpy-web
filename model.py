@@ -21,6 +21,7 @@ class Release(Data):
 
     prerelease = False
     wiki = False
+    java = True
 
     def __init__(self, **kwargs):
 

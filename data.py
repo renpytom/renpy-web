@@ -9,6 +9,80 @@ from model import *
 releases = [ ]
 
 Release(    
+    prerelease=True,
+    invisible=True,
+    version="6.14",
+    date="August XX, 2012",
+    patch=0,
+    patch_date=None,
+    name="Steampunk Hamster",
+    exe=22,
+    bz2=27,
+    zip=29,
+    android=True,
+    powerpc=True,
+    java=False,
+    deps="6.14.0",
+    announcement="""\
+I'm pleased to announce Ren'Py 6.14 "Steampunk Hamster", a release that brings
+with it many improvements to Ren'Py and Ren'Py development.
+
+Perhaps the largest theme of this release is that the tools we use to make 
+Ren'Py are now the same tools that we use to make Ren'Py games. Along this 
+vein:
+
+* The Ren'Py launcher has been rewritten. It's now far more attractive, and 
+  contains a new script navigation function that makes it east to navigate
+  Ren'Py code. 
+* For most creators, we now recommend using the Editra editor with Ren'Py
+  support. While still in beta, Editra is a lightweight and powerful 
+  programmer's editor to which we've added features that ease Ren'Py development. 
+  (jEdit is still supported, when Editra is not suitable.) 
+* The Ren'Py build process has also been updated. Now, it's possible to, in 
+  a single click, archive files and build a distribution of your game. Games
+  may also use the same web updater that's used to update Ren'Py.
+
+The engine proper has also seen many improvements:
+
+* The new A White Tulip theme, written from scratch, provides some diversity
+  to the look of Ren'Py games.
+* Improvements to rollback, including the ability to fix rollback so that
+  the user can't change a choice once made, without reloading.
+* Several convenience shortcuts have been added to screens. A viewport with
+  scrollbars can now be created as a single statement, and the style properties
+  of text inside textbuttons and labels can be changed directly.
+* An experimental new image load log helps creators understand image prediction 
+  and cache misses.
+* Linux x86_64 is now supported by Ren'Py. Linux distributions will support
+  both x86 and x86_64 cpus.
+* Ren'Py ships with Python 2.7, and may of the libraries that underly
+  Ren'Py have been updated.
+
+This release has seen a huge amount of support from the community. I 
+especially thank:
+
+* Edwin, for contributing the improved rollback support and several bug 
+  fixes and new features.
+* Doomfest, for the visual design of the new launcher.
+* Ren and Jake Staines for contributing the new A White Tulip theme.
+* SleepKirby for improvements to Ren'Py's documentation.
+
+As of this release, Ren'Py uses github for project hosting.
+""",
+    
+    history="""\
+""",
+    
+    full_html="""\
+<img src="/static/t1000.jpg" width="1000" height="367" alt="Screenshot of Ren'Py, Editra, and the Ren'Py Launcher">
+""",    
+
+    top_html="""\
+""",
+    )
+
+
+Release(    
     prerelease=False,
     invisible=False,
     version="6.13",
