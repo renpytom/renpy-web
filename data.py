@@ -22,6 +22,7 @@ Release(
     android=True,
     powerpc=True,
     java=False,
+    linux64=True,
     deps="6.14.0",
     announcement="""\
 I'm pleased to announce Ren'Py 6.14 "Steampunk Hamster", a release that brings

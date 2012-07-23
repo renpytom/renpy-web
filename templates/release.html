@@ -44,7 +44,7 @@
         <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.tar.bz2" class="button download-button linux">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
     </ul>
 
-    <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.4 and up, and Linux x86/x86_64. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
+    <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.4 and up, and Linux x86{% if release.linux64 %}/x86_64{% endif %}. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
 
     {% if release.android %}
     <p style="clear: both"><strong>Android.</strong>
@@ -56,7 +56,7 @@
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 </section>
 {% else %}
-    <p><strong>Additional Downloads.</strong> When first used, Ren'Py will prompot you to download a text editor. An Internet connection is required for this download.</p>
+    <p><strong>Additional Downloads.</strong> When first used, Ren'Py will prompt you to download a text editor. An Internet connection is required for this download.</p>
 {% endif %}
 
 {% if release.history %}
