@@ -68,6 +68,9 @@ especially thank:
 * SleepKirby for improvements to Ren'Py's documentation.
 
 As of this release, Ren'Py uses github for project hosting.
+
+Due to the change to the new web updater, shift+U updating from previous 
+versions of Ren'Py is not supported.
 """,
     
     history="""\
