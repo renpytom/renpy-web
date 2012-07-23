@@ -21,7 +21,11 @@ class Release(Data):
 
     prerelease = False
     wiki = False
-    java = True
+
+    # The "world order" of the release.
+    # 0-3 (before 6.14)
+    # 4 (6.14)
+    world_order = 0
 
     def __init__(self, **kwargs):
 
