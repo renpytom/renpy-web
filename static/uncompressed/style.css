@@ -419,3 +419,7 @@ a.button:hover {
 section ul {
     margin: 1.2em;   
 }
+
+#start-tips ul {
+    margin: 0;   
+}
