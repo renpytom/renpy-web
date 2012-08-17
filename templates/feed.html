@@ -1,0 +1,54 @@
+{% if mode == "prerelease" %}
+  <p>
+  Ren'Py {{release.version}} has been publicly prereleased. Prereleases are 
+  suitable for testing, but not for the release of final games. This pre-release
+  can be downloaded from:
+  </p>
+
+  <ul>
+  <li> <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+  </ul>
+
+  <p>
+  Here's a preview of the release announcement:
+  </p>
+  
+  {{release.announcement|rst|safe}}
+  
+
+{% elif mode == "update" %}
+
+  <p>
+  Ren'Py {{release.full_version}} has been updated. The update can be downloaded from:
+  </p>
+
+  <ul>
+  <li> <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+  </ul>
+
+  <p>
+    Here's the history of updates
+    to Ren'Py {{release.version}}:
+  </p>
+  
+  {{release.history|rst|safe}}
+  
+{% else %}
+  <p>
+  Ren'Py {{release.version}} has been publicly released. It can be downloaded from:
+  </p>
+
+  <ul>
+  <li> <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+  </ul>
+  
+  <p>Here's the release announcement:</p>
+  
+  {{release.announcement|rst|safe}}
+  
+  <p>
+  This release can be downloaded from:
+  </p>
+{% endif %}
+
+

@@ -10,8 +10,9 @@ releases = [ ]
 
 Release(    
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.14",
+    prerelease_date="July 22, 2012",
     date="August XX, 2012",
     patch=0,
     patch_date=None,
@@ -44,6 +45,8 @@ vein:
 
 The engine proper has also seen many improvements:
 
+* Video playback has been rewritten to improve robustness, performance, and 
+  stability. WebM is now a supported format.
 * The new A White Tulip theme, written from scratch, provides some diversity
   to the look of Ren'Py games.
 * Improvements to rollback, including the ability to fix rollback so that
@@ -66,6 +69,7 @@ especially thank:
 * Doomfest, for the visual design of the new launcher.
 * Ren and Jake Staines for contributing the new A White Tulip theme.
 * SleepKirby for improvements to Ren'Py's documentation.
+* Apricotorange, for adding the NVL-mode tutorial to Ren'Py's documentation.
 
 As of this release, Ren'Py uses github for project hosting.
 
