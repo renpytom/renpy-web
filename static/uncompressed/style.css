@@ -336,6 +336,12 @@ a.button:hover {
 .no-clear { clear: none; }
 
 /* Main Page Styling */
+#start-tips div {
+   display: inline-block;
+   width: 272px;   
+   vertical-align: top;
+}
+
 #start-tips ul {
     list-style: none;
 }
@@ -343,9 +349,6 @@ a.button:hover {
 #start-tips li {
     display: inline-block;
     width: 272px;
-
-    vertical-align: top;
-
     margin: 0px 10px 15px auto;
 }
 
