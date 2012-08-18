@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+.bzr-old
+.project
+.pydevproject
+.settings
