@@ -426,3 +426,7 @@ section ul {
 #start-tips ul {
     margin: 0;   
 }
+
+.gamename {
+    font-style: italic;   
+}
