@@ -240,7 +240,8 @@ footer li {
 }
 
 #quick-links {
-    float: right;
+    float: left;
+    margin-top: 5px;
 }
 
 #quick-links li {
@@ -411,7 +412,6 @@ a.button:hover {
 
 #social {
     text-align: right;	
-    margin-top: .5em;
 }
 
 .blurb {
