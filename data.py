@@ -9,11 +9,11 @@ from model import *
 releases = [ ]
 
 Release(    
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.14",
     prerelease_date="July 22, 2012",
-    date="August XX, 2012",
+    date="August 18, 2012",
     patch=0,
     patch_date=None,
     name="Steampunk Hamster",
