@@ -33,7 +33,7 @@ Ren'Py are now the same tools that we use to make Ren'Py games. Along this
 vein:
 
 * The Ren'Py launcher has been rewritten. It's now far more attractive, and 
-  contains a new script navigation function that makes it east to navigate
+  contains a new script navigation function that makes it easy to navigate
   Ren'Py code. 
 * For most creators, we now recommend using the Editra editor with Ren'Py
   support. While still in beta, Editra is a lightweight and powerful 
@@ -58,7 +58,7 @@ The engine proper has also seen many improvements:
   and cache misses.
 * Linux x86_64 is now supported by Ren'Py. Linux distributions will support
   both x86 and x86_64 cpus.
-* Ren'Py ships with Python 2.7, and may of the libraries that underly
+* Ren'Py ships with Python 2.7, and many of the libraries that underly
   Ren'Py have been updated.
 
 This release has seen a huge amount of support from the community. I 
