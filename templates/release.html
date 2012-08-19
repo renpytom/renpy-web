@@ -3,6 +3,9 @@
 
 {% block title %}Download Ren'Py {{release.version}}{% endblock %}
 
+{% macro url(variant) %}http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
+{% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
+
 {% block content %}
 <section>
   {% if release.prerelease %}
@@ -39,9 +42,9 @@
     </p>
 
     <ul id="downloads">
-        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.7z.exe" class="button download-button win">Download SDK <span>7z.exe - {{ release.exe }} MiB</span></a></li>
-        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.zip" class="button download-button mac">Download SDK <span>zip  {{ release.zip }} MiB</span></a></li>
-        <li><a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-sdk.tar.bz2" class="button download-button linux">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
+        <li><a href="{{ url("sdk.7z.exe") }}" class="button download-button win">Download SDK <span>7z.exe - {{ release.exe }} MiB</span></a></li>
+        <li><a href="{{ url("sdk.zip") }}" class="button download-button mac">Download SDK <span>zip  {{ release.zip }} MiB</span></a></li>
+        <li><a href="{{ url("sdk.tar.bz2") }}" class="button download-button linux">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
     </ul>
 
     <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.4 and up, and Linux x86{% if release.world_order >= 4 %}/x86_64{% endif %}. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
@@ -97,6 +100,29 @@
     </dl>
 </section>
 
+{% if release.world_order >= 4%}
+<section>
+   <h2>Editor Downloads</h2>
+  
+    <p>
+    When first asked to edit a file, the Ren'Py launcher will prompt you to download and 
+    install an editor. As this may fail if your Internet connection is unreliable, the 
+    editors can be downloaded separately. To install, extract the contents of the editor
+    archive to the Ren'Py directory.
+    </p>
+
+
+    <dl>
+      <dt><strong>Editra (Windows):</strong> {{ dl("editra-windows.zip") }}</dt>
+      <dt><strong>Editra (Mac):</strong> {{ dl("editra-mac.zip") }}</dt>
+      <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
+      <dt><strong>jEdit:</strong> {{ dl("jedit.zip") }}</dt>
+    </dl>
+  
+  
+</section>
+{% endif %}
+
 <section>
     <h2>Additional Downloads</h2>
 
@@ -105,7 +131,7 @@
         <dt><strong>PowerPC Support:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
         <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
         {% endif %}
-        <dt><strong>Source Code:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-source.tar.bz2">renpy-{{release.full_version}}-source.tar.bz2</a></dt>
+        <dt><strong>Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
         <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
         <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
