@@ -14,8 +14,8 @@ Release(
     version="6.14",
     prerelease_date="July 22, 2012",
     date="August 18, 2012",
-    patch=0,
-    patch_date=None,
+    patch=1,
+    patch_date="August 26, 2012",
     name="Steampunk Hamster",
     exe=22,
     bz2=27,
@@ -78,6 +78,19 @@ versions of Ren'Py is not supported.
 """,
     
     history="""\
+**6.14.1.366**: August 26, 2012
+
+   This release fixes a number of bugs in Ren'Py 6.14, including:
+
+   * A major bug that prevented rollback and save from working for variables
+     that are only updated in python functions.   
+   * Crashes during video and audio playback, especially on Mac OS X.
+   * The version of zsync used by the updater didn't work on Windows XP.
+   * Several string encoding problems in the new launcher.
+   
+   All users of Ren'Py 6.14.0 should upgrade to this release. Windows XP
+   users should download the release again, while users of other supported
+   operating systems can use the launcher to update.
 """,
     
     full_html="""\
