@@ -9,6 +9,68 @@ from model import *
 releases = [ ]
 
 Release(    
+    prerelease=True,
+    invisible=True,
+    version="6.15",
+    prerelease_date="February 17, 2013",
+    date="February xx, 2013",
+    patch=0,
+    patch_date="February xx, 2013",
+    name="Foreign Policy",
+    exe=22,
+    bz2=27,
+    zip=29,
+    android=True,
+    powerpc=False,
+    deps="6.15.0",
+    world_order=4,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.15 "Foreign Policy", the result of about
+six months of Ren'Py development. The main focus of this release was on
+internationalization, the creation of a comprehensive translation system, 
+and better support for displaying Japanese text. Other new features 
+include:
+
+* An interactive console that allows you to type Ren'Py and python command,
+  that can be accessed by typing ~. 
+* Screens now take positional and named parameters,
+* Support for creating a replay gallery.
+* Voice improvements, including the ability to mute particular voices.
+* Support for skinning the launcher. 
+
+Ren'Py also comes with a Japanese translation of the tutorial game. For a full 
+list of features and bug fixes, please see the changelog. 
+
+Ren'Py 6.15 has increased the minimum requirments to run on the Macintosh 
+platform. It now requires a 64-bit Intel Macintosh running OS X 10.6 or 
+later.
+
+Once again, this release has seen many contributions from the community. We 
+thank:
+
+* Koichi Akabe for much of the new Japanese support and the Japanese
+  translation of the tutorial game.
+* Shiz, C, and Delta for the interactive Console.
+* Ren for advice on how the translation system should work.
+
+And, of course, everyone who contributed ideas, bug reports, and feedback 
+to Ren'Py development.
+""",
+    
+    history="""\
+""",
+    
+    full_html="""\
+<img src="/static/6.15.jpg" width="1000" height="367" alt="Screenshot of Ren'Py 6.15">
+""",    
+
+    top_html="""\
+""",
+    )
+
+
+
+Release(    
     prerelease=False,
     invisible=False,
     version="6.14",
