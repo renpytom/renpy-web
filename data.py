@@ -9,13 +9,13 @@ from model import *
 releases = [ ]
 
 Release(    
-    prerelease=True,
-    invisible=True,
+    prerelease=False,
+    invisible=False,
     version="6.15",
     prerelease_date="February 17, 2013",
-    date="February xx, 2013",
+    date="March 3, 2013",
     patch=0,
-    patch_date="February xx, 2013",
+    patch_date=None,
     name="Foreign Policy",
     exe=22,
     bz2=27,
@@ -32,16 +32,17 @@ and better support for displaying Japanese text. Other new features
 include:
 
 * An interactive console that allows you to type Ren'Py and python command,
-  that can be accessed by typing ~. 
-* Screens now take positional and named parameters,
+  that can be accessed by typing backtick or shift+O.
+* Screens now take positional and named parameters.
 * Support for creating a replay gallery.
 * Voice improvements, including the ability to mute particular voices.
 * Support for skinning the launcher. 
 
-Ren'Py also comes with a Japanese translation of the tutorial game. For a full 
-list of features and bug fixes, please see the changelog. 
+Ren'Py now includes a Japanese translation of the tutorial game, which can
+be accessed from the preferences menu. For a full list of features and bug fixes, 
+please see the changelog. 
 
-Ren'Py 6.15 has increased the minimum requirments to run on the Macintosh 
+Ren'Py 6.15 has increased the minimum requirements to run on the Macintosh 
 platform. It now requires a 64-bit Intel Macintosh running OS X 10.6 or 
 later.
 
