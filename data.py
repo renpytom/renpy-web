@@ -14,8 +14,8 @@ Release(
     version="6.15",
     prerelease_date="February 17, 2013",
     date="March 3, 2013",
-    patch=0,
-    patch_date=None,
+    patch=3,
+    patch_date="March 30, 2013",
     name="Foreign Policy",
     exe=22,
     bz2=27,
@@ -59,6 +59,42 @@ to Ren'Py development.
 """,
     
     history="""\
+**6.15.3.303**: March 30, 2013
+    
+    Many bug fixes and improvements:
+    
+    * Image prediction has been broken up, such that a small amount of image
+      prediction will run each frame. This prevent looping ATL animations
+      from blocking image prediction.
+      
+    * When playing a fullscreen video, the screen will not be updated before
+      the first frame is ready. This makes it possible to smoothly transition
+      into a movie without displaying a black screen.
+    
+    * Fix problems with text input display on fonts that do not contain a 
+      zero-width space glyph.
+    
+    * Rare segfaults relating to font unloading have been fixed.
+    
+    * Fixed a memory leaks related to the rollback log and text layout cache.
+    
+    * Script parsing will fail with an error if a logical line exceeds 64 KB.
+    
+    * Quicksave will not fail of if the current file page is the auto-save page.
+    
+    * When a viewport changes size before being shown to the user, the offsets
+      are re-applied to the viewport
+
+    * SpriteManager now respects sprite zorder.
+
+**6.15.2.280**: March 5, 2013
+
+    This release fixes an issue with selecting the project directory on the
+    mac. It also adds the ability to loop a single track in the music room.
+
+**6.15.1.275**: March 5, 2013
+
+    This release fixes the packaging of the editra text editor.
 """,
     
     full_html="""\
