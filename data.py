@@ -14,8 +14,8 @@ Release(
     version="6.15",
     prerelease_date="February 17, 2013",
     date="March 3, 2013",
-    patch=3,
-    patch_date="March 30, 2013",
+    patch=4,
+    patch_date="April 6, 2013",
     name="Foreign Policy",
     exe=22,
     bz2=27,
@@ -59,6 +59,23 @@ to Ren'Py development.
 """,
     
     history="""\
+**6.15.4.320**: April 6, 2013
+
+    Bug fixes and improvements, including:
+
+    * The 64-bit Linux version of Ren'Py is linked against the correct 
+      libraries. Versions 6.14.x and 6.15.0-3 were linked against 
+      incorrect Python libraries.
+    
+    * In the common case, the python interpreter is no longer locked while 
+      images are preloading. This helps prevent image preloading from causing
+      framerate problems.
+      
+    * The new build.exclude_empty_directories variable determines if empty
+      directories are included in archive files. Previously, this was 
+      undefined, and varied from platform to platform.
+
+
 **6.15.3.303**: March 30, 2013
     
     Many bug fixes and improvements:
