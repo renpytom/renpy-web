@@ -14,15 +14,15 @@ Release(
     version="6.15",
     prerelease_date="February 17, 2013",
     date="March 3, 2013",
-    patch=4,
-    patch_date="April 6, 2013",
+    patch=5,
+    patch_date="June 6, 2013",
     name="Foreign Policy",
     exe=22,
     bz2=27,
     zip=29,
     android=True,
     powerpc=False,
-    deps="6.15.0",
+    deps="6.15.5",
     world_order=4,
     announcement="""\
 I'm pleased to announce Ren'Py 6.15 "Foreign Policy", the result of about
@@ -59,6 +59,29 @@ to Ren'Py development.
 """,
     
     history="""\
+**6.15.5.354**: June 6, 2013
+    
+    New features:
+    
+    * Additive blending, but only in the GL and DirectX/ANGLE renderers.
+    
+    * The new Flatten displayable, which combines multiple textures into one.
+    
+    Bug/Build fixes:
+    
+    * Before this release, Ren'Py produced zip files with unix modes that
+      were writable by all users. If unzipped by a program that ignored the
+      umask (like info-zip), the files could be overwritten by other users,
+      causing a security problem.
+      
+      This problem only existed on unix-like systems that are shared by 
+      multiple users.
+    
+    * Ren'Py once again uses freetype auto-hinting when displaying fonts. 
+    
+    * Ren'Py builds with the current libav (and ffmpeg).
+
+    
 **6.15.4.320**: April 6, 2013
 
     Bug fixes and improvements, including:
