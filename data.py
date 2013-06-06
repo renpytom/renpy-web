@@ -64,7 +64,6 @@ to Ren'Py development.
     New features:
     
     * Additive blending, but only in the GL and DirectX/ANGLE renderers.
-    
     * The new Flatten displayable, which combines multiple textures into one.
     
     Bug/Build fixes:
@@ -76,9 +75,7 @@ to Ren'Py development.
       
       This problem only existed on unix-like systems that are shared by 
       multiple users.
-    
     * Ren'Py once again uses freetype auto-hinting when displaying fonts. 
-    
     * Ren'Py builds with the current libav (and ffmpeg).
 
     
