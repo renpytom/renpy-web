@@ -8,14 +8,71 @@ from model import *
 # Release and WikiRelease statement-commands, below.
 releases = [ ]
 
-Release(    
+
+Release(
+    prerelease=True,
+    invisible=True,
+    version="6.16",
+    prerelease_date="October 24, 2013",
+    date="November xx, 2013",
+    patch=None,
+    patch_date="November xx, 2013",
+    name="In the Arena",
+    exe=22,
+    bz2=28,
+    zip=30,
+    android=True,
+    powerpc=False,
+    deps="6.15.5",
+    world_order=4,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.16 "In the Arena". This release brings
+with it:
+
+* Improved Android support, including the ability to build APKs from the
+  launcher, support for Expansion APKs, and support for televison-based
+  consoles like the OUYA.
+* The ability to associate JSON information with a save file, and access
+  that information in the load and save screens.
+* Save file synchronization when Ren'Py is run from a shared directory.
+* Support for a creator dumping the text of the game script, and for
+  automatically playing appropriately-named voice files.
+* Improvements to the gallery (including a new navigation overlay) and the
+  music room (such as shuffle, loop, and single-track toggles.)
+
+As well as a number of minor improvements and bugfixes.
+
+This release has been brought to you by:
+
+* kyouryuukunn
+* Koichi "vbkaisetsu" Akabe
+* Tom "PyTom" Rothamel
+
+With thanks to antoinentx for improving support for international
+directories, and everyone who contributed ideas, bug reports, and feedback
+to Ren'Py development.
+""",
+
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
+
+Release(
     prerelease=False,
     invisible=False,
     version="6.15",
     prerelease_date="February 17, 2013",
     date="March 3, 2013",
-    patch=5,
-    patch_date="June 6, 2013",
+    patch=7,
+    patch_date="June 26, 2013",
     name="Foreign Policy",
     exe=22,
     bz2=27,
@@ -27,26 +84,26 @@ Release(
     announcement="""\
 I'm pleased to announce Ren'Py 6.15 "Foreign Policy", the result of about
 six months of Ren'Py development. The main focus of this release was on
-internationalization, the creation of a comprehensive translation system, 
-and better support for displaying Japanese text. Other new features 
+internationalization, the creation of a comprehensive translation system,
+and better support for displaying Japanese text. Other new features
 include:
 
-* An interactive console that allows you to type Ren'Py and python command,
-  that can be accessed by typing backtick or shift+O.
+* An interactive console that allows you to type Ren'Py and python commands,
+  that can be accessed by typing shift+O.
 * Screens now take positional and named parameters.
 * Support for creating a replay gallery.
 * Voice improvements, including the ability to mute particular voices.
-* Support for skinning the launcher. 
+* Support for skinning the launcher.
 
 Ren'Py now includes a Japanese translation of the tutorial game, which can
-be accessed from the preferences menu. For a full list of features and bug fixes, 
-please see the changelog. 
+be accessed from the preferences menu. For a full list of features and bug fixes,
+please see the changelog.
 
-Ren'Py 6.15 has increased the minimum requirements to run on the Macintosh 
-platform. It now requires a 64-bit Intel Macintosh running OS X 10.6 or 
+Ren'Py 6.15 has increased the minimum requirements to run on the Macintosh
+platform. It now requires a 64-bit Intel Macintosh running OS X 10.6 or
 later.
 
-Once again, this release has seen many contributions from the community. We 
+Once again, this release has seen many contributions from the community. We
 thank:
 
 * Koichi Akabe for much of the new Japanese support and the Japanese
@@ -54,71 +111,98 @@ thank:
 * Shiz, C, and Delta for the interactive Console.
 * Ren for advice on how the translation system should work.
 
-And, of course, everyone who contributed ideas, bug reports, and feedback 
+And, of course, everyone who contributed ideas, bug reports, and feedback
 to Ren'Py development.
 """,
-    
+
     history="""\
+**6.15.7.374**: June 26, 2013
+
+    Fix a regression in ImageDissolve.
+
+**6.15.6.372**: June 25, 2013
+
+    This release includes improvements for the Android platform:
+
+    * Assets are now read exclusively from the APK and expansion file.
+    * Logs and tracebacks are placed on external storage.
+    * Saves are placed on external storage, except when saves from
+      older versions of Ren'Py exist.
+
+    The GL2 shaders Ren'Py uses have been simplified in the (usual) case
+    where no clipping is occurring. This leads to a noticeable speed
+    improvement on Android, and potentially other platforms as well.
+
+    An issue with Drag-and-drop has been fixed. Thanks go to Kinsman
+    for contributing this fix.
+
+    The Skip action now triggers the skip indicator. It also
+    supports a new fast parameter, which causes skipping to the
+    next menu.
+
+    This release includes various minor changes to improve compatibility
+    with very old Ren'Py games. (It now runs the Ren'Py 5 demo.)
+
 **6.15.5.354**: June 6, 2013
-    
+
     New features:
-    
+
     * Additive blending, but only in the GL and DirectX/ANGLE renderers.
     * The new Flatten displayable, which combines multiple textures into one.
-    
+
     Bug/Build fixes:
-    
+
     * Before this release, Ren'Py produced zip files with unix modes that
       were writable by all users. If unzipped by a program that ignored the
       umask (like info-zip), the files could be overwritten by other users,
       causing a security problem.
-      
-      This problem only existed on unix-like systems that are shared by 
+
+      This problem only existed on unix-like systems that are shared by
       multiple users.
-    * Ren'Py once again uses freetype auto-hinting when displaying fonts. 
+    * Ren'Py once again uses freetype auto-hinting when displaying fonts.
     * Ren'Py builds with the current libav (and ffmpeg).
 
-    
+
 **6.15.4.320**: April 6, 2013
 
     Bug fixes and improvements, including:
 
-    * The 64-bit Linux version of Ren'Py is linked against the correct 
-      libraries. Versions 6.14.x and 6.15.0-3 were linked against 
+    * The 64-bit Linux version of Ren'Py is linked against the correct
+      libraries. Versions 6.14.x and 6.15.0-3 were linked against
       incorrect Python libraries.
-    
-    * In the common case, the python interpreter is no longer locked while 
+
+    * In the common case, the python interpreter is no longer locked while
       images are preloading. This helps prevent image preloading from causing
       framerate problems.
-      
+
     * The new build.exclude_empty_directories variable determines if empty
-      directories are included in archive files. Previously, this was 
+      directories are included in archive files. Previously, this was
       undefined, and varied from platform to platform.
 
 
 **6.15.3.303**: March 30, 2013
-    
+
     Many bug fixes and improvements:
-    
+
     * Image prediction has been broken up, such that a small amount of image
       prediction will run each frame. This prevent looping ATL animations
       from blocking image prediction.
-      
+
     * When playing a fullscreen video, the screen will not be updated before
       the first frame is ready. This makes it possible to smoothly transition
       into a movie without displaying a black screen.
-    
-    * Fix problems with text input display on fonts that do not contain a 
+
+    * Fix problems with text input display on fonts that do not contain a
       zero-width space glyph.
-    
+
     * Rare segfaults relating to font unloading have been fixed.
-    
+
     * Fixed a memory leaks related to the rollback log and text layout cache.
-    
+
     * Script parsing will fail with an error if a logical line exceeds 64 KB.
-    
+
     * Quicksave will not fail of if the current file page is the auto-save page.
-    
+
     * When a viewport changes size before being shown to the user, the offsets
       are re-applied to the viewport
 
@@ -133,10 +217,10 @@ to Ren'Py development.
 
     This release fixes the packaging of the editra text editor.
 """,
-    
+
     full_html="""\
 <img src="/static/6.15.jpg" width="1000" height="367" alt="Screenshot of Ren'Py 6.15">
-""",    
+""",
 
     top_html="""\
 """,
@@ -144,7 +228,7 @@ to Ren'Py development.
 
 
 
-Release(    
+Release(
     prerelease=False,
     invisible=False,
     version="6.14",
@@ -164,24 +248,24 @@ Release(
 I'm pleased to announce Ren'Py 6.14 "Steampunk Hamster", a release that brings
 with it many improvements to Ren'Py and Ren'Py development.
 
-Perhaps the largest theme of this release is that the tools we use to make 
-Ren'Py are now the same tools that we use to make Ren'Py games. Along this 
+Perhaps the largest theme of this release is that the tools we use to make
+Ren'Py are now the same tools that we use to make Ren'Py games. Along this
 vein:
 
-* The Ren'Py launcher has been rewritten. It's now far more attractive, and 
+* The Ren'Py launcher has been rewritten. It's now far more attractive, and
   contains a new script navigation function that makes it easy to navigate
-  Ren'Py code. 
+  Ren'Py code.
 * For most creators, we now recommend using the Editra editor with Ren'Py
-  support. While still in beta, Editra is a lightweight and powerful 
-  programmer's editor to which we've added features that ease Ren'Py development. 
-  (jEdit is still supported, when Editra is not suitable.) 
-* The Ren'Py build process has also been updated. Now, it's possible to, in 
+  support. While still in beta, Editra is a lightweight and powerful
+  programmer's editor to which we've added features that ease Ren'Py development.
+  (jEdit is still supported, when Editra is not suitable.)
+* The Ren'Py build process has also been updated. Now, it's possible to, in
   a single click, archive files and build a distribution of your game. Games
   may also use the same web updater that's used to update Ren'Py.
 
 The engine proper has also seen many improvements:
 
-* Video playback has been rewritten to improve robustness, performance, and 
+* Video playback has been rewritten to improve robustness, performance, and
   stability. WebM is now a supported format.
 * The new A White Tulip theme, written from scratch, provides some diversity
   to the look of Ren'Py games.
@@ -190,17 +274,17 @@ The engine proper has also seen many improvements:
 * Several convenience shortcuts have been added to screens. A viewport with
   scrollbars can now be created as a single statement, and the style properties
   of text inside textbuttons and labels can be changed directly.
-* An experimental new image load log helps creators understand image prediction 
+* An experimental new image load log helps creators understand image prediction
   and cache misses.
 * Linux x86_64 is now supported by Ren'Py. Linux distributions will support
   both x86 and x86_64 cpus.
 * Ren'Py ships with Python 2.7, and many of the libraries that underly
   Ren'Py have been updated.
 
-This release has seen a huge amount of support from the community. I 
+This release has seen a huge amount of support from the community. I
 especially thank:
 
-* Edwin, for contributing the improved rollback support and several bug 
+* Edwin, for contributing the improved rollback support and several bug
   fixes and new features.
 * Doomfest, for the visual design of the new launcher.
 * Ren and Jake Staines for contributing the new A White Tulip theme.
@@ -209,36 +293,36 @@ especially thank:
 
 As of this release, Ren'Py uses github for project hosting.
 
-Due to the change to the new web updater, shift+U updating from previous 
+Due to the change to the new web updater, shift+U updating from previous
 versions of Ren'Py is not supported.
 """,
-    
+
     history="""\
 **6.14.1.366**: August 26, 2012
 
    This release fixes a number of bugs in Ren'Py 6.14, including:
 
    * A major bug that prevented rollback and save from working for variables
-     that are only updated in python functions.   
+     that are only updated in python functions.
    * Crashes during video and audio playback, especially on Mac OS X.
    * The version of zsync used by the updater didn't work on Windows XP.
    * Several string encoding problems in the new launcher.
-   
+
    All users of Ren'Py 6.14.0 should upgrade to this release. Windows XP
    users should download the release again, while users of other supported
    operating systems can use the launcher to update.
 """,
-    
+
     full_html="""\
 <img src="/static/t1000.jpg" width="1000" height="367" alt="Screenshot of Ren'Py, Editra, and the Ren'Py Launcher">
-""",    
+""",
 
     top_html="""\
 """,
     )
 
 
-Release(    
+Release(
     prerelease=False,
     invisible=False,
     version="6.13",
@@ -262,25 +346,25 @@ Ren'Py 6.13 also adds a DirectX rendering path. This new renderer should lead to
 faster and more functional graphics display on Windows systems lacking OpenGL
 support.
 
-In addition to these major features, 6.13 adds a style preferences system, new 
-actions - including actions for image galleries and music rooms - and new 
+In addition to these major features, 6.13 adds a style preferences system, new
+actions - including actions for image galleries and music rooms - and new
 themes.
 
 Some notes for upgraders:
 
 * The change in interpolation may cause your old scripts to stop working. Please
-  see the incompatible changes documentation for information on how to upgrade 
+  see the incompatible changes documentation for information on how to upgrade
   your script or enable a compatibility mode.
-  
+
 * The shift+U updater is not capable of upgrading 6.12.2 to this release. Please
   download 6.13 from the website.
 """,
-    
+
     history="""\
 **6.13.12.1728**: April 17, 2012
     This release:
-    
-    * Fixes a related minimize and restore bug. 
+
+    * Fixes a related minimize and restore bug.
     * Improves compatibility with games that replace config.keymap.
     * Allows StylePreference and Language to work together.
     * Logs to the system temp directory if it can't writhe to the current
@@ -290,25 +374,25 @@ Some notes for upgraders:
     * Updates the preferences screen when the window resizes.
     * Clears keyboard modifiers (like alt) when the window gains focus. This
       fixes a problem where the alt from an alt-tab would be remembered by
-      Ren'Py, even after the key has been released. 
+      Ren'Py, even after the key has been released.
 
 **6.13.11.1715**: March 27, 2012
-    This fixes a bug triggered (in some circumstances) by minimizing and 
+    This fixes a bug triggered (in some circumstances) by minimizing and
     restoring the game on Windows.
-    
+
 **6.13.10.1710**: March 25, 2012
     This release fixes a bug that can cause image buttons and image maps to
     not work on the software renderer. Other changes include more aggressive
     pruning of the rollback log to reduce memory consumption, improved handling
     of display initialization errors, and fixes to the loading of pure-python
     packages included as part of a game.
-    
+
 **6.13.9.1702**: March 14, 2012
-    This release introduces the RAPT tool, a new way of packaging your Ren'Py 
+    This release introduces the RAPT tool, a new way of packaging your Ren'Py
     game for use with Android. It fixes several bugs, including problems with
-    hardware compatibility, non-ASCII filenames, and save file size. 
-    
-    It introduces a new text editor documentation, backported from 
+    hardware compatibility, non-ASCII filenames, and save file size.
+
+    It introduces a new text editor documentation, backported from
     Ren'Py 6.14. If you use an editor other than jEdit, you'll need to
     check out the new text editor section of the Ren'Py documentation.
 
@@ -317,63 +401,63 @@ Some notes for upgraders:
     This release fixes a number of bugs and hardware compatibility problems in
     Ren'Py. It also includes improvements to new-style side image support, and
     adds the ability to run a callback after each Python block.
-    
+
     It has one incompatible change - it reverts the removal of old-style
     substitution support. Please see the list of incompatible changes for
     more information.
-    
+
 **6.13.7.1646**: October 18, 2011
     Fixes a problem with substitutions in the launcher. Fixes a crash on font
-    searching. On Android, merges multiple taps so as not to overwhelm the 
+    searching. On Android, merges multiple taps so as not to overwhelm the
     event queue.
-    
+
 **6.13.6.1642**: October 13, 2011
     Fixes a crash when loading automatically-created styles. Fixes a problem
     with quick saving not taking a screenshot. Fixes a problem with small solid
-    textures not showing up, on the software renderer. Fixes a crash when 
+    textures not showing up, on the software renderer. Fixes a crash when
     playing back movies on Linux.
-    
+
     This release introduces two new actions, QuickSave and QuickLoad, which
     are used for quick save and qick load functionality. If your game uses
-    the new quick menu, please update it with the new code found in 
+    the new quick menu, please update it with the new code found in
     template/game/screens.rpy.
-    
+
 **6.13.5.1638**: October 10, 2011
     Fixes slow text.
 
 **6.13.4.1637**: October 8, 2011
     Bugfix release 6.13.4 includes the following fixes:
-    
+
     * Jumps from called screens now work. This fixes the developer menu.
     * Hitting shift+G in-game brings the user to the renderer selection menu.
     * Include all source required to rebuild Ren'Py.
     * Fix the renpy-ppc packaging.
-    
+
 **6.13.2.1632**: October 5, 2011
-    Released bugfix release 6.13.2, which allows Text displayables to be 
+    Released bugfix release 6.13.2, which allows Text displayables to be
     instantiated in init blocks, and fixes error handling.
 
 **6.13.1.1629**: October 3, 2011
     Released bugfix release 6.13.1, which makes Ren'Py run stably.
-    
+
 **6.13.0.1601**: September 14, 2011
     Official release.
-    
+
 **6.13.0.1601**: September 11, 2011
     Support reading files out of an Android package. User-defined statements can
     take blocks. A fix to lint with non-ASCII characters. A fix to error
     handling.
-    
+
 **6.13.0.1598**: September 5, 2011
     Adds error reporting when a non-string is used as text, fixes sound problems
     by moving to libav, and various other fixes.
-    
+
 **6.13.0.1594**: September 4, 2011
     First public pre-release.
 """,
-    
+
     aside_html="""\
-""",    
+""",
 ################################################################################
 #    top_html="""\
 # <div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
@@ -384,7 +468,7 @@ Some notes for upgraders:
 ################################################################################
     )
 
-Release(    
+Release(
     prerelease=False,
     invisible=False,
     version="6.12.2",
@@ -399,12 +483,12 @@ Release(
 Ren'Py 6.12.2 "Human Factor II" is an update that fixes several bugs
 found in Ren'Py 6.12.1.
 """,
-    
+
     history="""\
 **6.12.2.1531**: July 30, 2011
     Initial release.
 """,
-    
+
     aside_html="""\
         <object width="380" height="238">
             <param name="movie" value="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0"></param>
@@ -414,11 +498,11 @@ found in Ren'Py 6.12.1.
         </object>
 
     <i><a href="http://sonia-leong.livejournal.com/200681.html">Let Me Save You! Your Faithful Companion</a></i> time-lapse creation screencast. Courtesy Sonia Leong.
-"""    
+"""
     )
 
 
-Release(    
+Release(
     prerelease=False,
     invisible=False,
     version="6.12.1",
@@ -452,26 +536,26 @@ Ren'Py would terminate on errors, 6.12.1 will display a screen that allows the
 maker to edit problematic files and reload the game, and the user to rollback or
 ignore the problem.
 
-Ren'Py 6.12.1 also includes many other minor features and bug fixes, please 
+Ren'Py 6.12.1 also includes many other minor features and bug fixes, please
 see the full changelog for more details.
 """,
-    
+
     history="""\
 **6.12.1.1520**: June 23, 2011
     A major bugfix release, including:
-    
+
     * Fixed a problem with texture upload that made games noticeably slower.
     * A better default size for windows on small monitors, like netbooks.
     * xfill and yfill now work for vbox and hbox, respectively.
     * Click-to-continue fixes.
     * Side image fixes.
-    
+
 **6.12.1.1502**: May 16, 2011
     Compatibility fixes for Android. This release only consisted of
     new versions of Ren'Py for Android and renpy-apk. If you're only
-    developing for desktop platforms, there's no need to update 
+    developing for desktop platforms, there's no need to update
     Ren'Py.
-    
+
 **6.12.1.1501**: May 04, 2011
     Updated release. Mistakes were made in the update release process, leading
     to a version of Ren'Py that could not switch between windowed and fullscreen
@@ -483,22 +567,22 @@ see the full changelog for more details.
 
 **6.12.1.1499**: May 02, 2011
     Final release. Fixes a bug with screenshots.
-    
+
 **6.12.1.1497**: April 30, 2011
-    Fixes display of exceptions during init code. Allows the contents of 
+    Fixes display of exceptions during init code. Allows the contents of
     viewports to be displayed by the shift+I style inspector. Populates
     config.archives in ascii order.
 
 **6.12.1.1493**: April 24, 2011
     Bug fixes involving say with image attributes.
-    Added config.say_attribute_transition as a way to invoke a transition 
+    Added config.say_attribute_transition as a way to invoke a transition
     when the image is changed by a say with image attributes, in response
     to feedback from the first users of the feature.
 
 **6.12.1.1487**: April 24, 2011
     First public pre-release.
 """,
-    
+
     aside_html="""\
         <object width="380" height="238">
             <param name="movie" value="http://www.youtube.com/v/_MRDp2RHGEc?fs=1&amp;hl=en_US&amp;rel=0"></param>
@@ -508,7 +592,7 @@ see the full changelog for more details.
         </object>
 
     <i><a href="http://sonia-leong.livejournal.com/200681.html">Let Me Save You! Your Faithful Companion</a></i> time-lapse creation screencast. Courtesy Sonia Leong.
-"""    
+"""
     )
 
 
@@ -560,7 +644,7 @@ by default.
 """,
     aside_html="""\
 <img src="/static/6.12.0small.jpg" width="380" height="295">
-"""    
+"""
     )
 
 
@@ -595,7 +679,7 @@ four new themes, and updates the included jEdit text editor.
             <embed src="http://www.youtube.com/v/2qrPIdRhv_Y?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="380" height="238"></embed>
         </object>
 """
-    
+
     )
 
 # Pre-web releases.
@@ -707,9 +791,9 @@ for i in releases:
     else:
         current = current or i
         final_releases.append(i)
-        
+
     if not i.wiki:
         release_version[i.version] = i
-        
+
 for n, i in enumerate(final_releases):
     i.ordinal = len(final_releases) - n
