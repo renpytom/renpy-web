@@ -11,16 +11,16 @@ releases = [ ]
 
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.16",
-    prerelease_date="October 24, 2013",
+    prerelease_date="October 31, 2013",
     date="November xx, 2013",
-    patch=None,
-    patch_date="November xx, 2013",
+    patch=0,
+    patch_date=None,
     name="In the Arena",
-    exe=22,
-    bz2=28,
-    zip=30,
+    exe=24,
+    bz2=31,
+    zip=34,
     android=True,
     powerpc=False,
     deps="6.15.5",
@@ -39,6 +39,7 @@ with it:
   automatically playing appropriately-named voice files.
 * Improvements to the gallery (including a new navigation overlay) and the
   music room (such as shuffle, loop, and single-track toggles.)
+* A Japanese translation of the launcher, template, and documentation.
 
 As well as a number of minor improvements and bugfixes.
 
