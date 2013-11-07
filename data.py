@@ -10,11 +10,11 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.16",
-    prerelease_date="October 31, 2013",
-    date="November xx, 2013",
+    prerelease_date="November 4, 2013",
+    date="November 06, 2013",
     patch=0,
     patch_date=None,
     name="In the Arena",
@@ -26,8 +26,8 @@ Release(
     deps="6.15.5",
     world_order=4,
     announcement="""\
-I'm pleased to announce Ren'Py 6.16 "In the Arena". This release brings
-with it:
+On behalf of the Ren'Py team, I'm pleased to announce Ren'Py 6.16 "In the
+Arena". This release brings with it:
 
 * Improved Android support, including the ability to build APKs from the
   launcher, support for Expansion APKs, and support for televison-based
