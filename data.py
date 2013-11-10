@@ -14,9 +14,9 @@ Release(
     invisible=False,
     version="6.16",
     prerelease_date="November 4, 2013",
-    date="November 06, 2013",
-    patch=0,
-    patch_date=None,
+    date="November 6, 2013",
+    patch=1,
+    patch_date="November 9, 2013",
     name="In the Arena",
     exe=24,
     bz2=31,
@@ -55,6 +55,10 @@ to Ren'Py development.
 """,
 
     history="""\
+**6.16.1.409**: November 9, 2013
+    This release includes a number of bug fixes related to translation and
+    running in non-ASCII directories, including a fix to the updater. It
+    also includes documentation improvements.
 """,
 
     full_html="""\
