@@ -62,6 +62,7 @@ to Ren'Py development.
 """,
 
     full_html="""\
+<img src="/static/6.16.jpg" width="1000" alt="Screenshot of Ren'Py 6.16">
 """,
 
     top_html="""\
