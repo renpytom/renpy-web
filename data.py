@@ -15,8 +15,8 @@ Release(
     version="6.16",
     prerelease_date="November 4, 2013",
     date="November 6, 2013",
-    patch=1,
-    patch_date="November 9, 2013",
+    patch=2,
+    patch_date="November 21, 2013",
     name="In the Arena",
     exe=24,
     bz2=31,
@@ -45,8 +45,10 @@ As well as a number of minor improvements and bugfixes.
 
 This release has been brought to you by:
 
+* javimat
 * kyouryuukunn
 * Koichi "vbkaisetsu" Akabe
+* Daniel Luque
 * Tom "PyTom" Rothamel
 
 With thanks to antoinentx for improving support for international
@@ -55,6 +57,11 @@ to Ren'Py development.
 """,
 
     history="""\
+**6.16.2.490**: November 21, 2013
+    This release adds new Spanish translations of the launcher and template
+    game. It adds a new function that gets the mouse position, and fixes
+    bugs, typos, and usability flaws in the launcher and Ren'Py proper.
+
 **6.16.1.409**: November 9, 2013
     This release includes a number of bug fixes related to translation and
     running in non-ASCII directories, including a fix to the updater. It
