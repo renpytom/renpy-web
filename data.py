@@ -8,6 +8,13 @@ from model import *
 # Release and WikiRelease statement-commands, below.
 releases = [ ]
 
+# Patch release checklist:
+#
+# 1. Bump patch.
+# 2. Update patch_date.
+# 3. Add to history.
+
+
 
 Release(
     prerelease=False,
@@ -15,8 +22,8 @@ Release(
     version="6.16",
     prerelease_date="November 4, 2013",
     date="November 6, 2013",
-    patch=2,
-    patch_date="November 21, 2013",
+    patch=3,
+    patch_date="November 29, 2013",
     name="In the Arena",
     exe=24,
     bz2=31,
@@ -57,6 +64,11 @@ to Ren'Py development.
 """,
 
     history="""\
+**6.16.3.502**: November 29, 2013
+    This release fixes a problem that could cause excessive texture memory
+    usage. It also improves Android support in several ways, making it
+    possible for Ren'Py games to appear in the tablet section of Google Play.
+
 **6.16.2.490**: November 21, 2013
     This release adds new Spanish translations of the launcher and template
     game. It adds a new function that gets the mouse position, and fixes
