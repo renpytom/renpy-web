@@ -22,8 +22,8 @@ Release(
     version="6.16",
     prerelease_date="November 4, 2013",
     date="November 6, 2013",
-    patch=3,
-    patch_date="November 29, 2013",
+    patch=4,
+    patch_date="December 16, 2013",
     name="In the Arena",
     exe=24,
     bz2=31,
@@ -64,6 +64,11 @@ to Ren'Py development.
 """,
 
     history="""\
+**6.16.4.524**: December 16, 2013
+    This release fixed Android building support, the Replay function, and
+    the scanning of save games. It also includes a number of improvements
+    to the documentation.
+
 **6.16.3.502**: November 29, 2013
     This release fixes a problem that could cause excessive texture memory
     usage. It also improves Android support in several ways, making it
