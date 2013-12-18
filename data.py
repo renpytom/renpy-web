@@ -22,8 +22,8 @@ Release(
     version="6.16",
     prerelease_date="November 4, 2013",
     date="November 6, 2013",
-    patch=4,
-    patch_date="December 16, 2013",
+    patch=5,
+    patch_date="December 17, 2013",
     name="In the Arena",
     exe=24,
     bz2=31,
@@ -64,6 +64,9 @@ to Ren'Py development.
 """,
 
     history="""\
+**6.16.4.524**: December 17, 2013
+    This release adds back a missing file that is required to launch jEdit.
+
 **6.16.4.524**: December 16, 2013
     This release fixed Android building support, the Replay function, and
     the scanning of save games. It also includes a number of improvements
