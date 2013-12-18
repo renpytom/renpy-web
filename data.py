@@ -64,7 +64,7 @@ to Ren'Py development.
 """,
 
     history="""\
-**6.16.4.524**: December 17, 2013
+**6.16.5.525**: December 17, 2013
     This release adds back a missing file that is required to launch jEdit.
 
 **6.16.4.524**: December 16, 2013
