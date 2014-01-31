@@ -27,8 +27,8 @@ releases = [ ]
 # 3. Add to history.
 
 Release(
-    prerelease=False,
-    invisible=False,
+    prerelease=True,
+    invisible=True,
     version="6.17",
     prerelease_date="January 30, 2014",
     date="February xx, 2014",
