@@ -8,12 +8,77 @@ from model import *
 # Release and WikiRelease statement-commands, below.
 releases = [ ]
 
+# Private Prerelease checklist:
+#
+# 1. prerelease=True
+# 2. invisible=True
+# 3. version
+# 4. patch=0
+# 5. patch_date=None
+# 6. name
+# 7. sizes
+# 8. deps
+# 9. announcement.
+
 # Patch release checklist:
 #
 # 1. Bump patch.
 # 2. Update patch_date.
 # 3. Add to history.
 
+Release(
+    prerelease=False,
+    invisible=False,
+    version="6.17",
+    prerelease_date="January 30, 2014",
+    date="February xx, 2014",
+    patch=0,
+    patch_date=None,
+    name="In This Decade...",
+    exe=28,
+    bz2=36,
+    zip=39,
+    android=True,
+    powerpc=False,
+    deps="6.17.0",
+    world_order=5,
+    announcement="""\
+As we reach the tenth anniversary of the start of Ren'Py development,
+I'm pleased to announce Ren'Py 6.17 "In This Decade...". Major improvements
+in this release include:
+
+* A rewrite of the Style system that should improve Ren'Py's performance.
+* A new style statement that makes it easier to define styles.
+* A new "show layer" statement that makes it convenient to apply transforms
+  and ATL transforms to entire layers at once.
+* Several other syntax improvements.
+* French and Russian translations.
+* The integration of RAPT (the Ren'Py Android Packaging Tool) with the
+  Ren'Py SDK. Ren'Py now downloads RAPT using the Ren'Py updater - it's
+  no longer necessary to download RAPT separately.
+
+This release also includes several other new functions and actions, and
+a pair of major bugfixes that affect the Android platform.
+
+This release has been brought to you by:
+
+* Koichi "vbkaisetsu" Akabe
+* CensoredUsername (C)
+* kyouryuukunn
+* Daniel Luque
+* Tom "PyTom" Rothamel
+* tlm-2501
+""",
+
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
 
 
 Release(

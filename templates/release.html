@@ -11,7 +11,7 @@
   {% if release.prerelease %}
   <p style="color: #800; text-align: center;">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</p>
   {% endif %}
-  
+
   {% if release.top_html %}{{ release.top_html|safe }}{% endif %}
 
     <h1>Download Ren'Py {{release.version}}</h1>
@@ -31,14 +31,14 @@
     {% endif %}
 
     <p>
-        
-        <strong>Ren'Py {{release.version}} "{{release.name}}"</strong> was released on {{release.date}}. 
+
+        <strong>Ren'Py {{release.version}} "{{release.name}}"</strong> was released on {{release.date}}.
         {% if release.patch_date %}
         It was updated to {{ release.full_version }} on {{ release.patch_date }}.
         {% endif %}
 
         The main distributions are:
-        
+
     </p>
 
     <ul id="downloads">
@@ -49,13 +49,15 @@
 
     <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.4 and up, and Linux x86{% if release.world_order >= 4 %}/x86_64{% endif %}. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
 
-    {% if release.android %}
+    {% if release.android and release.world_order < 5 %}
     <p style="clear: both"><strong>Android.</strong>
         To package a Ren'Py game for Android, please use RAPT - the Ren'Py Android Packaging Tool. RAPT can be downloaded <a href="/dl/android">here</a>, and is documented in the <a href="/doc/html/android.html">Ren'Py Documentation</a>.
     </p>
     {% endif %}
 
-{% if release.world_order >= 4%}
+{% if release.world_order >= 5 %}
+    <p><strong>Additional Downloads.</strong> When necessary, the Ren'Py SDK will automatically download additional packages, such as text editors and Android support. These packages are available for direct download <a href="#dlc">at the bottom of this page</a>.
+{% elif release.world_order == 4 %}
     <p><strong>Additional Downloads.</strong> When first used, Ren'Py will prompt you to download a text editor. An Internet connection is required for this download.</p>
 {% else %}
     <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
@@ -102,11 +104,12 @@
 
 {% if release.world_order >= 4%}
 <section>
+   <a name="dlc"></a>
    <h2>Editor Downloads</h2>
-  
+
     <p>
-    When first asked to edit a file, the Ren'Py launcher will prompt you to download and 
-    install an editor. As this may fail if your Internet connection is unreliable, the 
+    When first asked to edit a file, the Ren'Py launcher will prompt you to download and
+    install an editor. As this may fail if your Internet connection is unreliable, the
     editors can be downloaded separately. To install, extract the contents of the editor
     archive to the Ren'Py directory.
     </p>
@@ -118,8 +121,27 @@
       <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
       <dt><strong>jEdit:</strong> {{ dl("jedit.zip") }}</dt>
     </dl>
-  
-  
+
+</section>
+{% endif %}
+
+{% if release.world_order >= 5%}
+<section>
+   <a name="dlc"></a>
+   <h2>Android Support</h2>
+
+    <p>
+    When building an Android package, the Ren'Py launcher will prompt you to download and
+    install RAPT, the Ren'Py Android Packaging Tool. As this may fail if your Internet connection is unreliable, the
+    editors can be downloaded separately. To install, extract the contents of the editor
+    archive to the Ren'Py directory. (Place the "rapt" directory into the "renpy-{{release.full_version}}" directory.)
+    </p>
+
+
+    <dl>
+      <dt><strong>RAPT:</strong> {{ dl("rapt.zip") }}</dt>
+    </dl>
+
 </section>
 {% endif %}
 
