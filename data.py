@@ -28,9 +28,9 @@ releases = [ ]
 
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.17",
-    prerelease_date="January 30, 2014",
+    prerelease_date="February 15, 2014",
     date="February xx, 2014",
     patch=0,
     patch_date=None,
