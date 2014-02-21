@@ -27,11 +27,11 @@ releases = [ ]
 # 3. Add to history.
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.17",
     prerelease_date="February 15, 2014",
-    date="February xx, 2014",
+    date="February 20, 2014",
     patch=0,
     patch_date=None,
     name="In This Decade...",
@@ -51,6 +51,8 @@ in this release include:
 * A new style statement that makes it easier to define styles.
 * A new "show layer" statement that makes it convenient to apply transforms
   and ATL transforms to entire layers at once.
+* A new "window auto" statement that enables automatic management of the
+  dialogue window.
 * Several other syntax improvements.
 * French and Russian translations.
 * The integration of RAPT (the Ren'Py Android Packaging Tool) with the
@@ -58,7 +60,7 @@ in this release include:
   no longer necessary to download RAPT separately.
 
 This release also includes several other new functions and actions, and
-a pair of major bugfixes that affect the Android platform.
+major bugfixes that affect the Android platform.
 
 This release has been brought to you by:
 
