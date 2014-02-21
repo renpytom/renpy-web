@@ -49,6 +49,7 @@ in this release include:
 
 * A rewrite of the Style system that should improve Ren'Py's performance.
 * A new style statement that makes it easier to define styles.
+* A rewritten shift+I style inspector lets you view those styles.
 * A new "show layer" statement that makes it convenient to apply transforms
   and ATL transforms to entire layers at once.
 * A new "window auto" statement that enables automatic management of the
