@@ -32,8 +32,8 @@ Release(
     version="6.17",
     prerelease_date="February 15, 2014",
     date="February 20, 2014",
-    patch=0,
-    patch_date=None,
+    patch=2,
+    patch_date="February 28, 2014",
     name="In This Decade...",
     exe=28,
     bz2=36,
@@ -74,6 +74,17 @@ This release has been brought to you by:
 """,
 
     history="""\
+**6.17.2.319**: February 28, 2014
+    This release adds a new "translate <i>language</i> style <i>style_name</i>"
+    statement, which is used to customize styles in a particular language. It
+    also improves scanning the projects directory and fixes various other
+    issues.
+
+**6.17.1.309**: February 24, 2014
+    This release fixes a problem where an update could overwrite a file in
+    the RAPT directory, preventing builds. It also updates and improves
+    translations, and deals gracefully with improperly encoded files in
+    the projects directory.
 """,
 
     full_html="""\
