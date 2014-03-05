@@ -32,8 +32,8 @@ Release(
     version="6.17",
     prerelease_date="February 15, 2014",
     date="February 20, 2014",
-    patch=2,
-    patch_date="February 28, 2014",
+    patch=3,
+    patch_date="March 4, 2014",
     name="In This Decade...",
     exe=28,
     bz2=36,
@@ -74,6 +74,12 @@ This release has been brought to you by:
 """,
 
     history="""\
+**6.17.3.327**: March 4, 2014
+    This release fixes a bug where Ren'Py would misparse properties and
+    attributes that began with a Python operator. (For example, ``insensitive``,
+    which begins with ``in``.) It also rewrites the missing image code to use
+    styles and screens.
+
 **6.17.2.319**: February 28, 2014
     This release adds a new "translate <i>language</i> style <i>style_name</i>"
     statement, which is used to customize styles in a particular language. It
