@@ -76,8 +76,8 @@ This release has been brought to you by:
     history="""\
 **6.17.4.409**: April 16, 2014
     This release fixes problems with Android (especially ones caused by a missing
-    play licensing library), adds support for the Amazon Fire TV console, and prevents
-    large memory leaks from occurring when shift+R is pressed.
+    play licensing library), adds support for the Amazon Fire TV console, allows imagemaps
+    in viewports, and prevents large memory leaks from occurring when shift+R is pressed.
 
 **6.17.3.327**: March 4, 2014
     This release fixes a bug where Ren'Py would misparse properties and
