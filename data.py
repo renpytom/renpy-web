@@ -32,8 +32,8 @@ Release(
     version="6.17",
     prerelease_date="February 15, 2014",
     date="February 20, 2014",
-    patch=3,
-    patch_date="March 4, 2014",
+    patch=4,
+    patch_date="April 16, 2014",
     name="In This Decade...",
     exe=28,
     bz2=36,
@@ -74,6 +74,11 @@ This release has been brought to you by:
 """,
 
     history="""\
+**6.17.4.409**: April 16, 2014
+    This release fixes problems with Android (especially ones caused by a missing
+    play licensing library), adds support for the Amazon Fire TV console, and prevents
+    large memory leaks from occurring when shift+R is pressed.
+
 **6.17.3.327**: March 4, 2014
     This release fixes a bug where Ren'Py would misparse properties and
     attributes that began with a Python operator. (For example, ``insensitive``,
