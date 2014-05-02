@@ -32,8 +32,8 @@ Release(
     version="6.17",
     prerelease_date="February 15, 2014",
     date="February 20, 2014",
-    patch=4,
-    patch_date="April 16, 2014",
+    patch=5,
+    patch_date="May 1, 2014",
     name="In This Decade...",
     exe=28,
     bz2=36,
@@ -69,11 +69,17 @@ This release has been brought to you by:
 * CensoredUsername (C)
 * kyouryuukunn
 * Daniel Luque
+* Renoa
 * Tom "PyTom" Rothamel
 * tlm-2501
 """,
 
     history="""\
+**6.17.5.492**: May 1, 2014
+    This release adds a new Arabic translation, and updates the Japanese and
+    Spanish translation. It also fixes several bugs affecting the shift+R
+    reload functionality, and provides several new features.
+
 **6.17.4.409**: April 16, 2014
     This release fixes problems with Android (especially ones caused by a missing
     play licensing library), adds support for the Amazon Fire TV console, allows imagemaps
