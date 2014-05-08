@@ -75,9 +75,13 @@ This release has been brought to you by:
 """,
 
     history="""\
+**6.17.6.512**: May 7, 2014
+    This released adds new German and Korean translations, and works around
+    a bug that prevented the Ren'Py launcher from starting on certain macs.
+
 **6.17.5.492**: May 1, 2014
     This release adds a new Arabic translation, and updates the Japanese and
-    Spanish translation. It also fixes several bugs affecting the shift+R
+    Spanish translations. It also fixes several bugs affecting the shift+R
     reload functionality, and provides several new features.
 
 **6.17.4.409**: April 16, 2014
