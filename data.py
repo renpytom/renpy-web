@@ -32,8 +32,8 @@ Release(
     version="6.17",
     prerelease_date="February 15, 2014",
     date="February 20, 2014",
-    patch=6,
-    patch_date="May 7, 2014",
+    patch=7,
+    patch_date="July 6, 2014",
     name="In This Decade...",
     exe=28,
     bz2=36,
@@ -75,8 +75,13 @@ This release has been brought to you by:
 """,
 
     history="""\
+**6.17.7.521**: July 6, 2014
+    This release updates the Android SDK to a working version, adds a low-level
+    in-app purchasing framework, and fixes an issue with movie playback on
+    desktop platforms.
+
 **6.17.6.512**: May 7, 2014
-    This released adds new German and Korean translations, and works around
+    This release adds new German and Korean translations, and works around
     a bug that prevented the Ren'Py launcher from starting on certain macs.
 
 **6.17.5.492**: May 1, 2014
