@@ -26,6 +26,65 @@ releases = [ ]
 # 2. Update patch_date.
 # 3. Add to history.
 
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.18",
+    prerelease_date="August 24, 2014",
+    date="August xx, 2014",
+    patch=0,
+    patch_date="",
+    name="... Through Shared Popular Culture",
+    exe=31,
+    bz2=41,
+    zip=44,
+    android=True,
+    powerpc=False,
+    deps="6.17.0",
+    world_order=5,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.18 "... Through Shared Popular Culture". Major
+improvements in this release include:
+
+* A full rewrite of screen language that has the potential for significantly
+  improved performance.
+* Self-voicing support that provides a level of accessibility to blind
+  users.
+* A high-level Android in-app purchasing framework.
+* New Italian, Portuguese, and Simplified Chinese translations.
+
+This release also includes many other features and improvements.
+
+This release has been brought to you by:
+
+* Koichi Akabe
+* Duanemoody
+* Emmannuel Marty
+* Helloise
+* Huanxuantian
+* Daniel Luque
+* Javimat
+* Kyouryuukunn
+* Mrstalker
+* Oshi-Shinobu
+* Renoa
+* Shiz
+* Tom "PyTom" Rothamel
+* Winter Wolves
+""",
+
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
 Release(
     prerelease=False,
     invisible=False,
