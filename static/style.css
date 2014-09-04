@@ -10,6 +10,7 @@ body {
 .navbar-brand {
 	background: url(/static/navbar-logo.png);
     background-repeat: no-repeat;
+    background-size: auto 100%;
     padding-left: 50px;
     color: #444 !important;
     font-size: 20px;
