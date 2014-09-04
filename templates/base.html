@@ -1,88 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        
-        <title>{% block title %}Home - Ren'Py{% endblock %}</title>
-        
-        <link rel="alternate" href="/feed/" title="Announcements Atom Feed" type="application/atom+xml">
 
-        <meta name="og:title" content="The Ren'Py Visual Novel Engine"> 
-        <meta name="og:image" content="http://www.renpy.org/static/logo.png" >
-        <meta name="og:type" content="website">
-        <meta name="og:description" content="Ren'Py is a visual novel engine that helps you use words, images, and sounds to tell stories with the computer, such as visual novels and life simulation games.">
-        <meta name="og:url" content="http://www.renpy.org">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}Home - Ren'Py{% endblock %}</title>
+
+        <link rel="alternate" href="/feed/" title="Announcements Atom Feed" type="application/atom+xml">
         <meta name="fb:page_id" content="179822028707441">
-        
+
         <link rel="icon" href="/static/favicon.ico">
 
-        <link rel="stylesheet" href="/static/fonts.css">
+        <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="/static/style.css">
-        <!--[if lte IE 8]><link rel="stylesheet" href="/static/style-ie.css">
-        <script type="text/javascript" src="/static/iepp.1-6-2.min.js"></script><![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
         {% block extra_head %}{% endblock %}
     </head>
     <body>
         {% block header %}
-        <header>
-            <p id="nav-header"><strong>Navigation</strong></p>
-            <a id="logo" href="/" title="What is Ren'Py?">Ren'Py</a>
-            <nav>
-                <ul id="menu">
-                    <li class="menu-item"><a {% if name == 'why' %}class="selected" {% endif %}href="/why.html" title="Why Ren'Py?">Why</a></li>
-                    <li class="menu-item"><a {% if name == 'latest' %}class="selected" {% endif %}href="/latest.html" title="Download Ren'Py">Download</a></li>
-                    <li class="menu-item"><a href="/doc/html/">Documentation</a></li>
-                    <li class="menu-item"><a {% if name == 'support' %}class="selected" {% endif %}href="/support.html">Support</a></li>
-                    <li class="menu-item"><a href="http://games.renpy.org/">Games</a></li>
-                    <li class="menu-item"><a href="/wiki/">Wiki</a></li>
-                </ul>
-            </nav>
-            <form action="http://www.google.com/cse">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Ren'Py</a>
+               </div>
+
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav">
+                <li {% if name == 'why' %}class="active"{% endif %} ><a href="/why.html" title="Why Ren'Py?">Why</a></li>
+                <li {% if name == 'latest' %}class="active"{% endif %}><a href="/latest.html" title="Download Ren'Py">Download</a></li>
+                <li ><a href="/doc/html/">Documentation</a></li>
+                <li ><a href="http://games.renpy.org/">Games</a></li>
+            </ul>
+
+            <form class="navbar-form navbar-right" action="http://www.google.com/cse">
                 <input type="hidden" name="cx" value="000797277883883151475:iiwpz4lr2zw" />
                 <input type="hidden" name="ie" value="UTF-8" />
-                <input id="search" type="text" name="q" title="Search Ren'Py">
-                <button type="submit" title="Search Ren'Py">Search</button>
+                <div class="form-group">
+                <input class="form-control" id="search" type="text" name="q" placeholder="Search Ren'Py" title="Search Ren'Py">
+                <button class="btn btn-default" type="submit" title="Search Ren'Py">Search</button>
+                </div>
             </form>
-            <div class="clear"></div>
-        </header>
+
+             </div>
+
+
+            </div>
+            </nav>
         {% endblock %}
 
-        <div id="content">
+
+
+        <div id="content" class="container">
             {% block content %}
             <p>I can has base? :3</p>
             {% endblock %}
 
             <div class="clear"></div>
-            
+
         </div>
 
         {% block footer %}
-        <footer>
- 
-            <ul id="quick-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/why.html">Why</a></li>
-                <li><a href="/latest.html">Download</a></li>
-                <li><a href="/doc/html/">Documentation</a></li>
-                <li><a href="/support.html">Support</a></li>
-                <li><a href="http://games.renpy.org/">Games</a></li>
-                <li><a href="/wiki/">Wiki</a></li>
-            </ul>
- 
-            <p id="social">
-            <g:plusone size="medium" href="http://www.renpy.org"></g:plusone>
-            <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.renpy.org/" data-text="The Ren'Py Visual Novel Engine" data-count="horizontal" data-via="renpytom">Tweet</a>
-            <iframe src="http://www.facebook.com/plugins/like.php?app_id=175740402485772&amp;href=http%3A%2F%2Fwww.renpy.org&amp;send=false&amp;layout=button_count&amp;width=90&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
-            </p>
-        </footer>
 
         <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."), pageTracker;
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         </script>
-        <script type="text/javascript" src="/static/main.js" async defer></script>
-        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>        
-        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
+        <!--   <script type="text/javascript" src="/static/main.js" async defer></script> -->
         {% endblock %}
     </body>
 </html>
