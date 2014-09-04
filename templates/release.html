@@ -1,61 +1,57 @@
 {% extends "base.html" %}
 {% set doclink = "http://www.renpy.org/dev-doc/html" if release.prerelease else "http://www.renpy.org/doc/html" %}
 
-{% block title %}Download Ren'Py {{release.version}}{% endblock %}
+{% block title %}Ren'Py {{release.version}}{% endblock %}
 
 {% macro url(variant) %}http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
 {% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
 
 {% block content %}
+
+
+  {% if release.full_html %}<div class="fullwidth">{{ release.full_html | safe}}</div>{% endif %}
+
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
 <section>
-  {% if release.prerelease %}
-  <p style="color: #800; text-align: center;">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</p>
-  {% endif %}
 
   {% if release.top_html %}{{ release.top_html|safe }}{% endif %}
 
-    <h1>Download Ren'Py {{release.version}}</h1>
 
-    <p>Ren'Py is free to download and use for commercial and non-commercial purposes.<br>It may be modified and distributed under the terms of its <a href="http://www.renpy.org/doc/html/license.html">license</a>.</p>
-
-    {% if release.full_html %}
-      <div style="width: 1000px; margin-left: -15px">
-        {{ release.full_html | safe}}
-      </div>
-    {% endif %}
-
-    {% if release.aside_html %}
-    <aside class="after-header">
-        {{ release.aside_html|safe }}
-    </aside>
-    {% endif %}
+    <h1>Ren'Py {{release.version}} <small>"{{release.name}}"</small></h1>
 
     <p>
 
-        <strong>Ren'Py {{release.version}} "{{release.name}}"</strong> was released on {{release.date}}.
+        was released on {{release.date}}.
         {% if release.patch_date %}
         It was updated to {{ release.full_version }} on {{ release.patch_date }}.
         {% endif %}
 
-        The main distributions are:
-
+        The main downloads of Ren'Py {{ release.version }} are:
     </p>
 
-    <ul id="downloads">
-        <li><a href="{{ url("sdk.7z.exe") }}" class="button download-button win">Download SDK <span>7z.exe - {{ release.exe }} MiB</span></a></li>
-        <li><a href="{{ url("sdk.zip") }}" class="button download-button mac">Download SDK <span>zip  {{ release.zip }} MiB</span></a></li>
-        <li><a href="{{ url("sdk.tar.bz2") }}" class="button download-button linux">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
-    </ul>
+    <div class="center">
+        <a href="{{ url("sdk.7z.exe") }}" class="download-button win btn btn-primary btn-lg">Download SDK <span>7z.exe - {{ release.exe }} MiB</span></a></li>
+        <a href="{{ url("sdk.zip") }}" class="download-button mac btn btn-primary btn-lg">Download SDK <span>zip  - {{ release.zip }} MiB</span></a></li>
+        <a href="{{ url("sdk.tar.bz2") }}" class="download-button linux btn btn-primary btn-lg">Download SDK <span>tar.bz2 - {{ release.bz2 }} MiB</span></small></a></li>
+    </div>
+
+  {% if release.prerelease %}
+  <div class="alert alert-danger">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</div>
+  {% endif %}
+
 
     <!-- <p style="margin-left: 20%; margin-right: 20%; text-align: center; font-size: 95%;">While waiting for Ren'Py to download, please take a <a href="https://docs.google.com/forms/d/1rfjuOKpOhRWIbDw9Tal_iyOHVRQRODBot-TqFjWCSqU/viewform">6-question demographic survey</a>, to help us understand who uses Ren'Py. Thanks!</p> -->
 
-    <p>You only need to download one of these three files. Each of these files contains the full Ren'Py software development kit, containing everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.6 and up, and Linux x86{% if release.world_order >= 4 %}/x86_64{% endif %}. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
+    <p>You only need to download one of these three files. Each contains the full Ren'Py software development kit, with everything needed to develop Ren'Py games for Windows XP and up, Mac OS X 10.6 and up, and Linux x86{% if release.world_order >= 4 %}/x86_64{% endif %}. The development environment contains the files needed to produce games for all three platforms, the Ren'Py tutorial, and "The Question", an example game.</p>
 
     {% if release.android and release.world_order < 5 %}
     <p style="clear: both"><strong>Android.</strong>
         To package a Ren'Py game for Android, please use RAPT - the Ren'Py Android Packaging Tool. RAPT can be downloaded <a href="/dl/android">here</a>, and is documented in the <a href="/doc/html/android.html">Ren'Py Documentation</a>.
     </p>
     {% endif %}
+
+    <p>Ren'Py is free to download and use for commercial and non-commercial purposes. It may be modified and distributed under the terms of its <a href="http://www.renpy.org/doc/html/license.html">license</a>.</p>
 
 {% if release.world_order >= 5 %}
     <p><strong>Additional Downloads.</strong> When necessary, the Ren'Py SDK will automatically download additional packages, such as text editors and Android support. These packages are available for direct download <a href="#dlc">at the bottom of this page</a>.
@@ -117,7 +113,7 @@
     </p>
 
 
-    <dl>
+    <dl style="download">
       <dt><strong>Editra (Windows):</strong> {{ dl("editra-windows.zip") }}</dt>
       <dt><strong>Editra (Mac):</strong> {{ dl("editra-mac.zip") }}</dt>
       <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
@@ -163,4 +159,7 @@
 
     <p>We also maintain a <a href="/release_list.html">complete list of releases</a>.
 </section>
+</div>
+</div>
+
 {% endblock %}

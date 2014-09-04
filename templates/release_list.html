@@ -13,7 +13,7 @@
       this page has links to all of our final releases.
     </p>
 
-    <table class="release-list">
+    <table class="table">
       <tr>
         <th>#</th>
         <th>Version</th>
@@ -30,14 +30,14 @@
         <td><a href="/wiki/renpy/releases/{{ r.version }}">Ren'Py {{ r.version }}</a></td>
         {% else %}
         <td><a href="/release/{{ r.version }}">Ren'Py {{ r.version }}</a></td>
-        {% endif %}        
+        {% endif %}
 
         <td>{% if r.name %}"{{ r.name }}"{% endif %}</td>
         <td>{{ r.date }}</td>
       </tr>
 
       {% endfor %}
-      
+
     </table>
 
     <p>
@@ -46,5 +46,5 @@
       <a href="http://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=4638">here (version 1)</a>
       and <a href="http://www.bishoujo.us/old-renpy/">here (versions 2 &amp; 3)</a>.
     </p>
-    
+
 {% endblock %}

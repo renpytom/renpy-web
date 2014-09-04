@@ -84,3 +84,17 @@ aside.small figcaption {
 section {
 	clear: both;
 }
+
+dt {
+	margin-top: 10px;
+}
+
+.fullwidth {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.fullwidth img {
+	width: 100%;
+	height: auto;
+}

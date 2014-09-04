@@ -173,7 +173,7 @@ This release has been brought to you by:
 """,
 
     full_html="""\
-<img src="/static/6.17.jpg" width="1000" height="450" alt="Screenshot of Ren'Py 6.17">
+<img src="/static/6.17.jpg" alt="Screenshot of Ren'Py 6.17">
 """,
 
     top_html="""\
