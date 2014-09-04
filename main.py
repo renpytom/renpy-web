@@ -3,7 +3,7 @@
 import sys, os, time, datetime
 sys.path.insert(0, os.path.dirname(__file__))
 
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, redirect
 from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
@@ -21,12 +21,16 @@ def release(name):
         abort(404)
 
     release = data.release_version[name]
-        
+
     return render_template('release.html', release=release, data=data)
 
 @app.route("/latest.html")
 def latest():
     return render_template('release.html', name='latest', release=data.current, data=data)
+
+@app.route("/support.html")
+def support():
+    return redirect("/")
 
 @app.route("/<name>.html")
 def page(name):
@@ -49,20 +53,20 @@ def feed():
     """
     Renders the atom feed.
     """
-    
+
     feed = AtomFeed(
         "Ren'Py Visual Novel Engine",
         feed_url="http://www.renpy.org/feed/",
         url="http://www.renpy.org/"
         )
-    
+
     prerelease = data.prerelease
     current = data.current
-    
+
     def parse_date(s):
         ts = time.strptime(s, "%B %d, %Y")
         return datetime.datetime.fromtimestamp(time.mktime(ts))
-    
+
     if prerelease:
         feed.add(
             u"Ren'Py {} Pre-Released".format(prerelease.version),
@@ -82,7 +86,7 @@ def feed():
             updated=parse_date(current.patch_date),
             author="Ren'Py Developers",
             )
-        
+
     feed.add(
         u"Ren'Py {} Released".format(current.version),
         unicode(render_template("feed.html", release=current, mode="release")),
@@ -91,10 +95,10 @@ def feed():
         updated=parse_date(current.date),
         author="Ren'Py Developers",
         )
-            
+
     return feed.get_response()
-        
-    
+
+
 
 # For use under mod wsgi.
 application = app
