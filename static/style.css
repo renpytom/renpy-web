@@ -2,9 +2,10 @@ body {
 	background: #acd;
 }
 
-#content {
+.content {
 	background: #fff;
     border: 1px solid #ccc;
+    margin-bottom: 15px;
 }
 
 .navbar-brand {
