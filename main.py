@@ -3,7 +3,7 @@
 import sys, os, time, datetime
 sys.path.insert(0, os.path.dirname(__file__))
 
-from flask import Flask, render_template, abort, redirect
+from flask import Flask, render_template, abort, redirect, Response
 from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
@@ -39,6 +39,15 @@ def page(name):
     """
 
     return render_template(name + ".html", name=name, data=data)
+
+@app.route("/robots.txt")
+def robots_txt():
+    rv = """\
+User-agent: *
+Disallow: /wiki/renpy/doc/reference/
+"""
+
+    return Response(rv, mimetype="text/plain")
 
 @app.route("/")
 def index():
