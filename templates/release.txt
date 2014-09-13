@@ -1,0 +1,14 @@
+{% set doclink = "http://www.renpy.org/dev-doc/html" if release.prerelease else "http://www.renpy.org/doc/html" %}
+{{release.announcement.strip()}}
+
+Downloads of {{release.version}} can be found at
+
+    http://www.renpy.org/release/{{release.version}}
+
+A full list of changes to Ren'Py can be found at:
+
+    {{ doclink }}/changelog.html
+
+A list of changes that may require you to update your game can be found at:
+
+    {{ doclink }}/incompatible.html

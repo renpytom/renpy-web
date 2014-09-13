@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys, os, time, datetime
+import sys, os, time, datetime, re
 sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, render_template, abort, redirect, Response
@@ -23,6 +23,18 @@ def release(name):
     release = data.release_version[name]
 
     return render_template('release.html', release=release, data=data)
+
+@app.route("/release/<name>.txt")
+def release_txt(name):
+    if name not in data.release_version:
+        abort(404)
+
+    release = data.release_version[name]
+
+    rv = render_template('release.txt', release=release, data=data)
+    rv = re.compile(r'^\*', re.MULTILINE).sub(r'[*]', rv)
+    return Response(rv, mimetype="text/plain")
+
 
 @app.route("/latest.html")
 def latest():
