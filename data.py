@@ -26,16 +26,20 @@ releases = [ ]
 # 2. Update patch_date.
 # 3. Add to history.
 
+# Final release checklist:
+#
+# 1. Bump date.
+# 2. prerelease=False
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.18",
     prerelease_date="August 24, 2014",
-    date="August xx, 2014",
+    date="September 12, 2014",
     patch=0,
     patch_date="",
-    name="... Through Shared Popular Culture",
+    name="... through shared popular culture.",
     exe=31,
     bz2=41,
     zip=44,
@@ -44,7 +48,7 @@ Release(
     deps="6.17.0",
     world_order=5,
     announcement="""\
-I'm pleased to announce Ren'Py 6.18 "... Through Shared Popular Culture". Major
+I'm pleased to announce Ren'Py 6.18 "... through shared popular culture.". Major
 improvements in this release include:
 
 * A full rewrite of screen language that has the potential for significantly
@@ -54,9 +58,8 @@ improvements in this release include:
 * A high-level Android in-app purchasing framework.
 * New Italian, Portuguese, and Simplified Chinese translations.
 
-This release also includes many other features and improvements.
-
-This release has been brought to you by:
+This release also includes many other features and fixes. It has been brought
+to you by:
 
 * Koichi Akabe
 * Duanemoody
