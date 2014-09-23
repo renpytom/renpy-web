@@ -30,6 +30,8 @@ releases = [ ]
 #
 # 1. Bump date.
 # 2. prerelease=False
+#
+# Remember to add.py --release !
 
 Release(
     prerelease=False,
@@ -37,8 +39,8 @@ Release(
     version="6.18",
     prerelease_date="August 24, 2014",
     date="September 12, 2014",
-    patch=0,
-    patch_date="",
+    patch=1,
+    patch_date="September 22, 2014",
     name="... through shared popular culture.",
     exe=31,
     bz2=41,
@@ -56,7 +58,8 @@ improvements in this release include:
 * Self-voicing support that provides a level of accessibility to blind
   users.
 * A high-level Android in-app purchasing framework.
-* New Italian, Portuguese, and Simplified Chinese translations.
+* New Italian, Portuguese, and Simplified Chinese translations, and a new
+  German template.
 
 This release also includes many other features and fixes. It has been brought
 to you by:
@@ -70,6 +73,8 @@ to you by:
 * Javimat
 * Kyouryuukunn
 * Mrstalker
+* Mugenjohncel
+* Nojoker
 * Oshi-Shinobu
 * Renoa
 * Shiz
@@ -78,6 +83,12 @@ to you by:
 """,
 
     history="""\
+**6.18.1.670**: September 22, 2014
+    This release fixes a number of bugs in Ren'Py 6.18. It changes ATL behavior
+    so that an ATL transform that is part of a screen will begin executing when
+    the transform (rather than the screen) is first shown. It also adds a new
+    placeholder image system, and a way to speak descriptive text as part of
+    the self-voicing process.
 """,
 
     full_html="""\
