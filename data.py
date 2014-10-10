@@ -39,12 +39,12 @@ Release(
     version="6.18",
     prerelease_date="August 24, 2014",
     date="September 12, 2014",
-    patch=1,
-    patch_date="September 22, 2014",
+    patch=2,
+    patch_date="October 10, 2014",
     name="... through shared popular culture.",
     exe=31,
-    bz2=41,
-    zip=44,
+    bz2=44,
+    zip=48,
     android=True,
     powerpc=False,
     deps="6.17.0",
@@ -58,31 +58,36 @@ improvements in this release include:
 * Self-voicing support that provides a level of accessibility to blind
   users.
 * A high-level Android in-app purchasing framework.
-* New Italian, Portuguese, and Simplified Chinese translations, and a new
-  German template.
+* New Italian, Portuguese, Simplified Chinese, and Traditional Chinese
+  translations, and a new German template.
 
 This release also includes many other features and fixes. It has been brought
 to you by:
 
 * Koichi Akabe
+* Civalin
 * Duanemoody
-* Emmannuel Marty
 * Helloise
 * Huanxuantian
 * Daniel Luque
 * Javimat
 * Kyouryuukunn
+* Emmannuel Marty
 * Mrstalker
 * Mugenjohncel
 * Nojoker
 * Oshi-Shinobu
 * Renoa
-* Shiz
 * Tom "PyTom" Rothamel
+* Shiz
 * Winter Wolves
 """,
 
     history="""\
+**6.18.2.729**:
+    This release adds many small new features, and fixes several minor bugs.
+    It also adds the Traditional Chinese translation.
+
 **6.18.1.670**: September 22, 2014
     This release fixes a number of bugs in Ren'Py 6.18. It changes ATL behavior
     so that an ATL transform that is part of a screen will begin executing when
