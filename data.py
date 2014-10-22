@@ -39,8 +39,8 @@ Release(
     version="6.18",
     prerelease_date="August 24, 2014",
     date="September 12, 2014",
-    patch=2,
-    patch_date="October 10, 2014",
+    patch=3,
+    patch_date="October 21, 2014",
     name="... through shared popular culture.",
     exe=31,
     bz2=44,
@@ -84,6 +84,10 @@ to you by:
 """,
 
     history="""\
+**6.18.3.761**:
+    This release improves prediction, adds the new screen language "showif"
+    statement, adds minor features, and fixes bugs.
+
 **6.18.2.729**:
     This release adds many small new features, and fixes several minor bugs.
     It also adds the Traditional Chinese translation.
