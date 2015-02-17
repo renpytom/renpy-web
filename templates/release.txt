@@ -1,7 +1,7 @@
 {% set doclink = "http://www.renpy.org/dev-doc/html" if release.prerelease else "http://www.renpy.org/doc/html" %}
 {{release.announcement.strip()}}
 
-Downloads of {{release.version}} can be found at
+Downloads of {{release.version}} can be found at:
 
     http://www.renpy.org/release/{{release.version}}
 

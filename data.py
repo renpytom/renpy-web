@@ -53,7 +53,7 @@ Release(
     powerpc=False,
     world_order=6,
     announcement="""\
-I'm pleased to announce Ren'Py 6.19 "Here's to the crazy ones." This release
+I'm pleased to announce Ren'Py 6.99 "Here's to the crazy ones." This release
 focuses on modernizing Ren'Py by moving to the SDL2 family of libraries. This
 modernization will lead to a series of benefits, both now and in the future.
 
