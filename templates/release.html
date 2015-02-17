@@ -51,10 +51,10 @@
     </p>
     {% endif %}
 
-    <p>Ren'Py is free to download and use for commercial and non-commercial purposes. It may be modified and distributed under the terms of its <a href="http://www.renpy.org/doc/html/license.html">license</a>.</p>
+    <p>Ren'Py is free to download and use for commercial and non-commercial purposes. It may be modified and distributed under the terms of its <a href="{{doclink}}/license.html">license</a>.</p>
 
 {% if release.world_order >= 5 %}
-    <p><strong>Additional Downloads.</strong> When necessary, the Ren'Py SDK will automatically download additional packages, such as text editors and Android support. These packages are available for direct download <a href="#dlc">at the bottom of this page</a>.
+    <p><strong>Additional Downloads.</strong> When necessary, the Ren'Py SDK will automatically download additional packages, such as text editors and Android/iOS support. These packages are available for direct download <a href="#dlc">at the bottom of this page</a>.
 {% elif release.world_order == 4 %}
     <p><strong>Additional Downloads.</strong> When first used, Ren'Py will prompt you to download a text editor. An Internet connection is required for this download.</p>
 {% else %}
@@ -74,30 +74,26 @@
     <h2>Announcement</h2>
     {{release.announcement|rst|safe}}
 
-    <p>Downloads of {{release.version}} can be found at:</p>
+    <br>
 
-    <dl>
-        <dd>
-            <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
-        </dd>
-    </dl>
+    <p>Downloads of Ren'Py {{release.version}} can be found at:</p>
 
+    <p style="margin-left: 2em">
+        <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+    <p>
 
     <p>A full list of changes to Ren'Py can be found at:</p>
 
-    <dl>
-        <dd>
-            <a href="{{ doclink }}/changelog.html">{{ doclink }}/changelog.html</a>
-        </dd>
-    </dl>
+    <p style="margin-left: 2em">
+        <a href="{{ doclink }}/changelog.html">{{ doclink }}/changelog.html</a>
+    </p>
 
     <p>A list of changes that may require you to update your game can be found at:</p>
 
-    <dl>
-        <dd>
-            <a href="{{ doclink }}/incompatible.html">{{ doclink }}/incompatible.html</a>
-        </dd>
-    </dl>
+    <p style="margin-left: 2em">
+        <a href="{{ doclink }}/incompatible.html">{{ doclink }}/incompatible.html</a>
+    </p>
+
 </section>
 
 {% if release.world_order >= 4%}
@@ -123,7 +119,7 @@
 </section>
 {% endif %}
 
-{% if release.world_order >= 5%}
+{% if release.world_order == 5%}
 <section>
    <a name="dlc"></a>
    <h2>Android Support</h2>
@@ -131,13 +127,40 @@
     <p>
     When building an Android package, the Ren'Py launcher will prompt you to download and
     install RAPT, the Ren'Py Android Packaging Tool. As this may fail if your Internet connection is unreliable, the
-    editors can be downloaded separately. To install, extract the contents of the
+    packages can be downloaded separately. To install, extract the contents of the
     archive to the Ren'Py directory. (Place the "rapt" directory into the "renpy-{{release.full_version}}" directory.)
     </p>
 
 
     <dl>
       <dt><strong>RAPT:</strong> {{ dl("rapt.zip") }}</dt>
+    </dl>
+
+</section>
+{% endif %}
+
+{% if release.world_order >= 6 %}
+<section>
+   <a name="dlc"></a>
+   <h2>Android and iOS Support</h2>
+
+    <p>
+    When building Android or iOS packages, Ren'Py will prompt you to download RAPT (Ren'Py Android Packaging Tool) or
+    Renios (Ren'Py iOS Support). As these downloads may fail if your Internet connection is unreliable, these packages
+    can be downloaded separately. To install, extract the contents of the archives to the Ren'Py directory (Place the )
+
+    When building an Android package, the Ren'Py launcher will prompt you to download and
+    install RAPT, the Ren'Py Android Packaging Tool. As this may fail if your Internet connection is unreliable, the
+    editors can be downloaded separately. To install, extract the contents of the
+    archive to the Ren'Py directory. (Place the "rapt" or "renios" directory into the "renpy-{{release.full_version}}"
+    directory.)
+    </p>
+
+    <dl>
+      <dt><strong>Android Support (RAPT):</strong> {{ dl("rapt.zip") }}</dt>
+    </dl>
+    <dl>
+      <dt><strong>iOS Support (Renios):</strong> {{ dl("renios.zip") }}</dt>
     </dl>
 
 </section>
@@ -153,8 +176,17 @@
         {% endif %}
         <dt><strong>Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
+
+        {% if release.deps %}
         <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
         <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
+        {% else %}
+        <dt><strong>Dependencies:</strong> <a href="{{doclink}}/license.html">{{ doclink}}/license.html</a> </dt>
+        <dd>Ren'Py contains free software licensed under a number of licenses, including the GNU Lesser
+        General Public License. A full list of software and links to repositories from which the software
+        can be downloaded is linked above.</dd>
+        {% endif %}
+
     </dl>
 
     <p>We also maintain a <a href="/release_list.html">complete list of releases</a>.

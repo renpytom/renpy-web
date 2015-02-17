@@ -17,7 +17,7 @@ releases = [ ]
 # 5. patch_date=None
 # 6. name
 # 7. sizes
-# 8. deps
+# 8. -
 # 9. announcement.
 
 # Patch release checklist:
@@ -32,6 +32,76 @@ releases = [ ]
 # 2. prerelease=False
 #
 # Remember to add.py --release !
+
+
+# To get the list of contributors to a release, we can use the command:
+# git shortlog 6.99..HEAD
+
+
+Release(
+    prerelease=True,
+    invisible=True,
+    version="6.99",
+    prerelease_date="Febrary 16, 2015",
+    date="February xx, 2015",
+    patch=0,
+    patch_date=None,
+    name="Here's to the crazy ones.",
+    exe=34,
+    bz2=48,
+    zip=52,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.19 "Here's to the crazy ones." This release
+focuses on modernizing Ren'Py by moving to the SDL2 family of libraries. This
+modernization will lead to a series of benefits, both now and in the future.
+
+Perhaps the most obvious benefit is the addition of iOS support. Ren'Py can
+now produce iOS apps, targeting iPhone and iOS devices. To develop for iOS,
+you will need a Macintosh computer and paid iOS developer license.
+
+In addition, this release includes:
+
+* Rewritten Android support, based on SDL2. Among other things, Android now
+  supports the onscreen keyboard, rotating the screen, and bidirectional text.
+* Audio playback, using the same code on desktop and mobile platforms, so the
+  same audio files can be used on all platforms Ren'Py supports.
+* Support for Input Methods (IMEs), allowing text entry in non-English languages.
+* A high-level achievement API, including support for Steam achievements. (Steam
+  support will be made available on request to Steam developers.)
+* Improved support for custom text tags.
+* A Russian translation of the tutorial game.
+
+This release also includes a number of other fixes and improvements.
+
+We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
+a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
+the initial iOS port of Ren'Py that our current support is based on. Other
+contributors include:
+
+* Evilantishad0w
+* Giuseppe Bertone
+* Javimat
+* Kyouryuukunn
+* Lapalissiano
+* Nolanlemahn
+* Tlm-2501
+
+and myself, Tom "PyTom" Rothamel.
+""",
+
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
 
 Release(
     prerelease=False,
