@@ -40,10 +40,10 @@ releases = [ ]
 
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.99",
-    prerelease_date="Febrary 16, 2015",
-    date="February xx, 2015",
+    prerelease_date="March 13, 2015",
+    date="March xx, 2015",
     patch=0,
     patch_date=None,
     name="Here's to the crazy ones.",
@@ -86,6 +86,7 @@ contributors include:
 * Kyouryuukunn
 * Lapalissiano
 * Nolanlemahn
+* rivvil
 * Tlm-2501
 
 and myself, Tom "PyTom" Rothamel.
