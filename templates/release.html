@@ -5,6 +5,8 @@
 
 {% macro url(variant) %}http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
 {% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
+{% macro pygame_sdl2() %}http://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2-for-renpy-{{release.full_version}}.tar.bz2{% endmacro %}
+{% macro pygame_sdl2_dl() %}<a href="{{ pygame_sdl2() }}">pygame_sdl2-for-renpy-{{release.full_version}}.tar.bz2</a>{% endmacro %}
 
 {% block content %}
 
@@ -174,16 +176,21 @@
         <dt><strong>PowerPC Support:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
         <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
         {% endif %}
-        <dt><strong>Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
+        <dt><strong>Ren'Py Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
 
+{% if release.world_order >= 6 %}
+        <dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl() }}</dt>
+        <dd>Contains the source code for the version of pygame_sdl2 required to run this version of Ren'Py. This may be newer than any released version of pygame_sdl2.</dd>
+{% endif %}
+
         {% if release.deps %}
-        <dt><strong>Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
+        <dt><strong>Other Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
         <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
         {% else %}
-        <dt><strong>Dependencies:</strong> <a href="{{doclink}}/license.html">{{ doclink}}/license.html</a> </dt>
+        <dt><strong>Other Dependencies:</strong> <a href="{{doclink}}/license.html">{{ doclink}}/license.html</a> </dt>
         <dd>Ren'Py contains free software licensed under a number of licenses, including the GNU Lesser
-        General Public License. A full list of software and links to repositories from which the software
+        General Public License. A full list of software and links to git repositories from which the software
         can be downloaded is linked above.</dd>
         {% endif %}
 
