@@ -100,3 +100,11 @@ dt {
 	width: 100%;
 	height: auto;
 }
+
+.platform-logo {
+    height: 80px;
+}
+
+.platforms {
+	text-align: center;
+}
