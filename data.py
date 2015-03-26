@@ -39,11 +39,11 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99",
-    prerelease_date="March 13, 2015",
-    date="March xx, 2015",
+    prerelease_date="March 19, 2015",
+    date="March 25, 2015",
     patch=0,
     patch_date=None,
     name="Here's to the crazy ones.",
@@ -59,7 +59,8 @@ modernization will lead to a series of benefits, both now and in the future.
 
 Perhaps the most obvious benefit is the addition of iOS support. Ren'Py can
 now produce iOS apps, targeting iPhone and iOS devices. To develop for iOS,
-you will need a Macintosh computer and paid iOS developer license.
+you will need a Macintosh computer and paid iOS developer license, and will
+need to customize the interface to conform to iOS policies.
 
 In addition, this release includes:
 
@@ -71,7 +72,8 @@ In addition, this release includes:
 * A high-level achievement API, including support for Steam achievements. (Steam
   support will be made available on request to Steam developers.)
 * Improved support for custom text tags.
-* A Russian translation of the tutorial game.
+* A Russian translation of the tutorial game, and a Finnish translation of
+  the launcher.
 
 This release also includes a number of other fixes and improvements.
 
@@ -80,12 +82,15 @@ a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
 the initial iOS port of Ren'Py that our current support is based on. Other
 contributors include:
 
+* Daniel Luque
+* Diapolo10
 * Evilantishad0w
 * Giuseppe Bertone
 * Javimat
 * Kyouryuukunn
 * Lapalissiano
 * Nolanlemahn
+* Renoa
 * rivvil
 * Tlm-2501
 
