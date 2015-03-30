@@ -44,8 +44,8 @@ Release(
     version="6.99",
     prerelease_date="March 19, 2015",
     date="March 25, 2015",
-    patch=0,
-    patch_date=None,
+    patch=1,
+    patch_date="March 29, 2015",
     name="Here's to the crazy ones.",
     exe=34,
     bz2=48,
@@ -98,6 +98,13 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     history="""\
+**6.99.1.329**: March 29, 2015
+    This release fixes crashes that occurred in a number of important cases,
+    including non-ASCII directory names on Windows systems, 16-bit display
+    depths, and display rotation when targeting recent versions of Android.
+
+    It also fixes several non-crash bugs, adds three new functions, and
+    updates the Spanish and Japanese translations.
 """,
 
     full_html="""\
