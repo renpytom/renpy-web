@@ -57,6 +57,9 @@ I'm pleased to announce Ren'Py 6.99 "Here's to the crazy ones." This release
 focuses on modernizing Ren'Py by moving to the SDL2 family of libraries. This
 modernization will lead to a series of benefits, both now and in the future.
 
+This release is being managed as a rolling release leading to Ren'Py 7.0.
+New features may be added in point releases.
+
 Perhaps the most obvious benefit is the addition of iOS support. Ren'Py can
 now produce iOS apps, targeting iPhone and iOS devices. To develop for iOS,
 you will need a Macintosh computer and paid iOS developer license, and will
@@ -75,6 +78,13 @@ In addition, this release includes:
 * A Russian translation of the tutorial game, and a Finnish translation of
   the launcher.
 
+To this, the 6.99.2 release adds:
+
+* Support for the images directory. Image files placed into this directory
+  are automatically defined as images in Ren'Py,
+* The new AlphaMask displayable, which allows the alpha channel of one
+  displayable to be masked by that of another.
+
 This release also includes a number of other fixes and improvements.
 
 We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
@@ -82,7 +92,10 @@ a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
 the initial iOS port of Ren'Py that our current support is based on. Other
 contributors include:
 
+* Beuc
+* Caryoscelus
 * Daniel Luque
+* Denzil
 * Diapolo10
 * Evilantishad0w
 * Giuseppe Bertone
@@ -91,6 +104,7 @@ contributors include:
 * Lapalissiano
 * Nolanlemahn
 * Renoa
+* R.H. Lee
 * rivvil
 * Tlm-2501
 
