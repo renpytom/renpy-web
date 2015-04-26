@@ -1,13 +1,11 @@
 var pageTracker;
 
 $(function () {
-    pageTracker = _gat._getTracker("UA-1855234-1");
-    pageTracker._trackPageview();
-
     $(".download-button").on('click', function (ev) {
     	pageTracker._trackPageview(ev.target.href);
     });
 
+    $(".fancybox").fancybox();
 
     var btn_class = "btn-success";
 
@@ -26,5 +24,8 @@ $(function () {
     	$(".download-button.mac").removeClass("btn-other").addClass(btn_class);
     	$(".download-button.win").removeClass("btn-other").addClass(btn_class);
     }
+
+    pageTracker = _gat._getTracker("UA-1855234-1");
+    pageTracker._trackPageview();
 
 });

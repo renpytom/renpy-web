@@ -127,6 +127,7 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     full_html="""\
+<img src="/static/6.99.jpg" alt="Screenshot of Ren'Py 6.17" style="width: 100%">
 """,
 
     top_html="""\
