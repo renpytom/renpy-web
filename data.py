@@ -112,6 +112,11 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     history="""\
+**6.99.2.402**: April 25, 2015
+
+    This release adds new features, including the images directory and the
+    AlphaMask displayable. It also fixes bugs.
+
 **6.99.1.329**: March 29, 2015
     This release fixes crashes that occurred in a number of important cases,
     including non-ASCII directory names on Windows systems, 16-bit display
