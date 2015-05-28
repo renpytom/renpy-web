@@ -44,8 +44,8 @@ Release(
     version="6.99",
     prerelease_date="March 19, 2015",
     date="March 25, 2015",
-    patch=3,
-    patch_date="April 26, 2015",
+    patch=4,
+    patch_date="May 27, 2015",
     name="Here's to the crazy ones.",
     exe=34,
     bz2=48,
@@ -85,13 +85,21 @@ To this, the 6.99.2 release adds:
 * The new AlphaMask displayable, which allows the alpha channel of one
   displayable to be masked by that of another.
 
-This release also includes a number of other fixes and improvements.
+The 6.99.4 release adds:
+
+* The new default statement, which is used to set the initial value of a
+  variable in a game.
+* Support for the transclusion of screen language code inside use statements,
+  and support for creator-defined screen language statements.
+
+These releases also include a number of other fixes and improvements.
 
 We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
 a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
 the initial iOS port of Ren'Py that our current support is based on. Other
 contributors include:
 
+* Baekansi
 * Beuc
 * Caryoscelus
 * Daniel Luque
@@ -112,8 +120,14 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     history="""\
-**6.99.2.402**: April 25, 2015
+**6.99.4.467**: May 27, 2015
+    This release adds new features. It also fixes a number of bugs and
+    performance problems.
 
+**6.99.3.404**: April 26, 2015
+    This removes extraneous code that was causing problems.
+
+**6.99.2.403**: April 25, 2015
     This release adds new features, including the images directory and the
     AlphaMask displayable. It also fixes bugs.
 
