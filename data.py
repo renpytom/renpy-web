@@ -44,8 +44,8 @@ Release(
     version="6.99",
     prerelease_date="March 19, 2015",
     date="March 25, 2015",
-    patch=4,
-    patch_date="May 27, 2015",
+    patch=5,
+    patch_date="July 19, 2015",
     name="Here's to the crazy ones.",
     exe=34,
     bz2=48,
@@ -92,6 +92,12 @@ The 6.99.4 release adds:
 * Support for the transclusion of screen language code inside use statements,
   and support for creator-defined screen language statements.
 
+The 6.99.5 release adds:
+
+* Much faster startup, especially on mobile platforms.
+* Better support for iOS 8.
+* Many other small features.
+
 These releases also include a number of other fixes and improvements.
 
 We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
@@ -99,7 +105,9 @@ a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
 the initial iOS port of Ren'Py that our current support is based on. Other
 contributors include:
 
+* Asfdfdfd
 * Baekansi
+* Bbs3223474
 * Beuc
 * Caryoscelus
 * Daniel Luque
@@ -107,20 +115,27 @@ contributors include:
 * Diapolo10
 * Evilantishad0w
 * Giuseppe Bertone
+* Huang Junjie
 * Javimat
+* Konstantin Nikolayev
 * Kyouryuukunn
 * Lapalissiano
 * Nolanlemahn
 * Renoa
-* R.H. Lee
+* RangHo Lee
 * rivvil
 * Tlm-2501
+* Zigmut
 
 and myself, Tom "PyTom" Rothamel.
 """,
 
     history="""\
-**6.99.4.467**: May 27, 2015
+**6.99.5.602**: July 19, 2015
+    This release improves startup time, improves iOS 8 support, and
+    includes other improvements and fixes.
+
+**6qq.99.4.467**: May 27, 2015
     This release adds new features. It also fixes a number of bugs and
     performance problems.
 
