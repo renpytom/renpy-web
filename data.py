@@ -41,11 +41,162 @@ releases = [ ]
 Release(
     prerelease=False,
     invisible=False,
+    version="6.99.6",
+    prerelease_date="September 14, 2015",
+    date="September 14, 2015",
+    patch=None,
+    patch_date=None,
+    name="Here's to the crazy ones.",
+    exe=34,
+    bz2=48,
+    zip=52,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.99.6. This is the latest in a series of
+releases that introduce the new features that will make up Ren'Py 7.
+
+The 6.99.6 release:
+
+* Has much better support for high-resolution displays. Retina displays are now supported
+  on Mac OS X and iOS - the latter support was broken by 6.99.5. On all platforms,
+  Ren'Py will try to render text at the display resolution, rather than the game's
+  resolution. This means that text should remain sharp even as the window is scaled up.
+
+* Joystick support has been removed from Ren'Py, and replaced with gamepad
+  support based on SDL2's new controller API. This API maps all sorts of gamepads
+  to an Xbox-style controller, making standard bindings possible in the same way
+  such bindings are possible for a keyboard and mouse.
+
+* Ren'Py now automatically backs up .rpy files when a game changes. These script
+  files are backed up to the system-wide save directory.
+
+This release also includes a number of other fixes and improvements.
+
+We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
+a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
+the initial iOS port of Ren'Py that our current support is based on. Other
+contributors include:
+
+* Asfdfdfd
+* Baekansi
+* Bbs3223474
+* Beuc
+* Caryoscelus
+* Daniel Luque
+* Denzil
+* Diapolo10
+* Evilantishad0w
+* Giuseppe Bertone
+* Huang Junjie
+* Javimat
+* Konstantin Nikolayev
+* Kyouryuukunn
+* Lapalissiano
+* Nolanlemahn
+* Renoa
+* RangHo Lee
+* rivvil
+* Tlm-2501
+* Zigmut
+
+and myself, Tom "PyTom" Rothamel.
+""",
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at
+
+  http://www.renpy.org/release/6.99.5
+
+and
+
+  http://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+<img src="/static/6.99.jpg" alt="Screenshot of Ren'Py 6.17" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+    )
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="6.99.5",
+    prerelease_date="July 16, 2015",
+    date="July 19, 2015",
+    patch=None,
+    patch_date=None,
+    name="Here's to the crazy ones.",
+    exe=34,
+    bz2=48,
+    zip=52,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.99.5. This is the latest in a series of
+releases that introduce the new features that will make up Ren'Py 7.
+
+The 6.99.5 release focuses on mobile platforms. It massively improved
+startup time, which helps all platforms, but is especially important
+on the slower mobile devices. It also improves support for iOS 8, and
+has other fixes an improvements.
+
+We'd like to thank Patrick Dawson for writing much of the code of Pygame_SDL2,
+a new, SDL2-based implementation of the Pygame API, and Chris Mear, who created
+the initial iOS port of Ren'Py that our current support is based on. Other
+contributors include:
+
+* Asfdfdfd
+* Baekansi
+* Bbs3223474
+* Beuc
+* Caryoscelus
+* Daniel Luque
+* Denzil
+* Diapolo10
+* Evilantishad0w
+* Giuseppe Bertone
+* Huang Junjie
+* Javimat
+* Konstantin Nikolayev
+* Kyouryuukunn
+* Lapalissiano
+* Nolanlemahn
+* Renoa
+* RangHo Lee
+* rivvil
+* Tlm-2501
+* Zigmut
+
+and myself, Tom "PyTom" Rothamel.
+""",
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at
+
+  http://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+<img src="/static/6.99.jpg" alt="Screenshot of Ren'Py 6.17" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+    )
+
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="6.99",
     prerelease_date="March 19, 2015",
     date="March 25, 2015",
-    patch=5,
-    patch_date="July 19, 2015",
+    patch=4,
+    patch_date="May 27, 2015",
     name="Here's to the crazy ones.",
     exe=34,
     bz2=48,
@@ -135,7 +286,7 @@ and myself, Tom "PyTom" Rothamel.
     This release improves startup time, improves iOS 8 support, and
     includes other improvements and fixes.
 
-**6qq.99.4.467**: May 27, 2015
+**6.99.4.467**: May 27, 2015
     This release adds new features. It also fixes a number of bugs and
     performance problems.
 
