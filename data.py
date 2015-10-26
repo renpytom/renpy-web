@@ -1,3 +1,4 @@
+#coding=utf-8
 # This file contains data about Ren'Py, and its various
 # releases. Think of it as a kind of database, except that it's stored
 # as code rather than as data.
@@ -36,6 +37,63 @@ releases = [ ]
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.7",
+    prerelease_date="October 25, 2015",
+    date="November xx, 2015",
+    patch=None,
+    patch_date=None,
+    name="Here's to the crazy ones.",
+    exe=34,
+    bz2=48,
+    zip=52,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.99.7. This is the latest in a series of
+releases that introduce the new features that will make up Ren'Py 7.
+
+The 6.99.7 release:
+
+* Adds dynamic images, which makes it possible to substitute variables
+  into image names and filenames.
+* Improves the define statement so it can define config and persistent
+  variables.
+* Adds features and fixes many important bugs.
+
+Ren'Py 6.99.7 has been brought to you by:
+
+* Diapolo10
+* Emmeken
+* Javimat
+* Pavel Langwell
+* Ricardo Pérez
+* Spiky Caterpillar
+
+and myself, Tom "PyTom" Rothamel.
+""",
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* http://www.renpy.org/release/6.99.6
+* http://www.renpy.org/release/6.99.5
+* http://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
 
 
 Release(
