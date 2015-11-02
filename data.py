@@ -40,11 +40,11 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.7",
     prerelease_date="October 25, 2015",
-    date="November xx, 2015",
+    date="November 1, 2015",
     patch=None,
     patch_date=None,
     name="Here's to the crazy ones.",
@@ -55,27 +55,34 @@ Release(
     world_order=6,
     announcement="""\
 I'm pleased to announce Ren'Py 6.99.7. This is the latest in a series of
-releases that introduce the new features that will make up Ren'Py 7.
+releases that introduce the new features that will make up Ren'Py 7. Ren'Py
+6.99.7 is primarily to fixing bugs and rendering issues introduced in 6.99.7,
+but also introduces a number of new features, including:
 
-The 6.99.7 release:
+* A new dynamic images feature that lets Ren'Py interpolate text into displayables
+  at the start of each interaction. This should make certain common patterns much
+  easier to implement, such as dressup code that previously required a large
+  number of ConditionSwitches.
+* An extension to the define statement that makes it possible to define config
+  and persistent variables. Persistent variables use special semantics to ensure
+  a persistent variable is only defined once.
 
-* Adds dynamic images, which makes it possible to substitute variables
-  into image names and filenames.
-* Improves the define statement so it can define config and persistent
-  variables.
-* Adds features and fixes many important bugs.
+A number of other smaller features have been added, as described in the changelog.
+Over a dozen fixes to bugs and regressions are listed in the changelog, and
+there are probably a few more fixes that didn't make it.
 
-Ren'Py 6.99.7 has been brought to you by:
+Ren'Py 6.99.7 is brought to you by:
 
 * Diapolo10
 * Emmeken
+* Kalawore
 * Javimat
 * Pavel Langwell
 * Ricardo Pérez
 * Spiky Caterpillar
 
 and myself, Tom "PyTom" Rothamel.
-""",
+""".decode("utf-8"),
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
@@ -87,6 +94,7 @@ URLs:
 """,
 
     full_html="""\
+<img src="/static/6.99.7.jpg" title="Syrup and the Ultimate Sweet, running under Ren'Py 6.99.7." style="width: 100%">
 """,
 
     top_html="""\
