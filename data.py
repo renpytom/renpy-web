@@ -39,6 +39,66 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.8",
+    prerelease_date="November 28, 2015",
+    date="December xx, 2015",
+    patch=None,
+    patch_date=None,
+    name="Here's to the crazy ones.",
+    exe=34,
+    bz2=48,
+    zip=52,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm pleased to announce Ren'Py 6.99.8. This is the latest in a series of
+releases that introduce the new features that will make up Ren'Py 7. Ren'Py
+6.99.8 fixes a bug with text spacing introduced in 6.99.7, and also adds
+new features, including:
+
+* The ability to associate an image tag with a layer and transform, and a new
+  function that makes adding custom layers easier.
+* A full set of easing functions that can be used with ATL.
+* An overhaul of new-style side images, allowing transforms (and hence,
+  transitions) to be applied when the side image changes.
+
+As usual, other features have been added, bugs have been fixed, and Ren'Py
+has been generally improved.
+
+Ren'Py 6.99.8 is brought to you by:
+
+* Kalawore
+* Nyaatrap
+* Rikxz
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* http://www.renpy.org/release/6.99.7
+* http://www.renpy.org/release/6.99.6
+* http://www.renpy.org/release/6.99.5
+* http://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+<img src="/static/6.99.7.jpg" title="Syrup and the Ultimate Sweet, running under Ren'Py 6.99.7." style="width: 100%">
+""",
+
+    top_html="""\
+""",
+    )
+
+
+
+
 Release(
     prerelease=False,
     invisible=False,
