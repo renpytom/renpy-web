@@ -41,11 +41,11 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.8",
-    prerelease_date="November 28, 2015",
-    date="December xx, 2015",
+    prerelease_date="December 12, 2015",
+    date="December 25, 2015",
     patch=None,
     patch_date=None,
     name="Here's to the crazy ones.",
@@ -60,20 +60,26 @@ releases that introduce the new features that will make up Ren'Py 7. Ren'Py
 6.99.8 fixes a bug with text spacing introduced in 6.99.7, and also adds
 new features, including:
 
-* The ability to associate an image tag with a layer and transform, and a new
-  function that makes adding custom layers easier.
+* The ability to associate an image tag with a layer, transform, and zorder,
+  and a new function that makes adding custom layers easier.
 * A full set of easing functions that can be used with ATL.
 * An overhaul of new-style side images, allowing transforms (and hence,
   transitions) to be applied when the side image changes.
+* A new PushMove transition class, which uses the new scene to push the
+  old one out.
+* HighDPI display support has been added for the Windows platform.
 
 As usual, other features have been added, bugs have been fixed, and Ren'Py
 has been generally improved.
 
 Ren'Py 6.99.8 is brought to you by:
 
+* BlackDragonHunt/Mangagamer
 * Kalawore
+* Kuroonehalf
 * Nyaatrap
 * Rikxz
+* Vollschauer
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
