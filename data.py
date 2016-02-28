@@ -39,6 +39,67 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.9",
+    pygame="-2.1.0",
+    prerelease_date="February 28, 2016",
+    date="March xx, 2016",
+    patch=None,
+    patch_date=None,
+    name="To the nines.",
+    exe=36,
+    bz2=54,
+    zip=59,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'm happy to announce Ren'Py 6.99.9, the latest in a series of releases that
+will culminate in Ren'Py 7. This release features a full rewrite of the audio
+and video playback code, which allows for a number of often-requested features:
+
+* Partial playback of audio files, including the specification of start,
+  end, and loop points.
+* A new audio channel that allows the playback of multiple sound files at
+  once, for use by interface and game sound
+* The ability to play multiple movies at once, and to seamlessly loop
+  movies.
+* Movie-backed sprites that use a pair of movies, one for the color channel
+  and one containing alpha (opacity) information.
+
+This release includes a major bugfix involving fullscreen games on Windows
+when DPI scaling is used, and a number of other fixes and new features.
+
+Ren'Py 6.99.9 is brought to you by:
+
+* Carl
+* Markus Koschany
+* Shiz
+* Vollschauer
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* http://www.renpy.org/release/6.99.8
+* http://www.renpy.org/release/6.99.7
+* http://www.renpy.org/release/6.99.6
+* http://www.renpy.org/release/6.99.5
+* http://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
 
 Release(
     prerelease=False,
