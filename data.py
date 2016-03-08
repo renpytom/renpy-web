@@ -40,12 +40,12 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.9",
     pygame="-2.1.0",
     prerelease_date="February 28, 2016",
-    date="March xx, 2016",
+    date="March 07, 2016",
     patch=None,
     patch_date=None,
     name="To the nines.",
@@ -85,11 +85,11 @@ and myself, Tom "PyTom" Rothamel.
 The history of older Ren'Py 6.99 releases can be found at the following
 URLs:
 
-* http://www.renpy.org/release/6.99.8
-* http://www.renpy.org/release/6.99.7
-* http://www.renpy.org/release/6.99.6
-* http://www.renpy.org/release/6.99.5
-* http://www.renpy.org/release/6.99
+* https://www.renpy.org/release/6.99.8
+* https://www.renpy.org/release/6.99.7
+* https://www.renpy.org/release/6.99.6
+* https://www.renpy.org/release/6.99.5
+* https://www.renpy.org/release/6.99
 """,
 
     full_html="""\
