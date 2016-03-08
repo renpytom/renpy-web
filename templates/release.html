@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% set doclink = "http://www.renpy.org/dev-doc/html" if release.prerelease else "http://www.renpy.org/doc/html" %}
+{% set doclink = "https://www.renpy.org/dev-doc/html" if release.prerelease else "https://www.renpy.org/doc/html" %}
 
 {% block title %}Ren'Py {{release.version}}{% endblock %}
 
-{% macro url(variant) %}http://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
+{% macro url(variant) %}https://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
 {% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
-{% macro pygame_sdl2() %}http://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.bz2{% endmacro %}
+{% macro pygame_sdl2() %}https://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.bz2{% endmacro %}
 {% macro pygame_sdl2_dl() %}<a href="{{ pygame_sdl2() }}">pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.bz2</a>{% endmacro %}
 
 {% block content %}
@@ -60,7 +60,7 @@
 {% elif release.world_order == 4 %}
     <p><strong>Additional Downloads.</strong> When first used, Ren'Py will prompt you to download a text editor. An Internet connection is required for this download.</p>
 {% else %}
-    <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="http://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
+    <p><strong>Java Requirement.</strong> Java is required to run the jEdit text editor. If it's not installed on your computer, you'll need to <a href="https://www.java.com/en/download/index.jsp">download it from java.com</a>. Java is not required to run Ren'Py, only to develop with it.</p>
 {% endif %}
 
 </section>
@@ -81,7 +81,7 @@
     <p>Downloads of Ren'Py {{release.version}} can be found at:</p>
 
     <p style="margin-left: 2em">
-        <a href="http://www.renpy.org/release/{{release.version}}">http://www.renpy.org/release/{{release.version}}</a>
+        <a href="https://www.renpy.org/release/{{release.version}}">https://www.renpy.org/release/{{release.version}}</a>
     <p>
 
     <p>A full list of changes to Ren'Py can be found at:</p>
@@ -169,7 +169,7 @@
 
     <dl>
         {% if release.powerpc %}
-        <dt><strong>PowerPC Support:</strong> <a href="http://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
+        <dt><strong>PowerPC Support:</strong> <a href="https://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
         <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
         {% endif %}
         <dt><strong>Ren'Py Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
@@ -181,7 +181,7 @@
 {% endif %}
 
         {% if release.deps %}
-        <dt><strong>Other Dependencies:</strong> <a href="http://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
+        <dt><strong>Other Dependencies:</strong> <a href="https://www.renpy.org/dl/lgpl/renpy-deps-{{release.deps}}.tar.bz2">renpy-deps-{{release.deps}}.tar.bz2</a></dt>
         <dd>Contains source code for the libraries that Ren'Py depends on.</dd>
         {% else %}
         <dt><strong>Other Dependencies:</strong> <a href="{{doclink}}/license.html">{{ doclink}}/license.html</a> </dt>
