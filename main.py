@@ -44,6 +44,17 @@ def latest():
 def support():
     return redirect("/")
 
+@app.route("/l/<name>")
+def link(name):
+    name = name.rstrip('/')
+
+    links = {
+        "license" : "/doc/html/license.html",
+        "voicing" : "/doc/html/self_voicing.html",
+        }
+
+    return redirect(links.get(name, '/'))
+
 @app.route("/<name>.html")
 def page(name):
     """

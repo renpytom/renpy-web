@@ -3,7 +3,7 @@
 
 Downloads of {{release.version}} can be found at:
 
-    http://www.renpy.org/release/{{release.version}}
+    https://www.renpy.org/release/{{release.version}}
 
 A full list of changes to Ren'Py can be found at:
 
