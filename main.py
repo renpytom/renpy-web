@@ -68,6 +68,7 @@ def robots_txt():
     rv = """\
 User-agent: *
 Disallow: /wiki/renpy/doc/reference/
+Disallow: /w/
 """
 
     return Response(rv, mimetype="text/plain")
