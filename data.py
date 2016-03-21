@@ -39,6 +39,67 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.10",
+    pygame="-2.1.0",
+    prerelease_date="March 21, 2016",
+    date="March xx, 2016",
+    patch=None,
+    patch_date=None,
+    name="NaNoRenO - The Other March Madness",
+    exe=36,
+    bz2=54,
+    zip=59,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'd like to announce Ren'Py 6.99.10, the latest in a series of releases that
+will culminate in Ren'Py 7. This release fixes two regressions that were
+introduced in Ren'Py 6.99.9:
+
+* Ren'Py would fail to start if a DirectInput gamepad could not be opened in
+  exclusive mode.
+* Ren'Py would fail to start with an SDL error on certain Android devices.
+
+This release also includes:
+
+* A new vpgrid widget, which combines a viewport and a grid into a single
+  widget, with optimized rendering.
+* A new system of input values, that allow multiple input widgets to be on
+  the screen at once.
+* A new Greek translation of the launcher, contributed by George Economidis.
+
+Ren'Py 6.99.10 is brought to you by:
+
+* George Economidis
+* Jackmcbarn
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* https://www.renpy.org/release/6.99.8
+* https://www.renpy.org/release/6.99.7
+* https://www.renpy.org/release/6.99.6
+* https://www.renpy.org/release/6.99.5
+* https://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
+
 Release(
     prerelease=False,
     invisible=False,
