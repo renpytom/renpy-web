@@ -32,7 +32,60 @@ def release_txt(name):
     release = data.release_version[name]
 
     rv = render_template('release.txt', release=release, data=data)
-    rv = re.compile(r'^\*', re.MULTILINE).sub(r'[*]', rv)
+
+    output = [ ]
+    line = ""
+
+    for l in rv.split("\n"):
+        l = l.strip()
+
+        if not l:
+            output.append(line)
+            output.append('')
+            line = ""
+
+        elif l[0] == '*':
+            output.append(line)
+            line = ""
+
+        if line:
+            line = line + " " + l
+        else:
+            line = l
+
+    output.append(line)
+
+    rv = [ ]
+    in_list = False
+    last_empty = False
+
+    for l in output:
+
+        if not l:
+            if last_empty:
+                continue
+            last_empty = True
+        else:
+            last_empty = False
+
+        if l.startswith("*"):
+            if not in_list:
+                prefix="[list]"
+                in_list = True
+            else:
+                prefix = ""
+
+            rv.append(prefix + "[*]" + l[1:])
+            continue
+
+        if in_list:
+            rv.append('[/list]')
+            in_list = False
+
+        rv.append(l)
+
+    rv = "\n".join(rv)
+
     return Response(rv, mimetype="text/plain")
 
 
