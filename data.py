@@ -38,15 +38,13 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 
-
-
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.10",
     pygame="-2.1.0",
     prerelease_date="March 21, 2016",
-    date="March xx, 2016",
+    date="March 24, 2016",
     patch=None,
     patch_date=None,
     name="NaNoRenO - The Other March Madness",
@@ -68,9 +66,9 @@ This release also includes:
 
 * A new vpgrid widget, which combines a viewport and a grid into a single
   widget, with optimized rendering.
-* A new system of input values, that allow multiple input widgets to be on
-  the screen at once.
-* A new Greek translation of the launcher, contributed by George Economidis.
+* InputValues that can be with the text input widget to allow multiple text
+  inputs to be displayed at once.
+* A Greek translation of the launcher, contributed by George Economidis.
 
 Ren'Py 6.99.10 is brought to you by:
 
@@ -84,6 +82,7 @@ and myself, Tom "PyTom" Rothamel.
 The history of older Ren'Py 6.99 releases can be found at the following
 URLs:
 
+* https://www.renpy.org/release/6.99.9
 * https://www.renpy.org/release/6.99.8
 * https://www.renpy.org/release/6.99.7
 * https://www.renpy.org/release/6.99.6
