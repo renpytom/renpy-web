@@ -5,8 +5,8 @@
 
 {% macro url(variant) %}https://www.renpy.org/dl/{{release.full_version}}/renpy-{{release.full_version}}-{{variant}}{% endmacro %}
 {% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
-{% macro pygame_sdl2() %}https://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.bz2{% endmacro %}
-{% macro pygame_sdl2_dl() %}<a href="{{ pygame_sdl2() }}">pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.bz2</a>{% endmacro %}
+{% macro pygame_sdl2() %}https://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.{{release.pygame_ext}}{% endmacro %}
+{% macro pygame_sdl2_dl() %}<a href="{{ pygame_sdl2() }}">pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.{{release.pygame_ext}}</a>{% endmacro %}
 
 {% block content %}
 

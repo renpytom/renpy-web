@@ -31,9 +31,9 @@ class Release(Data):
 
         self.patch = None
         self.patch_date = None
-        
+
         super(Release, self).__init__(**kwargs)
-        
+
         data.releases.append(self)
 
     def get_full_version(self):
@@ -41,20 +41,29 @@ class Release(Data):
             return "{0}.{1}".format(self.version, self.patch)
         else:
             return self.version
-        
+
     full_version = property(get_full_version)
+
+    @property
+    def pygame_ext(self):
+        pygame =  getattr(self, "pygame", None)
+
+        if pygame:
+            return "gz"
+        else:
+            return "bz2"
 
 class WikiRelease(Data):
     """
     An older wiki-based release.
     """
-    
+
     prerelease = False
     wiki = True
-    
+
     def __init__(self, **kwargs):
         super(WikiRelease, self).__init__(**kwargs)
         data.releases.append(self)
-        
+
         self.full_version = self.version
-        
+
