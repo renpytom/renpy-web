@@ -38,6 +38,100 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 
+
+Release(
+    prerelease=True,
+    invisible=True,
+    version="6.99.11",
+    pygame="-2.1.0",
+    prerelease_date="July 25, 2016",
+    date="August xx, 2016",
+    patch=None,
+    patch_date=None,
+    name="We came in peace...",
+    exe=65,
+    bz2=84,
+    zip=89,
+    powerpc=False,
+    world_order=6,
+    announcement="""\
+I'd like to announce Ren'Py 6.99.11, the latest in a series of releases
+that will culminate in Ren'Py 7, and one of the biggest Ren'Py releases
+to date.
+
+The biggest change is a new default GUI framework. Out of the box, the new
+GUI looks more modern, works across a range of screen sizes, and supports
+mobile devices out of the box. The GUI is also easier for creators of all
+skill levels to customize, with re-theming accomplished by replacing image
+files and optionally adjusting variables. The Ren'Py documentation now
+includes a GUI customization guide explaining how to completely retheme
+the new GUI.
+
+Thanks go to Auro-Cyanide for the original design of the new GUI. (But
+don't blame her - we've had to stray quite a bit from that design in pursuit
+of resolution independence.)
+
+There have been a features added to Ren'Py to support the new GUI.
+
+* Ren'Py now natively supports a dialogue history/readback system.
+* File pages can be renamed by clicking on the page title/number.
+* Style properties that use image filenames can take a [prefix\_] substitution,
+  which causes a style prefix search.
+
+And the usual set of non-GUI-related changes:
+
+* Android support has been partially rewritten. It now supports x86 in addition
+  to ARM, supports immersive mode, and fixes problems downloading Android
+  dependencies.
+* Ren'Py supports Chrome OS and the Chrome web browser by converting an
+  Android package using the Android Runtime for Chrome tool.
+* The Ren'Py script language supports locally-scoped labels.
+* Transforms support tiling the child multiple times, and panning over the child
+  image by an angle.
+
+A Vietnamese translation of the launcher and tutorial has been added by Thuong
+Nguyen Huu. An Indonesian translation of the launcher and default  project has
+been contributed by Pratomo Asta Nugraha.
+
+Ren'Py 6.99.11 is brought to you by:
+
+* caryoscelus
+* Diapolo10
+* Edward Betts
+* Ferdinand Thiessen
+* Kevin Turner
+* Morgan Willcock
+* Nolanlemahn
+* Sapphi
+* Shiz
+* xavi-mat
+* Xela
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* https://www.renpy.org/release/6.99.10
+* https://www.renpy.org/release/6.99.9
+* https://www.renpy.org/release/6.99.8
+* https://www.renpy.org/release/6.99.7
+* https://www.renpy.org/release/6.99.6
+* https://www.renpy.org/release/6.99.5
+* https://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+    )
+
+
+
 Release(
     prerelease=False,
     invisible=False,
