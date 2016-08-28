@@ -58,7 +58,7 @@ class Release(Data):
 
         if zipfn is not None:
             ziptime = os.path.getmtime(zipfn)
-            zipdate = time.strftime("%B %d, %Y")
+            zipdate = time.strftime("%B %d, %Y", time.localtime(ziptime))
 
             if self.prerelease and (self.prerelease_date is None):
                 self.prerelease_date = zipdate
