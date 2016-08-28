@@ -41,17 +41,17 @@ releases = [ ]
 
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.99.11",
     pygame="-2.1.0",
-    prerelease_date="July 25, 2016",
+    prerelease_date=None,
     date="August xx, 2016",
     patch=None,
     patch_date=None,
     name="We came in peace...",
-    exe=65,
-    bz2=84,
-    zip=89,
+    exe=None,
+    bz2=None,
+    zip=None,
     powerpc=False,
     world_order=6,
     announcement="""\

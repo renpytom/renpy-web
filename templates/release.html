@@ -24,7 +24,12 @@
 
     <p>
 
+        {% if release.prerelease %}
+        is a prerelease, last updated on {{ release.prerelease_date }}.
+        {% else %}
         was released on {{release.date}}.
+        {% endif %}
+
         {% if release.patch_date %}
         It was updated to {{ release.full_version }} on {{ release.patch_date }}.
         {% endif %}

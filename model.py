@@ -2,6 +2,8 @@
 # always be imported _after_ data, if it needs to be imported at all.
 
 import data
+import os
+import time
 
 class Data(object):
     """
@@ -12,6 +14,12 @@ class Data(object):
 
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
+
+
+FILE_PATHS = [
+    "/home/tom/WWW.renpyorg/dl",
+    "/home/tom/ab/renpy/dl",
+    ]
 
 
 class Release(Data):
@@ -32,9 +40,31 @@ class Release(Data):
         self.patch = None
         self.patch_date = None
 
+        self.prerelease = False
+        self.prerelease_date = None
+
         super(Release, self).__init__(**kwargs)
 
         data.releases.append(self)
+
+        if self.exe is None:
+            self.exe = self.file_size("sdk.7z.exe")
+        if self.bz2 is None:
+            self.bz2 = self.file_size("sdk.tar.bz2")
+        if self.zip is None:
+            self.zip = self.file_size("sdk.zip")
+
+        zipfn = self.find_file("sdk.zip")
+
+        if zipfn is not None:
+            ziptime = os.path.getmtime(zipfn)
+            zipdate = time.strftime("%B %d, %Y")
+
+            if self.prerelease and (self.prerelease_date is None):
+                self.prerelease_date = zipdate
+
+            if self.patch and (self.patch_date is None):
+                self.patch_date = zipdate
 
     def get_full_version(self):
         if self.patch is not None:
@@ -52,6 +82,30 @@ class Release(Data):
             return "gz"
         else:
             return "bz2"
+
+    def find_file(self, variant):
+        fn = "renpy-" + self.version + "-" + variant
+
+        for i in FILE_PATHS:
+            ffn = os.path.join(i, self.version, fn)
+            if os.path.exists(ffn):
+                return ffn
+
+        return None
+
+    def file_size(self, variant):
+        """
+        Given `variant`, returns the file size in megabytes.
+        """
+
+        fn = self.find_file(variant)
+
+        if fn is None:
+            return None
+
+        size = os.path.getsize(fn)
+
+        return int(round(size / 1024.0 / 1024.0))
 
 class WikiRelease(Data):
     """
