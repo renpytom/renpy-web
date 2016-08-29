@@ -48,7 +48,7 @@ Release(
     date="August xx, 2016",
     patch=None,
     patch_date=None,
-    name="We came in peace...",
+    name="Who tells your story?",
     exe=None,
     bz2=None,
     zip=None,
