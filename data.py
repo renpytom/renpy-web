@@ -125,6 +125,7 @@ URLs:
 """,
 
     full_html="""\
+<img src="/static/6.99.11.jpg" alt="" style="width: 100%">
 """,
 
     top_html="""\
