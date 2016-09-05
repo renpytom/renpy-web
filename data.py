@@ -38,14 +38,13 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 
-
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.11",
     pygame="-2.1.0",
     prerelease_date=None,
-    date="August xx, 2016",
+    date="September 5, 2016",
     patch=None,
     patch_date=None,
     name="Who tells your story?",
@@ -83,28 +82,30 @@ And the usual set of non-GUI-related changes:
 * Android support has been partially rewritten. It now supports x86 in addition
   to ARM, supports immersive mode, and fixes problems downloading Android
   dependencies.
-* Ren'Py supports Chrome OS and the Chrome web browser by converting an
-  Android package using the Android Runtime for Chrome tool.
+* Ren'Py supports Chrome OS by converting an Android package using the Android
+  Runtime for Chrome tool.
 * The Ren'Py script language supports locally-scoped labels.
 * Transforms support tiling the child multiple times, and panning over the child
   image by an angle.
 
 A Vietnamese translation of the launcher and tutorial has been added by Thuong
-Nguyen Huu. An Indonesian translation of the launcher and default  project has
+Nguyen Huu. An Indonesian translation of the launcher and default project has
 been contributed by Pratomo Asta Nugraha.
 
 Ren'Py 6.99.11 is brought to you by:
 
-* caryoscelus
+* Caryoscelus
 * Diapolo10
 * Edward Betts
 * Ferdinand Thiessen
 * Kevin Turner
 * Morgan Willcock
 * Nolanlemahn
+* Pratomo Asta N
 * Sapphi
 * Shiz
-* xavi-mat
+* Vollschauer
+* Xavi-mat
 * Xela
 
 and myself, Tom "PyTom" Rothamel.
