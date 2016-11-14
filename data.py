@@ -39,6 +39,78 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.12",
+    pygame="-2.1.0",
+    prerelease_date="November 13, 2016",
+    date="November xx, 2016",
+    patch=None,
+    patch_date=None,
+    name="We get the job done.",
+    exe=None,
+    bz2=None,
+    zip=None,
+    powerpc=False,
+    world_order=7,
+    announcement="""\
+I'd like to announce Ren'Py 6.99.12, the latest in a series of releases
+that will culminate in Ren'Py 7, and one of the biggest Ren'Py releases
+to date.
+
+This release focuses on improving support for new versions of macOS, by
+changing the macOS-specific package to support code signing and work
+correctly when path randomization is enabled. When run on macOS, Ren'Py
+can automatically sing the application, and create a signed disk image.
+The launcher can launch older Ren'Py applications on macOS Sierra, to
+improve compatibility with older games.
+
+Because of this change, the -all distribution has been retired, replaced
+with -mac and a new -pc distribution that supports Windows and Linux.
+
+The other main focus of this release is improving support for translation
+of the new GUI. Translating Ren'Py now translates both the launcher and the
+interface of new games created in the launcher language. It is also possible
+to change the font used by the launcher and new projects. There is a page
+about translating Ren'Py in the documentation, to guide the process.
+
+In addition to these major focuses, this release includes a number of new
+features and bug fixes.
+
+Ren'Py 6.99.12 is brought to you by:
+
+* Bryan Tsang
+* Joshua Fehler
+* Morgan Willcock
+* Merumelu
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+The history of older Ren'Py 6.99 releases can be found at the following
+URLs:
+
+* https://www.renpy.org/release/6.99.11
+* https://www.renpy.org/release/6.99.10
+* https://www.renpy.org/release/6.99.9
+* https://www.renpy.org/release/6.99.8
+* https://www.renpy.org/release/6.99.7
+* https://www.renpy.org/release/6.99.6
+* https://www.renpy.org/release/6.99.5
+* https://www.renpy.org/release/6.99
+""",
+
+    full_html="""\
+<img src="/static/6.99.11.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
     prerelease=False,
     invisible=False,
     version="6.99.11",
@@ -70,7 +142,7 @@ Thanks go to Auro-Cyanide for the original design of the new GUI. (But
 don't blame her - we've had to stray quite a bit from that design in pursuit
 of resolution independence.)
 
-There have been a features added to Ren'Py to support the new GUI.
+There have been a number of features added to Ren'Py to support the new GUI.
 
 * Ren'Py now natively supports a dialogue history/readback system.
 * File pages can be renamed by clicking on the page title/number.
@@ -133,7 +205,6 @@ URLs:
     )
 
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -192,7 +263,6 @@ URLs:
     top_html="""\
 """,
     )
-
 
 
 Release(
@@ -254,7 +324,6 @@ URLs:
     top_html="""\
 """,
     )
-
 
 
 Release(
@@ -320,8 +389,6 @@ URLs:
     )
 
 
-
-
 Release(
     prerelease=False,
     invisible=False,
@@ -383,8 +450,6 @@ URLs:
     top_html="""\
 """,
     )
-
-
 
 
 Release(
@@ -664,7 +729,6 @@ and myself, Tom "PyTom" Rothamel.
     )
 
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -917,7 +981,6 @@ to Ren'Py development.
     )
 
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1078,7 +1141,6 @@ to Ren'Py development.
     top_html="""\
 """,
     )
-
 
 
 Release(
@@ -1311,14 +1373,14 @@ Some notes for upgraders:
 
     aside_html="""\
 """,
-################################################################################
-#    top_html="""\
-# <div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
-# Ren'Py 6.13 has been reported to be incompatible with many users's systems.<br>
-# Please download and use <a href="/release/6.12.2">6.12.2</a> until we can fix these problems.
-# </div>
-# """
-################################################################################
+    ################################################################################
+    #    top_html="""\
+    # <div style="color: #800; background: #fcc; border: 2px solid #800; padding: 1em; margin: .5em; text-align: center;">
+    # Ren'Py 6.13 has been reported to be incompatible with many users's systems.<br>
+    # Please download and use <a href="/release/6.12.2">6.12.2</a> until we can fix these problems.
+    # </div>
+    # """
+    ################################################################################
     )
 
 Release(
