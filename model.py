@@ -5,6 +5,7 @@ import data
 import os
 import time
 
+
 class Data(object):
     """
     This is a class that represents unstructured data. It simply
@@ -34,6 +35,7 @@ class Release(Data):
     # 0-3 (before 6.14)
     # 4 (6.14)
     world_order = 0
+    dmg = None
 
     def __init__(self, **kwargs):
 
@@ -53,6 +55,8 @@ class Release(Data):
             self.bz2 = self.file_size("sdk.tar.bz2")
         if self.zip is None:
             self.zip = self.file_size("sdk.zip")
+        if self.dmg is None:
+            self.dmg = self.file_size("sdk.dmg")
 
         zipfn = self.find_file("sdk.zip")
 
@@ -107,6 +111,7 @@ class Release(Data):
 
         return int(round(size / 1024.0 / 1024.0))
 
+
 class WikiRelease(Data):
     """
     An older wiki-based release.
@@ -120,4 +125,3 @@ class WikiRelease(Data):
         data.releases.append(self)
 
         self.full_version = self.version
-
