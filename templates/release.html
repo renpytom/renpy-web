@@ -212,6 +212,13 @@
         can be downloaded is linked above.</dd>
         {% endif %}
 
+{% if release.world_order >= 7  and (not release.prerelease) %}
+        <dt><strong>Checksums:</strong> {{ dl("sums") }}</dt>
+        <dd>Checksums for the various files making up the Ren'Py distribution.</dd>
+{% endif %}
+
+
+
     </dl>
 
     <p>We also maintain a <a href="/release_list.html">complete list of releases</a>.
