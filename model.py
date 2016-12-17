@@ -37,6 +37,11 @@ class Release(Data):
     world_order = 0
     dmg = None
 
+    exe=None,
+    bz2=None,
+    zip=None,
+    powerpc=False,
+
     def __init__(self, **kwargs):
 
         self.patch = None
@@ -70,6 +75,15 @@ class Release(Data):
             if self.patch and (self.patch_date is None):
                 self.patch_date = zipdate
 
+        zipfn = self.find_file("sdk.zip", False)
+
+        if zipfn is not None:
+            ziptime = os.path.getmtime(zipfn)
+            zipdate = time.strftime("%B %d, %Y", time.localtime(ziptime))
+
+            if self.date is None:
+                self.date = zipdate
+
     def get_full_version(self):
         if self.patch is not None:
             return "{0}.{1}".format(self.version, self.patch)
@@ -87,11 +101,17 @@ class Release(Data):
         else:
             return "bz2"
 
-    def find_file(self, variant):
-        fn = "renpy-" + self.version + "-" + variant
+    def find_file(self, variant, full_version=True):
+
+        if full_version:
+            version = self.full_version
+        else:
+            version = self.version
+
+        fn = "renpy-" + version + "-" + variant
 
         for i in FILE_PATHS:
-            ffn = os.path.join(i, self.version, fn)
+            ffn = os.path.join(i, version, fn)
             if os.path.exists(ffn):
                 return ffn
 

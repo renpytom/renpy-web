@@ -39,19 +39,13 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 Release(
-    prerelease=False,
+    prerelease=True,
     invisible=False,
     version="6.99.12",
     pygame="-2.1.0",
-    prerelease_date="November 13, 2016",
-    date="December 11, 2016",
+    date="December xx, 2016",
     patch=None,
-    patch_date=None,
     name="We get the job done.",
-    exe=None,
-    bz2=None,
-    zip=None,
-    powerpc=False,
     world_order=7,
     announcement="""\
 I'd like to announce Ren'Py 6.99.12, the latest in a series of releases
@@ -80,6 +74,7 @@ features and bug fixes.
 Ren'Py 6.99.12 is brought to you by:
 
 * Bryan Tsang
+* Daniel Luque
 * Joshua Fehler
 * Morgan Willcock
 * Merumelu
