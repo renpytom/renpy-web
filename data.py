@@ -39,11 +39,11 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.12",
     pygame="-2.1.0",
-    date="December xx, 2016",
+    date="December 20, 2016",
     patch=None,
     name="We get the job done.",
     world_order=7,
@@ -79,6 +79,7 @@ Ren'Py 6.99.12 is brought to you by:
 * Morgan Willcock
 * Merumelu
 * Nyaatrap
+* Pratomo Asta Nugraha
 * Xela
 * Xavi-Mat
 
