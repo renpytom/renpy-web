@@ -213,7 +213,7 @@
         {% endif %}
 
 {% if release.world_order >= 7  and (not release.prerelease) %}
-        <dt><strong>Checksums:</strong> {{ dl("sums") }}</dt>
+        <dt><strong>Checksums:</strong> <a href="https://www.renpy.org/dl/{{release.full_version}}/checksums.txt">checksums.txt</a></dt>
         <dd>Checksums for the various files making up the Ren'Py distribution.</dd>
 {% endif %}
 
