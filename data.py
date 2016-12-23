@@ -44,7 +44,7 @@ Release(
     version="6.99.12",
     pygame="-2.1.0",
     date="December 20, 2016",
-    patch=None,
+    patch="1",
     name="We get the job done.",
     world_order=7,
     announcement="""\
@@ -87,17 +87,10 @@ and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
 
     history="""\
-The history of older Ren'Py 6.99 releases can be found at the following
-URLs:
-
-* https://www.renpy.org/release/6.99.11
-* https://www.renpy.org/release/6.99.10
-* https://www.renpy.org/release/6.99.9
-* https://www.renpy.org/release/6.99.8
-* https://www.renpy.org/release/6.99.7
-* https://www.renpy.org/release/6.99.6
-* https://www.renpy.org/release/6.99.5
-* https://www.renpy.org/release/6.99
+**6.99.12.1.2012**: December 23, 2016
+    This fixes a major issue that could cause MultiPersistent data to not work
+    on systems using non-ASCII character sets. It also fixes other bugs, and
+    updates the Indonesian translation.
 """,
 
     full_html="""\
