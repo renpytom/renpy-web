@@ -55,7 +55,7 @@ to date.
 This release focuses on improving support for new versions of macOS, by
 changing the macOS-specific package to support code signing and work
 correctly when path randomization is enabled. When run on macOS, Ren'Py
-can automatically sing the application, and create a signed disk image.
+can automatically sign the application, and create a signed disk image.
 The launcher can launch older Ren'Py applications on macOS Sierra, to
 improve compatibility with older games.
 

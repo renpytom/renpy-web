@@ -37,10 +37,10 @@ class Release(Data):
     world_order = 0
     dmg = None
 
-    exe=None,
-    bz2=None,
-    zip=None,
-    powerpc=False,
+    exe=None
+    bz2=None
+    zip=None
+    powerpc=False
 
     def __init__(self, **kwargs):
 
@@ -112,6 +112,7 @@ class Release(Data):
 
         for i in FILE_PATHS:
             ffn = os.path.join(i, version, fn)
+
             if os.path.exists(ffn):
                 return ffn
 
