@@ -44,7 +44,7 @@ Release(
     version="6.99.12",
     pygame="-2.1.0",
     date="December 20, 2016",
-    patch="1",
+    patch="2",
     name="We get the job done.",
     world_order=7,
     announcement="""\
@@ -87,6 +87,11 @@ and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
 
     history="""\
+**6.99.12.2.2029**: December 31, 2016
+    This fixes a bug that could prevent viewport children from becoming focused,
+    and a bug that prevented the RAPT and Renios DLC from being downloaded
+    properly. It also adds functionality to support the interactive director.
+
 **6.99.12.1.2012**: December 23, 2016
     This fixes a major issue that could cause MultiPersistent data to not work
     on systems using non-ASCII character sets. It also fixes other bugs, and
