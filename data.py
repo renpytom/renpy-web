@@ -81,7 +81,7 @@ Ren'Py 6.99.12 is brought to you by:
 * Merumelu
 * Nyaatrap
 * Pratomo Asta Nugraha
-* Project Gardres
+* Project Gardares
 * Ria-kon
 * Xela
 * Xavi-Mat
