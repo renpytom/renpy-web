@@ -44,7 +44,7 @@ Release(
     version="6.99.12",
     pygame="-2.1.0",
     date="December 20, 2016",
-    patch="2",
+    patch="3",
     name="We get the job done.",
     world_order=7,
     announcement="""\
@@ -87,6 +87,11 @@ and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
 
     history="""\
+**6.99.12.3.2123**: February 12, 2017
+    This release fixes a number of bugs. It also adds and renames gui variables
+    so that every text property can be controlled by a gui variable, and adds
+    support for the new Ren'Py Interactive Director.
+
 **6.99.12.2.2029**: December 31, 2016
     This fixes a bug that could prevent viewport children from becoming focused,
     and a bug that prevented the RAPT and Renios DLC from being downloaded
