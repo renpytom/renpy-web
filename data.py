@@ -75,11 +75,14 @@ Ren'Py 6.99.12 is brought to you by:
 
 * Bryan Tsang
 * Daniel Luque
+* Gas
 * Joshua Fehler
 * Morgan Willcock
 * Merumelu
 * Nyaatrap
 * Pratomo Asta Nugraha
+* Project Gardres
+* Ria-kon
 * Xela
 * Xavi-Mat
 
