@@ -44,7 +44,7 @@ Release(
     version="6.99.12",
     pygame="-2.1.0",
     date="December 20, 2016",
-    patch="3",
+    patch="4",
     name="We get the job done.",
     world_order=7,
     announcement="""\
@@ -82,7 +82,10 @@ Ren'Py 6.99.12 is brought to you by:
 * Nyaatrap
 * Pratomo Asta Nugraha
 * Project Gardares
+* Renoa
 * Ria-kon
+* Spiky Caterpillar
+* Vollschauer
 * Xela
 * Xavi-Mat
 
@@ -90,6 +93,11 @@ and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
 
     history="""\
+**6.99.12.4.2187**: February 28, 2017
+    This release fixes a number of bugs, including one that would cause the
+    renpy.input function to crash. It improves the console (accessed with
+    shift+O), and updates translations.
+
 **6.99.12.3.2123**: February 12, 2017
     This release fixes a number of bugs. It also adds and renames gui variables
     so that every text property can be controlled by a gui variable, and adds
