@@ -5,7 +5,7 @@ $(function () {
     	pageTracker._trackPageview(ev.target.href);
     });
 
-    $(".fancybox").fancybox();
+    $(".colorbox").colorbox({ rel : 'colorbox', maxWidth: "95%", maxHeight : "95%" });
 
     var btn_class = "btn-success";
 

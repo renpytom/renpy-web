@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-import sys, os, time, datetime, re
+import sys
+import os
+import time
+import datetime
+import re
 sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, render_template, abort, redirect, Response
@@ -10,10 +14,12 @@ from werkzeug.contrib.atom import AtomFeed
 
 app = Flask(__name__)
 
+
 @app.template_filter('rst')
 def rst_filter(s):
     parts = publish_parts(s, writer_name='html4css1')
     return parts["fragment"]
+
 
 @app.route("/release/<name>")
 def release(name):
@@ -23,6 +29,7 @@ def release(name):
     release = data.release_version[name]
 
     return render_template('release.html', release=release, data=data)
+
 
 @app.route("/release/<name>.txt")
 def release_txt(name):
@@ -93,9 +100,11 @@ def release_txt(name):
 def latest():
     return render_template('release.html', name='latest', release=data.current, data=data)
 
+
 @app.route("/support.html")
 def support():
     return redirect("/")
+
 
 @app.route("/l/<name>")
 def link(name):
@@ -108,6 +117,7 @@ def link(name):
 
     return redirect(links.get(name, '/'))
 
+
 @app.route("/<name>.html")
 def page(name):
     """
@@ -115,6 +125,7 @@ def page(name):
     """
 
     return render_template(name + ".html", name=name, data=data)
+
 
 @app.route("/robots.txt")
 def robots_txt():
@@ -126,6 +137,7 @@ Disallow: /w/
 
     return Response(rv, mimetype="text/plain")
 
+
 @app.route("/")
 def index():
     """
@@ -133,6 +145,12 @@ def index():
     """
 
     return render_template("index.html", data=data)
+
+
+@app.route("/artcard.html")
+def artcard():
+    return render_template("artcard.html", data=data)
+
 
 @app.route("/feed/")
 def feed():
@@ -196,9 +214,7 @@ if __name__ == "__main__":
     ap.add_argument("--port", action='store', type=int, default=5000)
     args = ap.parse_args()
 
-
     if args.public:
         app.run(host='0.0.0.0', port=args.port)
     else:
         app.run(debug=True, port=args.port)
-
