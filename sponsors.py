@@ -159,7 +159,7 @@ def sample_non_banner():
 
 
 def anonymous_count():
-    return(len(i for i in sponsors if not i.level.public))
+    return(len([i for i in sponsors if not i.level.public]))
 
 
 def index_more_count():

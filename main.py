@@ -155,6 +155,17 @@ def index():
         )
 
 
+@app.route("/sponsors.html")
+def sponsors_page():
+    return render_template(
+        "sponsors.html",
+        data=data,
+        banner_sponsors=sponsors.banner(),
+        non_banner_sponsors=sponsors.non_banner(),
+        anonymous_sponsors=sponsors.anonymous_count(),
+        )
+
+
 @app.route("/artcard.html")
 def artcard():
     return render_template("artcard.html", data=data)
