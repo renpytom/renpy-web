@@ -3,6 +3,7 @@ var pageTracker;
 $(function () {
     $(".download-button").on('click', function (ev) {
     	pageTracker._trackPageview(ev.target.href);
+    	$("#patreon").show();
     });
 
     $(".colorbox").colorbox({ rel : 'colorbox', maxWidth: "95%", maxHeight : "95%" });
