@@ -2,6 +2,8 @@ import os
 import datetime
 import random
 
+SPONSORSDIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "sponsors")
+
 level_by_name = { }
 
 
@@ -57,6 +59,13 @@ class Sponsor(object):
             )
 
 
+def latest_month():
+
+    tsvs = [ i for i in os.listdir(SPONSORSDIR) if (len(i) == 11) if i.endswith(".tsv") ]
+    tsvs.sort()
+    return tsvs[-1][:-4]
+
+
 def current_month():
     # Figure out the sponsor filename for today.
 
@@ -76,7 +85,7 @@ def current_month():
 
 def load_sponsorfn(fn):
 
-    with open(fn) as f:
+    with open(fn, "rb") as f:
 
         l = f.readline()
 
@@ -128,8 +137,8 @@ def init(month=None):
         month = current_month()
 
     filenames = [
-        "{}/sponsors/{}.tsv".format(os.path.abspath(os.path.dirname(__file__)), month),
-        "{}/sponsors/overrides - main.tsv".format(os.path.abspath(os.path.dirname(__file__)))
+        "{}/{}.tsv".format(SPONSORSDIR, month),
+        "{}/overrides - main.tsv".format(SPONSORSDIR),
         ]
 
     for i in filenames:
@@ -168,6 +177,3 @@ def anonymous_count():
 
 def index_more_count():
     return len([ i for i in sponsors if i.level.count if not i.level.banner]) - 4
-
-
-init()

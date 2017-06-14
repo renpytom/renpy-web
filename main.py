@@ -13,6 +13,7 @@ import data
 from werkzeug.contrib.atom import AtomFeed
 
 import sponsors
+sponsors.init()
 
 app = Flask(__name__)
 
