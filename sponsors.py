@@ -54,8 +54,7 @@ class Sponsor(object):
             )
 
 
-def init():
-
+def current_month():
     # Figure out the sponsor filename for today.
 
     today = datetime.date.today()
@@ -66,10 +65,21 @@ def init():
     if today < datetime.date(2017, 6, 15):
         today = datetime.date(2017, 6, 15)
 
-    sponsorfn = "{}/sponsors/{:04d}-{:02d}.tsv".format(
-        os.path.abspath(os.path.dirname(__file__)),
+    return "{:04d}-{:02d}".format(
         today.year,
         today.month,
+        )
+
+
+def init(month=None):
+    today = datetime.date.today()
+
+    if month is None:
+        month = current_month()
+
+    sponsorfn = "{}/sponsors/{}.tsv".format(
+        os.path.abspath(os.path.dirname(__file__)),
+        month,
         )
 
     if not os.path.exists(sponsorfn):
@@ -120,8 +130,6 @@ def init():
                 level=level,
                 raw_postcard=(l[4] != "No")
                 )
-
-    month = "{:04d}-{:02d}".format(today.year, today.month)
 
     with open(os.path.abspath(os.path.dirname(__file__)) + "/sponsors/overrides.txt") as f:
         for l in f:

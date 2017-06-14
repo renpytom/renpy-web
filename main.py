@@ -163,6 +163,7 @@ def sponsors_page():
         banner_sponsors=sponsors.banner(),
         non_banner_sponsors=sponsors.non_banner(),
         anonymous_sponsors=sponsors.anonymous_count(),
+        current_month=sponsors.current_month(),
         )
 
 
