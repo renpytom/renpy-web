@@ -6,12 +6,13 @@ level_by_name = { }
 
 
 class Level(object):
-    def __init__(self, name, postcard=True, banner=None, span=None, public=True):
+    def __init__(self, name, postcard=True, banner=None, span=None, public=True, count=True):
         self.name = name
         self.postcard = postcard
         self.banner = banner
         self.span = span
         self.public = public
+        self.count = count
 
         if banner:
             self.width = banner[0]
@@ -31,6 +32,8 @@ Level("10 + Reward", True)
 Level("2 + Reward", False)
 Level("1 + Reward", False, public=False)
 Level("No Reward", False, public=False)
+
+Level("Admin", postcard=True, public=False, count=False)
 
 
 # All sponsors, map from email to data object.
@@ -71,23 +74,9 @@ def current_month():
         )
 
 
-def init(month=None):
-    today = datetime.date.today()
+def load_sponsorfn(fn):
 
-    if month is None:
-        month = current_month()
-
-    sponsorfn = "{}/sponsors/{}.tsv".format(
-        os.path.abspath(os.path.dirname(__file__)),
-        month,
-        )
-
-    if not os.path.exists(sponsorfn):
-        return
-
-    # Pull in the sponsors.
-
-    with open(sponsorfn) as f:
+    with open(fn) as f:
 
         l = f.readline()
 
@@ -131,22 +120,23 @@ def init(month=None):
                 raw_postcard=(l[4] != "No")
                 )
 
-    with open(os.path.abspath(os.path.dirname(__file__)) + "/sponsors/overrides.txt") as f:
-        for l in f:
-            l = l.decode("utf-8")
-            l = l.strip().split(None, 2)
 
-            level = level_by_name[l[2]]
+def init(month=None):
+    today = datetime.date.today()
 
-            s = by_email[l[0]]
-            s.pledge = float(l[1])
-            s.level = level
+    if month is None:
+        month = current_month()
 
-    # Manual overrides.
-    if 'sunrider.visualnovel@gmail.com' in by_email:
-        s = by_email['sunrider.visualnovel@gmail.com']
-        s.credit_name = "Love in Space"
-        s.url = "http://starnova.moe"
+    filenames = [
+        "{}/sponsors/{}.tsv".format(os.path.abspath(os.path.dirname(__file__)), month),
+        "{}/sponsors/overrides - main.tsv".format(os.path.abspath(os.path.dirname(__file__)))
+        ]
+
+    for i in filenames:
+        if not os.path.exists(i):
+            return
+
+        load_sponsorfn(i)
 
     global sponsors
     sponsors = [ i for i in by_email.values() if i.status ]
@@ -155,11 +145,17 @@ def init(month=None):
 
 
 def banner():
-    return [ i for i in sponsors if i.level.banner ]
+    rv =  [ i for i in sponsors if i.level.banner ]
+    rv.sort(key=lambda s : s.sort_key())
+    rv.reverse()
+    return rv
 
 
 def non_banner():
-    return [ i for i in sponsors if not i.level.banner and i.level.public ]
+    rv = [ i for i in sponsors if not i.level.banner and i.level.public ]
+    rv.sort(key=lambda s : s.sort_key())
+    rv.reverse()
+    return rv
 
 
 def sample_non_banner():
@@ -167,11 +163,11 @@ def sample_non_banner():
 
 
 def anonymous_count():
-    return(len([i for i in sponsors if not i.level.public]))
+    return(len([i for i in sponsors if i.level.count if not i.level.public]))
 
 
 def index_more_count():
-    return len([ i for i in sponsors if not i.level.banner]) - 4
+    return len([ i for i in sponsors if i.level.count if not i.level.banner]) - 4
 
 
 init()
