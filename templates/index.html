@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "sponsors.html" as sponsors %}
 
 {% block title %}The Ren'Py Visual Novel Engine{% endblock %}
 {% block extra_head %}
@@ -85,6 +86,7 @@
     </p>
     </div>
 
+
     {% if data.prerelease %}
     <div class="col-md-6">
     <p>
@@ -112,6 +114,30 @@
     </div>
     {% endif %}
     </div>
+
+    <h2>Sponsored By</h2>
+
+  <div class="row">
+  {% for s in banner_sponsors %}{{ sponsors.banner(s) }}{% endfor %}
+  </div>
+
+  <div class="row">
+  {% for s in non_banner_sponsors %}{{ sponsors.non_banner(s) }}{% endfor %}
+  </div>
+
+  <div class="row">
+    <div class="col-md-12" style="font-size: 18px; margin-top: .5em;">
+      ... and <a href="/sponsors.html"><b>{{ more_sponsors }}</b> more sponsors</a>.
+
+      <a href="https://www.patreon.com/renpytom" style="color: #e6461a">
+        <img style="margin-left: .5em; max-height: 20px; vertical-align: top;" src="/static/sponsors/patreon.png">
+        Become a Sponsor!
+      </a>
+
+    </div>
+
+  </div>
+
 
   <div class="row">
 
@@ -219,9 +245,7 @@
   </figure>
 
   <p>
-  To find more projects made with Ren'Py, visit the official <a href="http://games.renpy.org/">Ren'Py Games List</a> or the
-  thoroughly unofficial <a href="http://fuckyeahrenpy.tumblr.com/">F••• Yeah Ren'Py</a>.
-  </p>
+  To find more projects made with Ren'Py, visit the official <a href="http://games.renpy.org/">Ren'Py Games List</a>.
 
 </div>
 

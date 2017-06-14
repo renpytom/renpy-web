@@ -12,6 +12,8 @@ from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
 
+import sponsors
+
 app = Flask(__name__)
 
 
@@ -144,7 +146,13 @@ def index():
     Renders the index page.
     """
 
-    return render_template("index.html", data=data)
+    return render_template(
+        "index.html",
+        data=data,
+        banner_sponsors=sponsors.banner(),
+        non_banner_sponsors=sponsors.sample_non_banner(),
+        more_sponsors=sponsors.index_more_count(),
+        )
 
 
 @app.route("/artcard.html")

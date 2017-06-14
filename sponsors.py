@@ -13,11 +13,18 @@ class Level(object):
         self.span = span
         self.public = public
 
+        if banner:
+            self.width = banner[0]
+            self.height = banner[1]
+        else:
+            self.width = 0
+            self.height = 0
+
         level_by_name[self.name] = self
 
 
-Level("500 + Reward", True, (740, 150), "col-md-6")
-Level("250 + Reward", True, (740, 100), "col-md-6")
+Level("500 + Reward", True, (740, 150), "col-md-12")
+Level("250 + Reward", True, (740, 100), "col-md-12")
 Level("100 + Reward", True, (300, 100), "col-md-6")
 
 Level("10 + Reward", True)
@@ -80,6 +87,7 @@ def init():
         level = ''
 
         for l in f:
+            l = l.decode("utf-8")
             l = l.rstrip()
             l = l.split("\t")
 
@@ -117,6 +125,7 @@ def init():
 
     with open(os.path.abspath(os.path.dirname(__file__)) + "/sponsors/overrides.txt") as f:
         for l in f:
+            l = l.decode("utf-8")
             l = l.strip().split(None, 2)
 
             level = level_by_name[l[2]]
@@ -136,9 +145,25 @@ def init():
     sponsors.sort(key=lambda s : s.sort_key())
     sponsors.reverse()
 
-    for i in sponsors:
-        if i.level.banner:
-            print(i.credit_name, i.url, i.email)
+
+def banner():
+    return [ i for i in sponsors if i.level.banner ]
+
+
+def non_banner():
+    return [ i for i in sponsors if not i.level.banner and i.level.public ]
+
+
+def sample_non_banner():
+    return random.sample(non_banner(), 4)
+
+
+def anonymous_count():
+    return(len(i for i in sponsors if not i.level.public))
+
+
+def index_more_count():
+    return len([ i for i in sponsors if not i.level.banner]) - 4
 
 
 init()
