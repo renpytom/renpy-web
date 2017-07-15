@@ -13,9 +13,13 @@ import data
 from werkzeug.contrib.atom import AtomFeed
 
 import sponsors
-sponsors.init()
 
 app = Flask(__name__)
+
+
+@app.before_request
+def before_request():
+    sponsors.init(os.environ.get("MONTH", None))
 
 
 @app.template_filter('rst')

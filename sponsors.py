@@ -147,10 +147,12 @@ def init(month=None):
 
         load_sponsorfn(i)
 
+    sl = [ i for i in by_email.values() if i.status ]
+    sl.sort(key=lambda s : s.sort_key())
+    sl.reverse()
+
     global sponsors
-    sponsors = [ i for i in by_email.values() if i.status ]
-    sponsors.sort(key=lambda s : s.sort_key())
-    sponsors.reverse()
+    sponsors = sl
 
 
 def banner():
