@@ -113,3 +113,25 @@ dt {
 .platforms IMG {
     max-height: 45px;
 }
+
+.banner-sponsors {
+	margin-left: -140px;
+	max-width: 880px;
+}
+
+.banner-sponsors IMG {
+	width: 100%;
+}
+
+.sponsor-740 {
+    float: left;
+    margin-left: 140px;
+    max-width: 740px;
+}
+
+.sponsor-300 {
+    float: left;
+	max-width: 300px;
+	margin-left: 140px;
+}
+

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% macro banner(s) %}
-<div class="{{ s.level.span }}" style="text-align: center; margin-bottom: 10px;">
+<div class="sponsor-{{ s.level.width }}" style="text-align: center; margin-bottom: 10px;">
 <a href="{{ s.url }}" rel="nofollow"><img src="/static/sponsors/{{s.level.width}}x{{s.level.height}}/{{s.credit_name}}.png" alt="{{s.credit_name}}" width="{{ s.level.width }}}}"></a>
 </div>
 {% endmacro %}
@@ -38,7 +38,7 @@ Showing sponsors as of {{ current_month }}. This list is updated on the 15th of 
 </p>
 
 
-<div class="row" style="margin-top: 2.5em;">
+<div class="banner-sponsors" style="margin-top: 2.5em;">
 {% for s in banner_sponsors %}{{ banner(s) }}{% endfor %}
 </div>
 
