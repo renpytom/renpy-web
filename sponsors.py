@@ -28,7 +28,7 @@ class Level(object):
 
 Level("500 + Reward", True, (740, 150), "col-md-12")
 Level("250 + Reward", True, (740, 100), "col-md-12")
-Level("100 + Reward", True, (300, 100), "col-md-6")
+Level("100 + Reward", True, (350, 100), "col-md-6")
 
 Level("10 + Reward", True)
 Level("2 + Reward", False)

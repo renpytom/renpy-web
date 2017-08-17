@@ -115,7 +115,7 @@ dt {
 }
 
 .banner-sponsors {
-	margin-left: -140px;
+	margin-left: -40px;
 	max-width: 880px;
 }
 
@@ -125,13 +125,13 @@ dt {
 
 .sponsor-740 {
     float: left;
-    margin-left: 140px;
+    margin-left: 40px;
     max-width: 740px;
 }
 
-.sponsor-300 {
+.sponsor-350 {
     float: left;
-	max-width: 300px;
-	margin-left: 140px;
+	max-width: 350px;
+	margin-left: 40px;
 }
 
