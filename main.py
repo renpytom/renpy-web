@@ -7,7 +7,7 @@ import datetime
 import re
 sys.path.insert(0, os.path.dirname(__file__))
 
-from flask import Flask, render_template, abort, redirect, Response
+from flask import Flask, render_template, abort, redirect, Response, request, abort
 from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
@@ -170,6 +170,21 @@ def sponsors_page():
         anonymous_sponsors=sponsors.anonymous_count(),
         current_month=sponsors.current_month(),
         )
+
+
+@app.route("/agegate")
+def agegate():
+    url = request.args.get("url", "/")
+
+    for i in sponsors.sponsors:
+        if i.url == "https://www.renpy.org/agegate?url=" + url:
+            break
+    else:
+        abort(404)
+
+    return render_template(
+        "agegate.html",
+        url=url)
 
 
 @app.route("/artcard.html")

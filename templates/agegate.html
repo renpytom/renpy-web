@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Art Card Information{% endblock %}
+
+{% block content %}
+
+<h1>Adult Content Warning</h1>
+
+<p>
+The website you clicked, {{ url }}, contains adult content that may not
+be suitable for all audiences.
+</p>
+
+<div style="margin-bottom: 1em;">
+<a class="btn btn-large btn-primary" href="{{ url }}" rel="nofollow">Proceed to the website</a>
+</div>
+
+
+{% endblock %}
