@@ -85,6 +85,8 @@ def current_month():
 
 def load_sponsorfn(fn):
 
+    rv = [ ]
+
     with open(fn, "rb") as f:
 
         l = f.readline()
@@ -128,6 +130,10 @@ def load_sponsorfn(fn):
                 level=level,
                 raw_postcard=(l[4] != "No")
                 )
+
+            rv.append(s)
+
+    return rv
 
 
 def init(month=None):
