@@ -12,3 +12,6 @@ A full list of changes to Ren'Py can be found at:
 A list of changes that may require you to update your game can be found at:
 
     {{ doclink }}/incompatible.html
+
+Please also check out the [url={{ doclink }}/credits.html]credits[/url] and
+[url={{ doclink }}/sponsors.html]sponsor list[/url].
