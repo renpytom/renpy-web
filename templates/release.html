@@ -201,8 +201,15 @@
         <dt><strong>PowerPC Support:</strong> <a href="https://www.renpy.org/dl/{{release.full_version}}/renpy-ppc.zip">renpy-ppc.zip</a>
         <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
         {% endif %}
+
+{% if release.world_order >= 7 %}
+        <dt><strong>Raspberry Pi Support:</strong> {{ dl("raspi.tar.bz2") }}</dt>
+        <dd>Contains files required to allow Ren'Py to run on the Raspberry Pi. This should be untarred in the Ren'Py sdk directory.</dd>
+{% endif %}
+
         <dt><strong>Ren'Py Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
+
 
 {% if release.world_order >= 6 %}
         <dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl() }}</dt>

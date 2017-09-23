@@ -102,7 +102,6 @@ Ren'Py 6.99.13 is brought to you by:
 * Vollschauer
 * Xavi-mat
 
-
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
 
