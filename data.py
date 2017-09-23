@@ -37,6 +37,85 @@ releases = [ ]
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
+Release(
+    prerelease=True,
+    invisible=True,
+    version="6.99.13",
+    pygame="-2.1.0",
+    date="October xx, 2016",
+    patch=None,
+    name="We came in peace.",
+    world_order=8,
+    announcement="""\
+I'd like to announce Ren'Py 6.99.13, the last in a series of releases
+that will culminate in Ren'Py 7.
+
+This release improves Ren'Py for creators of all levels of experience.
+Some of the highlights of this release are:
+
+* The two games that are bundled with Ren'Py have both been remade. Both
+  are now in the 16:9 aspect ratio and use modern Ren'Py programming
+  techniques. The Tutorial has been rethought, and is now structured
+  to be a basic and in-depth class in Ren'Py, with hundreds of new examples.
+  (The old tutorial may still be used when a translation exists for a language.)
+
+* Ren'Py now ships with the interactive director, which can be accessed by
+  pressing 'D'. The directory allows one to edit scripts from inside Ren'Py,
+  adding and modifying the scene, show, hide, with, play, queue, stop and
+  voice statements.
+
+* Ren'Py now runs on the Raspberry Pi. Raspberry Pi files can be downloaded
+  and added to a Ren'PY release, though it's a creator's responsibility to ensure
+  that their project runs in the limited memory available on that platform.
+
+* Ren'Py now takes advantage of Non-Power of Two (NPOT) textures to reduce
+  memory usage, when supported on a platform. Memory usage can be reduced
+  further by setting config.cache_surfaces to False.
+
+* The functionality of the {a} text tag, which introduces a hyperlink, has
+  been improved. It's now possible to use a hyperlink to jump to a label,
+  call a label, or show a screen.
+
+* The say statement has been extended to take arguments. This new syntax can
+  be used by advanced creators to provide additional information to a say
+  statement.
+
+* Translations of the launcher to French and Brazilian Portugese have been added,
+  while the new tutorial is also available in Russian.
+
+In addition to these, dozens of minor improvements are mentioned in the
+changelog.
+
+Ren'Py 6.99.13 is brought to you by:
+
+* Alexandre Tranchant
+* Andrew Savchenko
+* Gustavo Carvalho
+* Lore
+* Maxwell Paul Brickner
+* Morgan Willcock
+* Mugenjohncel
+* Pratomo Asta N
+* Renoa
+* Ria-kon
+* Nyaatrap
+* Vollschauer
+* Xavi-mat
+
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.11.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
 
 Release(
     prerelease=False,
