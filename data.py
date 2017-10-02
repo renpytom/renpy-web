@@ -39,7 +39,7 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="6.99.13",
     pygame="-2.1.0",
     date="October xx, 2016",
