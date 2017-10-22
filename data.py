@@ -91,6 +91,8 @@ Ren'Py 6.99.13 is brought to you by:
 * Alexandre Tranchant
 * Andrew Savchenko
 * Gustavo Carvalho
+* Ian Leslie
+* Kevin Turner
 * Lore
 * Maxwell Paul Brickner
 * Morgan Willcock
@@ -101,6 +103,7 @@ Ren'Py 6.99.13 is brought to you by:
 * Nyaatrap
 * Vollschauer
 * Xavi-mat
+* Zedraxlo
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
