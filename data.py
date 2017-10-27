@@ -80,7 +80,10 @@ Some of the highlights of this release are:
   be used by advanced creators to provide additional information to a say
   statement.
 
-* Translations of the launcher to French and Brazilian Portugese have been added,
+* Ren'Py now loads files in a second thread, preventing sound playback and
+  looping from causing drops in the framerate.
+
+* Translations of the launcher to French and Brazilian Portuguese have been added,
   while the new tutorial is also available in Russian.
 
 In addition to these, dozens of minor improvements are mentioned in the
@@ -90,6 +93,7 @@ Ren'Py 6.99.13 is brought to you by:
 
 * Alexandre Tranchant
 * Andrew Savchenko
+* Gregory Pease
 * Gustavo Carvalho
 * Ian Leslie
 * Kevin Turner
