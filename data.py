@@ -116,7 +116,7 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     full_html="""\
-<img src="/static/6.99.11.jpg" alt="" style="width: 100%">
+<img src="/static/6.99.13.jpg" alt="" style="width: 100%">
 """,
 
     top_html="""\
