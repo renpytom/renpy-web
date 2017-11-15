@@ -117,9 +117,11 @@
 
     <h2>Who is it sponsored by?</h2>
 
-  <div class="banner-sponsors">
+  <div class="banner-sponsors clearfix">
   {% for s in banner_sponsors %}{{ sponsors.banner(s) }}{% endfor %}
   </div>
+
+
 
   <div class="row">
   {% for s in non_banner_sponsors %}{{ sponsors.non_banner(s) }}{% endfor %}
