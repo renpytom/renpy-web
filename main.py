@@ -113,7 +113,7 @@ def support():
     return redirect("/")
 
 
-@app.route("/l/<name>")
+@app.route("/l/<path:name>")
 def link(name):
     name = name.rstrip('/')
 
