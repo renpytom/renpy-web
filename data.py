@@ -34,6 +34,64 @@ releases = [ ]
 #
 # Remember to add.py --release !
 
+# To get the list of contributors to a release, we can use the command:
+# git shortlog 6.99..HEAD
+Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.14",
+    pygame="-2.1.0",
+    date="December xx, 2017",
+    patch=None,
+    name="A funny thing happened.",
+    world_order=8,
+    announcement="""\
+So, remember how 6.99.13 was supposed to be the last release before
+Ren'Py 7? Well, a funny thing happened - after a very productive month
+or two, we have Ren'Py 6.99.14 with many improvements.
+
+As an important note, the first time you open a game in 6.99.14, it will
+open much slower as Ren'Py compiles all the Python expressions it encounters.
+The game will open faster the second and later times it is run, and will run
+faster once it is open.
+
+Some of the improvements are:
+
+* The performance of Ren'Py has been improved in multiple ways, and the
+  apparent responsiveness has been improved even more.
+* A new multiple character dialogue system makes it possible for multiple
+  characters to display dialogue on the screen at once.
+* A new GUI preference system works with the new GUI to make it easier to
+  create preferences that customize the look of the Ren'Py GUI.
+* A new tooltip system makes it easier to write tooltips.
+* Ren'Py now supports TLS on multiple platforms, making it possible to
+  use HTTPS to connect to servers to transfer game data.
+
+This release also fixes issues with movie playback and android apps displaying
+a black screen, along with other improvements mentioned in the changelog.
+
+Ren'Py 6.99.14 is brought to you by:
+
+* Eliza Velasquez
+* Morgan Willcock
+* Rastagong
+* Ria-kon
+* Nyaatrap
+* Vollschauer
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.13.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
