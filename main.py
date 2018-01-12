@@ -137,7 +137,10 @@ def wiki(path):
     with open(fn, "r") as f:
         content = f.read()
 
-    return render_template('wiki.html', content=content)
+    obsolete = not path.startswith("renpy/releases")
+    title = os.path.basename(path).replace("_", " ")
+
+    return render_template('wiki.html', content=content, obsolete=obsolete, title=title)
 
 
 @app.route("/<name>.html")
@@ -272,4 +275,5 @@ if __name__ == "__main__":
     if args.public:
         app.run(host='0.0.0.0', port=args.port)
     else:
+        app.jinja_env.auto_reload = True
         app.run(debug=True, port=args.port)

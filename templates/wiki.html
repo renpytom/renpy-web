@@ -1,7 +1,40 @@
 {% extends "base.html" %}
 
-{% block title %}Wiki{% endblock %}
+{% block title %}{{ title }} - {% if obsolete %}Historic{% endif %} Ren'Py Wiki{% endblock %}
 
 {% block content %}
-    {{ content | safe }}
+{% if obsolete %}
+<div id="obsoleteTop">
+<h1>This page is out of date</h1>
+
+<p>
+You've reached a page on the Ren'Py wiki. Due to massive spam, the wiki hasn't
+been updated in over 5 years, and much of the information here is
+<span style="color: #800000;">very out of date</span>.
+ We've kept it because some of it is of historic interest, but all the
+information relevant to modern versions of Ren'Py has been moved elsewhere.
+</p>
+
+<p>
+Some places to look are:
+</p>
+
+<ul>
+<li> <a href="https://www.renpy.org">The Ren'Py Home Page</a>
+<li> <a href="https://www.renpy.org/latest.html">Download the Latest Version</a>
+<li> <a href="https://www.renpy.org/doc/html/">Ren'Py Documentation</a>
+<li> <a href="https://www.renpy.org/doc/html/quickstart.html">Quickstart Tutorial</a>
+<li> <a href="https://lemmasoft.renai.us/forums/viewforum.php?f=51">Ren'Py Cookbook</a>
+</ul>
+
+<p style="color: #800000;">Please do not create new links to this page.</p>
+
+<hr>
+
+</div>
+
+{% endif %}
+<div id="obsoleteBottom">
+{{ content | safe }}
+</div>
 {% endblock %}

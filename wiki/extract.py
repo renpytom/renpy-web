@@ -42,7 +42,7 @@ with open("page.csv") as f:
             if ("<pre>" in data) and ("</pre>" not in data):
                 data = data.replace("<pre>", "")
 
-            data = data.replace("__TOC__", "")
+            data = re.sub(r"__[A-Z]+__", "", data)
 
             f.write(data)
 
