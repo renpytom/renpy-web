@@ -32,8 +32,21 @@ Some places to look are:
 <hr>
 
 </div>
+{% endif %}
+
+{% if download %}
+
+<p style="margin-top: 1em;">
+If the download links on this page are missing, please download the SDK
+from <a href="{{download}}">{{ download }}</a>. Or <a href="/latest.html">click here</a>
+to download the latest version of Ren'Py.
+</p>
+
+<hr>
 
 {% endif %}
+
+
 <div id="obsoleteBottom">
 {{ content | safe }}
 </div>

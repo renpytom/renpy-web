@@ -140,7 +140,12 @@ def wiki(path):
     obsolete = not path.startswith("renpy/releases")
     title = os.path.basename(path).replace("_", " ")
 
-    return render_template('wiki.html', content=content, obsolete=obsolete, title=title)
+    if not obsolete:
+        download = "https://www.renpy.org/dl/" + os.path.basename(path) + "/"
+    else:
+        download = None
+
+    return render_template('wiki.html', content=content, obsolete=obsolete, title=title, download=download)
 
 
 @app.route("/<name>.html")

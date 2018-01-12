@@ -43,6 +43,7 @@ with open("page.csv") as f:
                 data = data.replace("<pre>", "")
 
             data = re.sub(r"__[A-Z]+__", "", data)
+            data = data.replace("{{SUBPAGENAME}}", os.path.basename(name))
 
             f.write(data)
 
