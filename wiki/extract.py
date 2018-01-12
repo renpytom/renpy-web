@@ -42,6 +42,8 @@ with open("page.csv") as f:
             if ("<pre>" in data) and ("</pre>" not in data):
                 data = data.replace("<pre>", "")
 
+            data = data.replace("__TOC__", "")
+
             f.write(data)
 
         subprocess.call([
@@ -56,7 +58,9 @@ with open("page.csv") as f:
         with open(html, "r") as f:
             data = f.read()
 
+        data = re.sub(r'src="', 'src="/static/wiki/', data)
         data = re.sub(r'href="Media:', 'href="/static/wiki/', data)
+        data = re.sub(r'href="(?!/)(?!http)', 'href="/wiki/', data)
 
         with open(html, "w") as f:
             f.write(data)

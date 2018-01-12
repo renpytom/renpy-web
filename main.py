@@ -16,6 +16,8 @@ import sponsors
 
 app = Flask(__name__)
 
+BASE = os.path.dirname(__file__)
+
 
 @app.before_request
 def before_request():
@@ -123,6 +125,19 @@ def link(name):
         }
 
     return redirect(links.get(name, '/'))
+
+
+@app.route("/wiki/<path:path>")
+def wiki(path):
+    fn = os.path.join(BASE, "wiki", "page", path + ".html")
+
+    if not os.path.exists(fn):
+        raise abort(404)
+
+    with open(fn, "r") as f:
+        content = f.read()
+
+    return render_template('wiki.html', content=content)
 
 
 @app.route("/<name>.html")
