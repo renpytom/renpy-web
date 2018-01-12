@@ -73,6 +73,7 @@ a black screen, along with other improvements mentioned in the changelog.
 Ren'Py 6.99.14 is brought to you by:
 
 * Eliza Velasquez
+* Maissara Moustafa
 * Morgan Willcock
 * Rastagong
 * Ria-kon
