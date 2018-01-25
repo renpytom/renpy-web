@@ -38,10 +38,38 @@ releases = [ ]
 # git shortlog 6.99..HEAD
 Release(
     prerelease=True,
+    invisible=True,
+    version="6.99.14.1",
+    pygame="-2.1.0",
+    date="January xx, 2018",
+    patch=None,
+    name="A funny thing happened.",
+    world_order=8,
+    announcement="""\
+Ren'Py 6.99.14.1 is a point release intended to improve the performance
+of Ren'Py, and especially image prediction. Please see the changelog for
+improvements.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.13.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+# To get the list of contributors to a release, we can use the command:
+# git shortlog 6.99..HEAD
+Release(
+    prerelease=False,
     invisible=False,
     version="6.99.14",
     pygame="-2.1.0",
-    date="December xx, 2017",
+    date="January 14, 2018",
     patch=None,
     name="A funny thing happened.",
     world_order=8,
