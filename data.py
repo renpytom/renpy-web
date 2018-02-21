@@ -37,18 +37,43 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 Release(
-    prerelease=True,
-    invisible=True,
+    prerelease=False,
+    invisible=False,
     version="6.99.14.1",
     pygame="-2.1.0",
-    date="January xx, 2018",
+    date="February 4, 2018",
     patch=None,
     name="A funny thing happened.",
     world_order=8,
     announcement="""\
-Ren'Py 6.99.14.1 is a point release intended to improve the performance
-of Ren'Py, and especially image prediction. Please see the changelog for
-improvements.
+I've released Ren'Py 6.99.14.1, a release focused on improving Ren'Py
+performance (both perceived and actual) by improving image prediction.
+This is done in a number of ways, such as reducing unnecessary locking,
+reducing memory usage by reducing duplication and only storing
+non-transparent portions of the image in memory, increasing the amount
+of memory used for by the image cache, and more.
+
+This release returns the framerate behavior to that in 6.99.13 and
+earlier, where Ren'Py will slow down how quickly it updates the screen
+when nothing changes. It also includes other improvements and fixes.
+
+Please see the `6.99.14 release notes <https://www.renpy.org/release/6.99.14>`_
+for what's new in that recent release.
+
+
+Ren'Py 6.99.14 is brought to you by:
+
+* Eliza Velasquez
+* Enerccio
+* Peter Vanusanik
+* Ria-kon
+* Nyyatrap
+* Vollschauer
+* Xavi-mat
+
+and myself, Tom "PyTom" Rothamel.
+
+This release is dedicated to the memory of `SusanTheCat <https://lemmasoft.renai.us/forums/memberlist.php?mode=viewprofile&u=7524>`_.
 """.decode("utf-8"),
     history="""\
 """,
