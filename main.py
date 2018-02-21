@@ -137,6 +137,11 @@ def wiki(path):
     with open(fn, "r") as f:
         content = f.read()
 
+    try:
+        content = content.decode("utf-8")
+    except:
+        content = content.decode("latin-1")
+
     obsolete = not path.startswith("renpy/releases")
     title = os.path.basename(path).replace("_", " ")
 
