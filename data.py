@@ -37,6 +37,57 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 Release(
+    prerelease=True,
+    invisible=False,
+    version="6.99.14.2",
+    pygame="-2.1.0",
+    date="February xx, 2018",
+    patch=None,
+    name="A funny thing happened.",
+    world_order=8,
+    announcement="""\
+I've released Ren'Py 6.99.14.2, a release that adds support for the Atom
+text editor to Ren'Py. Atom is a modern and approachable editor with
+support for a number of features, like code folding.
+
+To try Atom, please go to the Ren'Py preferences, and select Atom as
+your text editor. The normal Ren'Py text editing features will then
+use Atom. Further customization can be done inside Atom itself, including
+switching between dark and light themes.
+
+Special thanks to William Tumeo for the initial creation of the language-renpy
+Atom plugin, and then for transferring it to the Ren'Py project.
+
+Please see the `6.99.14 release notes <https://www.renpy.org/release/6.99.14>`_
+and `6.99.14.1 release notes <https://www.renpy.org/release/6.99.14.1>`_ for
+what's new in these releases.
+
+Ren'Py 6.99.14 is brought to you by:
+
+* Eliza Velasquez
+* Enerccio
+* Peter Vanusanik
+* Ria-kon
+* Nyyatrap
+* Vollschauer
+* William Tumeo
+* Xavi-mat
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.13.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
     prerelease=False,
     invisible=False,
     version="6.99.14.1",
