@@ -146,9 +146,17 @@
 
 
     <dl style="download">
+
+      {% if release.world_order >= 9 %}
+        <dt><strong>Atom (Windows):</strong> {{ dl("atom-windows.zip") }}</dt>
+        <dt><strong>Atom (Mac):</strong> {{ dl("atom-mac.zip") }}</dt>
+        <dt><strong>Atom (Linux):</strong> {{ dl("atom-linux.tar.bz2") }}</dt>
+      {% endif %}
+
       <dt><strong>Editra (Windows):</strong> {{ dl("editra-windows.zip") }}</dt>
       <dt><strong>Editra (Mac):</strong> {{ dl("editra-mac.zip") }}</dt>
       <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
+
       <dt><strong>jEdit:</strong> {{ dl("jedit.zip") }}</dt>
     </dl>
 

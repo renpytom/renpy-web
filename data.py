@@ -44,7 +44,7 @@ Release(
     date="February xx, 2018",
     patch=None,
     name="A funny thing happened.",
-    world_order=8,
+    world_order=9,
     announcement="""\
 I've released Ren'Py 6.99.14.2, a release that adds support for the Atom
 text editor to Ren'Py. Atom is a modern and approachable editor with
