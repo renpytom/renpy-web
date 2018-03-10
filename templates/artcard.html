@@ -2,6 +2,14 @@
 
 {% block title %}Art Card Information{% endblock %}
 
+{% macro card(month) %}
+<div class="col-sm-4" style="margin-bottom: 1em;">
+<a href="/static/artcard/{{ month }}.jpg" class="colorbox">
+<img src="/static/artcard/{{ month }}.jpg" class="img-thumbnail" style="max-height: 200px">
+</a>
+</div>
+{% endmacro %}
+
 {% block content %}
 
 <h2>Art Card Commission Information</h2>
@@ -124,6 +132,7 @@ time.
 
 <div class="col-sm-4">
 
+
 <a href="/static/artcard/eileen happy.png" class="colorbox">
 <img src="/static/artcard/eileen happy.png" class="img-thumbnail" style="max-height: 200px">
 </a><br>
@@ -141,21 +150,24 @@ time.
 </a><br>
 
 
-<a href="/static/patreon/2017-06/front.png" class="colorbox">
-<img src="/static/patreon/2017-06/front.png" class="img-thumbnail" style="max-height: 200px">
-</a><br>
-
-<a href="/static/patreon/2017-07/front.png" class="colorbox">
-<img src="/static/patreon/2017-07/front.png" class="img-thumbnail" style="max-height: 200px">
-</a><br>
-
-<a href="/static/patreon/2017-08/front.png" class="colorbox">
-<img src="/static/patreon/2017-08/front.png" class="img-thumbnail" style="max-height: 200px">
-</a><br>
+</div>
 
 
 </div>
 
+
+<div class="row">
+
+{{ card("2017-06") }}
+{{ card("2017-07") }}
+{{ card("2017-08") }}
+{{ card("2017-09") }}
+{{ card("2017-10") }}
+{{ card("2017-11") }}
+{{ card("2017-12") }}
+
+{{ card("2018-01") }}
+{{ card("2018-02") }}
 
 </div>
 
