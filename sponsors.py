@@ -101,7 +101,7 @@ def load_sponsorfn(fn):
             l = l.rstrip()
             l = l.split("\t")
 
-            if len(l) == 7:
+            if l[5] in level_by_name:
                 level = level_by_name[l[5]]
                 continue
 
@@ -111,7 +111,7 @@ def load_sponsorfn(fn):
             if url == 'n/a':
                 url = ""
 
-            status = (l[10] == "Ok")
+            status = (l[10] == "Ok") or (l[10] == "Processed")
 
             s = Sponsor(
                 name=name,
