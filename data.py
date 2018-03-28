@@ -37,11 +37,11 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="6.99.14.2",
     pygame="-2.1.0",
-    date="February xx, 2018",
+    date="March 27, 2018",
     patch=None,
     name="A funny thing happened.",
     world_order=9,
@@ -55,6 +55,9 @@ your text editor. The normal Ren'Py text editing features will then
 use Atom. Further customization can be done inside Atom itself, including
 switching between dark and light themes.
 
+This release also includes a few new features, and a number of important fixes,
+so everyone should upgrade.
+
 Special thanks to William Tumeo for the initial creation of the language-renpy
 Atom plugin, and then for transferring it to the Ren'Py project.
 
@@ -64,8 +67,12 @@ what's new in these releases.
 
 Ren'Py 6.99.14 is brought to you by:
 
+* Andy_kl
+* Eevee (Lexy Munroe)
 * Eliza Velasquez
 * Enerccio
+* Kevin Turner
+* Maxwell Paul Brickner
 * Peter Vanusanik
 * Ria-kon
 * Nyyatrap
@@ -79,7 +86,7 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     full_html="""\
-<img src="/static/6.99.13.jpg" alt="" style="width: 100%">
+<img src="/static/6.99.14.jpg" alt="" style="width: 100%">
 """,
 
     top_html="""\
