@@ -35,19 +35,72 @@ releases = [ ]
 # Remember to add.py --release !
 
 # To get the list of contributors to a release, we can use the command:
-# git shortlog 6.99..HEAD
+# git shortlog 7.0..HEAD
 Release(
     prerelease=True,
     invisible=False,
+    version="7.0.0",
+    pygame="-2.1.0",
+    date="April xx, 2018",
+    patch=None,
+    name="For all mankind.",
+    world_order=9,
+    announcement="""\
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.14.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+I'm happy to announce the release of Ren'Py 7, the result of over a decade
+of development since Ren'Py 6 was released. Compared to that release, Ren'Py
+7 adds many features uses have long since come to consider core parts of
+the engine, such as ATL, Screen Language, OpenGL acceleration, support for
+the Android and iOS platforms, Translations, Accessibility, and so much more.
+
+Thanks to everyone who created with Ren'Py during the Ren'Py 6 series, when
+Ren'Py and visual novels went from a tiny niche to something that is popular
+and culturally relevant. I look forward to seeing where Ren'Py 7 takes us.
+
+Compared to Ren'Py 6.99.14.3, this released adds a new layered image system,
+which provides a cleaner replacement for the use of LiveComposite and
+ConditionSwitch when it comes to building sprites from layered images
+created in paint programs. There is a new syntax for such images, and
+portions can be defined automatically. Layered images also interact better
+with other portions of Ren'Py, such as the image predictor and interactive
+director.
+
+Apart from this, this release includes a few fixes and minor new features.
+As always, check the changelog for complete details.
+
+Ren'Py 7 is brought to you by
+`over 100 people from around the world <https://www.renpy.org/doc/html/credits.html>`_,
+and myself, Tom "PyTom" Rothamel.
+""",
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="6.99.14.3",
     pygame="-2.1.0",
-    date="April x, 2018",
+    date="April 5, 2018",
     patch=None,
     name="A funny thing happened.",
     world_order=9,
     announcement="""\
 I've released Ren'Py 6.99.14.3, which fixes a few regressions introduced in
-6.99.14.2.
+6.99.14.2, most notably one in screens that could cause problems by failing
+to propagate data through screen updates. (This could cause transforms to
+repeat, as well as other strange problems. It only manifested for displayables
+directly or indirectly inside for loops.)
+
+It also fixes several other issues, and makes the AlphaMask displayable
+more useful.
 
 Please see the `6.99.14 release notes <https://www.renpy.org/release/6.99.14>`_,
 `6.99.14.1 release notes <https://www.renpy.org/release/6.99.14.1>`_,
@@ -59,6 +112,7 @@ Ren'Py 6.99.14 is brought to you by:
 * Andy_kl
 * Eevee (Lexy Munroe)
 * Eliza Velasquez
+* El-Unicorn
 * Enerccio
 * Kevin Turner
 * Maxwell Paul Brickner
