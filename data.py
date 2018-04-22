@@ -46,15 +46,6 @@ Release(
     name="For all mankind.",
     world_order=9,
     announcement="""\
-""".decode("utf-8"),
-    history="""\
-""",
-
-    full_html="""\
-<img src="/static/6.99.14.jpg" alt="" style="width: 100%">
-""",
-
-    top_html="""\
 I'm happy to announce the release of Ren'Py 7, the result of over a decade
 of development since Ren'Py 6 was released. Compared to that release, Ren'Py
 7 adds many features uses have long since come to consider core parts of
@@ -79,6 +70,15 @@ As always, check the changelog for complete details.
 Ren'Py 7 is brought to you by
 `over 100 people from around the world <https://www.renpy.org/doc/html/credits.html>`_,
 and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/6.99.14.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
 """,
 )
 
