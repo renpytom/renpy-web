@@ -41,7 +41,7 @@ Release(
     invisible=False,
     version="7.0.0",
     pygame="-2.1.0",
-    date="April xx, 2018",
+    date="May xx, 2018",
     patch=None,
     name="For all mankind.",
     world_order=9,
@@ -56,7 +56,7 @@ Thanks to everyone who created with Ren'Py during the Ren'Py 6 series, when
 Ren'Py and visual novels went from a tiny niche to something that is popular
 and culturally relevant. I look forward to seeing where Ren'Py 7 takes us.
 
-Compared to Ren'Py 6.99.14.3, this released adds a new layered image system,
+Compared to Ren'Py 6.99.14.3, this release adds a new layered image system,
 which provides a cleaner replacement for the use of LiveComposite and
 ConditionSwitch when it comes to building sprites from layered images
 created in paint programs. There is a new syntax for such images, and
@@ -75,7 +75,7 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     full_html="""\
-<img src="/static/6.99.14.jpg" alt="" style="width: 100%">
+<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
 """,
 
     top_html="""\
