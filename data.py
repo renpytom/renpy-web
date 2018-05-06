@@ -64,7 +64,11 @@ portions can be defined automatically. Layered images also interact better
 with other portions of Ren'Py, such as the image predictor and interactive
 director.
 
-Apart from this, this release includes a few fixes and minor new features.
+Other major changes are the ability to add a second row of ruby/interlinear
+text, a way of converting strings into custom displayables, and a French
+translation of the tutorial game.
+
+Apart from these, this release includes a few fixes and minor new features.
 As always, check the changelog for complete details.
 
 Ren'Py 7 is brought to you by
