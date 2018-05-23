@@ -12,9 +12,17 @@ from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
 
+from flask_recaptcha import ReCaptcha
+
+
 import sponsors
 
 app = Flask(__name__)
+
+app.config["RECAPTCHA_SITE_KEY"] = "6LeYkrsSAAAAACS53DFTOCeeslDtcVVSdv0K2ZuS"
+app.config["RECAPTCHA_SECRET_KEY"] = "6LeYkrsSAAAAAEUjiS_oEeuSSxEDbshkr1ao5exQ"
+
+recaptcha = ReCaptcha(app=app)
 
 BASE = os.path.dirname(__file__)
 
@@ -213,6 +221,20 @@ def agegate():
     return render_template(
         "agegate.html",
         url=url)
+
+
+@app.route("/email", methods=[ "GET", "POST" ])
+def email():
+
+    verified = False
+
+    if (request.method == "POST") and recaptcha.verify():
+        verified = True
+
+    return render_template(
+        "email.html",
+        verified=verified,
+        )
 
 
 @app.route("/artcard.html")
