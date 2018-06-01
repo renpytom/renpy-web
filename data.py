@@ -37,12 +37,12 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
-    version="7.0.0",
+    version="7.0",
     pygame="-2.1.0",
-    date="June xx, 2018",
-    patch=None,
+    date="June 01, 2018",
+    patch=0,
     name="For all mankind.",
     world_order=9,
     announcement="""\
@@ -71,6 +71,7 @@ Other major changes are:
 * A second row of ruby or interlinear text can now be shown.
 * A way of converting strings into custom displayables.
 * A French translation of the launcher and The Question.
+* An editing pass over the reference manual.
 
 Apart from these, this release includes a few fixes and minor new features.
 As always, check the changelog for complete details.
