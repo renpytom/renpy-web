@@ -41,7 +41,7 @@ Release(
     invisible=False,
     version="7.0.0",
     pygame="-2.1.0",
-    date="May xx, 2018",
+    date="June xx, 2018",
     patch=None,
     name="For all mankind.",
     world_order=9,
@@ -64,9 +64,13 @@ portions can be defined automatically. Layered images also interact better
 with other portions of Ren'Py, such as the image predictor and interactive
 director.
 
-Other major changes are the ability to add a second row of ruby/interlinear
-text, a way of converting strings into custom displayables, and a French
-translation of the tutorial game.
+Other major changes are:
+
+* The ability to apply transitions to specific layers, making it possible to
+  dissolve in a sprite while text is being shown.
+* A second row of ruby or interlinear text can now be shown.
+* A way of converting strings into custom displayables.
+* A French translation of the launcher and The Question.
 
 Apart from these, this release includes a few fixes and minor new features.
 As always, check the changelog for complete details.
