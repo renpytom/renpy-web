@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Email{% endblock %}
+
+
+{% block content %}
+
+{% if verified %}
+
+<h1>Thanks!</h1>
+
+<p>
+Sorry about that. Here's my email:
+</p>
+
+<p><a style="font-size: 150%"  href="mailto:pytom@bishoujo.us">pytom@bishoujo.us</a></p>
+
+<p>I look forward to hearing from you.</p>
+
+{% else %}
+
+<h1>Um...</h1>
+
+<p>
+Sorry to do this, but before I give you my email, I'd like to check that
+you are a person. Please check the box below, and hit submit, and then I'll
+know for sure.
+</p>
+
+
+<form method="POST" action="/email">
+{{ recaptcha }}
+<input type="submit" class="btn btn-primary" value="Submit"></input>
+</form>
+
+{% endif %}
+
+{% endblock %}
