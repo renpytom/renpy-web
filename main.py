@@ -5,9 +5,12 @@ import os
 import time
 import datetime
 import re
+import json
+
+
 sys.path.insert(0, os.path.dirname(__file__))
 
-from flask import Flask, render_template, abort, redirect, Response, request, abort
+from flask import Flask, render_template, abort, redirect, Response, request, abort, jsonify
 from docutils.core import publish_parts
 import data
 from werkzeug.contrib.atom import AtomFeed
@@ -293,6 +296,75 @@ def feed():
     return feed.get_response()
 
 
+@app.route("/channels.json")
+def channels():
+
+    rv = [ ]
+    seen = set()
+
+    def scan_version(channel, url, description, always, *paths):
+        for path in paths:
+
+            updates_json = os.path.join(path, "updates.json")
+
+            if os.path.exists(updates_json):
+                break
+
+        else:
+            return
+
+        with open(updates_json, "r") as f:
+            u = json.load(f)
+
+        sdk = u["sdk"]
+
+        version = sdk["pretty_version"].split()[1]
+
+        if version in seen:
+            return
+
+        seen.add(version)
+
+        record = {
+            "channel" : channel,
+            "url" : url,
+            "pretty_version" : version,
+            "split_version" : [ i for i in version.split(".") ],
+            "description" : description,
+            "timestamp" : os.path.getmtime(updates_json),
+            }
+
+        rv.append(record)
+
+    scan_version(
+        "Release",
+        "http://update.renpy.org/release/updates.json",
+        "{b}Recommended.{/b} The version of Ren'Py that should be used in all newly-released games.",
+        False,
+        "/home/tom/WWW.update/release",
+        "/home/tom/ab/renpy/dl/release",
+        )
+
+    scan_version(
+        "Prerelease",
+        "http://update.renpy.org/prerelease/updates.json",
+        "A preview of the next version of Ren'Py that can be used for testing and taking advantage of new features, but not for final releases of games.",
+        False,
+        "/home/tom/WWW.update/prerelease",
+        "/home/tom/ab/renpy/dl/prerelease",
+        )
+
+    scan_version(
+        "Nightly",
+        "http://nightly.renpy.org/current/updates.json",
+        "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
+        True,
+        "/home/tom/WWW.nightly/current",
+        "/home/tom/ab/WWW.nightly/current",
+        )
+
+    return jsonify({ "releases" : rv })
+
 
 # For use under mod wsgi.
 application = app
@@ -305,7 +377,7 @@ if __name__ == "__main__":
     args = ap.parse_args()
 
     if args.public:
-        app.run(host='0.0.0.0', port=args.port)
+        app.run(host='0.0.0.0', port=args.port, debug=True)
     else:
         app.jinja_env.auto_reload = True
         app.run(debug=True, port=args.port)
