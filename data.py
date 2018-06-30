@@ -36,6 +36,58 @@ releases = [ ]
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.0.1",
+    pygame="-2.1.0",
+    date="July XX, 2018",
+    patch=None,
+    name="For all mankind.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.0.1. This release fixes minor issues with
+Ren'Py 7.0.0, and also includes a few new features:
+
+* There is a new "monologue mode", which allows you to use triple-quoted
+  strings to create say statements that contain multiple lines of dialogue.
+  As part of this, the new {clear} text tag allows the equivalent of
+  ``nvl clear`` to be embedded in dialogue.
+
+* The new :var:`_quit_slot` variable lets you specify a save slot that
+  the game is saved to when the user quits.
+
+* The updater (built into the launcher) has been updated to prompt for the
+  channel to update to on each use, preventing creators from updated to
+  an unexpected prerelease or nightly build.
+
+As usual, check the changelog for a complete list of changes.
+
+Ren'Py 7.0.1 is brought to you by:
+
+* Alexandre-T
+* Craig P. Donson
+* Joshua Fehler
+* Max le Fou
+* Ria-kon
+* Nyaatrap
+* Xavi-mat
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
 Release(
     prerelease=False,
     invisible=False,
