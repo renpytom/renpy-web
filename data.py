@@ -40,22 +40,28 @@ releases = [ ]
 Release(
     prerelease=True,
     invisible=False,
-    version="7.0.1",
+    version="7.1.0",
     pygame="-2.1.0",
-    date="July XX, 2018",
+    date="August XX, 2018",
     patch=None,
-    name="For all mankind.",
+    name="On the road again.",
     world_order=9,
     announcement="""\
-I'm happy to announce Ren'Py 7.0.1. This release fixes minor issues with
+I'm happy to announce Ren'Py 7.1.0. This release fixes ssues with
 Ren'Py 7.0.0, and also includes a few new features:
+
+* Android support has been rewritten to use the modern gradle-based
+  build system. This allows Android apps created using Ren'Py to
+  be posted in the Google Play store again. This also improves them
+  in other ways, like making the app smaller by splitting out support
+  for different platforms.
 
 * There is a new "monologue mode", which allows you to use triple-quoted
   strings to create say statements that contain multiple lines of dialogue.
   As part of this, the new {clear} text tag allows the equivalent of
   ``nvl clear`` to be embedded in dialogue.
 
-* The new :var:`_quit_slot` variable lets you specify a save slot that
+* The new `_quit_slot` variable lets you specify a save slot that
   the game is saved to when the user quits.
 
 * The updater (built into the launcher) has been updated to prompt for the
@@ -64,7 +70,7 @@ Ren'Py 7.0.0, and also includes a few new features:
 
 As usual, check the changelog for a complete list of changes.
 
-Ren'Py 7.0.1 is brought to you by:
+Ren'Py 7.1.0 is brought to you by:
 
 * Alexandre-T
 * Craig P. Donson
