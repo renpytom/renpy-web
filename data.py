@@ -72,13 +72,15 @@ As usual, check the changelog for a complete list of changes.
 
 Ren'Py 7.1.0 is brought to you by:
 
+* Andykl
 * Alexandre-T
+* Bryan Tsang
 * Craig P. Donson
 * Joshua Fehler
-* Max le Fou
-* Ria-kon
-* Nyaatrap
-* Xavi-mat
+* Lee Yunseok
+* Moshibit
+* Saltome
+* Philat
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
