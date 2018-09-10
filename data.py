@@ -42,7 +42,7 @@ Release(
     invisible=False,
     version="7.1.0",
     pygame="-2.1.0",
-    date="August XX, 2018",
+    date="September 10, 2018",
     patch=None,
     name="On the road again.",
     world_order=9,
@@ -72,15 +72,22 @@ As usual, check the changelog for a complete list of changes.
 
 Ren'Py 7.1.0 is brought to you by:
 
-* Andykl
 * Alexandre-T
+* Andy_kl
+* Andykl
 * Bryan Tsang
 * Craig P. Donson
 * Joshua Fehler
 * Lee Yunseok
+* Max le Fou
 * Moshibit
+* Muhammad Nur Hidayat Yasuyoshi
+* Ria-kon
 * Saltome
-* Philat
+* Sylvain Beucler
+* nyaatraps
+* philat:
+* xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
