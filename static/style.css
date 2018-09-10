@@ -135,3 +135,16 @@ dt {
 	margin-left: 40px;
 }
 
+.topad {
+    display: block;
+    background-color: #fff;
+    background-image: url("/static/jam.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    min-height: 60px;
+
+    padding-left: 100px;
+    padding-top: 16px;
+}
