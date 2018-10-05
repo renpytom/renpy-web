@@ -40,6 +40,57 @@ releases = [ ]
 Release(
     prerelease=True,
     invisible=False,
+    version="7.1.1",
+    pygame="-2.1.0",
+    date="October xx, 2018",
+    patch=None,
+    name="On the road again.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.1.1. This is a bug release for Ren'Py
+7.1, which improves the new android support and fixes a number of other
+issues.
+
+Some of the more important bugfixes include:
+
+* A change to the History screen to fix problems with [[ in dialogue. (This
+  requires you to change screens.rpy, see the changelog for details.)
+* The Android SDK uses a sufficent amount of memory on low-memory computers.
+* Android icons are correctly.
+* Zero-width characters are drawn correctly, and non-breaking spaces are
+  respected in more places. (This fixes a problem with Arabic text rendering.)
+* Automatic window management now considers dialogue and captions associated
+  with the menu statement.
+
+There have also been a few small feature additions:
+
+* It is now possible to nestle the ctc indicator into the text in such a
+  way that it can not be on a separate line from the final word of dialogue.
+* Drags (used in drag-and-drop) now support alternate clicks, which are right
+  clicks on pc and long-presses on touch platforms.
+* The Russian and Korean translations have been updated.
+
+Ren'Py 7.1.1 is brought to you by:
+
+* Lee Yunesok
+* Ria-kon
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="7.1.0",
     pygame="-2.1.0",
     date="September 10, 2018",
@@ -47,7 +98,7 @@ Release(
     name="On the road again.",
     world_order=9,
     announcement="""\
-I'm happy to announce Ren'Py 7.1.0. This release fixes ssues with
+I'm happy to announce Ren'Py 7.1.0. This release fixes issues with
 Ren'Py 7.0.0, and also includes a few new features:
 
 * Android support has been rewritten to use the modern gradle-based

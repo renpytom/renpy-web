@@ -6,6 +6,7 @@ import time
 import datetime
 import re
 import json
+import random
 
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -190,9 +191,24 @@ def index():
     Renders the index page.
     """
 
+    FEATURED = os.path.join(BASE, "static/featured")
+    featured = [ ]
+
+    for i in os.listdir(FEATURED):
+        if not (i.endswith(".jpg") or i.endswith(".png")):
+            continue
+
+        with open(os.path.join(FEATURED, i.rpartition(".")[0] + ".html"), "r") as f:
+            html = f.read()
+
+        featured.append((i, html))
+
+    featured = random.sample(featured, 3)
+
     return render_template(
         "index.html",
         data=data,
+        featured=featured,
         banner_sponsors=sponsors.banner(),
         non_banner_sponsors=sponsors.sample_non_banner(),
         more_sponsors=sponsors.index_more_count(),
