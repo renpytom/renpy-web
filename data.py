@@ -55,8 +55,8 @@ Some of the more important bugfixes include:
 
 * A change to the History screen to fix problems with [[ in dialogue. (This
   requires you to change screens.rpy, see the changelog for details.)
-* The Android SDK uses a sufficent amount of memory on low-memory computers.
-* Android icons are correctly.
+* The Android SDK uses a sufficient amount of memory on low-memory computers.
+* A problem with creating non-adaptive Android icons has been fixed.
 * Zero-width characters are drawn correctly, and non-breaking spaces are
   respected in more places. (This fixes a problem with Arabic text rendering.)
 * Automatic window management now considers dialogue and captions associated
@@ -64,16 +64,33 @@ Some of the more important bugfixes include:
 
 There have also been a few small feature additions:
 
-* It is now possible to nestle the ctc indicator into the text in such a
+* It is now possible to nestle the CTC indicator into the text in such a
   way that it can not be on a separate line from the final word of dialogue.
 * Drags (used in drag-and-drop) now support alternate clicks, which are right
-  clicks on pc and long-presses on touch platforms.
+  clicks on PC and long-presses on touch platforms.
 * The Russian and Korean translations have been updated.
+* The 86_64 Android APK is given a different numeric version than the arm version,
+  allowing both to be uploaded to the Play store.
 
 Ren'Py 7.1.1 is brought to you by:
 
-* Lee Yunesok
+* Alexandre-T
+* Andy_kl
+* Andykl
+* Bryan Tsang
+* Craig P. Donson
+* Joshua Fehler
+* Lee Yunseok
+* Max le Fou
+* Moshibit
+* Muhammad Nur Hidayat Yasuyoshi
 * Ria-kon
+* Saltome
+* Sylvain Beucler
+* nyaatraps
+* philat
+* xavi-mat
+
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
