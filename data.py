@@ -38,11 +38,11 @@ releases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.1.1",
     pygame="-2.1.0",
-    date="October xx, 2018",
+    date="October 10, 2018",
     patch=None,
     name="On the road again.",
     world_order=9,
