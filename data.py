@@ -65,7 +65,7 @@ Some of the more important bugfixes include:
 There have also been a few small feature additions:
 
 * The SetVariable and ToggleVariable functions now can take namespaces,
-  and fields, so it's posible to have actions like SetVariable("hero.strenght", 42)
+  and fields, so it's posible to have actions like SetVariable("hero.strength", 42)
   and ToggleVariable("persistent.alternate_outfits").
 * It is now possible to nestle the CTC indicator into the text in such a
   way that it can not be on a separate line from the final word of dialogue.
