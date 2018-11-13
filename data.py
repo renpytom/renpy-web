@@ -51,7 +51,7 @@ Release(
 I'm happy to announce Ren'Py 7.1.2. This is the second bug release for Ren'Py
 7.1, which improves Ren'Py while fixing issues.
 
-There have also been a few feature additions:
+There have also been a few feature additions. Some of the highlights are:
 
 * Transforms that are used once in a screen can now be defined inline.
 * Choice menus can now display as insensitive buttons items selected by the
@@ -59,7 +59,7 @@ There have also been a few feature additions:
 * It is now possible to set variables inside a used screen.
 * Ren'Py can now automatically detect the language of the player's system
   and select the correct translation.
-* The German translation has been updated.
+* The French, German, Korean, and Russian translations has been updated.
 
 Some of the more important bugfixes include:
 
