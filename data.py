@@ -89,8 +89,9 @@ Ren'Py 7.1.2 is brought to you by:
 * nyaatraps
 * philat
 * Vollschauer
-* xavi-mat
+* Xavi-mat
 * Xela
+* Zedraxlo
 
 
 and myself, Tom "PyTom" Rothamel.
