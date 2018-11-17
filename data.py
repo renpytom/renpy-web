@@ -39,11 +39,11 @@ releases = [ ]
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.1.2",
     pygame="-2.1.0",
-    date="November xx, 2018",
+    date="November 17, 2018",
     patch=None,
     name="On the road again.",
     world_order=9,
@@ -59,7 +59,8 @@ There have also been a few feature additions. Some of the highlights are:
 * It is now possible to set variables inside a used screen.
 * Ren'Py can now automatically detect the language of the player's system
   and select the correct translation.
-* The French, German, Korean, and Russian translations has been updated.
+* The French, German, Korean, Russian, and Simplified Chinese translations
+  have been updated.
 
 Some of the more important bugfixes include:
 
