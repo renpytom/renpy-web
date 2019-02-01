@@ -39,6 +39,145 @@ releases = [ ]
 
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.1.4",
+    pygame="-2.1.0",
+    date="February xx, 2018",
+    patch=None,
+    name="On the road again.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.1.3. This is the fourth patch release for Ren'Py
+7.1, which improves Ren'Py while fixing issues. The main reason for this release
+is to fix a few issues in Android support caused by an SDK update.
+
+There have also been a few feature additions. Some of the highlights are:
+
+* Menus now take arguments, and so do menu choices.
+* The new im.Blur image manipulator can blur static images.
+* Layeredimage groups can now contain non-conflicting attributes while
+  still being automatically declared.
+* It's possible to display a non-looping Movie displayable.
+* A fullscreen Ren'Py will not minimize when the mouse changes monitors.
+
+In addition, there were a number of other bugfixes.
+
+Ren'Py 7.1.4 is brought to you by:
+
+* Alexandre-T
+* Andy_kl
+* Bryan Tsang
+* Craig P. Donson
+* Eric Ahn
+* Felix Lampe
+* Joshua Fehler
+* Konstantin Mozheyko
+* Lee Yunseok
+* Mal Graty
+* Max le Fou
+* Moshibit
+* Muhammad Nur Hidayat Yasuyoshi
+* Ria-kon
+* Saltome
+* Sergey Musiyenko
+* Shehriyar Qureshi
+* Sylvain Beucler
+* nyaatraps
+* philat
+* Vollschauer
+* Xavi-mat
+* Xela
+* Zedraxlo
+
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.1.3",
+    pygame="-2.1.0",
+    date="November 18, 2018",
+    patch=None,
+    name="On the road again.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.1.3. This is the third bug release for Ren'Py
+7.1, which improves Ren'Py while fixing issues. (There was a language bug in
+7.1.2 that necessitated a quick re-release. The rest of these notes apply
+to 7.1.2.)
+
+There have also been a few feature additions. Some of the highlights are:
+
+* Transforms that are used once in a screen can now be defined inline.
+* Choice menus can now display as insensitive buttons items selected by the
+  if clause.
+* It is now possible to set variables inside a used screen.
+* Ren'Py can now automatically detect the language of the player's system
+  and select the correct translation.
+* The French, German, Korean, Russian, and Simplified Chinese translations
+  have been updated.
+
+Some of the more important bugfixes include:
+
+* A bug that caused Arabic text to display as squares on Windows has been fixed.
+* Lint now handles several cases correctly, including layered images.
+* As Ren'Py generally could not created proper android packages with a 32-bit
+  Java 8, it now requires a 64-bit Java Development Kit.
+
+Ren'Py 7.1.3 is brought to you by:
+
+* Alexandre-T
+* Andy_kl
+* Bryan Tsang
+* Craig P. Donson
+* Felix Lampe
+* Joshua Fehler
+* Konstantin Mozheyko
+* Lee Yunseok
+* Max le Fou
+* Moshibit
+* Muhammad Nur Hidayat Yasuyoshi
+* Ria-kon
+* Saltome
+* Shehriyar Qureshi
+* Sylvain Beucler
+* nyaatraps
+* philat
+* Vollschauer
+* Xavi-mat
+* Xela
+* Zedraxlo
+
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.1.2",
