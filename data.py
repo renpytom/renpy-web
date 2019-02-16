@@ -49,12 +49,12 @@ Release(
     world_order=9,
     announcement="""\
 I'm happy to announce Ren'Py 7.1.4. This is the fourth patch release for Ren'Py
-7.1, which improves Ren'Py while fixing issues. The main reason for this release
-is to fix a few issues in Android support caused by an SDK update.
-
-There have also been a few feature additions. Some of the highlights are:
+7.1, which improves Ren'Py while fixing issues. Here's a selection of the new
+features added:
 
 * Menus now take arguments, and so do menu choices.
+* The say statement can now take a temporary image attribute, making is
+  possible to change a character's emotion for a single statement.
 * The new im.Blur image manipulator can blur static images.
 * Layeredimage groups can now contain non-conflicting attributes while
   still being automatically declared.
@@ -66,7 +66,8 @@ There have also been a few feature additions. Some of the highlights are:
 * The CTC screen now takes additional arguments, including the kind of
   click-to-continue indicator being shown.
 
-In addition, there were a number of other bugfixes.
+This release update Ren'Py to work with the current Android SDK, and contains
+a number of other bugfixes.
 
 Ren'Py 7.1.4 is brought to you by:
 
@@ -86,6 +87,7 @@ Ren'Py 7.1.4 is brought to you by:
 * Ria-kon
 * Saltome
 * Sergey Musiyenko
+* Shayne Officer
 * Shehriyar Qureshi
 * Sylvain Beucler
 * nyaatraps
