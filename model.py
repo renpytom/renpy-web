@@ -146,3 +146,10 @@ class WikiRelease(Data):
         data.releases.append(self)
 
         self.full_version = self.version
+
+
+class Alias(Data):
+
+    def __init__(self, **kwargs):
+        super(Alias, self).__init__(**kwargs)
+        data.aliases.append(self)
