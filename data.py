@@ -9,6 +9,9 @@ from model import *
 # Release and WikiRelease statement-commands, below.
 releases = [ ]
 
+# All aliases.
+aliases = [ ]
+
 # Private Prerelease checklist:
 #
 # 1. prerelease=True
@@ -37,20 +40,84 @@ releases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
-
 Release(
     prerelease=True,
     invisible=False,
-    version="7.1.4",
+    version="7.3.0",
     pygame="-2.1.0",
-    date="February xx, 2018",
+    date="June xx, 2019",
     patch=None,
-    name="On the road again.",
+    name="The world (wide web) is not enough.",
+    world_order=10,
+    announcement="""\
+I'm pleased to announce the release of Ren'Py 7.3.0, the first release of
+Ren'Py with support for running on the web platform, inside a web browser
+supporting HTML 5, Web Assembly, and WebGL. Right now, this support is in
+beta, as it's limited by the capabilities of the web platform itself, but
+it's suitable for making web demos of Ren'Py games.
+
+In addition to that, this release adds many new features to Ren'Py. These
+include:
+
+* Many improvements to creator-defined statements, allowing the parsing
+  of Ren'Py statements and block, the catching of errors, and the ability
+  to execute a second function after Ren'Py in the body of a statement
+  has finished.
+* Screen language improvements, like the ability to capture screen language
+  displayables into a variable and to use a property to determine if a screen
+  is sensitive to input.
+* Text improvements, with self-closing text tags and the ability to control
+  the capitalization of interpolated text.
+* Mobile platforms now support non-rectangular focus masks, and 64-bit Android
+  is supported in time for the Google Play deadline.
+* There is a new Turkish translation of the launcher and Spanish translation of
+  the tutorial game, while several of the other translations have been updated.
+
+Thare are also a number of other changes, so check out the changelog for all
+of what's new.
+
+Ren'Py 7.3.0 is brought to you by:
+
+* Andy_kl
+* Arda Güler
+* DragoonHP
+* Jan Beich
+* Kobaltcore
+* Lee Yunseok
+* Mal Graty
+* Moshibit
+* Pionere
+* Sylvain Beucler
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.2.2",
+    pygame="-2.1.0",
+    date="March 31, 2019",
+    patch=None,
+    name="What's on the menu.",
     world_order=9,
     announcement="""\
-I'm happy to announce Ren'Py 7.1.4. This is the fourth patch release for Ren'Py
-7.1, which improves Ren'Py while fixing issues. Here's a selection of the new
-features added:
+Ren'Py 7.2.2 is out! This is mostly a patch release, but it also includes support
+for the new accessibility menu, accessed by pressing 'a'. This menu puts current
+and future engine-level accessibility features in one place.
+
+Ren'Py 7.2 adds new features to Ren'Py, including:
 
 * Menus now take arguments, and so do menu choices.
 * The say statement can now take a temporary image attribute, making is
@@ -66,37 +133,23 @@ features added:
 * The CTC screen now takes additional arguments, including the kind of
   click-to-continue indicator being shown.
 
-This release update Ren'Py to work with the current Android SDK, and contains
+Ren'Py 7.2 updates Ren'Py to work with the current Android SDK, and contains
 a number of other bugfixes.
 
-Ren'Py 7.1.4 is brought to you by:
+Ren'Py 7.2.2 is brought to you by:
 
-* Alexandre-T
 * Andy_kl
-* Bryan Tsang
 * Craig P. Donson
 * Eric Ahn
-* Felix Lampe
-* Joshua Fehler
-* Konstantin Mozheyko
-* Lee Yunseok
+* Enerccio
+* Frédéric Chapoton
 * Mal Graty
-* Max le Fou
+* Meithal
 * Moshibit
-* Muhammad Nur Hidayat Yasuyoshi
-* Ria-kon
-* Saltome
 * Sergey Musiyenko
 * Shayne Officer
-* Shehriyar Qureshi
 * Sylvain Beucler
-* nyaatraps
-* philat
-* Vollschauer
 * Xavi-mat
-* Xela
-* Zedraxlo
-
 
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
@@ -104,13 +157,132 @@ and myself, Tom "PyTom" Rothamel.
 """,
 
     full_html="""\
-<img src="/static/7.0.0.jpg" alt="" style="width: 100%">
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
 """,
 
     top_html="""\
 """,
 )
 
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.2.1",
+    pygame="-2.1.0",
+    date="March 16, 2019",
+    patch=None,
+    name="What's on the menu.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.2.1, a patch release. This release consists
+primarily of fixes. It also adds support for generating the icon and
+launchimage on iOS.
+
+Ren'Py 7.2  adds new features to Ren'Py, including:
+
+* Menus now take arguments, and so do menu choices.
+* The say statement can now take a temporary image attribute, making is
+  possible to change a character's emotion for a single statement.
+* The new im.Blur image manipulator can blur static images.
+* Layeredimage groups can now contain non-conflicting attributes while
+  still being automatically declared.
+* It's possible to display a non-looping Movie displayable, and to have
+  a movie display a static image before the first frame renders.
+* A fullscreen Ren'Py will not minimize when the mouse changes monitors.
+* Text now takes renpy.BASELINE as a yanchor, which allows one to position
+  the text's baseline.
+* The CTC screen now takes additional arguments, including the kind of
+  click-to-continue indicator being shown.
+
+Ren'Py 7.2 updates Ren'Py to work with the current Android SDK, and contains
+a number of other bugfixes.
+
+Ren'Py 7.2.1 is brought to you by:
+
+* Andy_kl
+* Craig P. Donson
+* Eric Ahn
+* Enerccio
+* Frédéric Chapoton
+* Mal Graty
+* Moshibit
+* Sergey Musiyenko
+* Shayne Officer
+* Sylvain Beucler
+* Xavi-mat
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.2.0",
+    pygame="-2.1.0",
+    date="March 3, 2019",
+    patch=None,
+    name="What's on the menu.",
+    world_order=9,
+    announcement="""\
+I'm happy to announce Ren'Py 7.2.0. This release adds new features to
+Ren'Py, including:
+
+* Menus now take arguments, and so do menu choices.
+* The say statement can now take a temporary image attribute, making is
+  possible to change a character's emotion for a single statement.
+* The new im.Blur image manipulator can blur static images.
+* Layeredimage groups can now contain non-conflicting attributes while
+  still being automatically declared.
+* It's possible to display a non-looping Movie displayable, and to have
+  a movie display a static image before the first frame renders.
+* A fullscreen Ren'Py will not minimize when the mouse changes monitors.
+* Text now takes renpy.BASELINE as a yanchor, which allows one to position
+  the text's baseline.
+* The CTC screen now takes additional arguments, including the kind of
+  click-to-continue indicator being shown.
+
+This release also updates Ren'Py to work with the current Android SDK, and contains
+a number of other bugfixes.
+
+Ren'Py 7.2.0 is brought to you by:
+
+* Andy_kl
+* Craig P. Donson
+* Eric Ahn
+* Mal Graty
+* Moshibit
+* Sergey Musiyenko
+* Shayne Officer
+* Sylvain Beucler
+* Xavi-mat
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Alias(old="7.1.4", new="7.2.0")
 
 Release(
     prerelease=False,
@@ -2433,6 +2605,9 @@ for i in releases:
 
     if not i.wiki:
         release_version[i.version] = i
+
+for i in aliases:
+    release_version[i.old] = release_version[i.new]
 
 for n, i in enumerate(final_releases):
     i.ordinal = len(final_releases) - n
