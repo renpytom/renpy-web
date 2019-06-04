@@ -189,10 +189,11 @@
    <h2>Android and iOS Support</h2>
 
     <p>
-    When building Android or iOS packages, Ren'Py will prompt you to download RAPT (Ren'Py Android Packaging Tool) or
-    Renios (Ren'Py iOS Support). As these downloads may fail if your Internet connection is unreliable, these packages
+    When building Android packages, iOS packages, or web distributions, Ren'Py will prompt you to download
+    RAPT (Ren'Py Android Packaging Tool), Renios (Ren'Py iOS Support), or Renpyweb (Web Platform Support).
+    As these downloads may fail if your Internet connection is unreliable, these packages
     can be downloaded separately. To install, extract the contents of the
-    archive to the Ren'Py directory. (Place the "rapt" or "renios" directory into the "renpy-{{release.full_version}}"
+    archive to the Ren'Py directory. (Place the "rapt", "renios", or "web" directory into the "renpy-{{release.full_version}}"
     directory.)
     </p>
 
@@ -202,6 +203,11 @@
     <dl>
       <dt><strong>iOS Support (Renios):</strong> {{ dl("renios.zip") }}</dt>
     </dl>
+    {% if release.world_order >= 10 %}
+    <dl>
+      <dt><strong>Web Platform Support (Renpyweb):</strong> {{ dl("web.zip") }}</dt>
+    </dl>
+    {%endif%}
 
 </section>
 {% endif %}
