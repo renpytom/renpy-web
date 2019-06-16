@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.3.0",
     pygame="-2.1.0",
-    date="June xx, 2019",
+    date="June 16, 2019",
     patch=None,
     name="The world (wide web) is not enough.",
     world_order=10,
@@ -86,6 +86,7 @@ Ren'Py 7.3.0 is brought to you by:
 * Lee Yunseok
 * Mal Graty
 * Moshibit
+* Nyaatrap
 * Pionere
 * Sylvain Beucler
 
