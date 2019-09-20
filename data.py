@@ -40,6 +40,244 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.3.3",
+    pygame="-2.1.0",
+    date="September x, 2019",
+    patch=None,
+    name="The world (wide web) is not enough.",
+    world_order=10,
+    announcement="""\
+I'm happy to announce Ren'Py 7.3.3. This release is intended to improve
+performance and compatibility, fix bugs, and make available minor features
+that have been added since Ren'Py 7.3.2 was released.
+
+Some highlights are:
+
+* An audio directory that allows audio files to define themselves, similar
+  to images.
+* The ability for Ren'Py to accept audio files generated at runtime.
+* A lowering of the version of android needed to run Ren'Py.
+* Many improvements to Web platform support.
+* Improved render-to-texture performance.
+* The ability of renpy.input to take custom screens.
+
+**Running this release on macOS may now require you to ctrl-click on renpy.app
+and choose 'Open'.**
+
+Ren'Py 7.3.2 is a patch release to Ren'Py
+7.3, mostly intended to fix bugs and address issues that people have
+reported. As some of the bugs have significant performance and correctness
+impact, everyone who upgraded to Ren'Py 7.3.0 or 7.3.1 should move on to this version.
+
+Ren'Py 7.3.1 added a few minor new features, including the ability to
+customize descriptive text.
+
+Ren'Py 7.3 is the first release of
+Ren'Py with support for running on the web platform, inside a web browser
+supporting HTML 5, Web Assembly, and WebGL. Right now, this support is in
+beta, as it's limited by the capabilities of the web platform itself, but
+it's suitable for making web demos of Ren'Py games.
+
+In addition to that, this release adds many new features to Ren'Py. These
+include:
+
+* Many improvements to creator-defined statements, allowing the parsing
+  of Ren'Py statements and block, the catching of errors, and the ability
+  to execute a second function after Ren'Py in the body of a statement
+  has finished.
+* Screen language improvements, like the ability to capture screen language
+  displayables into a variable and to use a property to determine if a screen
+  is sensitive to input.
+* Text improvements, with self-closing text tags and the ability to control
+  the capitalization of interpolated text.
+* Mobile platforms now support non-rectangular focus masks, and 64-bit Android
+  is supported in time for the Google Play deadline.
+* There is a new Turkish translation of the launcher and Spanish translation of
+  the tutorial game, while several of the other translations have been updated.
+
+There are also a number of other changes, so check out the changelog for all
+of what's new.
+
+Ren'Py 7.3 is brought to you by:
+
+* Andy_kl
+* Arda Güler
+* Ben Wright
+* DragoonHP
+* Donghyeok Tak
+* Jan Beich
+* Joshua Fehler
+* Kobaltcore
+* Lee Yunseok
+* Mal Graty
+* Moshibit
+* Nyaatrap
+* Pionere
+* Psunbury
+* Remix
+* Roope Herpiö
+* Sylvain Beucler
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.3.2",
+    pygame="-2.1.0",
+    date="July 1, 2019",
+    patch=None,
+    name="The world (wide web) is not enough.",
+    world_order=10,
+    announcement="""\
+I'm mildly chagrined to announce Ren'Py 7.3.2. This is a patch release to Ren'Py
+7.3, mostly intended to fix bugs and address issues that people have
+reported. As some of the bugs have significant performance and correctness
+impact, everyone who upgraded to Ren'Py 7.3.0 or 7.3.1 should move on to this version.
+
+Ren'Py 7.3.1 added a few minor new features, including the ability to
+customize descriptive text.
+
+Ren'Py 7.3 is the first release of
+Ren'Py with support for running on the web platform, inside a web browser
+supporting HTML 5, Web Assembly, and WebGL. Right now, this support is in
+beta, as it's limited by the capabilities of the web platform itself, but
+it's suitable for making web demos of Ren'Py games.
+
+In addition to that, this release adds many new features to Ren'Py. These
+include:
+
+* Many improvements to creator-defined statements, allowing the parsing
+  of Ren'Py statements and block, the catching of errors, and the ability
+  to execute a second function after Ren'Py in the body of a statement
+  has finished.
+* Screen language improvements, like the ability to capture screen language
+  displayables into a variable and to use a property to determine if a screen
+  is sensitive to input.
+* Text improvements, with self-closing text tags and the ability to control
+  the capitalization of interpolated text.
+* Mobile platforms now support non-rectangular focus masks, and 64-bit Android
+  is supported in time for the Google Play deadline.
+* There is a new Turkish translation of the launcher and Spanish translation of
+  the tutorial game, while several of the other translations have been updated.
+
+There are also a number of other changes, so check out the changelog for all
+of what's new.
+
+Ren'Py 7.3 is brought to you by:
+
+* Andy_kl
+* Arda Güler
+* DragoonHP
+* Jan Beich
+* Kobaltcore
+* Lee Yunseok
+* Mal Graty
+* Moshibit
+* Nyaatrap
+* Pionere
+* Sylvain Beucler
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.3.1",
+    pygame="-2.1.0",
+    date="July 1, 2019",
+    patch=None,
+    name="The world (wide web) is not enough.",
+    world_order=10,
+    announcement="""\
+I'm happy to announce Ren'Py 7.3.1. This is a patch release to Ren'Py
+7.3, mostly intended to fix bugs and address issues that people have
+reported. As some of the bugs have significant performance and correctness
+impact, everyone who upgraded to Ren'Py 7.3.0 should move on to this version.
+
+Ren'Py 7.3.1 also adds a few minor new features.
+
+Ren'Py 7.3 is the first release of
+Ren'Py with support for running on the web platform, inside a web browser
+supporting HTML 5, Web Assembly, and WebGL. Right now, this support is in
+beta, as it's limited by the capabilities of the web platform itself, but
+it's suitable for making web demos of Ren'Py games.
+
+In addition to that, this release adds many new features to Ren'Py. These
+include:
+
+* Many improvements to creator-defined statements, allowing the parsing
+  of Ren'Py statements and block, the catching of errors, and the ability
+  to execute a second function after Ren'Py in the body of a statement
+  has finished.
+* Screen language improvements, like the ability to capture screen language
+  displayables into a variable and to use a property to determine if a screen
+  is sensitive to input.
+* Text improvements, with self-closing text tags and the ability to control
+  the capitalization of interpolated text.
+* Mobile platforms now support non-rectangular focus masks, and 64-bit Android
+  is supported in time for the Google Play deadline.
+* There is a new Turkish translation of the launcher and Spanish translation of
+  the tutorial game, while several of the other translations have been updated.
+
+There are also a number of other changes, so check out the changelog for all
+of what's new.
+
+Ren'Py 7.3 is brought to you by:
+
+* Andy_kl
+* Arda Güler
+* DragoonHP
+* Jan Beich
+* Kobaltcore
+* Lee Yunseok
+* Mal Graty
+* Moshibit
+* Nyaatrap
+* Pionere
+* Sylvain Beucler
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
 Release(
     prerelease=False,
     invisible=False,
@@ -73,7 +311,7 @@ include:
 * There is a new Turkish translation of the launcher and Spanish translation of
   the tutorial game, while several of the other translations have been updated.
 
-Thare are also a number of other changes, so check out the changelog for all
+There are also a number of other changes, so check out the changelog for all
 of what's new.
 
 Ren'Py 7.3.0 is brought to you by:
