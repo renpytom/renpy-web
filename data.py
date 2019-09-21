@@ -43,7 +43,7 @@ aliases = [ ]
 
 Release(
     prerelease=True,
-    invisible=False,
+    invisible=True,
     version="7.3.3",
     pygame="-2.1.0",
     date="September x, 2019",
