@@ -43,7 +43,7 @@ aliases = [ ]
 
 Release(
     prerelease=True,
-    invisible=True,
+    invisible=False,
     version="7.3.3",
     pygame="-2.1.0",
     date="September x, 2019",
@@ -64,9 +64,7 @@ Some highlights are:
 * Many improvements to Web platform support.
 * Improved render-to-texture performance.
 * The ability of renpy.input to take custom screens.
-
-**Running this release on macOS may now require you to ctrl-click on renpy.app
-and choose 'Open'.**
+* Ren'Py is now signed and notarized to run on macOS.
 
 Ren'Py 7.3.2 is a patch release to Ren'Py
 7.3, mostly intended to fix bugs and address issues that people have
@@ -111,6 +109,7 @@ Ren'Py 7.3 is brought to you by:
 * Donghyeok Tak
 * Jan Beich
 * Joshua Fehler
+* Julian Uy
 * Kobaltcore
 * Lee Yunseok
 * Mal Graty
