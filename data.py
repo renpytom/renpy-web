@@ -46,7 +46,7 @@ Release(
     invisible=False,
     version="7.3.3",
     pygame="-2.1.0",
-    date="September x, 2019",
+    date="October 1, 2019",
     patch=None,
     name="The world (wide web) is not enough.",
     world_order=10,
@@ -102,11 +102,13 @@ of what's new.
 
 Ren'Py 7.3 is brought to you by:
 
+* Alisha Taylor
 * Andy_kl
 * Arda Güler
 * Ben Wright
 * DragoonHP
 * Donghyeok Tak
+* Herpior
 * Jan Beich
 * Joshua Fehler
 * Julian Uy
