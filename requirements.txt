@@ -2,7 +2,7 @@ Fabric==1.4.3
 Flask==0.9
 Jinja2==2.6
 Ren-Py==6.99.11.1227
-Werkzeug==0.8.3
+Werkzeug==0.15.3
 argparse==1.2.1
 distribute==0.6.24
 docutils==0.9.1
