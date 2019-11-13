@@ -2,6 +2,7 @@ import os
 import datetime
 import random
 
+STATICSPONSORS = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static", "sponsors")
 SPONSORSDIR = os.path.join(os.path.abspath(os.path.dirname(__file__)), "sponsors")
 
 level_by_name = { }
@@ -57,6 +58,16 @@ class Sponsor(object):
             self.lifetime,
             random.random(),
             )
+
+    @property
+    def banner(self):
+
+        fn = "{}x{}/{}.png".format(self.level.width, self.level.height, self.credit_name)
+
+        if os.path.exists(os.path.join(STATICSPONSORS, fn)):
+            return "/static/sponsors/" + fn
+        else:
+            return None
 
 
 def latest_month():
@@ -162,7 +173,7 @@ def init(month=None):
 
 
 def banner():
-    rv =  [ i for i in sponsors if i.level.banner ]
+    rv =  [ i for i in sponsors if i.level.banner  ]
     rv.sort(key=lambda s : s.sort_key())
     rv.reverse()
     return rv

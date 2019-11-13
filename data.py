@@ -40,6 +40,63 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.3.5",
+    pygame="-2.1.0",
+    date="October 17, 2019",
+    patch=None,
+    name="The world (wide web) is not enough.",
+    world_order=10,
+    announcement="""\
+I'm happy to announce Ren'Py 7.3.5, the latest in a series of
+releases that continue to maintain Ren'Py 7.3. This release fixes the
+compilation of iOS projects, and adds a button that accesses the audio
+directory to the launcher.
+
+As there have been quite a few changes since Ren'Py 7.3 was originally
+released, please check out the changelog for new features that will help
+you create your visual novels and games.
+
+Ren'Py 7.3 is brought to you by:
+
+* Alisha Taylor
+* Andy_kl
+* Arda Güler
+* Ben Wright
+* DragoonHP
+* Donghyeok Tak
+* Herpior
+* Jan Beich
+* Joshua Fehler
+* Julian Uy
+* Kobaltcore
+* Lee Yunseok
+* Mal Graty
+* Moshibit
+* Nyaatrap
+* Pionere
+* Psunbury
+* Remix
+* Roope Herpiö
+* Sylvain Beucler
+
+and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/7.2.0.jpg" alt="" style="width: 100%">
+""",
+
+    top_html="""\
+""",
+)
+
+
 Release(
     prerelease=False,
     invisible=False,

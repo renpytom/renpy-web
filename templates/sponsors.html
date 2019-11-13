@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% macro banner(s) %}
 <div class="sponsor-{{ s.level.width }}" style="text-align: center; margin-bottom: 10px;">
-<a href="{{ s.url }}" rel="nofollow"><img src="/static/sponsors/{{s.level.width}}x{{s.level.height}}/{{s.credit_name}}.png" alt="{{s.credit_name}}" width="{{ s.level.width }}}}"></a>
+{% if s.banner %}
+<a href="{{ s.url }}" rel="nofollow"><img src="{{ s.banner }}" alt="{{s.credit_name}}" width="{{ s.level.width }}"></a>
+{% else %}
+<div href="{{ s.url }}" style="display: table; background: #acd; width: {{ s.level.width }}px; height: {{ s.level.height }}px;'">
+<div style="display: table-cell; vertical-align: middle; font-size: 20px; color:#ffffff">
+{{ s.credit_name }}
+</div>
+</div>
+{% endif %}
 </div>
 {% endmacro %}
 
 {% macro non_banner(s) %}
-<div class="col-md-6" style="text-align: center; margin-top: .5em; margin-bottom: .5em; font-size: 18px;">
+<div class="col-md-6" style="text-align: center; vertical-align: middle; margin-top: .5em; margin-bottom: .5em; font-size: 18px;">
 {% if s.url %}
 <a href="{{ s.url}}" rel="nofollow">{{ s.credit_name }}</a>
 {% else %}
