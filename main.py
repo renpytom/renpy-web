@@ -8,7 +8,6 @@ import re
 import json
 import random
 
-
 sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, render_template, abort, redirect, Response, request, abort, jsonify
@@ -17,7 +16,6 @@ import data
 from werkzeug.contrib.atom import AtomFeed
 
 from flask_recaptcha import ReCaptcha
-
 
 import sponsors
 
@@ -98,7 +96,7 @@ def release_txt(name):
 
         if l.startswith("*"):
             if not in_list:
-                prefix="[list]"
+                prefix = "[list]"
                 in_list = True
             else:
                 prefix = ""

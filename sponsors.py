@@ -9,8 +9,10 @@ level_by_name = { }
 
 
 class Level(object):
-    def __init__(self, name, postcard=True, banner=None, span=None, public=True, count=True):
+
+    def __init__(self, name, newname, postcard=True, banner=None, span=None, public=True, count=True):
         self.name = name
+        self.newname = newname
         self.postcard = postcard
         self.banner = banner
         self.span = span
@@ -25,19 +27,19 @@ class Level(object):
             self.height = 0
 
         level_by_name[self.name] = self
+        level_by_name[self.newname] = self
 
 
-Level("500 + Reward", True, (740, 150), "col-md-12")
-Level("250 + Reward", True, (740, 100), "col-md-12")
-Level("100 + Reward", True, (350, 100), "col-md-6")
+Level("500 + Reward", "Diamond Sponsor", True, (740, 150), "col-md-12")
+Level("250 + Reward", "Platinum Sponsor", True, (740, 100), "col-md-12")
+Level("100 + Reward", "Gold Sponsor", True, (350, 100), "col-md-6")
 
-Level("10 + Reward", True)
-Level("2 + Reward", False)
-Level("1 + Reward", False, public=False)
-Level("No Reward", False, public=False)
+Level("10 + Reward", "Silver Postcard Sponsor", True)
+Level("2 + Reward", "Bronze Sponsor", False)
+Level("1 + Reward", "Secret Sponsor", False, public=False)
+Level("No Reward", "", False, public=False)
 
-Level("Admin", postcard=True, public=False, count=False)
-
+Level("Admin", "Admin", postcard=True, public=False, count=False)
 
 # All sponsors, map from email to data object.
 by_email = { }
@@ -94,7 +96,7 @@ def current_month():
         )
 
 
-def load_sponsorfn(fn):
+def load_sponsorfn_old(fn):
 
     rv = [ ]
 
@@ -124,6 +126,9 @@ def load_sponsorfn(fn):
 
             status = (l[10] == "Ok") or (l[10] == "Processed")
 
+            while len(l) < 18:
+                l.append('')
+
             s = Sponsor(
                 name=name,
                 credit_name=l[2] or name,
@@ -145,6 +150,73 @@ def load_sponsorfn(fn):
             rv.append(s)
 
     return rv
+
+
+def load_sponsorfn_new(fn):
+
+    rv = [ ]
+
+    with open(fn, "rb") as f:
+
+        l = f.readline()
+
+#         for i, s in enumerate(l.split("\t")):
+#             print(i, s)
+
+        level = ''
+
+        for l in f:
+            l = l.decode("utf-8")
+            l = l.rstrip()
+            l = l.split("\t")
+
+            if l[13] in level_by_name:
+                level = level_by_name[l[13]]
+            else:
+                continue
+
+            name = l[5]
+
+            url = l[3]
+            if url == 'n/a':
+                url = ""
+
+            status = (l[8] == "Active patron")
+
+            while len(l) < 18:
+                l.append('')
+
+            s = Sponsor(
+                name=name,
+                credit_name=l[2] or name,
+                url=url,
+                email=l[6],
+                pledge=float(l[11][1:].replace(",", "")),
+                lifetime=float(l[10][1:].replace(",", "")),
+                status=status,
+                street=l[15],
+                city=l[16],
+                state=l[17],
+                zip=l[18],
+                country=l[19],
+                start=l[21],
+                level=level,
+                raw_postcard=(l[4] != "No")
+                )
+
+            rv.append(s)
+
+    return rv
+
+
+def load_sponsorfn(fn):
+
+    basefn = os.path.basename(fn)
+
+    if basefn[0] == "2" and basefn >= "2020-07.tsv":
+        return load_sponsorfn_new(fn)
+    else:
+        return load_sponsorfn_old(fn)
 
 
 def init(month=None):
@@ -173,7 +245,7 @@ def init(month=None):
 
 
 def banner():
-    rv =  [ i for i in sponsors if i.level.banner  ]
+    rv = [ i for i in sponsors if i.level.banner  ]
     rv.sort(key=lambda s : s.sort_key())
     rv.reverse()
     return rv
