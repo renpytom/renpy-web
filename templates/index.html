@@ -9,16 +9,16 @@
 
 <div class="row">
 
-<div class="col-md-8">
+  <div class="col-md-8">
 
     <img src="/static/index-logo.png" class="index-logo" alt="">
 
     <h1>What is Ren'Py?</h1>
     <p>Ren'Py is a visual novel engine &ndash; used by thousands of creators from around the world &ndash;
-       that helps you use words, images, and sounds to tell interactive stories that run on computers and mobile devices.
-       These can be both visual novels and life simulation games. The easy to learn script language allows
-       anyone to efficiently write large visual novels, while its Python scripting is enough for complex
-       simulation games.</p>
+      that helps you use words, images, and sounds to tell interactive stories that run on computers and mobile devices.
+      These can be both visual novels and life simulation games. The easy to learn script language allows
+      anyone to efficiently write large visual novels, while its Python scripting is enough for complex
+      simulation games.</p>
     <p>Ren'Py is open source and free for commercial use.</p>
     <div class="center"><a href="/why.html" class="btn btn-lg btn-link">Why Ren'Py?</a></div>
 
@@ -26,225 +26,240 @@
 
     <div class="row platforms">
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/android-small.png" alt="">
-    </div>
-    Android 5.0+
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/android-small.png" alt="">
+        </div>
+        Android 5.0+
+      </div>
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/html5-small.png" alt="">
-    </div>
-    HTML5/Web Assembly (Beta)
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/html5-small.png" alt="">
+        </div>
+        HTML5/Web Assembly (Beta)
+      </div>
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/linux-small.png" alt="">
-    </div>
-    Linux x86/x86_64
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/linux-small.png" alt="">
+        </div>
+        Linux x86/x86_64
+      </div>
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/windows-small.png" alt="">
-    </div>
-    Windows XP+
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/windows-small.png" alt="">
+        </div>
+        Windows XP+
+      </div>
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/osx-small.png" alt="">
-    </div>
-    Mac OS X 10.6+
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/osx-small.png" alt="">
+        </div>
+        Mac OS X 10.6+
+      </div>
 
-    <div class="col-sm-2">
-    <div class="platform-logo">
-    <img src="/static/ios-small.png" alt="">
-    </div>
-    iOS 7+<br>
-    </div>
+      <div class="col-sm-2">
+        <div class="platform-logo">
+          <img src="/static/ios-small.png" alt="">
+        </div>
+        iOS 7+<br>
+      </div>
 
     </div>
 
     <h2>Where do I get it?</h2>
 
     <div class="row">
-    <div class="{% if data.prerelease %}col-md-6{% else %}col-md-12{% endif %}">
+      <div class="{% if data.prerelease %}col-md-6{% else %}col-md-12{% endif %}">
 
-    <p>
-        {% if data.current.patch_date %}
-        The latest version of Ren'Py is {{data.current.full_version}}, released on {{data.current.patch_date}}. This release fixes bugs
-        found in Ren'Py {{data.current.version}} "{{data.current.name}}".
-        {% else %}
-        The latest version of Ren'Py is {{data.current.version}} "{{data.current.name}}", released on {{data.current.date}}.
-        {% endif %}
+        <p>
+          {% if data.current.patch_date %}
+          The latest version of Ren'Py is {{data.current.full_version}}, released on {{data.current.patch_date}}. This
+          release fixes bugs
+          found in Ren'Py {{data.current.version}} "{{data.current.name}}".
+          {% else %}
+          The latest version of Ren'Py is {{data.current.version}} "{{data.current.name}}", released on
+          {{data.current.date}}.
+          {% endif %}
 
-    </p>
-    </div>
+        </p>
+      </div>
 
 
-    {% if data.prerelease %}
-    <div class="col-md-6">
-    <p>
-        A prerelease of Ren'Py {{ data.prerelease.version }} "{{ data.prerelease.name }}" is available for testing. It was last updated
-        on {{ data.prerelease.prerelease_date }}. Please do not release games with this version until it has become stable. The prerelease
-        is documented <a href="https://www.renpy.org/dev-doc/html/">here</a>.
-    </p>
-    </div>
-    {% endif %}
+      {% if data.prerelease %}
+      <div class="col-md-6">
+        <p>
+          A prerelease of Ren'Py {{ data.prerelease.version }} "{{ data.prerelease.name }}" is available for testing. It
+          was last updated
+          on {{ data.prerelease.prerelease_date }}. Please do not release games with this version until it has become
+          stable. The prerelease
+          is documented <a href="https://www.renpy.org/dev-doc/html/">here</a>.
+        </p>
+      </div>
+      {% endif %}
     </div>
 
 
     <div class="row">
-    <div class="{% if data.prerelease %}col-md-6{% else %}col-md-12{% endif %}">
+      <div class="{% if data.prerelease %}col-md-6{% else %}col-md-12{% endif %}">
 
-        <div class="center"><a href="/latest.html" role="button" class="btn btn-lg btn-success">Download Latest Version</a></div>
+        <div class="center"><a href="/latest.html" role="button" class="btn btn-lg btn-success">Download Latest
+            Version</a></div>
 
+      </div>
+
+      {% if data.prerelease %}
+      <div class="col-md-6">
+
+        <div class="center"><a href="/release/{{ data.prerelease.version }}" role="button"
+            class="btn btn-lg btn-warning">Download Prerelease Version</a></div>
+
+      </div>
+      {% endif %}
     </div>
 
-    {% if data.prerelease %}
-    <div class="col-md-6">
+    <div class="row">
 
-        <div class="center"><a href="/release/{{ data.prerelease.version }}" role="button" class="btn btn-lg btn-warning">Download Prerelease Version</a></div>
+      <div class="col-md-6 clearfix">
 
-    </div>
-    {% endif %}
-    </div>
+        <h2>Where do I start?</h2>
 
-    <h2>Who is it sponsored by?</h2>
+        <p>
+          The <a href="http://www.renpy.org/doc/html/quickstart.html">quickstart</a>
+          walks you through the process of creating a simple game.
+        </p>
 
-  <div class="banner-sponsors clearfix">
-  {% for s in banner_sponsors %}{{ sponsors.banner(s) }}{% endfor %}
-  </div>
-
-
-
-  <div class="row">
-  {% for s in non_banner_sponsors %}{{ sponsors.non_banner(s) }}{% endfor %}
-  </div>
-
-  <div class="row">
-    <div class="col-md-12" style="font-size: 18px; margin-top: .5em;">
-      ... and <a href="/sponsors.html"><b>{{ more_sponsors }}</b> more sponsors</a>.
-
-      <a href="https://www.patreon.com/renpytom" style="color: #e6461a">
-        <img style="margin-left: .5em; margin-right: -6px; max-height: 25px; vertical-align: top;" src="/static/sponsors/patreon.png">
-        Become a Sponsor!
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="row">
-
-    <div class="col-md-6 clearfix">
-
-      <h2>Where do I start?</h2>
-
-      <p>
-        The <a href="http://www.renpy.org/doc/html/quickstart.html">quickstart</a>
-        walks you through the process of creating a simple game.
-      </p>
-
-<!--
+        <!--
       <p>
         There are a large number of <a href="http://renpyhandbook.tumblr.com/code-tutorials">community-created tutorials</a> that explain
         how to customize Ren'Py.
       </p>
 -->
 
-      <p>
-        Ren'Py comes with a comprehensive, if complex, <a href="/doc/html/">reference manual</a>, also available in <a href="http://ja.renpy.org/doc/html/">Japanese</a>.
-      </p>
+        <p>
+          Ren'Py comes with a comprehensive, if complex, <a href="/doc/html/">reference manual</a>, also available in <a
+            href="http://ja.renpy.org/doc/html/">Japanese</a>.
+        </p>
 
-      <img class="octocat" src="/static/github.png" alt="">
+        <img class="octocat" src="/static/github.png" alt="">
 
-      <p>
-        If you think you've found a bug in Ren'Py, report it to our <a href="http://www.github.com/renpy/renpy/issues">GitHub issue tracker</a>.
-      </p>
+        <p>
+          If you think you've found a bug in Ren'Py, report it to our <a
+            href="http://www.github.com/renpy/renpy/issues">GitHub issue tracker</a>.
+        </p>
 
-      <p>
-        If you'd like to contribute to Ren'Py development, please visit our
-        <a href="http://www.github.com/renpy/renpy">GitHub project page</a>.
-      </p>
+        <p>
+          If you'd like to contribute to Ren'Py development, please visit our
+          <a href="http://www.github.com/renpy/renpy">GitHub project page</a>.
+        </p>
 
-    </div>
-
-
-    <div class="col-md-6">
-
-    <h2>How do I keep in touch?</h2>
-
-    <p>
-      The best places to ask questions about Ren'Py are the <a href="http://lemmasoft.renai.us/forums/">Lemma Soft Forums</a>,
-      the <a href="https://discord.gg/6ckxWYm">Ren'Py Discord</a>,
-      and the <a href="http://webchat.freenode.net/?channels=renpy">#renpy IRC channel</a>.
-    </p>
-
-    <p>We make news about Ren'Py available on a number of social platforms:</p>
-
-    <p>
-    <b>Twitter:</b> You can follow Ren'Py's lead developer <a href="http://twitter.com/renpytom">@renpytom</a>
-    for release announcements, development news, and general commentary on life.
-    </p>
-
-    <p>
-    <b>Facebook:</b>
-    We announce new releases on <a href="https://www.facebook.com/renpy">our Facebook page</a>.
-    </p>
+      </div>
 
 
-    <!--
+      <div class="col-md-6">
+
+        <h2>How do I keep in touch?</h2>
+
+        <p>
+          The best places to ask questions about Ren'Py are the <a href="http://lemmasoft.renai.us/forums/">Lemma Soft
+            Forums</a>,
+          the <a href="https://discord.gg/6ckxWYm">Ren'Py Discord</a>,
+          and the <a href="http://webchat.freenode.net/?channels=renpy">#renpy IRC channel</a>.
+        </p>
+
+        <p>We make news about Ren'Py available on a number of social platforms:</p>
+
+        <p>
+          <b>Twitter:</b> You can follow Ren'Py's lead developer <a href="http://twitter.com/renpytom">@renpytom</a>
+          for release announcements, development news, and general commentary on life.
+        </p>
+
+        <p>
+          <b>Facebook:</b>
+          We announce new releases on <a href="https://www.facebook.com/renpy">our Facebook page</a>.
+        </p>
+
+
+        <!--
     <p>
     <b>Deviantart:</b>
     Artists interested in Ren'Py and visual novels might want to visit our <a href="http://renpy.deviantart.com/">DeviantArt</a> group.
     </p>
      -->
 
+      </div>
+
     </div>
 
-   </div>
+    <h2>Who is it sponsored by?</h2>
 
-<p class="center">
-  To ask questions that aren't appropriate for a public forum, or to find a
-  speaker for your visual novel-related conference or con, please <a href="/email">contact us via email</a>.
-</p>
-
-</div>
+    <div class="banner-sponsors clearfix">
+      {% for s in banner_sponsors %}{{ sponsors.banner(s) }}{% endfor %}
+    </div>
 
 
 
-<div class="col-md-4 featured">
+    <div class="row">
+      {% for s in non_banner_sponsors %}{{ sponsors.non_banner(s) }}{% endfor %}
+    </div>
 
-  <h2 class="hidden-md hidden-lg">Featured Games</h2>
+    <div class="row">
+      <div class="col-md-12" style="font-size: 18px; margin-top: .5em;">
+        ... and <a href="/sponsors.html"><b>{{ more_sponsors }}</b> more sponsors</a>.
 
-  <p class="blurb">
-    Ren'Py has been used to create over 1,500 visual novels, games, and other works. You can find them at the official
-    <a href="http://games.renpy.org/">Ren'Py Games List</a>, and the list of <a href="https://itch.io/games/top-rated/made-with-renpy">Games made with Ren'Py on itch.io.</a>
-  </p>
+        <a href="https://www.patreon.com/renpytom" style="color: #e6461a">
+          <img style="margin-left: .5em; margin-right: -6px; max-height: 25px; vertical-align: top;"
+            src="/static/sponsors/patreon.png">
+          Become a Sponsor!
+        </a>
 
-  <p class="blurb">
-    Here are just a few of the games made with Ren'Py.
-  </p>
+      </div>
 
-{% for i, description in featured %}
+    </div>
 
-  <figure>
-      <a href="/static/featured/{{ i }}" class="colorbox"><img src="/static/featured/{{ i }}" class="img-responsive"></a>
+
+
+
+
+    <p class="center">
+      To ask questions that aren't appropriate for a public forum, or to find a
+      speaker for your visual novel-related conference or con, please <a href="/email">contact us via email</a>.
+    </p>
+
+  </div>
+
+
+
+  <div class="col-md-4 featured">
+
+    <h2 class="hidden-md hidden-lg">Featured Games</h2>
+
+    <p class="blurb">
+      Ren'Py has been used to create over 1,500 visual novels, games, and other works. You can find them at the official
+      <a href="http://games.renpy.org/">Ren'Py Games List</a>, and the list of <a
+        href="https://itch.io/games/top-rated/made-with-renpy">Games made with Ren'Py on itch.io.</a>
+    </p>
+
+    <p class="blurb">
+      Here are just a few of the games made with Ren'Py.
+    </p>
+
+    {% for i, description in featured %}
+
+    <figure>
+      <a href="/static/featured/{{ i }}" class="colorbox"><img src="/static/featured/{{ i }}"
+          class="img-responsive"></a>
       <figcaption>
         {{ description | safe }}
       </figcaption>
-  </figure>
+    </figure>
 
-{% endfor %}
+    {% endfor %}
 
-</div>
+  </div>
 
 
 

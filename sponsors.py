@@ -259,7 +259,7 @@ def non_banner():
 
 
 def sample_non_banner():
-    return random.sample(non_banner(), 4)
+    return random.sample(non_banner(), 8)
 
 
 def anonymous_count():

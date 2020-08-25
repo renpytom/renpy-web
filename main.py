@@ -201,7 +201,7 @@ def index():
 
         featured.append((i, html))
 
-    featured = random.sample(featured, 3)
+    featured = random.sample(featured, 5)
 
     return render_template(
         "index.html",

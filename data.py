@@ -86,6 +86,10 @@ Ren'Py 7.3 is brought to you by:
 and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
     history="""\
+There has been an update to Ren'Py 7.3.5 to address the requirement
+that Android applications target Android 10 (android-29). For a
+link and instructions on how to install this update, please see
+the `thread on the Lemma Soft Forums <https://lemmasoft.renai.us/forums/viewtopic.php?t=59848>`_.
 """,
 
     full_html="""\
