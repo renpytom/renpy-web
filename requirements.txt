@@ -1,5 +1,5 @@
 Fabric==1.4.3
-Flask==0.9
+Flask==1.0
 Jinja2==2.6
 Ren-Py==6.99.11.1227
 Werkzeug==0.8.3
