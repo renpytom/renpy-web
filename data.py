@@ -1,4 +1,4 @@
-#coding=utf-8
+# coding=utf-8
 # This file contains data about Ren'Py, and its various
 # releases. Think of it as a kind of database, except that it's stored
 # as code rather than as data.
@@ -40,6 +40,99 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.0",
+    pygame="-2.1.0",
+    date="November xx, 2020",
+    patch=None,
+    name="The Big One",
+    world_order=10,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4.0, the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+release focuses on updating Ren'Py's internals so that Ren'Py is ready
+for its next 15 years.
+
+Some of the bigger changes are:
+
+* A new model-based renderer. While this is opt-in for the moment, it
+  opens the way to features that creators have been requesting for a
+  long time, such as being able to recolor displayables, blurring the
+  screen, and using Live2D to animate sprites. The model-based renderer
+  is extensible with shaders, allowing for custom effects.
+* A new Python 3 compatibility mode has been added, to pave the way for Python 3
+  support in the next release. This mode changes the ways in which Ren'Py
+  runs, to allow you to begin porting your game before full Python 3
+  comes out in Ren'Py 8.0.
+* Ren'Py's build system has been modernized, and the libraries underlying it
+  have been updated. This allows 64-bit Windows to be supported.
+* The web platform has bene updated, to allow for the incremental download
+  of games.
+
+This release also raises the minimum requirements to run a Ren'Py game. It is
+now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
+or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
+
+With these changes, there have been a few deprecations. The 32-bit armv7l
+platform has been removed on iOS, as this platform hasn't been supported
+by Apple for several years. The Editra text editor has been removed, as
+it hasn't been supported for quite some time, and wasn't compatible with
+the new build system.
+
+It's my hope that this release will enable creators to take on projects
+they couldn't before, and will provide a solid basis for the next releases
+of Ren'Py.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Hyper Sonic
+* Jackmcbarn
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* Kyouryuukunn
+* Lee Yunseok
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Moshibit
+* Remix
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Zedraxlo
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+**October 28, 2020** Initial prerelease. There are two known omissions,
+as both the custom mouse cursor and steam suppport are yet to be implemented.
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
 
 Release(
     prerelease=False,
@@ -99,7 +192,6 @@ the `thread on the Lemma Soft Forums <https://lemmasoft.renai.us/forums/viewtopi
     top_html="""\
 """,
 )
-
 
 Release(
     prerelease=False,
@@ -199,7 +291,6 @@ and myself, Tom "PyTom" Rothamel.
     top_html="""\
 """,
 )
-
 
 Release(
     prerelease=False,
@@ -367,7 +458,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -438,7 +528,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -502,7 +591,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -564,7 +652,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -625,7 +712,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -680,7 +766,6 @@ and myself, Tom "PyTom" Rothamel.
     top_html="""\
 """,
 )
-
 
 Alias(old="7.1.4", new="7.2.0")
 
@@ -755,7 +840,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -824,7 +908,6 @@ and myself, Tom "PyTom" Rothamel.
     top_html="""\
 """,
 )
-
 
 Release(
     prerelease=False,
@@ -962,7 +1045,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1018,7 +1100,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1071,7 +1152,6 @@ and myself, Tom "PyTom" Rothamel.
     top_html="""\
 """,
 )
-
 
 Release(
     prerelease=False,
@@ -1130,7 +1210,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1180,7 +1259,6 @@ This release is dedicated to the memory of `SusanTheCat <https://lemmasoft.renai
     top_html="""\
 """,
 )
-
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
@@ -1240,7 +1318,6 @@ and myself, Tom "PyTom" Rothamel.
     top_html="""\
 """,
 )
-
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 6.99..HEAD
@@ -1405,7 +1482,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
 )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1500,7 +1576,6 @@ URLs:
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1559,7 +1634,6 @@ URLs:
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -1620,7 +1694,6 @@ URLs:
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -1684,7 +1757,6 @@ URLs:
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -1746,7 +1818,6 @@ URLs:
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -1898,7 +1969,6 @@ The history of older Ren'Py 6.99 releases can be found at
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -2024,7 +2094,6 @@ and myself, Tom "PyTom" Rothamel.
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -2098,7 +2167,6 @@ to you by:
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -2195,7 +2263,6 @@ This release has been brought to you by:
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -2275,7 +2342,6 @@ to Ren'Py development.
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -2438,7 +2504,6 @@ to Ren'Py development.
 """,
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -2531,7 +2596,6 @@ versions of Ren'Py is not supported.
     top_html="""\
 """,
     )
-
 
 Release(
     prerelease=False,
@@ -2712,7 +2776,6 @@ found in Ren'Py 6.12.1.
 """
     )
 
-
 Release(
     prerelease=False,
     invisible=False,
@@ -2806,7 +2869,6 @@ see the full changelog for more details.
 """
     )
 
-
 Release(
     prerelease=False,
     version="6.12.0",
@@ -2857,7 +2919,6 @@ by default.
 <img src="/static/6.12.0small.jpg" width="380" height="295">
 """
     )
-
 
 Release(
     version="6.11.2",
