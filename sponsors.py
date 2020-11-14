@@ -151,6 +151,66 @@ def load_sponsorfn_old(fn):
 
     return rv
 
+(0, u'Form Person Name')
+(1, u'Form Email')
+(2, u'Website Credit Name')
+(3, u'Form Sponsor URL')
+(4, u'Send a postcard?')
+(5, u'Name')
+(6, u'Email')
+(7, u'Twitter')
+(8, u'Patron Status')
+(9, u'Follows You')
+(10, u'Lifetime $')
+(11, u'Pledge $')
+(12, u'Charge Frequency')
+(13, u'Tier')
+(14, u'Addressee')
+(15, u'Street')
+(16, u'City')
+(17, u'State')
+(18, u'Zip')
+(19, u'Country')
+(20, u'Phone')
+(21, u'Patronage Since Date')
+(22, u'Max Amount')
+(23, u'Last Charge Date')
+(24, u'Last Charge Status')
+(25, u'Additional Details')
+(26, u'User ID')
+(27, u'Last Updated')
+
+(0, u'Form Person Name')
+(1, u'Form Email')
+(2, u'Website Credit Name')
+(3, u'Form Sponsor URL')
+(4, u'Send a postcard?')
+(5, u'Name')
+(6, u'Email')
+(7, u'Twitter')
+(8, u'Discord')
+(9, u'Patron Status')
+(10, u'Follows You')
+(11, u'Lifetime Amount')
+(12, u'Pledge Amount')
+(13, u'Charge Frequency')
+(14, u'Tier')
+(15, u'Addressee')
+(16, u'Street')
+(17, u'City')
+(18, u'State')
+(19, u'Zip')
+(20, u'Country')
+(21, u'Phone')
+(22, u'Patronage Since Date')
+(23, u'Last Charge Date')
+(24, u'Last Charge Status')
+(25, u'Additional Details')
+(26, u'User ID')
+(27, u'Last Updated')
+(28, u'Currency')
+(29, u'Max Posts')
+
 
 def load_sponsorfn_new(fn):
 
@@ -160,8 +220,15 @@ def load_sponsorfn_new(fn):
 
         l = f.readline()
 
-#         for i, s in enumerate(l.split("\t")):
-#             print(i, s)
+        l = l.decode("utf-8")
+        l = l.rstrip()
+        l = l.split("\t")
+
+
+        # for i, s in enumerate(l):
+        #     print(i, s)
+
+        has_discord = l[8] == "Discord"
 
         level = ''
 
@@ -169,6 +236,10 @@ def load_sponsorfn_new(fn):
             l = l.decode("utf-8")
             l = l.rstrip()
             l = l.split("\t")
+
+            if has_discord:
+                l.pop(8)            
+                l.insert(22, '')
 
             if l[13] in level_by_name:
                 level = level_by_name[l[13]]
@@ -181,18 +252,26 @@ def load_sponsorfn_new(fn):
             if url == 'n/a':
                 url = ""
 
-            status = (l[8] == "Active patron")
+            # for i, s in enumerate(l):
+            #     print(i, s)
+
+            status = (l[24] == "Paid")
 
             while len(l) < 18:
                 l.append('')
+
+            def money(s):
+                s = s.replace("$", "")
+                s = s.replace(",", "")
+                return float(s)
 
             s = Sponsor(
                 name=name,
                 credit_name=l[2] or name,
                 url=url,
                 email=l[6],
-                pledge=float(l[11][1:].replace(",", "")),
-                lifetime=float(l[10][1:].replace(",", "")),
+                pledge=money(l[11]),
+                lifetime=money(l[10]),
                 status=status,
                 street=l[15],
                 city=l[16],
