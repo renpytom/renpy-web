@@ -43,14 +43,14 @@ aliases = [ ]
 Release(
     prerelease=True,
     invisible=False,
-    version="7.4.0",
+    version="7.4.1",
     pygame="-2.1.0",
-    date="November xx, 2020",
+    date="January xx, 2021",
     patch=None,
     name="The Big One",
     world_order=10,
     announcement="""\
-I'm happy to announce Ren'Py 7.4.0, the product of over a year of
+I'm happy to announce Ren'Py 7.4, the product of over a year of
 development, and one of the biggest releases of Ren'Py to date. This
 release focuses on updating Ren'Py's internals so that Ren'Py is ready
 for its next 15 years.
@@ -68,14 +68,15 @@ Some of the bigger changes are:
   comes out in Ren'Py 8.0.
 * Ren'Py's build system has been modernized, and the libraries underlying it
   have been updated. This allows 64-bit Windows to be supported.
-* The web platform has bene updated, to allow for the incremental download
+* The web platform has been updated, to allow for the incremental download
   of games.
 
 This release also raises the minimum requirements to run a Ren'Py game. It is
 now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
 or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
 
-With these changes, there have been a few deprecations. The 32-bit armv7l
+With these changes, there have been a few deprecations. Ren'Py no longer runs
+on Windows XP. The 32-bit armv7l
 platform has been removed on iOS, as this platform hasn't been supported
 by Apple for several years. The Editra text editor has been removed, as
 it hasn't been supported for quite some time, and wasn't compatible with
@@ -99,6 +100,7 @@ Ren'Py 7.4 is brought to you by:
 * GimmiRuski
 * Gio
 * Gouvernathor
+* Gratusfr
 * Hyper Sonic
 * Jackmcbarn
 * Joaquin Garmendia Cabrera
@@ -114,6 +116,8 @@ Ren'Py 7.4 is brought to you by:
 * Mason Chou
 * Maxwell Paul Brickner
 * Moshibit
+* Neotus
+* Paul J Martinez
 * Remix
 * Shawna-p
 * Sylvain Beucler
@@ -123,8 +127,106 @@ Ren'Py 7.4 is brought to you by:
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
 """.decode("utf-8"),
     history="""\
-**October 28, 2020** Initial prerelease. There are two known omissions,
-as both the custom mouse cursor and steam suppport are yet to be implemented.
+Ren'Py 7.4.1 is the first patch release, addressing bugs and compatibility
+issues found in Ren'Py 7.4.0. As some of these issues may affect end-users
+of games without affecting creators, everyone is encouraged to upgrade as
+soon as possible.
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.4.0",
+    pygame="-2.1.0",
+    date="December 31, 2020",
+    patch=None,
+    name="The Big One",
+    world_order=10,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4, the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+release focuses on updating Ren'Py's internals so that Ren'Py is ready
+for its next 15 years.
+
+Some of the bigger changes are:
+
+* A new model-based renderer. While this is opt-in for the moment, it
+  opens the way to features that creators have been requesting for a
+  long time, such as being able to recolor displayables, blurring the
+  screen, and using Live2D to animate sprites. The model-based renderer
+  is extensible with shaders, allowing for custom effects.
+* A new Python 3 compatibility mode has been added, to pave the way for Python 3
+  support in the next release. This mode changes the ways in which Ren'Py
+  runs, to allow you to begin porting your game before full Python 3
+  comes out in Ren'Py 8.0.
+* Ren'Py's build system has been modernized, and the libraries underlying it
+  have been updated. This allows 64-bit Windows to be supported.
+* The web platform has been updated, to allow for the incremental download
+  of games.
+
+This release also raises the minimum requirements to run a Ren'Py game. It is
+now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
+or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
+
+With these changes, there have been a few deprecations. Ren'Py no longer runs
+on Windows XP. The 32-bit armv7l
+platform has been removed on iOS, as this platform hasn't been supported
+by Apple for several years. The Editra text editor has been removed, as
+it hasn't been supported for quite some time, and wasn't compatible with
+the new build system.
+
+It's my hope that this release will enable creators to take on projects
+they couldn't before, and will provide a solid basis for the next releases
+of Ren'Py.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* Kyouryuukunn
+* Lee Yunseok
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Zedraxlo
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
 """,
 
     full_html="""\
