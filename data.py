@@ -48,7 +48,7 @@ Release(
     date="January xx, 2021",
     patch=None,
     name="The Big One",
-    world_order=10,
+    world_order=11,
     announcement="""\
 I'm happy to announce Ren'Py 7.4, the product of over a year of
 development, and one of the biggest releases of Ren'Py to date. This
@@ -148,7 +148,7 @@ Release(
     date="December 31, 2020",
     patch=None,
     name="The Big One",
-    world_order=10,
+    world_order=11,
     announcement="""\
 I'm happy to announce Ren'Py 7.4, the product of over a year of
 development, and one of the biggest releases of Ren'Py to date. This

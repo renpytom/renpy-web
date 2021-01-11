@@ -153,9 +153,11 @@
         <dt><strong>Atom (Linux):</strong> {{ dl("atom-linux.tar.bz2") }}</dt>
       {% endif %}
 
+      {% if release.world_order < 11 %}
       <dt><strong>Editra (Windows):</strong> {{ dl("editra-windows.zip") }}</dt>
       <dt><strong>Editra (Mac):</strong> {{ dl("editra-mac.zip") }}</dt>
       <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
+      {% endif %}
 
       <dt><strong>jEdit:</strong> {{ dl("jedit.zip") }}</dt>
     </dl>
