@@ -7,13 +7,14 @@ import datetime
 import re
 import json
 import random
+import pytz
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-from flask import Flask, render_template, abort, redirect, Response, request, abort, jsonify
+from flask import Flask, render_template, abort, redirect, Response, request, abort, jsonify, make_response
 from docutils.core import publish_parts
 import data
-from werkzeug.contrib.atom import AtomFeed
+from feedgen.feed import FeedGenerator
 
 from flask_recaptcha import ReCaptcha
 
@@ -265,49 +266,49 @@ def feed():
     Renders the atom feed.
     """
 
-    feed = AtomFeed(
-        "Ren'Py Visual Novel Engine",
-        feed_url="http://www.renpy.org/feed/",
-        url="http://www.renpy.org/"
-        )
+    fg = FeedGenerator()
+    fg.id("http://www.renpy.org/feed/")
+    fg.title("Ren'Py Visual Novel Engine")
+    fg.description("Ren'Py Visual Novel Engine")
+    fg.link(href="https://www.renpy.org", rel="alternate")
+    fg.language("en")
 
     prerelease = data.prerelease
     current = data.current
 
     def parse_date(s):
         ts = time.strptime(s, "%B %d, %Y")
-        return datetime.datetime.fromtimestamp(time.mktime(ts))
+        return datetime.datetime.fromtimestamp(time.mktime(ts), pytz.utc)
+
+    def add(release, version, date, mode):
+        suffix = "?mode=" + mode + "&version=" + version
+        fe = fg.add_entry()
+        fe.id("http://www.renpy.org/release/" + version + suffix)
+        fe.link(href="https://www.renpy.org/release/" + version + suffix, rel="alternate")
+
+        if mode == "prerelease":
+            fe.title(u"Ren'Py {} Pre-Released".format(version))
+        else:
+            fe.title(u"Ren'Py {} Released".format(version))
+
+        fe.content(
+            content=unicode(render_template("feed.html", release=release, mode=mode)),
+            type="text/html"
+        )
+        fe.updated(parse_date(date))
 
     if prerelease:
-        feed.add(
-            u"Ren'Py {} Pre-Released".format(prerelease.version),
-            unicode(render_template("feed.html", release=prerelease, mode="prerelease")),
-            content_type="html",
-            url="http://www.renpy.org/release/" + prerelease.version + "?mode=prerelease",
-            updated=parse_date(prerelease.prerelease_date),
-            author="Ren'Py Developers",
-            )
+        add(prerelease, prerelease.version, prerelease.prerelease_date, "prerelease")
 
     if current.patch_date:
-        feed.add(
-            u"Ren'Py Updated to {}".format(current.full_version),
-            unicode(render_template("feed.html", release=current, mode="update")),
-            content_type="html",
-            url="http://www.renpy.org/release/" + current.version + "?mode=update&version=" + current.full_version,
-            updated=parse_date(current.patch_date),
-            author="Ren'Py Developers",
-            )
+        add(current, current.full_version, current.patch_date, "update")
 
-    feed.add(
-        u"Ren'Py {} Released".format(current.version),
-        unicode(render_template("feed.html", release=current, mode="release")),
-        content_type="html",
-        url="http://www.renpy.org/release/" + current.version + "?mode=release",
-        updated=parse_date(current.date),
-        author="Ren'Py Developers",
-        )
+    add(current, current.version, current.date, "release")
 
-    return feed.get_response()
+    response = make_response(fg.rss_str())
+    response.headers.set('Content-Type', 'application/rss+xml')
+
+    return response
 
 
 @app.route("/channels.json")
