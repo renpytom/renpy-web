@@ -41,19 +41,23 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.1",
     pygame="-2.1.0",
-    date="January xx, 2021",
+    date="January 23, 2021",
     patch=None,
-    name="The Big One",
+    name="The Better One",
     world_order=11,
     announcement="""\
-I'm happy to announce Ren'Py 7.4, the product of over a year of
+I'm happy to announce Ren'Py 7.4.1, the first patch release for the 7.4
+series. This release fixes a number of issues found in Ren'Py 7.4.0.
+Everyone should upgrade.
+
+Ren'Py 7.4 is the the product of over a year of
 development, and one of the biggest releases of Ren'Py to date. This
-release focuses on updating Ren'Py's internals so that Ren'Py is ready
-for its next 15 years.
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
 
 Some of the bigger changes are:
 
@@ -76,8 +80,8 @@ now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
 or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
 
 With these changes, there have been a few deprecations. Ren'Py no longer runs
-on Windows XP. The 32-bit armv7l
-platform has been removed on iOS, as this platform hasn't been supported
+on Windows XP. The minimum version of macOS Ren'Py uspports is now 10.10.
+The 32-bit armv7l platform has been removed on iOS, as this platform hasn't been supported
 by Apple for several years. The Editra text editor has been removed, as
 it hasn't been supported for quite some time, and wasn't compatible with
 the new build system.
