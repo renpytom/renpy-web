@@ -41,7 +41,7 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.2",
     pygame="-2.1.0",
@@ -50,7 +50,7 @@ Release(
     name="The Betterer One",
     world_order=11,
     announcement="""\
-I'm happy to announce Ren'Py 7.4.2, the first patch release for the 7.4
+I'm happy to announce Ren'Py 7.4.2, the second patch release for the 7.4
 series. This release fixes a number of issues found in Ren'Py 7.4, including
 some that only affect users that need accessibility options. Everyone should upgrade.
 
@@ -80,7 +80,7 @@ now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
 or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
 
 With these changes, there have been a few deprecations. Ren'Py no longer runs
-on Windows XP. The minimum version of macOS Ren'Py uspports is now 10.10.
+on Windows XP. The minimum version of macOS Ren'Py supports is now 10.10.
 The 32-bit armv7l platform has been removed on iOS, as this platform hasn't been supported
 by Apple for several years. The Editra text editor has been removed, as
 it hasn't been supported for quite some time, and wasn't compatible with
