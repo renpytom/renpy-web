@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.3",
     pygame="-2.1.0",
-    date="February xx, 2021",
+    date="March 8, 2021",
     patch=None,
     name="The Best One",
     world_order=11,
@@ -54,14 +54,14 @@ I'm happy to announce Ren'Py 7.4.3, the third patch release for the 7.4
 series. This release improves the compatibility of Ren'Py 7.4, and adds
 some new features. New to Ren'Py 7.4.3 are:
 
-* Windows improvements that should increase compatibility and reduces the
+* Windows improvements that should increase compatibility and reduce the
   chance of false positives from some antivirus software.
-* Improved compatibility with older Android devices.
+* Improved compatibility with Android devices.
 * A number of focus improvements, including marking frames modal, and
   focusing the mask part of an AlphaMask.
 * The ability to render Emoji found in fonts.
 
-This release includes feature improvements and updates transations.
+This release includes feature improvements and updates translations.
 Everyone should upgrade.
 
 Ren'Py 7.4 is the the product of over a year of
