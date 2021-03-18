@@ -43,6 +43,125 @@ aliases = [ ]
 Release(
     prerelease=False,
     invisible=False,
+    version="7.4.4",
+    pygame="-2.1.0",
+    date="March 17, 2021",
+    patch=None,
+    name="The Pot of Gold",
+    world_order=11,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4.4, the fourth patch release for the 7.4
+series. This fixes a pair of regressions, one that stopped the Web Beta
+from working, and another that prevented gestures and controller support
+from working.
+
+This release adds basic support for custom blend modes, and uses that
+support to implement additive and multiplicative blends for Live2D.
+It also fixes an issue with large textures that usually manifested
+as problems with Live2D.
+
+It also includes a new feature that makes it possible to supply old
+.rpyc files to Ren'Py, which should help maintain save compatibility
+with games that are released more than once, such as games with
+early access.
+
+Everyone should upgrade.
+
+Ren'Py 7.4 is the the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
+
+Some of the bigger changes are:
+
+* A new model-based renderer. While this is opt-in for the moment, it
+  opens the way to features that creators have been requesting for a
+  long time, such as being able to recolor displayables, blurring the
+  screen, and using Live2D to animate sprites. The model-based renderer
+  is extensible with shaders, allowing for custom effects.
+* A new Python 3 compatibility mode has been added, to pave the way for Python 3
+  support in the next release. This mode changes the ways in which Ren'Py
+  runs, to allow you to begin porting your game before full Python 3
+  comes out in Ren'Py 8.0.
+* Ren'Py's build system has been modernized, and the libraries underlying it
+  have been updated. This allows 64-bit Windows to be supported.
+* The web platform has been updated, to allow for the incremental download
+  of games.
+
+This release also raises the minimum requirements to run a Ren'Py game. It is
+now required that a user's computer have OpenGL 2, DirectX 9, OpenGL ES 2,
+or WebGL to run Ren'Py. The model-based renderer requires OpenGL ES 3 or WebGL 2.
+
+With these changes, there have been a few deprecations. Ren'Py no longer runs
+on Windows XP. The minimum version of macOS Ren'Py supports is now 10.10.
+The 32-bit armv7l platform has been removed on iOS, as this platform hasn't been supported
+by Apple for several years. The Editra text editor has been removed, as
+it hasn't been supported for quite some time, and wasn't compatible with
+the new build system.
+
+It's my hope that this release will enable creators to take on projects
+they couldn't before, and will provide a solid basis for the next releases
+of Ren'Py.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* Kyouryuukunn
+* Lee Yunseok
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="7.4.3",
     pygame="-2.1.0",
     date="March 8, 2021",
