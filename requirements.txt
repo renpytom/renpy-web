@@ -153,7 +153,7 @@ pyFFTW==0.12.0
 pyflakes==2.1.1
 pygame==1.9.6
 PyGithub==1.43.7
-Pygments==2.3.1
+Pygments==2.7.4
 PyGObject==3.36.0
 PyJWT==1.7.1
 pylast==3.1.0
