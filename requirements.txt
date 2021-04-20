@@ -139,7 +139,7 @@ pluggy==0.13.0
 ply==3.11
 prompt-toolkit==2.0.10
 protobuf==3.6.1
-py==1.8.1
+py==1.10.0
 PyAudio==0.2.11
 PyBluez==0.22
 pycairo==1.16.2
