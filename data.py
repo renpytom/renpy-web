@@ -41,6 +41,98 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.5",
+    pygame="-2.1.0",
+    date="May xx, 2021",
+    patch=None,
+    name="The Five-Leaf Clover",
+    world_order=11,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4.5, the fourth patch release for the 7.4
+series. This fix adds several features that take advantage of the
+model-based renderer, improves platform support, and adds other
+quality of life features, like a dark theme for the launcher.
+
+Perhaps the biggest new feature is the 3D Stage system. This allows a
+creator to position images on a three dimensional stage, like the one
+a play takes place on. Images can be rotated and moved in three dimensions,
+and Ren'Py will take care of rendering them in a perspective-correct manner.
+
+Other features that take advantage of the model-based renderer are
+new blend modes (including multiply), and a new transition, Swing,
+that rotates images in three dimensions.
+
+Platform support includes changes to Android to allow Ren'Py games to be
+compiled after the bintray shutdown, fixes to compiling for iOS, and
+support for signing and notarizing macOS applications.
+
+Ren'Py 7.4 is the the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* CodePsy
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* KG
+* Kyouryuukunn
+* Lee Yunseok
+* Lent1
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""".decode("utf-8"),
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.4.4",
