@@ -335,7 +335,7 @@ def channels():
 
         version = sdk["pretty_version"].split()[1]
 
-        if version in seen:
+        if (not always) and (version in seen):
             return
 
         seen.add(version)
@@ -355,7 +355,7 @@ def channels():
         "Release",
         "http://update.renpy.org/release/updates.json",
         "{b}Recommended.{/b} The version of Ren'Py that should be used in all newly-released games.",
-        False,
+        True,
         "/home/tom/WWW.update/release",
         "/home/tom/ab/renpy/dl/release",
         )

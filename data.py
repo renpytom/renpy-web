@@ -50,7 +50,7 @@ Release(
     name="The Five-Leaf Clover",
     world_order=11,
     announcement="""\
-I'm happy to announce Ren'Py 7.4.5, the fourth patch release for the 7.4
+I'm happy to announce Ren'Py 7.4.5, the fifth patch release for the 7.4
 series. This fix adds several features that take advantage of the
 model-based renderer, improves platform support, and adds other
 quality of life features, like a dark theme for the launcher.
@@ -62,7 +62,8 @@ and Ren'Py will take care of rendering them in a perspective-correct manner.
 
 Other features that take advantage of the model-based renderer are
 new blend modes (including multiply), and a new transition, Swing,
-that rotates images in three dimensions.
+that rotates images in three dimensions. The model-based renderer
+is enabled by default in games released with Ren'Py 7.4.5.
 
 Platform support includes changes to Android to allow Ren'Py games to be
 compiled after the bintray shutdown, fixes to compiling for iOS, and
