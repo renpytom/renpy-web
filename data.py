@@ -122,7 +122,7 @@ Ren'Py 7.4 is brought to you by:
 * 逆转咸鱼
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -241,7 +241,7 @@ Ren'Py 7.4 is brought to you by:
 * 逆转咸鱼
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -357,7 +357,7 @@ Ren'Py 7.4 is brought to you by:
 * 逆转咸鱼
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -463,7 +463,7 @@ Ren'Py 7.4 is brought to you by:
 * 逆转咸鱼
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 Ren'Py 7.4.1 is the first patch release, addressing bugs and compatibility
 issues found in Ren'Py 7.4.0. As some of these issues may affect end-users
@@ -567,7 +567,7 @@ Ren'Py 7.4 is brought to you by:
 * Zedraxlo
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 Ren'Py 7.4.1 is the first patch release, addressing bugs and compatibility
 issues found in Ren'Py 7.4.0. As some of these issues may affect end-users
@@ -667,7 +667,7 @@ Ren'Py 7.4 is brought to you by:
 * Zedraxlo
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -721,7 +721,7 @@ Ren'Py 7.3 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 There has been an update to Ren'Py 7.3.5 to address the requirement
 that Android applications target Android 10 (android-29). For a
@@ -824,7 +824,7 @@ Ren'Py 7.3 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -919,7 +919,7 @@ Ren'Py 7.3 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -990,7 +990,7 @@ Ren'Py 7.3 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1060,7 +1060,7 @@ Ren'Py 7.3 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1123,7 +1123,7 @@ Ren'Py 7.3.0 is brought to you by:
 * Sylvain Beucler
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1184,7 +1184,7 @@ Ren'Py 7.2.2 is brought to you by:
 * Xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1244,7 +1244,7 @@ Ren'Py 7.2.1 is brought to you by:
 * Xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1299,7 +1299,7 @@ Ren'Py 7.2.0 is brought to you by:
 * Xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1372,7 +1372,7 @@ Ren'Py 7.1.3 is brought to you by:
 
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1441,7 +1441,7 @@ Ren'Py 7.1.2 is brought to you by:
 
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1512,7 +1512,7 @@ Ren'Py 7.1.1 is brought to you by:
 
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1577,7 +1577,7 @@ Ren'Py 7.1.0 is brought to you by:
 * xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1632,7 +1632,7 @@ As always, check the changelog for complete details.
 Ren'Py 7 is brought to you by
 `over 100 people from around the world <https://www.renpy.org/doc/html/credits.html>`_,
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1685,7 +1685,7 @@ Ren'Py 6.99.14 is brought to you by:
 * Xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1742,7 +1742,7 @@ Ren'Py 6.99.14 is brought to you by:
 * Xavi-mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1792,7 +1792,7 @@ Ren'Py 6.99.14 is brought to you by:
 and myself, Tom "PyTom" Rothamel.
 
 This release is dedicated to the memory of `SusanTheCat <https://lemmasoft.renai.us/forums/memberlist.php?mode=viewprofile&u=7524>`_.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1851,7 +1851,7 @@ Ren'Py 6.99.14 is brought to you by:
 * Vollschauer
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
     history="""\
 """,
 
@@ -1929,7 +1929,7 @@ Ren'Py 6.99.13 is brought to you by:
 * Zedraxlo
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 """,
@@ -1994,7 +1994,7 @@ Ren'Py 6.99.12 is brought to you by:
 * Xavi-Mat
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 **6.99.12.4.2187**: February 28, 2017
@@ -2097,7 +2097,7 @@ Ren'Py 6.99.11 is brought to you by:
 * Xela
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
@@ -2158,7 +2158,7 @@ Ren'Py 6.99.10 is brought to you by:
 * Jackmcbarn
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
@@ -2219,7 +2219,7 @@ Ren'Py 6.99.9 is brought to you by:
 * Vollschauer
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
@@ -2281,7 +2281,7 @@ Ren'Py 6.99.8 is brought to you by:
 * Vollschauer
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
@@ -2344,7 +2344,7 @@ Ren'Py 6.99.7 is brought to you by:
 * Spiky Caterpillar
 
 and myself, Tom "PyTom" Rothamel.
-""".decode("utf-8"),
+""",
 
     history="""\
 The history of older Ren'Py 6.99 releases can be found at the following
