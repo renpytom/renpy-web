@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.5",
     pygame="-2.1.0",
-    date="May xx, 2021",
+    date="May 26, 2021",
     patch=None,
     name="The Five-Leaf Clover",
     world_order=11,
@@ -65,9 +65,11 @@ new blend modes (including multiply), and a new transition, Swing,
 that rotates images in three dimensions. The model-based renderer
 is enabled by default in games released with Ren'Py 7.4.5.
 
-Platform support includes changes to Android to allow Ren'Py games to be
-compiled after the bintray shutdown, fixes to compiling for iOS, and
-support for signing and notarizing macOS applications.
+This release also includes improvements for many platforms. The Android
+support allows new projects to be compiled after the bintray shutdown,
+while a rewritten splashscreen allows Ren'Py to start on more devices.
+This release also includes fixes for compiling on iOS, and for signing
+and notarizing macOS applications.
 
 Ren'Py 7.4 is the the product of over a year of
 development, and one of the biggest releases of Ren'Py to date. This
