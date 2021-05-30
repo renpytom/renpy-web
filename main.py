@@ -292,7 +292,7 @@ def feed():
             fe.title(u"Ren'Py {} Released".format(version))
 
         fe.content(
-            content=unicode(render_template("feed.html", release=release, mode=mode)),
+            content=render_template("feed.html", release=release, mode=mode),
             type="text/html"
         )
         fe.updated(parse_date(date))
