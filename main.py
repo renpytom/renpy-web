@@ -145,7 +145,7 @@ def wiki(path):
     if not os.path.exists(fn):
         raise abort(404)
 
-    with open(fn, "r") as f:
+    with open(fn, "rb") as f:
         content = f.read()
 
     try:
