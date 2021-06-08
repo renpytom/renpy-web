@@ -41,6 +41,101 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.6",
+    pygame="-2.1.0",
+    date="June xx, 2021",
+    patch=None,
+    name="Lucky Dice",
+    world_order=11,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4.6, the sixth patch release for the 7.4
+series. This release contains a number of fixes for  7.4.5, both to improve
+platform compatibility and to extend some to the features added for the
+new 3D Stage.
+
+This release include a new camera statement, which is used to introduce
+transforms that will persist until changed. This allows the show layer
+statement to revert to the behavior it had in 7.4.4, improving compatibility
+with projects in production. At the same time, it allows more concise control
+of the camera in 3D productions.
+
+This release introduces the Model displayable. While right now focused on
+allowing multiple textures to be combined (it's now possible to implement
+dissolve-like transforms without a creator-defined displayable), it will
+in the future serve as a way to access 2D and 3D model functionality.
+
+This release fixes a mistake in the 7.4.5 that prevented builds from working
+on iOS, and gets the model-based renderer working on that platform.
+
+In addition, there are a number of bug fixes and other improvements.
+
+Ren'Py 7.4 is the the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* CodePsy
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* KG
+* Kyouryuukunn
+* Lee Yunseok
+* Lent1
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""",
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.4.5",
