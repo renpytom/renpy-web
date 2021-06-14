@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.6",
     pygame="-2.1.0",
-    date="June xx, 2021",
+    date="June 13, 2021",
     patch=None,
     name="Lucky Dice",
     world_order=11,
@@ -68,6 +68,8 @@ in the future serve as a way to access 2D and 3D model functionality.
 
 This release fixes a mistake in the 7.4.5 that prevented builds from working
 on iOS, and gets the model-based renderer working on that platform.
+
+This release updates Atom and the language-renpy plugin.
 
 In addition, there are a number of bug fixes and other improvements.
 
