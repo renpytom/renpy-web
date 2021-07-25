@@ -43,6 +43,103 @@ aliases = [ ]
 Release(
     prerelease=False,
     invisible=False,
+    version="7.4.7",
+    pygame="-2.1.0",
+    date="June 13, 2021",
+    patch=None,
+    name="The Queen of the Skies",
+    world_order=11,
+    announcement="""\
+I'm happy to announce Ren'Py 7.4.7, the seventh patch release of Ren'Py
+7.4. This release includes many fixes, and some major improvements.
+
+Perhaps the biggest set of changes was to the Web port of Ren'Py, which
+has been rewritten to use the web browser's native audio processing. This
+prevents expensive operations, like decoding image files, from interrupting
+audio playback. (However, an issue with Safari still exists.) Self-voicing
+has also been added to the web plaform.
+
+There have also been improvements to support for the iOS platform, that allow
+Ren'Py games to run on the latest iPhones without aggressive pillarboxing.
+
+The input displayable has grown quite a bit of functionality, with more
+keys being supported, and the caret blinking to indicate that text can
+be edited.
+
+The Atom editor has been updated.
+
+There is quite a bit of new functionality in this release, please check out
+the changelog for some of the new things that can be done.
+
+Ren'Py 7.4 is the the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* CodePsy
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* KG
+* Kyouryuukunn
+* Lee Yunseok
+* Lent1
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Ruben Jesus Garcia-Hernandez
+* Siege-Wizard
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""",
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="7.4.6",
     pygame="-2.1.0",
     date="June 13, 2021",
