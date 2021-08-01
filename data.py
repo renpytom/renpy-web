@@ -41,11 +41,99 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.8",
+    pygame="-2.1.0",
+    date="August xx, 2021",
+    patch=None,
+    name="Lucky Eight Ball",
+    world_order=11,
+    announcement="""\
+I'd like to announce Ren'Py 7.4.8, the eighth patch release of Ren'Py
+7.4. This release is focused on fixes, and especially fixes a problem
+introduced in Ren'Py 7.4.7 that could, in some circumstances, cause
+data to become corrupt during rollback.
+
+Everyone on 7.4.7 should upgrade.
+
+In addition to that fix, there are multiple other fixes, and a
+single new feature - the ability to pause playing movies like
+any other sound channel. Please see the changelog for a complete
+list of what has changed.
+
+Ren'Py 7.4 is the the product of over a year of
+development, and one of the biggest releases of Ren'Py to date. This
+series of releases focuses on updating Ren'Py's internals so that Ren'Py
+is ready for its next 15 years.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* CodePsy
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* KG
+* Kyouryuukunn
+* Lee Yunseok
+* Lent1
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Ruben Jesus Garcia-Hernandez
+* Siege-Wizard
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""",
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.4.7",
     pygame="-2.1.0",
-    date="June 13, 2021",
+    date="July 13, 2021",
     patch=None,
     name="The Queen of the Skies",
     world_order=11,
