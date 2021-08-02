@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.8",
     pygame="-2.1.0",
-    date="August xx, 2021",
+    date="August 2, 2021",
     patch=None,
     name="Lucky Eight Ball",
     world_order=11,
