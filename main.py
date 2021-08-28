@@ -344,7 +344,7 @@ def channels():
             "channel" : channel,
             "url" : url,
             "pretty_version" : version,
-            "split_version" : [ int(i) for i in version.split(".") ],
+            "split_version" : [ int(i) for i in version.rstrip("un").split(".") ],
             "description" : description,
             "timestamp" : os.path.getmtime(updates_json),
             }
