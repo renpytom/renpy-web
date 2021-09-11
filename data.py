@@ -41,6 +41,98 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.9",
+    pygame="-2.1.0",
+    date="September xx, 2021",
+    patch=None,
+    name="Lucky Robot Retcon",
+    world_order=11,
+    announcement="""\
+I'd like to announce Ren'Py 7.4.8, the ninth patch release of Ren'Py
+7.4. The largest amount of work was done to update the Android version
+of Ren'Py to keep pace with Google Play's requirements. Ren'Py now
+uses the Android App Bundle format, and uses Play Asset Delivery
+to download assets to the player's device.
+
+In addition to the Android improvements, some of the major changes are:
+
+* Improvements to the web updater, providing a less efficient mode
+  that works with htpps we bserver.
+* A new option in the launcher that can tell you if a new Ren'Py release
+  exists.
+* Improvements to the 3D stage, so that the camera statement and perspective
+  work with transitions and transforms.
+* Transforms now can take fractional sizes.
+* The shift+A accessibility menu now has a new high-contrast mode, to make
+  text more readable.
+
+These are just some of the improvements in this release, so please read
+the changelog to find everything new.
+
+Ren'Py 7.4 is brought to you by:
+
+* Andrej
+* Andrí Wilford
+* Andy_kl
+* Capntrips
+* Cherie Davidson
+* CobaltCore
+* CodePsy
+* Daniel Conley
+* Daniel Luque
+* Dogtopus
+* Eric Ahn
+* GimmiRuski
+* Gio
+* Gouvernathor
+* Gratusfr
+* Hyper Sonic
+* Jackmcbarn
+* Jan Masek
+* Joaquin Garmendia Cabrera
+* Joshua Fehler
+* Joshua Stone
+* Kapil Gain
+* KG
+* Kyouryuukunn
+* Lee Yunseok
+* Lent1
+* Lezalith
+* Lucas Ramage
+* Maciej Katafiasz
+* Mal Graty
+* Mason Chou
+* Maxwell Paul Brickner
+* Midgethetree
+* Moshibit
+* Neotus
+* Paul J Martinez
+* Remix
+* Ruben Jesus Garcia-Hernandez
+* Siege-Wizard
+* Shawna-p
+* Sylvain Beucler
+* Uyjulian
+* Xavimat
+* Zedraxlo
+* 被诅咒的章鱼
+* 逆转咸鱼
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""",
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.4.8",
@@ -189,6 +281,7 @@ Ren'Py 7.4 is brought to you by:
 * Joshua Stone
 * Kapil Gain
 * KG
+* KorDen
 * Kyouryuukunn
 * Lee Yunseok
 * Lent1
@@ -198,6 +291,7 @@ Ren'Py 7.4 is brought to you by:
 * Mal Graty
 * Mason Chou
 * Maxwell Paul Brickner
+* Meithal
 * Midgethetree
 * Moshibit
 * Neotus
