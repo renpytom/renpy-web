@@ -50,7 +50,7 @@ Release(
     name="Lucky Robot Retcon",
     world_order=11,
     announcement="""\
-I'd like to announce Ren'Py 7.4.8, the ninth patch release of Ren'Py
+I'd like to announce Ren'Py 7.4.9, the ninth patch release of Ren'Py
 7.4. The largest amount of work was done to update the Android version
 of Ren'Py to keep pace with Google Play's requirements. Ren'Py now
 uses the Android App Bundle format, and uses Play Asset Delivery
@@ -59,7 +59,7 @@ to download assets to the player's device.
 In addition to the Android improvements, some of the major changes are:
 
 * Improvements to the web updater, providing a less efficient mode
-  that works with htpps we bserver.
+  that works with https web servers.
 * A new option in the launcher that can tell you if a new Ren'Py release
   exists.
 * Improvements to the 3D stage, so that the camera statement and perspective
@@ -73,52 +73,68 @@ the changelog to find everything new.
 
 Ren'Py 7.4 is brought to you by:
 
-* Andrej
-* Andrí Wilford
-* Andy_kl
-* Capntrips
-* Cherie Davidson
-* CobaltCore
-* CodePsy
-* Daniel Conley
-* Daniel Luque
-* Dogtopus
-* Eric Ahn
-* GimmiRuski
-* Gio
-* Gouvernathor
-* Gratusfr
-* Hyper Sonic
-* Jackmcbarn
-* Jan Masek
-* Joaquin Garmendia Cabrera
-* Joshua Fehler
-* Joshua Stone
-* Kapil Gain
-* KG
-* Kyouryuukunn
-* Lee Yunseok
-* Lent1
-* Lezalith
-* Lucas Ramage
-* Maciej Katafiasz
-* Mal Graty
-* Mason Chou
-* Maxwell Paul Brickner
-* Midgethetree
-* Moshibit
-* Neotus
-* Paul J Martinez
-* Remix
-* Ruben Jesus Garcia-Hernandez
-* Siege-Wizard
-* Shawna-p
-* Sylvain Beucler
-* Uyjulian
-* Xavimat
-* Zedraxlo
-* 被诅咒的章鱼
-* 逆转咸鱼
+.. raw:: html
+
+    <table style="width: 100%;">
+    <tr>
+    <td style="width: 25%; vertical-align: top">
+    <ul>
+        <li> Andrej
+        <li> Andrí Wilford
+        <li> Andy_kl
+        <li> Capntrips
+        <li> Charles Surett
+        <li> Cherie Davidson
+        <li> CobaltCore
+        <li> CodePsy
+        <li> Daniel Conley
+        <li> Daniel Luque
+        <li> Dogtopus
+        <li> Eric Ahn
+        <li> GanstaKingofSA
+        <li> GimmiRuski
+        <li> GiovanH
+        <li> Gouvernathor
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Gratusfr
+        <li> Hanaka
+        <li> Hyper Sonic
+        <li> Jackmcbarn
+        <li> Jan Masek
+        <li> Joaquin Garmendia Cabrera
+        <li> Joshua Fehler
+        <li> Joshua Stone
+        <li> Jürg Billeter
+        <li> Kapil Gain
+        <li> KG
+        <li> Kyouryuukunn
+        <li> Lee Yunseok
+        <li> Lent1
+        <li> Lezalith
+        <li> Liu Wenyuan
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Lucas Ramage
+        <li> Maciej Katafiasz
+        <li> Mal Graty
+        <li> Mason Chou
+        <li> Maxwell Paul Brickner
+        <li> Midgethetree
+        <li> Moshibit
+        <li> Neotus
+        <li> Neyunse
+        <li> Paul J Martinez
+        <li> Remix
+        <li> Ruben Jesus Garcia-Hernandez
+        <li> Siege-Wizard
+        <li> Shawna-p
+        <li> Sylvain Beucler
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Uyjulian
+        <li> Xavimat
+        <li> Zedraxlo
+        <li> 被诅咒的章鱼
+        <li> 逆转咸鱼
+    </ul><td></tr></table>
 
 everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
 """,
