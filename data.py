@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.9",
     pygame="-2.1.0",
-    date="September xx, 2021",
+    date="October 7, 2021",
     patch=None,
     name="Lucky Robot Retcon",
     world_order=11,
@@ -58,6 +58,8 @@ to download assets to the player's device.
 
 In addition to the Android improvements, some of the major changes are:
 
+* The iOS version of Ren'Py now produces more complete projects, requiring
+  less work to get projects working.
 * Improvements to the web updater, providing a less efficient mode
   that works with https web servers.
 * A new option in the launcher that can tell you if a new Ren'Py release
