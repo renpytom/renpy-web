@@ -41,6 +41,101 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="7.4.10",
+    pygame="-2.1.0",
+    date="October xx, 2021",
+    patch=None,
+    name="Lucky Four-Footed Rabbit",
+    world_order=11,
+    announcement="""\
+I'd like to announce Ren'Py 7.4.10, the tenth patch release of Ren'Py
+7.4. This release is a small one, to fix a regression in
+`Ren'Py 7.4.9 <https://www.renpy.org/release/7.4.9>`_ that
+occurred when large images were displayed.
+
+The Indonesian language translation has been updated.
+
+Ren'Py 7.4 is brought to you by:
+
+.. raw:: html
+
+    <table style="width: 100%;">
+    <tr>
+    <td style="width: 25%; vertical-align: top">
+    <ul>
+        <li> Andrej
+        <li> Andrí Wilford
+        <li> Andy_kl
+        <li> Capntrips
+        <li> Charles Surett
+        <li> Cherie Davidson
+        <li> CobaltCore
+        <li> CodePsy
+        <li> Daniel Conley
+        <li> Daniel Luque
+        <li> Dogtopus
+        <li> Eric Ahn
+        <li> GanstaKingofSA
+        <li> GimmiRuski
+        <li> GiovanH
+        <li> Gouvernathor
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Gratusfr
+        <li> Hanaka
+        <li> Hyper Sonic
+        <li> Jackmcbarn
+        <li> Jan Masek
+        <li> Joaquin Garmendia Cabrera
+        <li> Joshua Fehler
+        <li> Joshua Stone
+        <li> Jürg Billeter
+        <li> Kapil Gain
+        <li> KG
+        <li> Kyouryuukunn
+        <li> Lee Yunseok
+        <li> Lent1
+        <li> Lezalith
+        <li> Liu Wenyuan
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Loliconazter
+        <li> Lucas Ramage
+        <li> Maciej Katafiasz
+        <li> Mal Graty
+        <li> Mason Chou
+        <li> Maxwell Paul Brickner
+        <li> Midgethetree
+        <li> Moshibit
+        <li> Neotus
+        <li> Neyunse
+        <li> Paul J Martinez
+        <li> Remix
+        <li> Ruben Jesus Garcia-Hernandez
+        <li> Siege-Wizard
+        <li> Shawna-p
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        <li> Sylvain Beucler
+        <li> Uyjulian
+        <li> Xavimat
+        <li> Zedraxlo
+        <li> 被诅咒的章鱼
+        <li> 逆转咸鱼
+    </ul><td></tr></table>
+
+everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+""",
+    history="""\
+""",
+
+    full_html="""\
+""",
+
+    top_html="""\
+""",
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="7.4.9",
