@@ -41,11 +41,11 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.4.11",
     pygame="-2.1.0",
-    date="November xx, 2021",
+    date="December 2, 2021",
     patch=None,
     name="Lucky Beckoning Cat",
     world_order=11,
