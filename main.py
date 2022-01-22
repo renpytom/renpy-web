@@ -370,12 +370,21 @@ def channels():
         )
 
     scan_version(
-        "Nightly",
-        "http://nightly.renpy.org/current/updates.json",
+        "Nightly (Ren'Py 7)",
+        "http://nightly.renpy.org/current-7/updates.json",
         "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
         True,
-        "/home/tom/WWW.nightly/current",
-        "/home/tom/ab/WWW.nightly/current",
+        "/home/tom/WWW.nightly/current-7",
+        "/home/tom/ab/WWW.nightly/current-7",
+        )
+
+    scan_version(
+        "Nightly (Ren'Py 8)",
+        "http://nightly.renpy.org/current-8/updates.json",
+        "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
+        True,
+        "/home/tom/WWW.nightly/current-8",
+        "/home/tom/ab/WWW.nightly/current-8",
         )
 
     return jsonify({ "releases" : rv })
