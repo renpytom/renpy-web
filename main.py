@@ -352,39 +352,57 @@ def channels():
         rv.append(record)
 
     scan_version(
-        "Release",
-        "http://update.renpy.org/release/updates.json",
+        "Release (Ren'Py 8, Python 3)",
+        "http://update.renpy.org/release-8/updates.json",
         "{b}Recommended.{/b} The version of Ren'Py that should be used in all newly-released games.",
         True,
-        "/home/tom/WWW.update/release",
-        "/home/tom/ab/renpy/dl/release",
+        "/home/tom/WWW.update/release-8",
+        "/home/tom/ab/renpy/dl/release-8",
         )
 
     scan_version(
-        "Prerelease",
-        "http://update.renpy.org/prerelease/updates.json",
+        "Release (Ren'Py 7, Python 2)",
+        "http://update.renpy.org/release-7/updates.json",
+        "{b}Recommended.{/b} The version of Ren'Py that should be used in all newly-released games.",
+        True,
+        "/home/tom/WWW.update/release-7",
+        "/home/tom/ab/renpy/dl/release-7",
+        )
+
+    scan_version(
+        "Prerelease (Ren'Py 8, Python 3)",
+        "http://update.renpy.org/prerelease-8/updates.json",
         "A preview of the next version of Ren'Py that can be used for testing and taking advantage of new features, but not for final releases of games.",
         False,
-        "/home/tom/WWW.update/prerelease",
-        "/home/tom/ab/renpy/dl/prerelease",
+        "/home/tom/WWW.update/prerelease-8",
+        "/home/tom/ab/renpy/dl/prerelease-8",
         )
 
     scan_version(
-        "Nightly (Ren'Py 7)",
-        "http://nightly.renpy.org/current-7/updates.json",
-        "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
-        True,
-        "/home/tom/WWW.nightly/current-7",
-        "/home/tom/ab/WWW.nightly/current-7",
+        "Prerelease (Ren'Py 7, Python 2)",
+        "http://update.renpy.org/prerelease-7/updates.json",
+        "A preview of the next version of Ren'Py that can be used for testing and taking advantage of new features, but not for final releases of games.",
+        False,
+        "/home/tom/WWW.update/prerelease-7",
+        "/home/tom/ab/renpy/dl/prerelease-7",
         )
 
     scan_version(
-        "Nightly (Ren'Py 8)",
+        "Nightly (Ren'Py 8, Python 3)",
         "http://nightly.renpy.org/current-8/updates.json",
         "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
         True,
         "/home/tom/WWW.nightly/current-8",
         "/home/tom/ab/WWW.nightly/current-8",
+        )
+
+    scan_version(
+        "Nightly (Ren'Py 7, Python 2)",
+        "http://nightly.renpy.org/current-7/updates.json",
+        "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
+        True,
+        "/home/tom/WWW.nightly/current-7",
+        "/home/tom/ab/WWW.nightly/current-7",
         )
 
     return jsonify({ "releases" : rv })
