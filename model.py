@@ -84,6 +84,10 @@ class Release(Data):
             if self.date is None:
                 self.date = zipdate
 
+    @property
+    def major(self):
+        return int(self.version.split(".")[0])
+
     def get_full_version(self):
         if self.patch is not None:
             return "{0}.{1}".format(self.version, self.patch)
@@ -140,6 +144,7 @@ class WikiRelease(Data):
 
     prerelease = False
     wiki = True
+    major = 7
 
     def __init__(self, **kwargs):
         super(WikiRelease, self).__init__(**kwargs)
