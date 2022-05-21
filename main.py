@@ -118,7 +118,11 @@ def release_txt(name):
 
 @app.route("/latest.html")
 def latest():
-    return render_template('release.html', name='latest', release=data.current, data=data)
+    return render_template('release.html', name='latest', release=data.current_8 or data.current_7, data=data)
+
+@app.route("/latest-7.html")
+def latest_7():
+    return render_template('release.html', name='latest', release=data.current_7, data=data)
 
 
 @app.route("/support.html")

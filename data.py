@@ -50,9 +50,9 @@ Release(
     name="Heck Freezes Over",
     world_order=11,
     announcement="""\
-I'd like to announce Ren'Py 7.5.0.
+I'd like to announce Ren'Py 8.0.0.
 
-Ren'Py 7.5 is brought to you by:
+Ren'Py 8.0 is brought to you by:
 
 .. raw:: html
 
@@ -71,6 +71,7 @@ Ren'Py 7.5 is brought to you by:
         <li> Liu Wenyuan
         <li> LoafyLemon
         <li> Loliconazter
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
         <li> Mal Graty
         <li> Matt George
         <li> Moshibit
@@ -82,7 +83,6 @@ Ren'Py 7.5 is brought to you by:
         <li> Uyjulian
         <li> Zedraxlo
         <li> 琴梨梨
-    </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul><td></tr></table>
