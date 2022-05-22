@@ -205,11 +205,13 @@
     <dl>
       <dt><strong>iOS Support (Renios):</strong> {{ dl("renios.zip") }}</dt>
     </dl>
-    {% if release.world_order >= 10 %}
+{% if release.world_order >= 10 %}
+{% if release.major < 8 %}
     <dl>
       <dt><strong>Web Platform Support (Renpyweb):</strong> {{ dl("web.zip") }}</dt>
     </dl>
-    {%endif%}
+{% endif %}
+{% endif %}
 
 </section>
 {% endif %}
@@ -224,8 +226,10 @@
         {% endif %}
 
 {% if release.world_order >= 7 %}
+{% if release.major < 8 %}
         <dt><strong>Raspberry Pi Support:</strong> {{ dl("raspi.tar.bz2") }}</dt>
         <dd>Contains files required to allow Ren'Py to run on the Raspberry Pi. This should be untarred in the Ren'Py sdk directory.</dd>
+{% endif %}
 {% endif %}
 
         <dt><strong>Ren'Py Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>
