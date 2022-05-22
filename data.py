@@ -40,19 +40,50 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
-Release(
-    prerelease=True,
-    invisible=False,
-    version="8.0.0",
-    pygame="-2.1.0",
-    date="June xx, 2022",
-    patch=None,
-    name="Heck Freezes Over",
-    world_order=11,
-    announcement="""\
-I'd like to announce Ren'Py 8.0.0.
 
-Ren'Py 8.0 is brought to you by:
+COMMON_8_0 = """
+Ren'Py 8.0 and Ren'Py 7.5 are the first in what is planned to be a joint
+series of releases. Ren'Py 8.0:
+
+* Adds support for Python 3, which is recommended for all new games.
+
+* Removes support for 32-bit Windows and Linux.
+
+* Temporarily removes support for the web platform, to be added back in a
+  near-future release.
+
+Ren'Py 7.5:
+
+* Continues support for Python 2.7, to allow current games to release.
+
+* Improves support for the web platform, including:
+
+  * Workarounds for changes introduced by web browsers that caused the browser
+    to consume more memory when running Ren'Py, resulting in RangeErrors.
+
+  * Detecting if the audio types supported by your game are available,
+    and falling back if they are.
+
+Ren'Py 8.0 and 7.5 are released in parallel, and share the same source code,
+which means the bulk of changes apply to versions, including:
+
+* Support for the Visual Studio Code text editor, including the Ren'Py
+  Language extension. This extension include support for many advanced
+  including live diagnostics and an outline. It also allows access
+  to many other Visual Studio Code extensions.
+
+* The new ``dismiss`` and ``nearrect`` displayables provide support for
+  pop-up tooltips and drop-down menus.
+
+* A rewritten wrapper for Steamworks that supports the full API. This allows
+  for Steam Deck integration, including automatically setting a "steam_deck"
+  variant and displaying the on-screen keyboard.
+
+* Over 140 issues - a mix of fixes and feature requests - have been addressed
+  in this release.
+
+For a full list of what's changed in Ren'Py 8.0 and 7.5, see the changelog.
+These releases are brought to you by:
 
 .. raw:: html
 
@@ -66,29 +97,47 @@ Ren'Py 8.0 is brought to you by:
         <li> Gouvernathor
         <li> Jacob Kauffmann
         <li> Joshua Fehler
+        <li> Julian Uy
         <li> Julvenzor
         <li> LaUwUrence
         <li> Liu Wenyuan
         <li> LoafyLemon
         <li> Loliconazter
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
-        <li> Mal Graty
+        <li> Mal Gratyr
         <li> Matt George
         <li> Moshibit
         <li> Raj Singh Chauhan
+        <li> Raspberry-soft
+        <li> Rob Colton
         <li> Siege-Wizard
         <li> Tey
         <li> Tichq
-        <li> Raspberry-soft
-        <li> Uyjulian
         <li> Zedraxlo
         <li> 琴梨梨
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul><td></tr></table>
 
-everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
-""",
+everyone who's tested these releases, and myself, Tom "PyTom" Rothamel.
+"""
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.0.0",
+    pygame="-2.1.0",
+    date="June xx, 2022",
+    patch=None,
+    name="Heck Freezes Over",
+    world_order=11,
+    announcement="""\
+I'd like to announce Ren'Py 8.0.0, the first release of Ren'Py based on
+Python 3. This release modernizes Ren'Py by embracing a decade of Python
+development, and brings the many improvements of Python 3.9 to Ren'Py.
+
+""" + COMMON_8_0,
     history="""\
 """,
 
@@ -97,9 +146,6 @@ everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
 
 top_html="""\
   """)
-
-
-
 
 Release(
     prerelease=True,
@@ -111,47 +157,12 @@ Release(
     name="Heck's Getting Frosty",
     world_order=11,
     announcement="""\
-I'd like to announce Ren'Py 7.5.0.
-
-Ren'Py 7.5 is brought to you by:
-
-.. raw:: html
-
-    <table style="width: 100%;">
-    <tr>
-    <td style="width: 25%; vertical-align: top">
-    <ul>
-        <li> Alex
-        <li> Andy_kl
-        <li> Daniel Luque
-        <li> Gouvernathor
-        <li> Jacob Kauffmann
-        <li> Joshua Fehler
-        <li> Julvenzor
-        <li> LaUwUrence
-        <li> Liu Wenyuan
-        <li> LoafyLemon
-        <li> Loliconazter
-        <li> Mal Graty
-        <li> Matt George
-        <li> Moshibit
-        <li> Raj Singh Chauhan
-        <li> Siege-Wizard
-        <li> Tey
-        <li> Tichq
-        <li> Raspberry-soft
-        <li> Uyjulian
-        <li> Zedraxlo
-        <li> 琴梨梨
-    </ul></td><td style="width: 25%; vertical-align: top"><ul>
-    </ul></td><td style="width: 25%; vertical-align: top"><ul>
-    </ul></td><td style="width: 25%; vertical-align: top"><ul>
-    </ul><td></tr></table>
-
-everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+I'd like to announce Ren'Py 7.5.0. This release is a continuation of the
+Rem'Py 7 series, supporting Python 2.7 and all platforms Ren'Py 7.4 supported,
+while bringing you many of the new features of Ren'Py 8.0.
 """,
     history="""\
-""",
+""" + COMMON_8_0,
 
     full_html="""\
 """,
