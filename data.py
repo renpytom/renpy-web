@@ -65,7 +65,7 @@ Ren'Py 7.5:
     and falling back if they are.
 
 Ren'Py 8.0 and 7.5 are released in parallel, and share the same source code,
-which means the bulk of changes apply to versions, including:
+which means the bulk of changes apply to both versions, including:
 
 * Support for the Visual Studio Code text editor, including the Ren'Py
   Language extension. This extension include support for many advanced
@@ -99,12 +99,14 @@ These releases are brought to you by:
         <li> Joshua Fehler
         <li> Julian Uy
         <li> Julvenzor
+        <li> Kigyo
         <li> LaUwUrence
+        <li> Lezalith
         <li> Liu Wenyuan
         <li> LoafyLemon
-        <li> Loliconazter
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
-        <li> Mal Gratyr
+        <li> Loliconazter
+        <li> Mal Graty
         <li> Matt George
         <li> Moshibit
         <li> Raj Singh Chauhan
@@ -113,6 +115,7 @@ These releases are brought to you by:
         <li> Siege-Wizard
         <li> Tey
         <li> Tichq
+        <li> Totally a Booplicate
         <li> Zedraxlo
         <li> 琴梨梨
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
@@ -131,7 +134,7 @@ Release(
     date="June xx, 2022",
     patch=None,
     name="Heck Freezes Over",
-    world_order=11,
+    world_order=12,
     announcement="""\
 I'd like to announce Ren'Py 8.0.0, the first release of Ren'Py based on
 Python 3. This release modernizes Ren'Py by embracing a decade of Python
@@ -155,7 +158,7 @@ Release(
     date="June xx, 2022",
     patch=None,
     name="Heck's Getting Frosty",
-    world_order=11,
+    world_order=12,
     announcement="""\
 I'd like to announce Ren'Py 7.5.0. This release is a continuation of the
 Rem'Py 7 series, supporting Python 2.7 and all platforms Ren'Py 7.4 supported,

@@ -46,7 +46,9 @@
     </div>
 
     <div class="center" style="margin-top: -1em;">
-        <a href="{{ url("sdk.zip") }}">Download SDK <span>zip  - {{ release.zip }} MiB</span></a></li>
+        <a href="{{ url("sdk.zip") }}">Download SDK <span>zip  - {{ release.zip }} MiB</span></a>
+        <br>
+        <a href="{{ url("sdkarm.tar.bz2") }}">Download ARM Linux (Raspberry Pi and Chromebook) SDK <span>tar.bz2 - {{ release.sdkarm }} MiB</span></a>
     </div>
 
     {% else %}
@@ -144,8 +146,17 @@
     archive to the Ren'Py directory.
     </p>
 
-
     <dl style="download">
+
+      {% if release.world_order >= 12 %}
+        <dt>
+            <strong>VS Code:</strong> <a href=https://code.visualstudio.com/Download">Editor</a>,
+            <a href="https://marketplace.visualstudio.com/items?itemName=LuqueDaniel.languague-renpy">Ren'Py Language extension</a>.
+        </dt>
+        <dd>
+            To use a VS Code installed outside Ren'Py, select the "Visual Studio Code (System)" editor.
+        </dd>
+      {% endif %}
 
       {% if release.world_order >= 9 %}
         <dt><strong>Atom (Windows):</strong> {{ dl("atom-windows.zip") }}</dt>
@@ -159,7 +170,9 @@
       <dt><strong>Editra (Linux):</strong> {{ dl("editra-linux.tar.bz2") }}</dt>
       {% endif %}
 
+      {% if release.world_order < 12 %}
       <dt><strong>jEdit:</strong> {{ dl("jedit.zip") }}</dt>
+      {% endif %}
     </dl>
 
 </section>
@@ -225,11 +238,9 @@
         <dd>Allows games developed with Ren'Py {{release.full_version}} to run on PowerPC Macintoshes.
         {% endif %}
 
-{% if release.world_order >= 7 %}
-{% if release.major < 8 %}
+{% if (release.world_order >= 7) and (release.world_order < 12) %}
         <dt><strong>Raspberry Pi Support:</strong> {{ dl("raspi.tar.bz2") }}</dt>
         <dd>Contains files required to allow Ren'Py to run on the Raspberry Pi. This should be untarred in the Ren'Py sdk directory.</dd>
-{% endif %}
 {% endif %}
 
         <dt><strong>Ren'Py Source Code:</strong> {{ dl("source.tar.bz2") }}</dt>

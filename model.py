@@ -40,6 +40,7 @@ class Release(Data):
     exe=None
     bz2=None
     zip=None
+    sdkarm = None
     powerpc=False
 
     def __init__(self, **kwargs):
@@ -62,6 +63,8 @@ class Release(Data):
             self.zip = self.file_size("sdk.zip")
         if self.dmg is None:
             self.dmg = self.file_size("sdk.dmg")
+        if self.sdkarm is None:
+            self.sdkarm = self.file_size("sdkarm.tar.bz2")
 
         zipfn = self.find_file("sdk.zip")
 
