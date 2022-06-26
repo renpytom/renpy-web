@@ -304,23 +304,23 @@ def feed():
         )
         fe.updated(parse_date(date))
 
-    if prerelease_8:
-        add(prerelease_8, prerelease_8.version, prerelease_8.prerelease_date, "prerelease-8")
-
     if prerelease_7:
         add(prerelease_7, prerelease_7.version, prerelease_7.prerelease_date, "prerelease-7")
 
-
-    if current_8 and current_8.patch_date:
-        add(current_8, current_8.full_version, current_8.patch_date, "update-8")
+    if prerelease_8:
+        add(prerelease_8, prerelease_8.version, prerelease_8.prerelease_date, "prerelease-8")
 
     if current_7.patch_date:
         add(current_7, current_7.full_version, current_7.patch_date, "update-7")
 
+    if current_8 and current_8.patch_date:
+        add(current_8, current_8.full_version, current_8.patch_date, "update-8")
+
+    add(current_7, current_7.version, current_7.date, "release-7")
+
     if current_8:
         add(current_8, current_8.version, current_8.date, "release-8")
 
-    add(current_7, current_7.version, current_7.date, "release-7")
 
     response = make_response(fg.rss_str())
     response.headers.set('Content-Type', 'application/rss+xml')
