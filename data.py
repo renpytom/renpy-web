@@ -167,11 +167,11 @@ Release(
     world_order=12,
     announcement="""\
 I'd like to announce Ren'Py 7.5.0. This release is a continuation of the
-Rem'Py 7 series, supporting Python 2.7 and all platforms Ren'Py 7.4 supported,
+Ren'Py 7 series, supporting Python 2.7 and all platforms Ren'Py 7.4 supported,
 while bringing you many of the new features of Ren'Py 8.0.
-""",
-    history="""\
 """ + COMMON_8_0,
+    history="""\
+""",
 
     full_html="""\
 """,
