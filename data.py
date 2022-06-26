@@ -79,6 +79,9 @@ which means the bulk of changes apply to both versions, including:
   for Steam Deck integration, including automatically setting a "steam_deck"
   variant and displaying the on-screen keyboard.
 
+* Improvements to how graphics work on Android and iOS, improving compatibility
+  with those devices.
+
 * Over 140 issues - a mix of fixes and feature requests - have been addressed
   in this release.
 
@@ -100,6 +103,7 @@ These releases are brought to you by:
         <li> Julian Uy
         <li> Julvenzor
         <li> Kigyo
+        <li> Lari Liuhamo
         <li> LaUwUrence
         <li> Lezalith
         <li> Liu Wenyuan
@@ -117,6 +121,7 @@ These releases are brought to you by:
         <li> Tichq
         <li> Totally a Booplicate
         <li> Zedraxlo
+        <li> ねゆんせ
         <li> 琴梨梨
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
     </ul></td><td style="width: 25%; vertical-align: top"><ul>
@@ -127,11 +132,11 @@ everyone who's tested these releases, and myself, Tom "PyTom" Rothamel.
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.0.0",
     pygame="-2.1.0",
-    date="June xx, 2022",
+    date="June 26, 2022",
     patch=None,
     name="Heck Freezes Over",
     world_order=12,
@@ -145,17 +150,18 @@ development, and brings the many improvements of Python 3.9 to Ren'Py.
 """,
 
     full_html="""\
+<img src="/static/8.0.jpg" alt="" style="width: 100%">
 """,
 
 top_html="""\
   """)
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.5.0",
     pygame="-2.1.0",
-    date="June xx, 2022",
+    date="June 26, 2022",
     patch=None,
     name="Heck's Getting Frosty",
     world_order=12,
