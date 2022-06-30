@@ -47,8 +47,10 @@
 
     <div class="center" style="margin-top: -1em;">
         <a href="{{ url("sdk.zip") }}">Download SDK <span>zip  - {{ release.zip }} MiB</span></a>
+{% if release.world_order >= 12 %}
         <br>
         <a href="{{ url("sdkarm.tar.bz2") }}">Download ARM Linux (Raspberry Pi and Chromebook) SDK <span>tar.bz2 - {{ release.sdkarm }} MiB</span></a>
+{% endif %}
     </div>
 
     {% else %}
@@ -150,7 +152,7 @@
 
       {% if release.world_order >= 12 %}
         <dt>
-            <strong>VS Code:</strong> <a href=https://code.visualstudio.com/Download">Editor</a>,
+            <strong>VS Code:</strong> <a href="https://code.visualstudio.com/Download">Editor</a>,
             <a href="https://marketplace.visualstudio.com/items?itemName=LuqueDaniel.languague-renpy">Ren'Py Language extension</a>.
         </dt>
         <dd>
