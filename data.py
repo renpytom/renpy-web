@@ -97,6 +97,7 @@ These releases are brought to you by:
         <li> Alex
         <li> Andy_kl
         <li> Daniel Luque
+        <li> Elckarow
         <li> Gouvernathor
         <li> Jacob Kauffmann
         <li> Joshua Fehler
@@ -108,11 +109,13 @@ These releases are brought to you by:
         <li> Lezalith
         <li> Liu Wenyuan
         <li> LoafyLemon
-    </ul></td><td style="width: 25%; vertical-align: top"><ul>
         <li> Loliconazter
+    </ul></td><td style="width: 25%; vertical-align: top"><ul>
         <li> Mal Graty
+        <li> Matias B.
         <li> Matt George
         <li> Moshibit
+        <li> Numerlor
         <li> Raj Singh Chauhan
         <li> Raspberry-soft
         <li> Rob Colton

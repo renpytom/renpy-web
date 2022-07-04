@@ -91,6 +91,10 @@ class Release(Data):
     def major(self):
         return int(self.version.split(".")[0])
 
+    @property
+    def major_minor(self):
+        return ".".join(self.version.split(".")[:2])
+
     def get_full_version(self):
         if self.patch is not None:
             return "{0}.{1}".format(self.version, self.patch)

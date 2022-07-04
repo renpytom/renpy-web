@@ -58,9 +58,16 @@
   <li> <a href="https://www.renpy.org/release/{{release.version}}">https://www.renpy.org/release/{{release.version}}</a>
   </ul>
 
-  <p>Here's the release announcement:</p>
+{% if release.history %}
+  <p>
+    Here's the history of updates to Ren'Py {{release.major_minor}}:
+  </p>
 
-  {{release.announcement|rst|safe}}
+  {{release.history|rst|safe}}
 {% endif %}
 
+  <p>Here's the Ren'Py {{release.major_minor}} release announcement:</p>
 
+  {{release.announcement|rst|safe}}
+
+{% endif %}
