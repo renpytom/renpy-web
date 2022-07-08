@@ -138,7 +138,7 @@ Release(
     invisible=False,
     version="8.0.1",
     pygame="-2.1.0",
-    date="July xx, 2022",
+    date="July 8, 2022",
     patch=None,
     name="Heck Freezes Over",
     world_order=12,
@@ -151,18 +151,11 @@ development, and brings the many improvements of Python 3.9 to Ren'Py.
     history="""\
 **8.0.1**
 
-* Adds a Ukrainian translation of the launcher.
+This release fixes multiple issues with Ren'Py 8.0.0, including one that
+prevented upgrading from Ren'Py 7.4 when Steam support was installed.
 
-* Fixes problems with a Movie displayable that plays a list
-  of movie files.
-
-* Fixes an issue with the Function action that could cause
-  it to call the incorrect object.
-
-* Fixes spurious exception when when building for Android.
-
-* Prevents an error that occurs when upgrading from 7.4 and earlier
-  when Steam support is installed.
+This release also includes a new Ukrainian translation of the
+launcher.
 """,
 
     full_html="""\
@@ -177,7 +170,7 @@ Release(
     invisible=False,
     version="7.5.1",
     pygame="-2.1.0",
-    date="July xx, 2022",
+    date="July 8, 2022",
     patch=None,
     name="Heck's Getting Frosty",
     world_order=12,
@@ -189,18 +182,11 @@ while bringing you many of the new features of Ren'Py 8.0.
     history="""\
 **7.5.1**
 
-* Adds a Ukrainian translation of the launcher.
+This release fixes multiple issues with Ren'Py 7.5.0, including one that
+prevented upgrading from Ren'Py 7.4 when Steam support was installed.
 
-* Fixes problems with a Movie displayable that plays a list
-  of movie files.
-
-* Fixes an issue with the Function action that could cause
-  it to call the incorrect object.
-
-* Fixes spurious exception when when building for Android.
-
-* Prevents an error that occurs when upgrading from 7.4 and earlier
-  when Steam support is installed.
+This release also includes a new Ukrainian translation of the
+launcher.
 """,
     full_html="""\
 """,
