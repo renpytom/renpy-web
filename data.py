@@ -134,7 +134,7 @@ everyone who's tested these releases, and myself, Tom "PyTom" Rothamel.
 """
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.0.1",
     pygame="-2.1.0",
@@ -166,7 +166,7 @@ top_html="""\
   """)
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.5.1",
     pygame="-2.1.0",
