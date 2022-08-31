@@ -98,6 +98,7 @@ These releases are brought to you by:
         <li> Andy_kl
         <li> Daniel Luque
         <li> Elckarow
+        <li> GNCanva
         <li> Gouvernathor
         <li> Jacob Kauffmann
         <li> Joshua Fehler
@@ -133,6 +134,88 @@ These releases are brought to you by:
 
 everyone who's tested these releases, and myself, Tom "PyTom" Rothamel.
 """
+
+# 8.0.3 / 7.5.3 ##############################################################
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.0.3",
+    pygame="-2.1.0",
+    date="August 14, 2022",
+    patch=None,
+    name="Heck Freezes Over",
+    world_order=12,
+    announcement="""\
+I'd like to announce Ren'Py 8.0.0, the first release of Ren'Py based on
+Python 3. This release modernizes Ren'Py by embracing a decade of Python
+development, and brings the many improvements of Python 3.9 to Ren'Py.
+
+""" + COMMON_8_0,
+    history="""\
+**8.0.3**
+    This release updates the Android port to target Android 13, ensuing that
+    games can be added to the google play store. It also includes a way to
+    have pauses that will expire when a modal screen is display. Please see
+    the changelog for a full list of changes.
+
+**8.0.2**
+    This release fixes multiple issues with Ren'Py 8.0.1. Please see the
+    changelog for a full list of changes.
+
+**8.0.1**
+    This release fixes multiple issues with Ren'Py 8.0.0, including one that
+    prevented upgrading from Ren'Py 7.4 when Steam support was installed.
+
+    This release also includes a new Ukrainian translation of the
+    launcher.
+""",
+
+    full_html="""\
+<img src="/static/8.0.jpg" alt="" style="width: 100%">
+""",
+
+top_html="""\
+  """)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.5.3",
+    pygame="-2.1.0",
+    date="August 14, 2022",
+    patch=None,
+    name="Heck's Getting Frosty",
+    world_order=12,
+    announcement="""\
+I'd like to announce Ren'Py 7.5.0. This release is a continuation of the
+Ren'Py 7 series, supporting Python 2.7 and all platforms Ren'Py 7.4 supported,
+while bringing you many of the new features of Ren'Py 8.0.
+""" + COMMON_8_0,
+    history="""\
+**7.5.3**
+    This release updates the Android port to target Android 13, ensuing that
+    games can be added to the google play store. It also includes a way to
+    have pauses that will expire when a modal screen is display. Please see
+    the changelog for a full list of changes.
+
+**7.5.2**
+    This release fixes multiple issues with Ren'Py 7.5.1. Please see the
+    changelog for a full list of changes.
+
+**7.5.1**
+    This release fixes multiple issues with Ren'Py 7.5.0, including one that
+    prevented upgrading from Ren'Py 7.4 when Steam support was installed.
+
+    This release also includes a new Ukrainian translation of the
+    launcher.
+""",
+    full_html="""\
+""",
+
+top_html="""\
+  """)
 
 # 8.0.2 / 7.5.2 ##############################################################
 
