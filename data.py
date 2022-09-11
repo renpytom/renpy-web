@@ -142,7 +142,7 @@ Release(
     invisible=False,
     version="8.0.3",
     pygame="-2.1.0",
-    date="August 14, 2022",
+    date="September 10, 2022",
     patch=None,
     name="Heck Freezes Over",
     world_order=12,
@@ -156,8 +156,9 @@ development, and brings the many improvements of Python 3.9 to Ren'Py.
 **8.0.3**
     This release updates the Android port to target Android 13, ensuing that
     games can be added to the google play store. It also includes a way to
-    have pauses that will expire when a modal screen is display. Please see
-    the changelog for a full list of changes.
+    have pauses that will expire when a modal screen is display, , and
+    adds Ukrainian translations of the Tutorial game and The Question.
+    Please see the changelog for a full list of changes.
 
 **8.0.2**
     This release fixes multiple issues with Ren'Py 8.0.1. Please see the
@@ -184,7 +185,7 @@ Release(
     invisible=False,
     version="7.5.3",
     pygame="-2.1.0",
-    date="August 14, 2022",
+    date="September 10, 2022",
     patch=None,
     name="Heck's Getting Frosty",
     world_order=12,
@@ -197,8 +198,9 @@ while bringing you many of the new features of Ren'Py 8.0.
 **7.5.3**
     This release updates the Android port to target Android 13, ensuing that
     games can be added to the google play store. It also includes a way to
-    have pauses that will expire when a modal screen is display. Please see
-    the changelog for a full list of changes.
+    have pauses that will expire when a modal screen is display, and
+    adds Ukrainian translations of the Tutorial game and The Question.
+    Please see the changelog for a full list of changes.
 
 **7.5.2**
     This release fixes multiple issues with Ren'Py 7.5.1. Please see the

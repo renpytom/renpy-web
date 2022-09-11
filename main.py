@@ -422,7 +422,9 @@ def channels():
         "/home/tom/ab/WWW.nightly/current-7",
         )
 
-    return jsonify({ "releases" : rv })
+    response = jsonify({ "releases" : rv })
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # For use under mod wsgi.
