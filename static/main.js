@@ -2,7 +2,12 @@ var pageTracker;
 
 $(function () {
     $(".download-button").on('click', function (ev) {
-    	pageTracker._trackPageview(ev.target.href);
+        let url = new URL(ev.target.href, document.baseURI).href;
+
+        gtag('event', 'page_view', {
+            page_location: url,
+        });
+
     	$("#patreon").show();
     });
 
@@ -25,8 +30,5 @@ $(function () {
     	$(".download-button.mac").removeClass("btn-other").addClass(btn_class);
     	$(".download-button.win").removeClass("btn-other").addClass(btn_class);
     }
-
-    pageTracker = _gat._getTracker("UA-1855234-1");
-    pageTracker._trackPageview();
 
 });
