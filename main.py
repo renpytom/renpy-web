@@ -426,6 +426,9 @@ def channels():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+@app.route("/jdk/<int:version>")
+def jdk(version):
+    return redirect("https://adoptium.net/temurin/releases/?version=" + str(version))
 
 # For use under mod wsgi.
 application = app
