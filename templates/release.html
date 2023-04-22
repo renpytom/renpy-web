@@ -72,7 +72,7 @@
   </div>
 
   {% if release.prerelease %}
-  <div id="prerelease-warning" class="alert alert-danger">This is a pre-release version of Ren'Py. Please test it and report bugs, but don't release games with it until it becomes final.</div>
+  <div id="prerelease-warning" class="alert alert-danger">This is a pre-release version of Ren'Py. Please test it and report issues you find.</div>
   {% endif %}
 
 
@@ -109,8 +109,6 @@
     <h2>Announcement</h2>
     {{release.announcement|rst|safe}}
 
-    <br>
-
     <p>Downloads of Ren'Py {{release.version}} can be found at:</p>
 
     <p style="margin-left: 2em">
@@ -136,6 +134,51 @@
 
 </section>
 
+{% if release.deprecations %}
+<section>
+    <h2>Pending Deprecations</h2>
+    {{release.deprecations|rst|safe}}
+</section>
+
+{% endif %}
+
+
+{% if release.world_order >= 13 %}
+<section>
+    <a name="dlc"></a>
+    <h2>Credits</h2>
+
+    <p>
+        Ren'Py {{ release.version }} is brought to you by:
+    </p>
+
+    <table style="width: 100%;">
+        <tr>
+        <td style="width: 25%; vertical-align: top">
+        <ul>
+            {% for name in release.split_credits[0] %}
+            <li> {{ name }}
+            {% endfor %}
+        </ul></td><td style="width: 25%; vertical-align: top"><ul>
+            {% for name in release.split_credits[1] %}
+            <li> {{ name }}
+            {% endfor %}
+        </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        </ul></td><td style="width: 25%; vertical-align: top"><ul>
+        </ul><td>
+        </tr>
+    </table>
+
+    <p>
+        everyone who's tested this release, and myself, Tom "PyTom" Rothamel.
+    </p>
+
+
+</section>
+
+{% endif %}
+
+
 {% if release.world_order >= 4%}
 <section>
    <a name="dlc"></a>
@@ -160,7 +203,7 @@
         </dd>
       {% endif %}
 
-      {% if release.world_order >= 9 %}
+      {% if release.world_order >= 9 and release.world_order < 13 %}
         <dt><strong>Atom (Windows):</strong> {{ dl("atom-windows.zip") }}</dt>
         <dt><strong>Atom (Mac):</strong> {{ dl("atom-mac.zip") }}</dt>
         <dt><strong>Atom (Linux):</strong> {{ dl("atom-linux.tar.bz2") }}</dt>

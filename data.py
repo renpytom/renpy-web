@@ -40,6 +40,157 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
+# 8.1.0 / 7.6.0 ##############################################################
+
+COMMON_8_1 = """
+Ren'Py 8.1 and Ren'Py 7.6 are a joint release that add improved
+documentation, fixes, and many new features to Ren'Py. Some of the
+new features are:
+
+* Ren'Py Sync, an easy way to synchronize save games between computers,
+  phones, and the web.
+* A built-in way for displaying character dialogue in speech bubbles,
+  including an interactive editor for positioning the bubbles.
+* Ren'Py 8-only support for progressive web apps, including features like
+  installing on a device and caching data locally.
+* Apple Silicon support.
+* Sticky layers, such that an image tag remains associated with a layer
+  until it's hidden.
+* Detached layers, that are displayables themselves.
+* Support for displaying AVIF images.
+* Support for displaying SVG images.
+* Support for oversampled images, which can be used to upgrade a game
+  to a higher resolution.
+* Support for AV1 video on PC and Mobile platforms, with web support
+  depending on browser support.
+* A rewritten audio mixing system that works on a per-sample basis,
+  allowing for smoother fadeouts and removing clicks.
+* Volume sliders that work in decibels, and hence are more responsive.
+* Viewports that can be dragged on touch screen devices, even if the
+  player is touching a button or bar.
+* Support for \_ren.py files, that allow Ren'Py script to be edited using
+  Python text editors (allowing for better completion of Python-heavy
+  files).
+* The use of lenticular brackets as a simpler syntax for ruby text (furigana).
+* The ability to substitute text before self-voicing is performed, allowing
+  pronunciation to be changed.
+* A new warning that reminds people that it's insecure to load saves from
+  people you do not fully trust.
+* New transform properties that control rotation on the 3D Stage.
+
+As well as many more new features, improvements, fixes, and a dark theme
+for the documentation.
+"""
+
+CREDITS_8_1 = """
+Adam Trzypolski (5):
+Altskop (6):
+Andy_kl (8):
+Awakening (1):
+Ayowel (2):
+Chrisclone (1):
+Clinton Nguyen (1):
+DinakiS (1):
+Elckarow (4):
+Galo223344 (1):
+Gio (2):
+Gouvernathor (252):
+Haelwenn (lanodan) Monnier (1):
+Jeremy Rand (1):
+Jesusaves (1):
+Kassy (5):
+Kyouryuukunn (21):
+LaUwUrence (5):
+Llyama (2):
+Mal Graty (30):
+Midgethetree (4):
+Moshibit (11):
+NattyanTV (1):
+Noriverwater (5):
+Oscar Six (1):
+Shawna-p (4):
+Tey (16):
+Teyut (5):
+Tichq (9):
+Tom Rothamel (716):
+Totally a booplicate (9):
+Julian Uy (1):
+Vadim Karpenko (15):
+Valery Iwanofu (4):
+Xareyli (1):
+ねゆんせ (3):
+琴梨梨 (2):
+Sandra "Maxi" Molina (1):
+"""
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.1.0",
+    pygame="-2.1.0",
+    date="May xx, 2022",
+    patch=None,
+    name="Where No One Has Gone Before",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 8.1, the second feature release of Ren'Py
+to support Python 3. This release is the first version
+of Ren'Py 8 to run on the web platform, and is recommended for all
+new games and games that plan to release after May 2024.
+
+""" + COMMON_8_1,
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/8.0.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed 1 year after Ren'Py 8.1 is released,
+in May 2024.
+If your game sets ``config.gl2`` to ``False``, you should set it to ``True``,
+and make sure your game runs well. If it doesn't, please report any issues.
+When reporting issues, please determine the hardware (device and GPU),
+os and driver versions, and year of manufacture.
+""",
+
+credits=CREDITS_8_1)
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.6.0",
+    pygame="-2.1.0",
+    date="May xx, 2022",
+    patch=None,
+    name="To Boldly Go",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 7.6, a feature release that retains support for
+Python 2.7. This release is intended to support games that do not support
+Python 3 yet, and plan to release before May 2024.
+
+    """ + COMMON_8_1,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped 1 year after Ren'Py 8.1 is
+released, in May 2024.
+""",
+
+credits=CREDITS_8_1)
+
+# 8.0 / 7.5 ##############################################################
+
 
 COMMON_8_0 = """
 Ren'Py 8.0 and Ren'Py 7.5 are the first in what is planned to be a joint
@@ -177,7 +328,9 @@ development, and brings the many improvements of Python 3.9 to Ren'Py.
 """,
 
 top_html="""\
-  """)
+"""
+
+)
 
 
 Release(

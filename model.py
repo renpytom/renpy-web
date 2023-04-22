@@ -43,6 +43,8 @@ class Release(Data):
     sdkarm = None
     powerpc=False
 
+    deprecations = None
+
     def __init__(self, **kwargs):
 
         self.patch = None
@@ -86,6 +88,26 @@ class Release(Data):
 
             if self.date is None:
                 self.date = zipdate
+
+    @property
+    def split_credits(self):
+        import re
+
+        credits = [ ]
+
+        for l in getattr(self, "credits", "").split("\n"):
+            m = re.match(r"^(.*) \(\d+\):\s*$", l)
+            if m:
+                credits.append(m.group(1))
+
+        credits = [ i for i in credits if ("Rothamel" not in i) ]
+
+        credits.sort()
+
+        split = len(credits) - len(credits) // 2
+
+        return credits[:split], credits[split:]
+
 
     @property
     def major(self):
