@@ -92,6 +92,7 @@ Chrisclone (1):
 Clinton Nguyen (1):
 DinakiS (1):
 Elckarow (4):
+Erufailon4 (1):
 Galo223344 (1):
 Gio (2):
 Gouvernathor (252):
@@ -143,7 +144,7 @@ new games and games that plan to release after May 2024.
 """,
 
     full_html="""\
-<img src="/static/8.0.jpg" alt="" style="width: 100%">
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
 """,
 top_html="""\
 """,
@@ -178,6 +179,7 @@ Python 3 yet, and plan to release before May 2024.
     history="""\
 """,
     full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
 """,
 top_html="""\
 """,
