@@ -80,6 +80,10 @@ new features are:
 
 As well as many more new features, improvements, fixes, and a dark theme
 for the documentation.
+
+**Note:** This release moves the android keys to a per-project location.
+While Ren'Py will automatically move the keys, you should make a backup
+of rapt/android.keystore and rapt/bundle.keystore before upgrading.
 """
 
 CREDITS_8_1 = """
@@ -125,11 +129,11 @@ Sandra "Maxi" Molina (1):
 """
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.1.0",
     pygame="-2.1.0",
-    date="May xx, 2022",
+    date="May 14, 2022",
     patch=None,
     name="Where No One Has Gone Before",
     world_order=13,
@@ -162,11 +166,11 @@ credits=CREDITS_8_1)
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.6.0",
     pygame="-2.1.0",
-    date="May xx, 2022",
+    date="May 14, 2022",
     patch=None,
     name="To Boldly Go",
     world_order=13,
@@ -174,7 +178,6 @@ Release(
 I'm happy to announce Ren'Py 7.6, a feature release that retains support for
 Python 2.7. This release is intended to support games that do not support
 Python 3 yet, and plan to release before May 2024.
-
     """ + COMMON_8_1,
     history="""\
 """,
