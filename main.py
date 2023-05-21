@@ -405,6 +405,24 @@ def channels():
         )
 
     scan_version(
+        "Nightly Fix (Ren'Py 8, Python 3)",
+        "http://nightly.renpy.org/current-8-fix/updates.json",
+        "A nightly build of fixes to the release version of Ren'Py.",
+        True,
+        "/home/tom/WWW.nightly/current-8",
+        "/home/tom/ab/WWW.nightly/current-8",
+        )
+
+    scan_version(
+        "Nightly Fix (Ren'Py 7, Python 2)",
+        "http://nightly.renpy.org/current-7-fix/updates.json",
+        "A nightly build of fixes to the release version of Ren'Py.",
+        True,
+        "/home/tom/WWW.nightly/current-7-fix",
+        "/home/tom/ab/WWW.nightly/current-7-fix",
+        )
+
+    scan_version(
         "Nightly (Ren'Py 8, Python 3)",
         "http://nightly.renpy.org/current-8/updates.json",
         "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
