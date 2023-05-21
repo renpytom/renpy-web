@@ -409,8 +409,8 @@ def channels():
         "http://nightly.renpy.org/current-8-fix/updates.json",
         "A nightly build of fixes to the release version of Ren'Py.",
         True,
-        "/home/tom/WWW.nightly/current-8",
-        "/home/tom/ab/WWW.nightly/current-8",
+        "/home/tom/WWW.nightly/current-8-fix",
+        "/home/tom/ab/WWW.nightly/current-8-fix",
         )
 
     scan_version(
