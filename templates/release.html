@@ -264,7 +264,7 @@
       <dt><strong>iOS Support (Renios):</strong> {{ dl("renios.zip") }}</dt>
     </dl>
 {% if release.world_order >= 10 %}
-{% if release.major < 8 %}
+{% if (release.major < 8) or (release.world_order >= 13) %}
     <dl>
       <dt><strong>Web Platform Support (Renpyweb):</strong> {{ dl("web.zip") }}</dt>
     </dl>
