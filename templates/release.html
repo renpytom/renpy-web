@@ -7,6 +7,8 @@
 {% macro dl(variant) %}<a href="{{ url(variant) }}">renpy-{{release.full_version}}-{{variant}}</a>{% endmacro %}
 {% macro pygame_sdl2() %}https://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.{{release.pygame_ext}}{% endmacro %}
 {% macro pygame_sdl2_dl() %}<a href="{{ pygame_sdl2() }}">pygame_sdl2{{release.pygame}}-for-renpy-{{release.full_version}}.tar.{{release.pygame_ext}}</a>{% endmacro %}
+{% macro pygame_sdl2_new() %}https://www.renpy.org/dl/{{release.full_version}}/pygame_sdl2{{release.pygame}}+renpy{{release.full_version}}.tar.{{release.pygame_ext}}{% endmacro %}
+{% macro pygame_sdl2_dl_new() %}<a href="{{ pygame_sdl2_new() }}">pygame_sdl2{{release.pygame}}+renpy{{release.full_version}}.tar.{{release.pygame_ext}}</a>{% endmacro %}
 
 {% block content %}
 
@@ -292,7 +294,10 @@
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
 
 
-{% if release.world_order >= 6 %}
+{% if release.world_order >= 14 %}
+<dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl_new() }}</dt>
+<dd>Contains the source code for the version of pygame_sdl2 required to run this version of Ren'Py. This may be newer than any released version of pygame_sdl2.</dd>
+{% elif release.world_order >= 6 %}
         <dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl() }}</dt>
         <dd>Contains the source code for the version of pygame_sdl2 required to run this version of Ren'Py. This may be newer than any released version of pygame_sdl2.</dd>
 {% endif %}

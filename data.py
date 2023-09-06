@@ -147,7 +147,7 @@ Release(
     date="September 5, 2023",
     patch=None,
     name="Where No One Has Gone Before",
-    world_order=13,
+    world_order=14,
     announcement="""\
 I'm happy to announce Ren'Py 8.1.2, the second fix release for
 Ren'Py 8.1. This release fixes issues reported in Ren'Py 8.1.
@@ -187,7 +187,7 @@ Release(
     date="September 5, 2023",
     patch=None,
     name="To Boldly Go",
-    world_order=13,
+    world_order=14,
     announcement="""\
 I'm happy to announce Ren'Py 7.6.1, the first fix release for
 Ren'Py 7.6. This release fixes issues reported in Ren'Py 7.6.
