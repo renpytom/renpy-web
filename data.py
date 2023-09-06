@@ -40,7 +40,7 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
-# 8.1.0 / 7.6.0 ##############################################################
+# 8.1.x / 7.6.x ##############################################################
 
 COMMON_8_1 = """
 Ren'Py 8.1 and Ren'Py 7.6 are a joint release that add improved
@@ -87,13 +87,16 @@ of rapt/android.keystore and rapt/bundle.keystore before upgrading.
 """
 
 CREDITS_8_1 = """
+Abdul (1):
 Adam Trzypolski (5):
 Altskop (6):
 Andy_kl (8):
 Awakening (1):
 Ayowel (2):
+Brainos (1):
 Chrisclone (1):
 Clinton Nguyen (1):
+Daniel Brookman (1):
 DinakiS (1):
 Elckarow (4):
 Erufailon4 (1):
@@ -103,19 +106,24 @@ Gouvernathor (252):
 Haelwenn (lanodan) Monnier (1):
 Jeremy Rand (1):
 Jesusaves (1):
+Joseph Boyd (1):
 Kassy (5):
 Kyouryuukunn (21):
 LaUwUrence (5):
 Llyama (2):
 Mal Graty (30):
+Michael (1):
 Midgethetree (4):
+Morgan Willcock (1):
 Moshibit (11):
 NattyanTV (1):
 Noriverwater (5):
 Oscar Six (1):
+Sandra "Maxi" Molina (1):
 Shawna-p (4):
 Tey (16):
 Teyut (5):
+The66F95 (2):
 Tichq (9):
 Tom Rothamel (716):
 Totally a booplicate (9):
@@ -123,10 +131,164 @@ Julian Uy (1):
 Vadim Karpenko (15):
 Valery Iwanofu (4):
 Xareyli (1):
+zedraxlo (1):
 ねゆんせ (3):
 琴梨梨 (2):
-Sandra "Maxi" Molina (1):
 """
+
+# 8.1.2 / 7.6.2
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.1.2",
+    pygame="-2.1.0",
+    date="September 5, 2023",
+    patch=None,
+    name="Where No One Has Gone Before",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 8.1.2, the second fix release for
+Ren'Py 8.1. This release fixes issues reported in Ren'Py 8.1.
+
+Ren'Py 8.1 is the second feature release of Ren'Py
+to support Python 3. It is is the first version
+of Ren'Py 8 to run on the web platform, and is recommended for all
+new games and games that plan to release after May 2024.
+
+""" + COMMON_8_1,
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed 1 year after Ren'Py 8.1 is released,
+in May 2024.
+If your game sets ``config.gl2`` to ``False``, you should set it to ``True``,
+and make sure your game runs well. If it doesn't, please report any issues.
+When reporting issues, please determine the hardware (device and GPU),
+os and driver versions, and year of manufacture.
+""",
+
+credits=CREDITS_8_1)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.6.2",
+    pygame="-2.1.0",
+    date="September 5, 2023",
+    patch=None,
+    name="To Boldly Go",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 7.6.1, the first fix release for
+Ren'Py 7.6. This release fixes issues reported in Ren'Py 7.6.
+
+Ren'Py 7.6 is a feature release that retains support for
+Python 2.7. It is intended to support games that do not support
+Python 3 yet, and plan to release before May 2024.
+    """ + COMMON_8_1,
+    history="""\
+""",
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped 1 year after Ren'Py 8.1 is
+released, in May 2024.
+""",
+
+credits=CREDITS_8_1)
+
+
+
+# 8.1.1 / 7.6.1
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.1.1",
+    pygame="-2.1.0",
+    date="June 7, 2023",
+    patch=None,
+    name="Where No One Has Gone Before",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 8.1.1, the first fix release for
+Ren'Py 8.1. This release fixes issues reported in Ren'Py 8.1.
+
+Ren'Py 8.1 is the second feature release of Ren'Py
+to support Python 3. It is is the first version
+of Ren'Py 8 to run on the web platform, and is recommended for all
+new games and games that plan to release after May 2024.
+
+""" + COMMON_8_1,
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed 1 year after Ren'Py 8.1 is released,
+in May 2024.
+If your game sets ``config.gl2`` to ``False``, you should set it to ``True``,
+and make sure your game runs well. If it doesn't, please report any issues.
+When reporting issues, please determine the hardware (device and GPU),
+os and driver versions, and year of manufacture.
+""",
+
+credits=CREDITS_8_1)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.6.1",
+    pygame="-2.1.0",
+    date="June 7, 2023",
+    patch=None,
+    name="To Boldly Go",
+    world_order=13,
+    announcement="""\
+I'm happy to announce Ren'Py 7.6.1, the first fix release for
+Ren'Py 7.6. This release fixes issues reported in Ren'Py 7.6.
+
+Ren'Py 7.6 is a feature release that retains support for
+Python 2.7. It is intended to support games that do not support
+Python 3 yet, and plan to release before May 2024.
+    """ + COMMON_8_1,
+    history="""\
+""",
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped 1 year after Ren'Py 8.1 is
+released, in May 2024.
+""",
+
+credits=CREDITS_8_1)
+
+
+# 8.1.0 / 7.6.0
 
 Release(
     prerelease=False,
