@@ -136,6 +136,83 @@ zedraxlo (1):
 琴梨梨 (2):
 """
 
+# 8.1.3 / 7.6.3
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.1.3",
+    pygame="-2.1.0",
+    date="September 18, 2023",
+    patch=None,
+    name="Where No One Has Gone Before",
+    world_order=14,
+    announcement="""\
+I'd like to announce Ren'Py 8.1.3, the third fix release for
+Ren'Py 8.1. This release fixes issues reported in Ren'Py 8.1.
+
+Ren'Py 8.1 is the second feature release of Ren'Py
+to support Python 3. It is is the first version
+of Ren'Py 8 to run on the web platform, and is recommended for all
+new games and games that plan to release after May 2024.
+
+""" + COMMON_8_1,
+    history="""\
+""",
+
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed 1 year after Ren'Py 8.1 is released,
+in May 2024.
+If your game sets ``config.gl2`` to ``False``, you should set it to ``True``,
+and make sure your game runs well. If it doesn't, please report any issues.
+When reporting issues, please determine the hardware (device and GPU),
+os and driver versions, and year of manufacture.
+""",
+
+credits=CREDITS_8_1)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.6.3",
+    pygame="-2.1.0",
+    date="September 18, 2023",
+    patch=None,
+    name="To Boldly Go",
+    world_order=14,
+    announcement="""\
+I'd like to announce Ren'Py 7.6.3, the third fix release for
+Ren'Py 7.6. This release fixes issues reported in Ren'Py 7.6.
+
+Ren'Py 7.6 is a feature release that retains support for
+Python 2.7. It is intended to support games that do not support
+Python 3 yet, and plan to release before May 2024.
+    """ + COMMON_8_1,
+    history="""\
+""",
+    full_html="""\
+<img src="/static/8.1.jpg" alt="" style="width: 100%">
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped 1 year after Ren'Py 8.1 is
+released, in May 2024.
+""",
+
+credits=CREDITS_8_1)
+
+
+
 # 8.1.2 / 7.6.2
 
 
@@ -189,7 +266,7 @@ Release(
     name="To Boldly Go",
     world_order=14,
     announcement="""\
-I'm happy to announce Ren'Py 7.6.1, the first fix release for
+I'm happy to announce Ren'Py 7.6.1, the second fix release for
 Ren'Py 7.6. This release fixes issues reported in Ren'Py 7.6.
 
 Ren'Py 7.6 is a feature release that retains support for
