@@ -8,6 +8,7 @@ import re
 import json
 import random
 import pytz
+import doc
 
 sys.path.insert(0, os.path.dirname(__file__))
 
@@ -447,6 +448,18 @@ def channels():
 @app.route("/jdk/<int:version>")
 def jdk(version):
     return redirect("https://adoptium.net/temurin/releases/?version=" + str(version))
+
+@app.route("/d/<path:path>")
+def d(path):
+    doc_map = doc.get_doc_map()
+
+    path = path.strip()
+
+    if path in doc_map:
+        return redirect("https://www.renpy.org/doc/html/" + doc_map[path])
+    else:
+        return f"Couldn't find {path}.", 404
+
 
 # For use under mod wsgi.
 application = app
