@@ -164,11 +164,13 @@ def load_sponsorfn_new(fn):
         l = l.rstrip()
         l = l.split("\t")
 
-
         # for i, s in enumerate(l):
         #     print(i, s)
 
+        # print(fn)
+
         has_discord = l[8] == "Discord"
+        has_free = l[11] == "Free Member"
 
         level = ''
 
@@ -177,8 +179,11 @@ def load_sponsorfn_new(fn):
             l = l.rstrip()
             l = l.split("\t")
 
+            if has_free:
+                l.pop(11)
+
             if has_discord:
-                l.pop(8)            
+                l.pop(8)
                 l.insert(22, '')
 
             if l[13] in level_by_name:
