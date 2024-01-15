@@ -40,6 +40,156 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 7.0..HEAD
 
+# 8.2.0 / 7.7.0 ##############################################################
+
+COMMON_8_2 = """
+Ren'Py 8.2 and Ren'Py 7.7 are joint releases that add many new features,
+fixes, and improvements to Ren'Py. Some of the most important are:
+
+* For 8.2 only, integration with the Harfbuzz text shaping library, which
+  supports more languages and more complex text shaping than Ren'Py supported
+  before. This adds support for Brahmic/Indic scripts, with an appropriate font.
+* Support for displaying Emoji in color, simply by typing it into your game. 🎉
+* Support for OpenType variable fonts.
+* Improvements to the text interpolation system to allow expressions to be used,
+  similar to Python's f-strings.
+* The ability to show multiple speech bubbles at once, and to have speech bubbles
+  animate in and out.
+* Changes to Transform and ATL Transforms to be able to (in most cases)
+  interpolate between absolute and relative positions.
+* A new HTTPS/HTTP fetch function that properly pauses Ren'Py as the fetch occurs,
+  and works with the web platform.
+* Several new accessibility properties.
+* Improvements to loading translations. Loading translations is roughly 2/3rds
+  faster, and it's possible to defer loading translations for languages not in
+  use.
+* The ability to specify a transition that runs after each sequence of
+  scene, show, and hide statements.
+* A modernization of the Android build process, which now can use (and requires)
+  the supported Java 21.
+* The ability to create an Android game that can download its data from a
+  web server, allowing the creation of games that are more than 2GB in size.
+* Improvements and fixes to Web support, especially fullscreen modes.
+* A complete rewrite of the Ren'Py updater to use a new format that works
+  better with modern web servers.
+
+But with so many changes, it's hard to list them all. For a full list, see
+the changelog.
+
+There is two behavior changes I want to call out:
+
+* The first is that Ren'Py 7.7 and 8.2 will attempt to remember and restore the
+  window position, so you can expect that it may pop up in the last place you left it.
+* The second is that config.gl2 is now ignored, and the only way to use
+  the soon-to-be removed first-generation GL renderer is for the player to
+  select it.
+"""
+
+CREDITS_8_2 = """
+Abdul (3):
+Andy_kl (2):
+Asriel Senna (9):
+Ayowel (1):
+Brainos (3):
+Daniel Brookman (1):
+Denys (3):
+Elckarow (2):
+Gouvernathor (133):
+Helmut K. C. Tessarek (1):
+JamiesonC (1):
+Joseph Boyd (1):
+Joshua Fehler (2):
+KagariSoft-Dev (4):
+Kassy (4):
+Lezalith (3):
+Mal Graty (18):
+Michael (1):
+Morgan Willcock (2):
+Moshibit (9):
+Ren'Py Bot (89):
+Tichq (11):
+Tom Rothamel (505):
+Vladya (2):
+brainos233 (2):
+jsfehler (1):
+kyouryuukunn (4):
+midgethetree (1):
+shawna-p (4):
+symegac (12):
+the66F95 (5):
+zedraxlo (1):
+ねゆんせ (1):
+"""
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.2.0",
+    pygame="-2.1.0",
+    date="January xx, 2023",
+    patch=None,
+    name="64bit Sensation",
+    world_order=14,
+    announcement="""\
+I'm happy to announce Ren'Py 8.2.0, the latest release of Ren'Py, the
+results of months of work by many contributors.
+
+Ren'Py 8.2 is a major release of Ren'Py, containing new features,
+fixes, and improvements. It is recommended for all new games, and it's
+strongly recommended that existing games update to Ren'Py 8.
+
+""" + COMMON_8_2,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed after May 2024.
+
+Support for Windows 7, 8, and 8.1 will be dropped after May 2024.
+""",
+
+credits=CREDITS_8_2)
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.6.3",
+    pygame="-2.1.0",
+    date="January xx, 2023",
+    patch=None,
+    name="32bit Sensation",
+    world_order=14,
+    announcement="""\
+I'm happy to announce Ren'Py 7.7.0, the latest release of Ren'Py
+7.
+
+Ren'Py 7.7 attempts to match Ren'Py 8.2 in features, while retaining
+support for Python 2. A some of the new features require Python 3
+support, not every new feature in Ren'Py 8.2 is available in Ren'Py 7.7.
+
+It's strongly recommended that all new games start with Ren'Py 8, and
+that existing games update to Ren'Py 8.
+""" + COMMON_8_2,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in May 2024.
+""",
+
+credits=CREDITS_8_2)
+
+
 # 8.1.x / 7.6.x ##############################################################
 
 COMMON_8_1 = """
