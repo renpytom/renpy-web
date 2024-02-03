@@ -122,11 +122,11 @@ zedraxlo (1):
 """
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.2.0",
     pygame="-2.1.0",
-    date="January xx, 2023",
+    date="January 27, 2024",
     patch=None,
     name="64bit Sensation",
     world_order=14,
@@ -157,11 +157,11 @@ credits=CREDITS_8_2)
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
-    version="7.6.3",
+    version="7.7.0",
     pygame="-2.1.0",
-    date="January xx, 2023",
+    date="January 27, 2024",
     patch=None,
     name="32bit Sensation",
     world_order=14,
