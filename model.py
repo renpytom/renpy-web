@@ -117,6 +117,11 @@ class Release(Data):
     def major_minor(self):
         return ".".join(self.version.split(".")[:2])
 
+
+    @property
+    def changelog_version(self):
+        return self.version.replace(".", "-")
+
     def get_full_version(self):
         if self.patch is not None:
             return "{0}.{1}".format(self.version, self.patch)
