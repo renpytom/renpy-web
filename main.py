@@ -335,6 +335,10 @@ def channels():
     rv = [ ]
     seen = set()
 
+    request_version = request.values.get("version", "7.0.0")
+
+    allow_7 = request_version.split(".")[0] == "7"
+
     def scan_version(channel, url, description, always, *paths):
         for path in paths:
 
@@ -366,6 +370,9 @@ def channels():
             "description" : description,
             "timestamp" : os.path.getmtime(updates_json),
             }
+
+        if record["split_version"][0] == 7 and not allow_7:
+            return
 
         rv.append(record)
 
