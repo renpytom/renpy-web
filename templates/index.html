@@ -75,43 +75,34 @@
     <div class="row">
 
       <div class="col-md-6">
-        {% if data.current_8 %}
-
         <p>
-          The latest version of Ren'Py 8 is {{data.current_8.version}} "{{data.current_8.name}}", released on
-          {{data.current_8.date}}. Ren'Py 8 is recommended for new development.
+          The latest official release of Ren'Py 8 is {{data.current_8.version}} "{{data.current_8.name}}", released on
+          {{data.current_8.date}}. Ren'Py 8 is recommended for all projects.
         </p>
-
-        {% else %}
-        <p>
-          Ren'Py 8 is available for public testing, but the first stable version of Ren'Py 8 has
-          not yet been released.
-        </p>
-        {% endif %}
-
       </div>
 
       <div class="col-md-6">
         <p>
-          The latest version of Ren'Py 7 is {{data.current_7.version}} "{{data.current_7.name}}", released on
-          {{data.current_7.date}}.
+          The nightly fix version of Ren'Py is built every night, and contains fixes to the latest stable version. It isn't
+          tested as well as the official release, but often has fixes that haven't made it through the release process.
         </p>
-
       </div>
+
+
+
 
     </div>
 
     <div class="row">
 
       <div class="col-md-6">
-        {% if data.current_8 %}
         <div class="center"><a href="/latest.html" role="button" class="btn btn-lg btn-success">Download Ren'Py {{ data.current_8.version }}</a></div>
-        {% endif %}
       </div>
 
       <div class="col-md-6">
-        <div class="center"><a href="/latest-7.html" role="button" class="btn btn-lg btn-success">Download Ren'Py {{ data.current_7.version }}</a></div>
+        <div class="center"><a href="https://nightly.renpy.org/current-8-fix/" role="button" class="btn btn-lg btn-success">Download Ren'Py 8 Nightly Fix</a></div>
       </div>
+
 
     </div>
 
@@ -130,9 +121,8 @@
 
       <div class="col-md-6">
         <p>
-          A prerelease of Ren'Py {{ data.prerelease_7.version }} "{{ data.prerelease_7.name }}" is available for testing. It
-          was last updated on {{ data.prerelease_7.prerelease_date }}. Please do not release games with this version until it has become
-          stable. The prerelease is documented <a href="https://www.renpy.org/dev-doc/html/">here</a>.
+          The nightly builds of Ren'Py can have fixes that haven't made it into the prerelease yet. Please do not release games with
+          nightly builds until the build has become stable.
         </p>
       </div>
 
@@ -147,40 +137,25 @@
       </div>
 
       <div class="col-md-6">
-        <div class="center"><a href="/release/{{ data.prerelease_7.version }}" role="button"
-          class="btn btn-lg btn-warning">Download {{ data.prerelease_7.version }} Prerelease</a></div>
+        <div class="center"><a href="https://nightly.renpy.org/current-8/" role="button"
+          class="btn btn-lg btn-warning">Download Ren'Py 8 Nightly</a></div>
       </div>
 
     </div>
 
 {% endif %}
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="well">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4" style="text-align: center">
-                <img src="/static/renpy8_lores.png" style="width: 200px;" alt="Ren'Py 8">
-              </div>
-              <div class="col-md-8">
-                <p>
-                  <strong>Ren'Py 8</strong> is a big deal, as it's the first version of Ren'Py that supports Python 3.
-                  At the same time, it doesn't require big changes to your games. Many games run unchanged on Ren'Py 8,
-                  while others will require minor changes.
-                </p>
 
-                <p>
-                  We understand that games can take months and years to finish, and try to make sure you can
-                  move to newer versions of Ren'Py without major changes.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="col-md-12">
+      <p>
+        Ren'Py 7 is the legacy version of Ren'Py, to support ongoing projects that will be released in 2004.
+        The latest version of Ren'Py 7 is {{data.current_7.version}} "{{data.current_7.name}}", released on
+        {{data.current_7.date}}.
+      </p>
+      <div class="col-md-12">
+        <div class="center"><a href="/latest-7.html" role="button" class="btn btn-link">Download Ren'Py {{ data.current_7.version }}</a></div>
       </div>
     </div>
-
 
     <div class="row">
 
