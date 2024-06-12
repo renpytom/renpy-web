@@ -131,6 +131,75 @@ Zout141 (1):
 Release(
     prerelease=False,
     invisible=False,
+    version="8.2.2",
+    pygame="-2.1.0",
+    date="June 12, 2024",
+    patch=None,
+    name="64bit Sensation",
+    world_order=14,
+    announcement="""\
+I'm happy to announce Ren'Py 8.2.2, the second fix release for Ren'Py 8.2. This release
+contains many fixes and several accessibility improvements.
+
+Ren'Py 8.2 is a major release of Ren'Py, containing new features,
+fixes, and improvements. It is recommended for all new games, and it's
+strongly recommended that existing games update to Ren'Py 8.
+
+""" + COMMON_8_2,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed after the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped after the next major release.
+""",
+
+credits=CREDITS_8_2)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.7.2",
+    pygame="-2.1.0",
+    date="June 12, 2024",
+    patch=None,
+    name="32bit Sensation",
+    world_order=14,
+    announcement="""\
+I'm happy to announce Ren'Py 7.7.2, the second fix release for Ren'Py 7.7.
+
+Ren'Py 7.7 attempts to match Ren'Py 8.2 in features, while retaining
+support for Python 2. A some of the new features require Python 3
+support, not every new feature in Ren'Py 8.2 is available in Ren'Py 7.7.
+
+It's strongly recommended that all new games start with Ren'Py 8, and
+that existing games update to Ren'Py 8.
+""" + COMMON_8_2,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped after the next major release.
+""",
+
+credits=CREDITS_8_2)
+
+
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="8.2.1",
     pygame="-2.1.0",
     date="March 4, 2024",
@@ -138,7 +207,7 @@ Release(
     name="64bit Sensation",
     world_order=14,
     announcement="""\
-I'm happy to announce Ren'Py 8.2.0, the first fix release for Ren'Py 8.2.
+I'm happy to announce Ren'Py 8.2.1, the first fix release for Ren'Py 8.2.
 
 Ren'Py 8.2 is a major release of Ren'Py, containing new features,
 fixes, and improvements. It is recommended for all new games, and it's
