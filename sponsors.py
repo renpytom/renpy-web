@@ -1,5 +1,6 @@
 import os
 import datetime
+import dateutil.relativedelta
 import random
 
 STATICSPONSORS = os.path.join(os.path.abspath(os.path.dirname(__file__)), "static", "sponsors")
@@ -79,10 +80,12 @@ def latest_month():
     return tsvs[-1][:-4]
 
 
-def current_month():
+def current_month(offset=0):
     # Figure out the sponsor filename for today.
 
     today = datetime.date.today()
+
+    today = today + dateutil.relativedelta.relativedelta(months=offset)
 
     if today.day < 15:
         today = today - datetime.timedelta(days=15)
@@ -164,10 +167,12 @@ def load_sponsorfn_new(fn):
         l = l.rstrip()
         l = l.split("\t")
 
+        has_twitter = l[7] == "Twitter"
+        if not has_twitter:
+            l.insert(7, 'Twitter')
+
         # for i, s in enumerate(l):
         #     print(i, s)
-
-        # print(fn)
 
         has_discord = l[8] == "Discord"
         has_free = l[11] == "Free Member"
@@ -178,6 +183,12 @@ def load_sponsorfn_new(fn):
             l = l.decode("utf-8")
             l = l.rstrip()
             l = l.split("\t")
+
+            if len(l) < 12:
+                continue
+
+            if not has_twitter:
+                l.insert(7, 'Twitter')
 
             if has_free:
                 l.pop(11)
@@ -246,27 +257,39 @@ def load_sponsorfn(fn):
 def init(month=None):
     today = datetime.date.today()
 
-    if month is None:
-        month = current_month()
+    offset = 0
 
-    filenames = [
-        "{}/{}.tsv".format(SPONSORSDIR, month),
-        "{}/overrides - main.tsv".format(SPONSORSDIR),
-        ]
+    while True:
 
-    for i in filenames:
-        if not os.path.exists(i):
-            return
+        if not month:
+            month = current_month(offset)
 
-        load_sponsorfn(i)
+        month_fn = "{}/{}.tsv".format(SPONSORSDIR, month)
+        override_fn = "{}/overrides - main.tsv".format(SPONSORSDIR)
 
-    sl = [ i for i in by_email.values() if i.status ]
-    sl.sort(key=lambda s : s.sort_key())
-    sl.reverse()
+        if not os.path.exists(month_fn):
+            offset -= 1
+            continue
+
+        break
+
+    try:
+
+        load_sponsorfn(month_fn)
+        load_sponsorfn(override_fn)
+
+        sl = [ i for i in by_email.values() if i.status ]
+        sl.sort(key=lambda s : s.sort_key())
+        sl.reverse()
+
+    except Exception as e:
+        print("Failed to load sponsors:", e)
+        return False
 
     global sponsors
     sponsors = sl
 
+    return True
 
 def banner():
     rv = [ i for i in sponsors if i.level.banner  ]
@@ -283,7 +306,7 @@ def non_banner():
 
 
 def sample_non_banner():
-    return random.sample(non_banner(), 8)
+    return random.sample(non_banner(), min(8, len(sponsors)))
 
 
 def anonymous_count():

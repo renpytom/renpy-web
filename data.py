@@ -90,6 +90,7 @@ Abdul (3):
 Andy_kl (2):
 Asriel Senna (9):
 Ayowel (1):
+Bas Couwenberg (1):
 Brainos (3):
 Daniel Brookman (1):
 Denys (3):
@@ -108,9 +109,10 @@ Kassy (4):
 Lezalith (3):
 Mal Graty (18):
 Michael (1):
+Minger0 (1):
 Morgan Willcock (2):
 Moshibit (9):
-Ren'Py Bot (89):
+OleSTEEP (1):
 Tichq (11):
 Tom Rothamel (505):
 Vladya (2):
@@ -122,6 +124,7 @@ shawna-p (4):
 symegac (12):
 the66F95 (5):
 zedraxlo (1):
+Zout141 (1):
 ねゆんせ (1):
 """
 
