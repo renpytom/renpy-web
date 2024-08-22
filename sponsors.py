@@ -84,7 +84,6 @@ def current_month(offset=0):
     # Figure out the sponsor filename for today.
 
     today = datetime.date.today()
-
     today = today + dateutil.relativedelta.relativedelta(months=offset)
 
     if today.day < 15:
@@ -261,8 +260,7 @@ def init(month=None):
 
     while True:
 
-        if not month:
-            month = current_month(offset)
+        month = current_month(offset)
 
         month_fn = "{}/{}.tsv".format(SPONSORSDIR, month)
         override_fn = "{}/overrides - main.tsv".format(SPONSORSDIR)
