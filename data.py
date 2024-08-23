@@ -48,20 +48,26 @@ Ren'Py 8.3 and Ren'Py 7.8 are joint releases that add many new features,
 fixes, and improvements to Ren'Py. The two biggest features are:
 
 * Audio Filters, a system for processing audio in real-time, allowing for
-  efects like high-pass and low-pass filters, reverb, and more.
-* Text shaders, which allow GLSL shaders to be applied to text. Among other things,
-  it's now possible to change the default typewriter slow-text effect to one that
-  will dissolve in letters from left to right.
+  effects like high-pass and low-pass filters, reverb, and more.
+* Text shaders, which allow GLSL shaders to be applied to text. These allow
+  for many text effects that were not possible, and make it possible to replace
+  the default typewriter slow-text effect with other options, like a moving
+  dissolve.
 
 Some of the other changes are:
 
-* Changes and improvements to the ``window`` statements to make those statements more useful.
+* Improvements to shaders, including shader-part local variables that make it easier to combine
+  shaders.
+* Changes and improvements to the ``window`` statements to give better control over window
+  management.
 * New functions that make it possible to screenshot displayable (for example, a layered image that
   contains a paper doll) and save that screenshot to a file.
-* Support for the Steam timelime feature.
-* Targeting of Android 15 (API Level 35).
+* Updated Steam support, including new support for the Steam Timeline.
+* Ren'Py's Android support now targets Android 15 (API Level 35).
+* Ren'Py's Android support now supports sizes of up to 4GB on Google Play.
+* Retained speech bubbles are now automatically cleared when appropriate.
 
-And a whole lot more. Please see the full changelog for a complete list of changes.
+As well ans many other fixes, changes, and improvements. Please see the changelog for a complete list of changes.
 """
 
 CREDITS_8_3 = """
@@ -100,16 +106,16 @@ Zout141 (2):
 """
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.3.0",
     pygame="-2.1.0",
-    date="August xx, 2024",
+    date="August 22, 2024",
     patch=None,
     name="Second Star to the Right",
     world_order=14,
     announcement="""\
-I'm happy to announce the release of Ren'Py 8.3, the results of months of developmet. Ren'Py 8.3 is a feature
+I'm happy to announce the release of Ren'Py 8.3, the result of months of development. Ren'Py 8.3.0 is a feature
 release that adds many new features, fixes, and improvements to Ren'Py, and should be used for all new games.
 """ + COMMON_8_3,
     history="""\
@@ -134,12 +140,12 @@ Release(
     invisible=False,
     version="7.8.0",
     pygame="-2.1.0",
-    date="August xx, 2024",
+    date="August 22, 2024",
     patch=None,
     name="Straight on Till Morning",
     world_order=14,
     announcement="""\
-I'm happy to announce Ren'Py 7.8. The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining
+I'm happy to announce the release of Ren'Py 7.8. The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining
 support for Python 2. As some of the new features require Python 3 support, not every new feature in
 Ren'Py 8 is available in Ren'Py 7.
 
