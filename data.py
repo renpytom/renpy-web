@@ -105,6 +105,72 @@ Viktoras Agejevas (1):
 Zout141 (2):
 """
 
+# 8.3.1 / 7.8.1
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.3.1",
+    pygame="-2.1.0",
+    date="August xx, 2024",
+    patch=None,
+    name="Second Star to the Right",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 8.3.1, a fix release that improves earlier versions of Ren'Py 8.3,
+and should be used for all new games.
+""" + COMMON_8_3,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed in the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.8.1",
+    pygame="-2.1.0",
+    date="August xx, 2024",
+    patch=None,
+    name="Straight on Till Morning",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 7.8.1, a fix release that improves earlier versions of Ren'Py 7.8.
+The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining support for Python 2.
+As some of the new features require Python 3 support, not every new feature in Ren'Py 8 is available in Ren'Py 7.
+
+As Ren'Py 7.8 will be the last major release in the 7.x series, all games should be updated to Ren'Py 8 before
+the release of Ren'Py 8.4, when support for Ren'Py 7 will end.
+""" + COMMON_8_3,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+
+# 8.3.0 / 7.8.0
+
 Release(
     prerelease=False,
     invisible=False,
@@ -136,7 +202,7 @@ credits=CREDITS_8_3)
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.8.0",
     pygame="-2.1.0",
