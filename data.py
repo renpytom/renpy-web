@@ -86,6 +86,7 @@ Gouvernathor (53):
 HB38 (1):
 iivusly (2):
 ImJustAQ (2):
+Kassy (1):
 Kuro (1):
 kyouryuukunn (9):
 Lent1 (2):
@@ -101,6 +102,8 @@ Petr Abdulin (1):
 Ren'Py Bot (44):
 shawna-p (3):
 Tichq (8):
+the66F95 (1):
+veydzh3r (1):
 Viktoras Agejevas (1):
 Zout141 (2):
 """
