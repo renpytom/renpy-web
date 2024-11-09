@@ -71,42 +71,113 @@ As well as many other fixes, changes, and improvements. Please see the changelog
 """
 
 CREDITS_8_3 = """
-Abdul (5):
+Abdul (4):
 Aleksandar Belic Aleksanchez (1):
 Alexandre Detiste (1):
-Andy_kl (2):
-Bas Couwenberg (2):
+Andrej Klychin (1):
+Andy_kl (6):
+Avonder (1):
+Ayowel (2):
+Bas Couwenberg (1):
 Brainos (1):
+Brimbel (2):
 CensoredUsername (1):
 Chengtian He (1):
-Dipesh Aggarwal (9):
-do10HM (2):
-Elckarow (4):
-Gouvernathor (53):
-HB38 (1):
-iivusly (2):
-ImJustAQ (2):
+Craig de Stigter (1):
+Denys (14):
+Dipesh Aggarwal (5):
+Do10HM (1):
+Elckarow (2):
+Gouvernathor (58):
+Iivusly (1):
+ImJustAQ (1):
 Kassy (1):
 Kuro (1):
-kyouryuukunn (9):
+Kyouryuukunn (10):
 Lent1 (2):
-levicratic (3):
-luejerry (1):
-Mal Graty (5):
-m-from-space (7):
-minger0 (2):
-npckc (2):
+Levicratic (3):
+Luejerry (1):
+M-From-Space (7):
+Mal Graty (2):
+Mark (2):
+Minger0 (1):
+Npckc (1):
 OctoSpacc (1):
-OleSTEEP (2):
+OleSTEEP (1):
 Petr Abdulin (1):
-Ren'Py Bot (44):
-shawna-p (3):
-Tichq (8):
-the66F95 (1):
-veydzh3r (1):
+Shawna-p (3):
+The66F95 (1):
+Tichq (7):
+Veydzh3r (1):
 Viktoras Agejevas (1):
-Zout141 (2):
+Zout141 (1):
 """
+
+# 8.3.3 / 7.8.3
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.3.3",
+    pygame="-2.1.0",
+    date="November xx, 2024",
+    patch=None,
+    name="Second Star to the Right",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 8.3.3, a fix release that improves earlier versions of Ren'Py 8.3.
+
+Ren'Py 8.3 should be used for all new games.
+""" + COMMON_8_3,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed in the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.8.3",
+    pygame="-2.1.0",
+    date="September 9, 2024",
+    patch=None,
+    name="Straight on Till Morning",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 7.8.3, a fix release that improves earlier versions of Ren'Py 7.8.
+The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining support for Python 2.
+As some of the new features require Python 3 support, not every new feature in Ren'Py 8 is available in Ren'Py 7.
+
+As Ren'Py 7.8 will be the last major release in the 7.x series, all games should be updated to Ren'Py 8 before
+the release of Ren'Py 8.4, when support for Ren'Py 7 will end.
+""" + COMMON_8_3,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+
 
 # 8.3.2 / 7.8.2
 
