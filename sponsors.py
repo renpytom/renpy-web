@@ -175,6 +175,7 @@ def load_sponsorfn_new(fn):
 
         has_discord = l[8] == "Discord"
         has_free = l[11] == "Free Member"
+        has_free_trial = l[12] == "Free Trial"
 
         level = ''
 
@@ -188,6 +189,9 @@ def load_sponsorfn_new(fn):
 
             if not has_twitter:
                 l.insert(7, 'Twitter')
+
+            if has_free_trial:
+                l.pop(12)
 
             if has_free:
                 l.pop(11)

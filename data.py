@@ -116,11 +116,11 @@ Zout141 (1):
 # 8.3.3 / 7.8.3
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.3.3",
     pygame="-2.1.0",
-    date="November xx, 2024",
+    date="November 15, 2024",
     patch=None,
     name="Second Star to the Right",
     world_order=14,
@@ -147,11 +147,11 @@ credits=CREDITS_8_3)
 
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="7.8.3",
     pygame="-2.1.0",
-    date="September 9, 2024",
+    date="November 15, 2024",
     patch=None,
     name="Straight on Till Morning",
     world_order=14,
