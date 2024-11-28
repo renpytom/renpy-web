@@ -4,7 +4,7 @@ certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
 click==8.0.1
-cryptography==3.4.7
+cryptography==39.0.1
 decorator==5.0.9
 docutils==0.17.1
 feedgen==0.9.0
