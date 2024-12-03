@@ -87,7 +87,9 @@ Craig de Stigter (1):
 Denys (14):
 Dipesh Aggarwal (5):
 Do10HM (1):
+Edward Nicholes Jr.
 Elckarow (2):
+Farzher
 Gouvernathor (58):
 Iivusly (1):
 ImJustAQ (1):
@@ -101,6 +103,7 @@ M-From-Space (7):
 Mal Graty (2):
 Mark (2):
 Minger0 (1):
+Naughty Road
 Npckc (1):
 OctoSpacc (1):
 OleSTEEP (1):
@@ -112,6 +115,71 @@ Veydzh3r (1):
 Viktoras Agejevas (1):
 Zout141 (1):
 """
+
+# 8.3.4 / 7.8.4
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.3.4",
+    pygame="-2.1.0",
+    date="December xx, 2024",
+    patch=None,
+    name="Second Star to the Right",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 8.3.3, a fix release that improves earlier versions of Ren'Py 8.3.
+
+Ren'Py 8.3 should be used for all new games.
+""" + COMMON_8_3,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed in the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="7.8.4",
+    pygame="-2.1.0",
+    date="December xx, 2024",
+    patch=None,
+    name="Straight on Till Morning",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 7.8.3, a fix release that improves earlier versions of Ren'Py 7.8.
+The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining support for Python 2.
+As some of the new features require Python 3 support, not every new feature in Ren'Py 8 is available in Ren'Py 7.
+
+As Ren'Py 7.8 will be the last major release in the 7.x series, all games should be updated to Ren'Py 8 before
+the release of Ren'Py 8.4, when support for Ren'Py 7 will end.
+""" + COMMON_8_3,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
 
 # 8.3.3 / 7.8.3
 
