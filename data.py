@@ -115,11 +115,144 @@ Petr Abdulin (1):
 Ruben Garcia (1):
 shawna-p (4):
 the66F95 (6):
+TDCMC (1):
 Tichq (8):
 veydzh3r (1):
 Viktoras Agejevas (1):
 woolion (1):
 """
+
+# 8.3.7 / 7.8.7
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.3.7",
+    pygame="-2.1.0",
+    date="March 17, 2025",
+    patch=None,
+    name="Second Star to the Right",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 8.3.7, a fix release that improves earlier versions of Ren'Py 8.3.
+This release fixes multiple reported issues, with a focus on Live2D and Arabic text shaping.
+
+Ren'Py 8.3 should be used for all new games.
+""" + COMMON_8_3,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed in the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.8.7",
+    pygame="-2.1.0",
+    date="March 17, 2025",
+    patch=None,
+    name="Straight on Till Morning",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 7.8.7, a fix release that improves earlier versions of Ren'Py 7.8.
+This release fixes multiple reported issues, with a focus on Live2D and Arabic text shaping.
+
+The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining support for Python 2.
+As some of the new features require Python 3 support, not every new feature in Ren'Py 8 is available in Ren'Py 7.
+As Ren'Py 7.8 will be the last major release in the 7.x series, all games should be updated to Ren'Py 8 before
+the release of Ren'Py 8.4, when support for Ren'Py 7 will end.
+""" + COMMON_8_3,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+
+# 8.3.6 / 7.8.6
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.3.6",
+    pygame="-2.1.0",
+    date="February 28, 2025",
+    patch=None,
+    name="Second Star to the Right",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 8.3.6, a fix release that improves earlier versions of Ren'Py 8.3.
+
+Ren'Py 8.3 should be used for all new games.
+""" + COMMON_8_3,
+    history="""\
+""",
+
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+The original OpenGL renderer will be removed in the next major release.
+
+Support for Windows 7, 8, and 8.1 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="7.8.6",
+    pygame="-2.1.0",
+    date="February 28, 2025",
+    patch=None,
+    name="Straight on Till Morning",
+    world_order=14,
+    announcement="""\
+I'm happy to announce the release of Ren'Py 7.8.6, a fix release that improves earlier versions of Ren'Py 7.8.
+The Ren'Py 7 series attempts to match Ren'Py 8 in features, while retaining support for Python 2.
+As some of the new features require Python 3 support, not every new feature in Ren'Py 8 is available in Ren'Py 7.
+
+As Ren'Py 7.8 will be the last major release in the 7.x series, all games should be updated to Ren'Py 8 before
+the release of Ren'Py 8.4, when support for Ren'Py 7 will end.
+""" + COMMON_8_3,
+    history="""\
+""",
+    full_html="""\
+""",
+top_html="""\
+""",
+
+deprecations="""\
+Support for Python 2 and Ren'Py 7 will be dropped in the next major release.
+""",
+
+credits=CREDITS_8_3)
+
+
 
 # 8.3.5 / 7.8.5
 
