@@ -41,6 +41,114 @@ aliases = [ ]
 # git shortlog 7.0..HEAD
 
 
+# 8.4.0 ################################################################################################################ Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+
+
+COMMON_8_4 = """
+Some of the new features and improvements Ren'Py 8.4 are:
+
+* Ren'Py now uses Python 3.12 on all platforms.
+* Performance improvements in the areas of script loading, persistent data, OpenGL drawing, and Live2D.
+* OpenGL shader support has been improved. This includes support for more data types, arrays, separate
+  projection, view, and model matrices, and the ability to supply displayables to shaders as textures.
+* Ren'Py supports loading GLTF models. Right now, only static models are supported, and you'll need
+  to provide a shader to render the model.
+* Libs and Mods directories provide places to put libraries and modes, with an adjusted load order.
+* The layered image sub-language has been improved to be more concise and powerful.
+* Oversampled images, which are images at a higher resolution that can be used when the game is scaled up
+  or run on a high-DPI display, are automatically selected. Moves also support oversampling.
+* The shift+A accessibility menu has been redesigned, and includes options to adjust kerning and force
+  sound to mono.
+* The launcher now supports folders, and customizing what files and directories are shown.
+* Ren'Py supports Opentype features, allowing for ligatures, style changes, and more.
+* When a traceback occurse, the game will be saved, producing a save file that can be sent to developers
+  to help diagnose the problem.
+
+As well as many other improvements, changes, and fixes. For a complete list of changes,
+please see the changelog.
+
+Ren'Py 8.4 changes the minimum system requirements for Ren'Py and games. The Windows version now requires
+Windows 10 or later. Linux required Ubuntu 20.04 or later, the Steam "soldier" runtime, or a similar Linux
+distribution. 32-bit ARM Linux is no longer supported.
+
+Finally, Ren'Py 8.4 is now the sole supported version of Ren'Py - there is not equvalent Ren'Py 7 release
+that uses Python 2.
+"""
+
+CREDITS_8_4 = """
+Abdul (4):
+Andrej Klychin (10):
+Andy_kl (83):
+Arman (1):
+avonder (2):
+Ayowel (7):
+brimbel (2):
+Craig de Stigter (2):
+Dipesh Aggarwal (6):
+dm1sh (1):
+Edward Nicholes Jr. (2):
+Elckarow (11):
+Emmanuel Ferdman (1):
+Farzher (2):
+Gio (6):
+Gouvernathor (55):
+Gregor Riepl (5):
+HB38 (1):
+Jade Macho (2):
+jamaine (1):
+Jaybe Games (1):
+Joshua Fehler (5):
+Kassy (6):
+levicratic (2):
+Lezalith (12):
+Mal Graty (49):
+Mark (4):
+Matěj Račinský (1):
+Moshibit (4):
+naughty road (6):
+nullvoid8 (1):
+Opolis13 (2):
+Peter Dave Hello (1):
+Quetz (5):
+Ruben Garcia (3):
+shawna-p (2):
+Stanislau Tsitsianok (1):
+Sunrise Sarsaparilla (2):
+TDCMC (3):
+the66F95 (20):
+Tichq (3):
+tinyboxvk (1):
+veydzh3r (4):
+woolion (2):
+"""
+
+
+
+# 8.4.0
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.4.0",
+    pygame="-2.1.0",
+    date="June xx, 2025",
+    patch=None,
+    name="Tomorrowland",
+    world_order=14,
+    announcement="""
+I'm happy to announce the release of Ren'Py 8.4, a feature release that includes many new features,
+fixes, and improvements to Ren'Py.
+
+""" + COMMON_8_4,
+    history="",
+    full_html="",
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_4)
+
+
+
+
 # 8.3.0 / 7.8.0 ##############################################################
 
 COMMON_8_3 = """
