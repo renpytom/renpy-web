@@ -47,32 +47,34 @@ aliases = [ ]
 COMMON_8_4 = """
 Some of the new features and improvements Ren'Py 8.4 are:
 
-* Ren'Py now uses Python 3.12 on all platforms.
-* Performance improvements in the areas of script loading, persistent data, OpenGL drawing, and Live2D.
-* OpenGL shader support has been improved. This includes support for more data types, arrays, separate
-  projection, view, and model matrices, and the ability to supply displayables to shaders as textures.
-* Ren'Py supports loading GLTF models. Right now, only static models are supported, and you'll need
-  to provide a shader to render the model.
-* Libs and Mods directories provide places to put libraries and modes, with an adjusted load order.
-* The layered image sub-language has been improved to be more concise and powerful.
-* Oversampled images, which are images at a higher resolution that can be used when the game is scaled up
-  or run on a high-DPI display, are automatically selected. Moves also support oversampling.
-* The shift+A accessibility menu has been redesigned, and includes options to adjust kerning and force
-  sound to mono.
-* The launcher now supports folders, and customizing what files and directories are shown.
-* Ren'Py supports Opentype features, allowing for ligatures, style changes, and more.
-* When a traceback occurse, the game will be saved, producing a save file that can be sent to developers
-  to help diagnose the problem.
+* Ren'Py now utilizes Python 3.12 across all platforms.
+* Performance has been improved in script loading, persistent data management, OpenGL drawing, and Live2D integration.
+* OpenGL shader support is enhanced, now including more data types, arrays, separate projection, view, and model
+  matrices. It also allows for displayables to be supplied to shaders as textures.
+* Ren'Py now supports the loading of GLTF models. Currently, only static models are supported, and a custom shader is
+  required for rendering.
+* The new :file:`libs` and :file:`mods` directories allow for the organized placement of libraries and mods with an adjusted loading
+  order.
+* The layered images sub-language has been updated to be more concise and powerful.
+* Oversampled images—higher-resolution assets for upscaling and high-DPI displays—are now selected automatically.
+  Movies also support oversampling.
+* The Shift+A accessibility menu has been redesigned to include options for adjusting text kerning and forcing mono
+  audio output.
+* The launcher now supports the organization of projects into folders and allows for the customization of which files
+  and directories are displayed.
+* Ren'Py now supports OpenType features, enabling the use of ligatures, stylistic sets, and other typographic
+  enhancements.
+* When a traceback error occurs, the game's state is automatically saved. This save file can be sent to teammates to
+  help diagnose the issue.
 
-As well as many other improvements, changes, and fixes. For a complete list of changes,
-please see the changelog.
+As well as many other improvements, changes, and fixes. For a complete list of changes, please see the changelog.
 
-Ren'Py 8.4 changes the minimum system requirements for Ren'Py and games. The Windows version now requires
-Windows 10 or later. Linux required Ubuntu 20.04 or later, the Steam "soldier" runtime, or a similar Linux
-distribution. 32-bit ARM Linux is no longer supported.
+Ren'Py 8.4 increases the minimum system requirements for Ren'Py and games. The Windows version now requires Windows 10 or
+later. Linux now requires Ubuntu 20.04 or later, the Steam "soldier" runtime, or a similar Linux distribution. 32-bit ARM
+Linux is no longer supported.
 
-Finally, Ren'Py 8.4 is now the sole supported version of Ren'Py - there is not equvalent Ren'Py 7 release
-that uses Python 2.
+Finally, Ren'Py 8.4 is now the sole supported version of Ren'Py - there is not an equivalent Ren'Py 7 release that uses
+Python 2.
 """
 
 CREDITS_8_4 = """
