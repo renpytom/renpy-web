@@ -53,7 +53,7 @@ Some of the new features and improvements Ren'Py 8.4 are:
   matrices. It also allows for displayables to be supplied to shaders as textures.
 * Ren'Py now supports the loading of GLTF models. Currently, only static models are supported, and a custom shader is
   required for rendering.
-* The new :file:`libs` and :file:`mods` directories allow for the organized placement of libraries and mods with an adjusted loading
+* The new ``libs`` and ``mods`` directories allow for the organized placement of libraries and mods with an adjusted loading
   order.
 * The layered images sub-language has been updated to be more concise and powerful.
 * Oversampled images—higher-resolution assets for upscaling and high-DPI displays—are now selected automatically.
@@ -201,7 +201,7 @@ Edward Nicholes Jr. (1):
 Elckarow (2):
 Gio (1):
 Gouvernathor (58):
-HorBro38 (1):
+HB38 (1):
 iivusly (1):
 ImJustAQ (1):
 Jan Masek (1):
@@ -219,7 +219,6 @@ naughty road (3):
 npckc (1):
 nullvoid8 (1):
 octospacc (1):
-OctoSpacc (1):
 OleSTEEP (1):
 Petr Abdulin (1):
 Ruben Garcia (1):
