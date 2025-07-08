@@ -79,7 +79,6 @@ Python 2.
 
 CREDITS_8_4 = """
 Abdul (4):
-Andrej Klychin (10):
 Andy_kl (83):
 Arman (1):
 avonder (2):
@@ -101,6 +100,7 @@ jamaine (1):
 Jaybe Games (1):
 Joshua Fehler (5):
 Kassy (6):
+lauwurence (1):
 levicratic (2):
 Lezalith (12):
 Mal Graty (49):
@@ -121,6 +121,7 @@ the66F95 (20):
 Tichq (3):
 tinyboxvk (1):
 veydzh3r (4):
+Vladya (3):
 woolion (2):
 """
 
