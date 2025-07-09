@@ -216,6 +216,12 @@ def load_sponsorfn_new(fn):
 
             status = (l[24] == "Paid")
 
+            if "Declined patron" in l:
+                status = False
+
+            if "Former patron" in l:
+                status = False
+
             while len(l) < 18:
                 l.append('')
 
