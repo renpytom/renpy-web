@@ -130,11 +130,11 @@ woolion (2):
 # 8.4.0
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.4.0",
     pygame="-2.1.0",
-    date="June xx, 2025",
+    date="July 12, 2025",
     patch=None,
     name="Tomorrowland",
     world_order=14,
@@ -145,7 +145,7 @@ fixes, and improvements to Ren'Py.
 """ + COMMON_8_4,
     history="",
     full_html="",
-    top_html="",
+    top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
     deprecations="",
     credits=CREDITS_8_4)
 
