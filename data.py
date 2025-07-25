@@ -86,6 +86,7 @@ Ayowel (7):
 brimbel (2):
 Craig de Stigter (2):
 Dipesh Aggarwal (6):
+Doohyeon Won (1):
 dm1sh (1):
 Edward Nicholes Jr. (2):
 Elckarow (11):
@@ -111,6 +112,7 @@ naughty road (6):
 nullvoid8 (1):
 Opolis13 (2):
 Peter Dave Hello (1):
+Puxap-3opre (1):
 Quetz (5):
 Ruben Garcia (3):
 shawna-p (2):
@@ -124,6 +126,30 @@ veydzh3r (4):
 Vladya (3):
 woolion (2):
 """
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.4.1",
+    pygame="-2.1.0",
+    date="July 24, 2025",
+    patch=None,
+    name="Tomorrowland",
+    world_order=14,
+    announcement="""
+I'm happy to announce the release of Ren'Py 8.4.1. This release is a fix release that addresses multiple issues,
+including a problem that prevented creators on Windows from creating new games in non-English languages.
+""" + COMMON_8_4,
+    history="",
+    full_html="",
+    top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
+    deprecations="",
+    credits=CREDITS_8_4,
+    extra_credits="""
+I'd like to give a special thank you to Mal Graty, who contributed most of the fixes in this release.
+""")
+
 
 
 

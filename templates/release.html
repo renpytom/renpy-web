@@ -175,6 +175,10 @@
         everyone who's tested this release, and myself, Tom "Renpytom" Rothamel.
     </p>
 
+{% if release.extra_credits %}
+    {{ release.extra_credits|rst|safe }}
+{% endif %}
+
 
 </section>
 

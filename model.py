@@ -45,6 +45,8 @@ class Release(Data):
 
     deprecations = None
 
+    extra_credits = None
+
     def __init__(self, **kwargs):
 
         self.patch = None
