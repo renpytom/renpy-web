@@ -281,9 +281,6 @@ def feed():
     prerelease_8 = data.prerelease_8
     current_8 = data.current_8
 
-    prerelease_7 = data.prerelease_7
-    current_7 = data.current_7
-
     def parse_date(s):
         ts = time.strptime(s, "%B %d, %Y")
         return datetime.datetime.fromtimestamp(time.mktime(ts), pytz.utc)
@@ -305,19 +302,11 @@ def feed():
         )
         fe.updated(parse_date(date))
 
-    if prerelease_7:
-        add(prerelease_7, prerelease_7.version, prerelease_7.prerelease_date, "prerelease-7")
-
     if prerelease_8:
         add(prerelease_8, prerelease_8.version, prerelease_8.prerelease_date, "prerelease-8")
 
-    if current_7.patch_date:
-        add(current_7, current_7.full_version, current_7.patch_date, "update-7")
-
     if current_8 and current_8.patch_date:
         add(current_8, current_8.full_version, current_8.patch_date, "update-8")
-
-    add(current_7, current_7.version, current_7.date, "release-7")
 
     if current_8:
         add(current_8, current_8.version, current_8.date, "release-8")
@@ -377,7 +366,7 @@ def channels():
         rv.append(record)
 
     scan_version(
-        "Release (Ren'Py 8, Python 3)",
+        "Release",
         "http://update.renpy.org/release-8/updates.json",
         "{b}Recommended.{/b} The version of Ren'Py that should be used in all newly-released games.",
         True,
@@ -395,7 +384,7 @@ def channels():
         )
 
     scan_version(
-        "Prerelease (Ren'Py 8, Python 3)",
+        "Prerelease",
         "http://update.renpy.org/prerelease-8/updates.json",
         "A preview of the next version of Ren'Py that can be used for testing and taking advantage of new features, but not for final releases of games.",
         False,
@@ -413,7 +402,7 @@ def channels():
         )
 
     scan_version(
-        "Nightly Fix (Ren'Py 8, Python 3)",
+        "Nightly Fix",
         "http://nightly.renpy.org/current-8-fix/updates.json",
         "A nightly build of fixes to the release version of Ren'Py.",
         True,
@@ -431,7 +420,7 @@ def channels():
         )
 
     scan_version(
-        "Nightly (Ren'Py 8, Python 3)",
+        "Nightly",
         "http://nightly.renpy.org/current-8/updates.json",
         "The bleeding edge of Ren'Py development. This may have the latest features, or might not run at all.",
         True,
