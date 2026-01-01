@@ -298,10 +298,10 @@
         <dd>Contains the source code of the Ren'Py distribution without any binary components.</dd>
 
 
-{% if release.world_order >= 14 %}
+{% if release.world_order >= 14 and release.world_order < 15 %}
 <dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl_new() }}</dt>
 <dd>Contains the source code for the version of pygame_sdl2 required to run this version of Ren'Py. This may be newer than any released version of pygame_sdl2.</dd>
-{% elif release.world_order >= 6 %}
+{% elif release.world_order >= 6 and release.world_order < 15 %}
         <dt><strong>Pygame_SDL2 Source Code:</strong> {{ pygame_sdl2_dl() }}</dt>
         <dd>Contains the source code for the version of pygame_sdl2 required to run this version of Ren'Py. This may be newer than any released version of pygame_sdl2.</dd>
 {% endif %}

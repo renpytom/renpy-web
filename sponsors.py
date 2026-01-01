@@ -83,6 +83,9 @@ def latest_month():
 def current_month(offset=0):
     # Figure out the sponsor filename for today.
 
+    if os.environ.get("MONTH", None):
+        return os.environ["MONTH"]
+
     today = datetime.date.today()
     today = today + dateutil.relativedelta.relativedelta(months=offset)
 

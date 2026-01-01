@@ -35,10 +35,100 @@ aliases = [ ]
 # 1. Bump date.
 # 2. prerelease=False
 #
-# Remember to add.py --release !
+# scripts/add_all.sh --release
+# scripts/add_all.sh --push-tags
+# scripts/add_all.sh --github
+# scripts/itch_upload.sh <version>
 
 # To get the list of contributors to a release, we can use the command:
-# git shortlog 7.0..HEAD
+# git shortlog 8.5.0.25111603..HEAD | grep -v ^\\s | sort -i | uniq
+
+# 8.5.0 ################################################################################################################ Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
+
+
+COMMON_8_5 = """
+
+Some of the major changes in Ren'Py 8.5 are:
+
+* Live2D models are now supported on the Web platform.
+* A new Automated Testing framework makes it possible to perform automated test of games and of Ren'Py itself.
+* Local labels have been relaxed so that they can be declared with any global label.
+* Ren'Py supports Unicode 17, and more Emoji characters.
+
+As well as many other improvements, changes, and fixes. For a complete list of changes, please see the changelog.
+"""
+
+CREDITS_8_5 = """
+Aliengeo
+Andy_kl (34):
+Atlas Cove (1):
+Arsym (105):
+Bkats (1):
+Dipesh Aggarwal (1):
+Doohyeon Won (Daniel Harold Won) (Cor) (1):
+Dynamiclinking (1):
+Elckarow (2):
+Gouvernathor (1):
+HB38 (2):
+Kassy (3):
+Levicratic (1):
+LoafyLemon (1):
+Mal Graty (19):
+NaughyRoad (1):
+Puxap-3opre (1):
+Rastagong (1):
+Ruben Garcia (1):
+TDCMC (13):
+Totally a booplicate (1):
+the66F95 (4):
+veydzh3r (2):
+VivianTu789 (1):
+Vladya (1):
+"""
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.5.1",
+    date="December 31, 2025",
+    patch=None,
+    name="In Good Health",
+    world_order=15,
+    announcement="""
+I'm happy to ring in the new year with the release of Ren'Py 8.5.1, a fix release of Ren'Py 8.5. This release addresses
+multiple reported issues.
+""" + COMMON_8_5,
+    history="",
+    full_html="",
+    # top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_5,
+    extra_credits=""
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.5.0",
+    date="November 16, 2025",
+    patch=None,
+    name="In Good Health",
+    world_order=15,
+    announcement="""
+I'm pleased to announce the release of Ren'Py 8.5, a major release of Ren'Py. Major releases include new features,
+major improvements, and fixes.
+""" + COMMON_8_5,
+    history="",
+    full_html="",
+    # top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_5,
+    extra_credits=""
+)
+
 
 
 # 8.4.0 ################################################################################################################ Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
