@@ -89,6 +89,27 @@ Vladya (1):
 Release(
     prerelease=False,
     invisible=False,
+    version="8.5.2",
+    date="January 3, 2026",
+    patch=None,
+    name="In Good Health",
+    world_order=15,
+    announcement="""
+I'd like to announce Ren'Py 8.5.2, a fix release of 8.5.1. This release fixes a single issue in Ren'Py 8.5.1.
+""" + COMMON_8_5,
+    history="",
+    full_html="",
+    # top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_5,
+    extra_credits=""
+)
+
+
+Release(
+    prerelease=False,
+    invisible=False,
     version="8.5.1",
     date="December 31, 2025",
     patch=None,
