@@ -51,40 +51,70 @@ COMMON_8_5 = """
 Some of the major changes in Ren'Py 8.5 are:
 
 * Live2D models are now supported on the Web platform.
-* A new Automated Testing framework makes it possible to perform automated test of games and of Ren'Py itself.
+* A new Automated Testing framework makes it possible to perform automated tests of games and of Ren'Py itself.
 * Local labels have been relaxed so that they can be declared with any global label.
-* Ren'Py supports Unicode 17, and more Emoji characters.
+* Ren'Py supports Unicode 17 and more Emoji characters.
 
 As well as many other improvements, changes, and fixes. For a complete list of changes, please see the changelog.
 """
 
 CREDITS_8_5 = """
-Aliengeo
-Andy_kl (34):
+aliengeo (1):
+Andy_kl (48):
+Arsym (110):
 Atlas Cove (1):
-Arsym (105):
-Bkats (1):
-Dipesh Aggarwal (1):
-Doohyeon Won (Daniel Harold Won) (Cor) (1):
-Dynamiclinking (1):
-Elckarow (2):
+bkats (1):
+Devon Lewis (1):
+Dipesh Aggarwal (3):
+dynamiclinking (1):
+Elckarow (5):
+Galo223344 (1):
 Gouvernathor (1):
-HB38 (2):
-Kassy (3):
-Levicratic (1):
+HB38 (11):
+juperMonkey (2):
+Kassy (1):
+levicratic (1):
 LoafyLemon (1):
-Mal Graty (19):
+loviuz (2):
+Mal Graty (11):
 NaughyRoad (1):
-Puxap-3opre (1):
 Rastagong (1):
+River (1):
+Rodrigo Oliveira (1):
+Rose20 (1):
 Ruben Garcia (1):
-TDCMC (13):
+TDCMC (15):
+the66F95 (5):
 Totally a booplicate (1):
-the66F95 (4):
-veydzh3r (2):
+Ulysses Zhan (2):
+veydzh3r (3):
 VivianTu789 (1):
 Vladya (1):
 """
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.5.3",
+    date="May 15, 2026",
+    patch=None,
+    name="We Can Go to the Moon",
+    world_order=15,
+    announcement="""
+I'd like to announce Ren'Py 8.5.3, a fix release of Ren'Py 8.5. This release fixes multiple issues, adds a few small features,
+and improves documentation. It also adds and updates translations of the tutorial games. Ren'Py now supports and requires
+Live2D 5.3 when Live2D is in use.
+""" + COMMON_8_5,
+    history="",
+    full_html="",
+    # top_html='<img src="/static/8.4.jpg" alt="" style="width: 100%">',
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_5,
+    extra_credits=""
+)
+
+
 
 Release(
     prerelease=False,

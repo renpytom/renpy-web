@@ -7,6 +7,7 @@ import datetime
 import re
 import json
 import random
+from urllib.parse import quote
 import pytz
 import doc
 
@@ -236,7 +237,9 @@ def agegate():
     url = request.args.get("url", "/")
 
     for i in sponsors.sponsors:
-        if i.url == "https://www.renpy.org/agegate?url=" + url:
+        if i.url:
+            print(i.url, "https://www.renpy.org/agegate?url=" + quote(url, safe=""))
+        if i.url == "https://www.renpy.org/agegate?url=" + url.replace("?", "%3F"):
             break
     else:
         abort(404)

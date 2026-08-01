@@ -105,17 +105,18 @@ def load_sponsorfn_old(fn):
 
     rv = [ ]
 
-    with open(fn, "rb") as f:
+    with open(fn, "r", encoding="utf-8") as f:
 
         l = f.readline()
 
-#         for i, s in enumerate(l.split("\t")):
-#             print(i, s)
+        # if not rv:
+        #     for i, s in enumerate(l.split("\t")):
+        #         print(i, s)
 
         level = ''
 
         for l in f:
-            l = l.decode("utf-8")
+
             l = l.rstrip()
             l = l.split("\t")
 
@@ -161,13 +162,15 @@ def load_sponsorfn_new(fn):
 
     rv = [ ]
 
-    with open(fn, "rb") as f:
+    with open(fn, "r", encoding="utf-8") as f:
 
         l = f.readline()
-
-        l = l.decode("utf-8")
         l = l.rstrip()
         l = l.split("\t")
+
+        # if not rv:
+        #     for i, s in enumerate(l):
+        #         print(i, s)
 
         has_twitter = l[7] == "Twitter"
         if not has_twitter:
@@ -183,7 +186,6 @@ def load_sponsorfn_new(fn):
         level = ''
 
         for l in f:
-            l = l.decode("utf-8")
             l = l.rstrip()
             l = l.split("\t")
 
@@ -217,7 +219,7 @@ def load_sponsorfn_new(fn):
             # for i, s in enumerate(l):
             #     print(i, s)
 
-            status = (l[24] == "Paid")
+            status = (l[24] == "Paid" or l[24] == "Active patron")
 
             if "Declined patron" in l:
                 status = False
@@ -237,7 +239,7 @@ def load_sponsorfn_new(fn):
                 name=name,
                 credit_name=l[2] or name,
                 url=url,
-                email=l[6],
+                email=l[1] or l[6],
                 pledge=money(l[11]),
                 lifetime=money(l[10]),
                 status=status,
@@ -295,10 +297,13 @@ def init(month=None):
 
     except Exception as e:
         print("Failed to load sponsors:", e)
+        raise
         return False
 
     global sponsors
     sponsors = sl
+
+    print([(i.credit_name, i.status) for i in sl if i.credit_name == "Fallen Eros"])
 
     return True
 
