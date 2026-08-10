@@ -2,10 +2,10 @@
 
 {% block title %}Art Postcard Information{% endblock %}
 
-{% macro card(month) %}
+{% macro card(filename) %}
 <div class="col-sm-4" style="margin-bottom: 1em;">
-<a href="/static/artcard/{{ month }}.jpg" class="colorbox">
-<img src="/static/artcard/{{ month }}.jpg" class="img-thumbnail" style="max-height: 200px">
+<a href="/static/artcard/{{ filename }}" class="colorbox">
+<img src="/static/artcard/{{ filename }}" class="img-thumbnail" style="max-height: 200px">
 </a>
 </div>
 {% endmacro %}
@@ -187,67 +187,9 @@ If you have any specifics as to how you want to be credited, please let me know.
 
 
 <div class="row">
-
-{{ card("2017-06") }}
-{{ card("2017-07") }}
-{{ card("2017-08") }}
-{{ card("2017-09") }}
-{{ card("2017-10") }}
-{{ card("2017-11") }}
-{{ card("2017-12") }}
-
-{{ card("2018-01") }}
-{{ card("2018-02") }}
-{{ card("2018-03") }}
-{{ card("2018-04") }}
-{{ card("2018-05") }}
-{{ card("2018-06") }}
-{{ card("2018-07") }}
-{{ card("2018-08") }}
-{{ card("2018-09") }}
-{{ card("2018-10") }}
-{{ card("2018-11") }}
-{{ card("2018-12") }}
-
-{{ card("2019-01") }}
-{{ card("2019-02") }}
-{{ card("2019-03") }}
-{{ card("2019-04") }}
-{{ card("2019-05") }}
-{{ card("2019-06") }}
-{{ card("2019-07") }}
-{{ card("2019-08") }}
-{{ card("2019-09") }}
-{{ card("2019-10") }}
-{{ card("2019-11") }}
-{{ card("2019-12") }}
-
-{{ card("2020-01") }}
-{{ card("2020-02") }}
-{{ card("2020-03") }}
-{{ card("2020-04") }}
-{{ card("2020-05") }}
-{{ card("2020-06") }}
-{{ card("2020-07") }}
-{{ card("2020-08") }}
-{{ card("2020-09") }}
-{{ card("2020-10") }}
-{{ card("2020-11") }}
-{{ card("2020-12") }}
-
-{{ card("2021-01") }}
-{{ card("2021-02") }}
-{{ card("2021-03") }}
-{{ card("2021-04") }}
-{{ card("2021-05") }}
-{{ card("2021-06") }}
-{{ card("2021-07") }}
-{{ card("2021-08") }}
-{{ card("2021-09") }}
-{{ card("2021-10") }}
-{{ card("2021-11") }}
-{{ card("2021-12") }}
-
+{% for filename in cards %}
+{{ card(filename) }}
+{% endfor %}
 
 
 </div>

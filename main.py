@@ -265,7 +265,18 @@ def email():
 
 @app.route("/artcard.html")
 def artcard():
-    return render_template("artcard.html", data=data)
+    artcard_dir = os.path.join(BASE, "static", "artcard")
+    cards = [ ]
+
+    for filename in os.listdir(artcard_dir):
+        if not re.match(r"^\d{4}-\d{2}\.(jpg|jpeg|png|webp)$", filename, re.IGNORECASE):
+            continue
+
+        cards.append(filename)
+
+    cards.sort()
+
+    return render_template("artcard.html", data=data, cards=cards)
 
 
 @app.route("/feed/")
