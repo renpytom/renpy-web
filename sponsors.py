@@ -1,4 +1,5 @@
 import os
+import csv
 import datetime
 import dateutil.relativedelta
 import random
@@ -162,11 +163,10 @@ def load_sponsorfn_new(fn):
 
     rv = [ ]
 
-    with open(fn, "r", encoding="utf-8") as f:
+    with open(fn, "r", encoding="utf-8", newline="") as f:
 
-        l = f.readline()
-        l = l.rstrip()
-        l = l.split("\t")
+        rows = csv.reader(f, delimiter="\t")
+        l = next(rows)
 
         # if not rv:
         #     for i, s in enumerate(l):
@@ -185,9 +185,7 @@ def load_sponsorfn_new(fn):
 
         level = ''
 
-        for l in f:
-            l = l.rstrip()
-            l = l.split("\t")
+        for l in rows:
 
             if len(l) < 12:
                 continue
@@ -322,7 +320,8 @@ def non_banner():
 
 
 def sample_non_banner():
-    return random.sample(non_banner(), min(8, len(sponsors)))
+    non_banner_sponsors = non_banner()
+    return random.sample(non_banner_sponsors, min(8, len(non_banner_sponsors)))
 
 
 def anonymous_count():
