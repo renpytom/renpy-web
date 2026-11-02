@@ -43,6 +43,119 @@ aliases = [ ]
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 8.5.0.25111603..HEAD | grep -v ^\\s | sort -i | uniq
 
+# 8.6.0 ################################################################################################################ Copyright 2004-2026 Tom Rothamel <pytom@bishoujo.us>
+
+
+COMMON_8_6 = """
+
+Some of the major features and improvements in Ren'Py 8.6 include:
+
+**SDL3.** Perhaps the biggest change in Ren'Py 8.6 is the move to SDL3, the newest version of the Simple DirectMedia Layer library, which provides low-level access to audio, keyboard, mouse, controller and graphics hardware, as well as other aspects of the system. Moving to SDL3 means that Ren'Py can take advantage of the latest features and improvements in SDL3, including new hardware and operating system versions.
+
+**Graphics.** We've also improved Ren'Py's graphics system. Capability improvements include a new shader compiler that supports predicting and caching shaders, and GLSL 3 (while retaining support for GLSL 1), including translating shader parts automatically between GLSL versions when necessary. There has also been a lot of work done to optimize drawing to the screen, minimizing redundant state changes and improving overall rendering performance.
+
+**Prediction.** Ren'Py's prediction system has been rewritten to use Python coroutines, which are small functions that can be interrupted in the middle. This makes it possible to divide prediction into chunks that are small enough to comfortably fit inside a single frame. Ren'Py 8.6 eliminates the need to design pauses into your animation to allow prediction, as prediction can now occur seamlessly as animations play.
+
+**Self-Voicing.** Ren'Py's self-voicing system has been improved to allow the use of any voice installed on the user's system, and to allow the speed of the voice to be adjusted. When a screen reader is active on the user's system, Ren'Py will use the Prism library to directly interface with it, automatically activating screen reader voicing as required.
+
+**Live2D.** Ren'Py's Live2D support has been updated to support the blend modes and offscreen drawing of Cubism 5.3. Ren'Py also now supports Live2D physics and pose files, allowing for more dynamic and expressive character animations.
+
+Other new features include:
+
+* New clipboard functions allow games to work with text, data, and images on the system clipboard. Screenshots are automatically copied to the clipboard.
+* The new renpy.get_user_age function reports the user's age range on Android and iOS devices that support it.
+* Ren'Py supports wavedash.com, a platform and marketplace for web-based games.
+* Different languages can be set for strings and files, so you could have one language for text, another for audio, and yet another for images.
+* It's now possible to seek in music, and loop in movies.
+* It's now possible to specify more than one directory to search for images, audio, and/or fonts.
+* Support for WOFF2 font files has been added.
+
+There are also dozens of other features and fixes, please refer to the full changelog for a complete list.
+
+Ren'Py 8.6 raises some system requirements. iOS games now require iOS 15 or later, up from iOS 13, and macOS games now require macOS 10.13 or later. On Android, iOS, and the web, Ren'Py now requires a GPU that supports OpenGL ES 3.0, which includes devices from 2013 or later. On the desktop, Ren'Py asks for OpenGL 3.3, and falls back to OpenGL 2.0. The new Live2D features require Cubism SDK for Native 5-r.5 or later.
+
+Ren'Py 8.6 is the next step in our goal of providing tools that enable human creativity in the form of visual novels and similar styles
+of games. I'm proud to announce that more people than ever have contributed to this release of Ren'Py. Thanks to everyone that has contributed to this release, and to those of you who will create with it.
+"""
+
+CREDITS_8_6 = """
+A-Voski (4):
+Aarushbbh (23):
+Andy_kl (278):
+Arsym (40):
+Atlas Cove (3):
+AxelBeary (2):
+Ayowel (4):
+Bkats (21):
+Chris Bier (1):
+Devon Lewis (1):
+Dipesh Aggarwal (2):
+DublikuntMux (3):
+Elckarow (11):
+Erik Chou (8):
+Felipe Carvajal Brown (1):
+Galo223344 (1):
+Gio (1):
+HB38 (9):
+Hsandt (1):
+Izarii-dev (11):
+Jed (3):
+Joey luu (1):
+Juhani Krekelä (1):
+juperMonkey (2):
+Kassy (1):
+Kyouryuukunn (3):
+Kyuiazusa (2):
+LaUwUrence (1):
+loviuz (4):
+Mal Graty (14):
+Matt Murdock (1):
+Merilynn Paisley (1):
+Moshibit (3):
+Mubashir78 (1):
+Naughty Road (1):
+Neyunse (10):
+Nora Lua (1):
+Npckc (1):
+OneCrisisAtATime (2):
+Peder Bergan (4):
+River (1):
+Rodrigo Oliveira (2):
+Ronchonbon (108):
+Rose20 (3):
+Saamkhaih Kyakya (5):
+Sab Pyrope (1):
+TDCMC (2):
+The66F95 (5):
+Tichq (7):
+Totally a booplicate (1):
+Ulysses Zhan (4):
+Veydzh3r (3):
+VivianTu789 (1):
+Yorkyang2333 (13):
+Zaveshaa (8):
+"""
+
+Release(
+    prerelease=True,
+    invisible=False,
+    version="8.6.0",
+    date="November xx, 2026",
+    patch=None,
+    name="Real Artists Ship",
+    world_order=16,
+    announcement="""
+I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py that is the result of a year of work to add new features, fixes, optimizations, and other improvements.
+""" + COMMON_8_6,
+    history="",
+    full_html="",
+    top_html="",
+    deprecations="",
+    credits=CREDITS_8_6,
+    extra_credits=""
+)
+
+
 # 8.5.0 ################################################################################################################ Copyright 2004-2024 Tom Rothamel <pytom@bishoujo.us>
 
 

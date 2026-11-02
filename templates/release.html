@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% set doclink = "https://www.renpy.org/dev-doc/html" if release.prerelease else "https://www.renpy.org/doc/html" %}
+{% set newest = release in (data.current_8, data.prerelease_8) %}
 
 {% block title %}Ren'Py {{release.version}}{% endblock %}
 
@@ -127,6 +128,16 @@
 
     <p style="margin-left: 2em">
         <a href="{{ doclink }}/incompatible.html">{{ doclink }}/incompatible.html</a>
+    </p>
+
+    {% if not newest %}
+    <p>This is not the newest version of Ren'Py. Before reporting a problem, please try the <a href="/latest.html">newest release</a>, and check that the problem still occurs.</p>
+    {% endif %}
+
+    <p>Problems with Ren'Py can be reported at the Ren'Py issue tracker:</p>
+
+    <p style="margin-left: 2em">
+        <a href="https://github.com/renpy/renpy/issues">https://github.com/renpy/renpy/issues</a>
     </p>
 
     <p>

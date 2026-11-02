@@ -13,5 +13,14 @@ A list of changes that may require you to update your game can be found at:
 
     {{ doclink }}/incompatible.html
 
+{% if release not in (data.current_8, data.prerelease_8) -%}
+This is not the newest version of Ren'Py. Before reporting a problem, please try the newest release, available at
+https://www.renpy.org/latest.html, and check that the problem still occurs.
+
+{% endif -%}
+Problems with Ren'Py can be reported at the Ren'Py issue tracker:
+
+    https://github.com/renpy/renpy/issues
+
 Please also check out the [url={{ doclink }}/credits.html]credits[/url] and
 [url={{ doclink }}/sponsors.html]sponsor list[/url].

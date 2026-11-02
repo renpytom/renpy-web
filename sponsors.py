@@ -187,7 +187,7 @@ def load_sponsorfn_new(fn):
 
         for l in rows:
 
-            if len(l) < 12:
+            if len(l) < 12 or not any(l):
                 continue
 
             if not has_twitter:
