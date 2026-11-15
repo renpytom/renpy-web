@@ -50,29 +50,34 @@ COMMON_8_6 = """
 
 Some of the major features and improvements in Ren'Py 8.6 include:
 
-**SDL3.** Perhaps the biggest change in Ren'Py 8.6 is the move to SDL3, the newest version of the Simple DirectMedia Layer library, which provides low-level access to audio, keyboard, mouse, controller and graphics hardware, as well as other aspects of the system. Moving to SDL3 means that Ren'Py can take advantage of the latest features and improvements in SDL3, including new hardware and operating system versions.
+**SDL3.** Perhaps the biggest change in Ren'Py 8.6 is the move to SDL3, the newest version of the Simple DirectMedia Layer library, which provides low-level access to audio, keyboard, mouse, controller and graphics hardware. SDL3 is where new platform support is being developed, so this lets Ren'Py take advantage of new hardware and operating systems. It also brings high-DPI support on Windows and support for the Nintendo Switch Pro Controller.
 
-**Graphics.** We've also improved Ren'Py's graphics system. Capability improvements include a new shader compiler that supports predicting and caching shaders, and GLSL 3 (while retaining support for GLSL 1), including translating shader parts automatically between GLSL versions when necessary. There has also been a lot of work done to optimize drawing to the screen, minimizing redundant state changes and improving overall rendering performance.
+**Performance.** Ren'Py's prediction system has been rewritten to use Python coroutines, which are small functions that can be interrupted in the middle, so prediction can be split into chunks that fit inside a single frame. Ren'Py 8.6 eliminates the need to design pauses into your animation to allow prediction, as prediction can now occur seamlessly as animations play. Images are decoded on multiple threads, texture uploads are spread across frames, redundant drawing work is skipped, and shaders are compiled ahead of time and cached across launches.
 
-**Prediction.** Ren'Py's prediction system has been rewritten to use Python coroutines, which are small functions that can be interrupted in the middle. This makes it possible to divide prediction into chunks that are small enough to comfortably fit inside a single frame. Ren'Py 8.6 eliminates the need to design pauses into your animation to allow prediction, as prediction can now occur seamlessly as animations play.
+**Accessibility.** A new screen reader mode, toggled with Shift+V, uses the Prism library to talk directly to screen readers like NVDA, JAWS, VoiceOver, and Orca, presenting the game's text through speech and braille displays. It turns on automatically when a screen reader is running. Self-voicing can now use any voice installed on the user's system, at an adjustable speed.
 
-**Self-Voicing.** Ren'Py's self-voicing system has been improved to allow the use of any voice installed on the user's system, and to allow the speed of the voice to be adjusted. When a screen reader is active on the user's system, Ren'Py will use the Prism library to directly interface with it, automatically activating screen reader voicing as required.
+**Shaders.** Shader parts can now be written in GLSL ES 3.00, the default for new games. Existing shaders don't need to change, as Ren'Py translates between versions automatically, and parts written in either version can be combined.
 
 **Live2D.** Ren'Py's Live2D support has been updated to support the blend modes and offscreen drawing of Cubism 5.3. Ren'Py also now supports Live2D physics and pose files, allowing for more dynamic and expressive character animations.
 
 Other new features include:
 
+* On Windows, Ren'Py draws input method candidate lists itself, so they're visible in fullscreen games.
+* Warping to a line now replays the dialogue along the way, rebuilding the history, NVL-mode text, and speech bubbles.
+* Automated tests can be selected with wildcards and parameters, and more test statements accept expressions.
 * New clipboard functions allow games to work with text, data, and images on the system clipboard. Screenshots are automatically copied to the clipboard.
 * The new renpy.get_user_age function reports the user's age range on Android and iOS devices that support it.
-* Ren'Py supports wavedash.com, a platform and marketplace for web-based games.
+* Ren'Py supports wavedash.com, a platform and marketplace for web-based games, and the launcher can upload to it directly.
 * Different languages can be set for strings and files, so you could have one language for text, another for audio, and yet another for images.
 * It's now possible to seek in music, and loop in movies.
 * It's now possible to specify more than one directory to search for images, audio, and/or fonts.
-* Support for WOFF2 font files has been added.
+* Font sizes can be adjusted per-font, without editing the font files.
+* Files created when a new project is made are now dedicated to the public domain.
+* Support for WOFF and WOFF2 font files has been added.
 
 There are also dozens of other features and fixes, please refer to the full changelog for a complete list.
 
-Ren'Py 8.6 raises some system requirements. iOS games now require iOS 15 or later, up from iOS 13, and macOS games now require macOS 10.13 or later. On Android, iOS, and the web, Ren'Py now requires a GPU that supports OpenGL ES 3.0, which includes devices from 2013 or later. On the desktop, Ren'Py asks for OpenGL 3.3, and falls back to OpenGL 2.0. The new Live2D features require Cubism SDK for Native 5-r.5 or later.
+Ren'Py 8.6 raises some system requirements. iOS games now require iOS 15 or later, up from iOS 13, and macOS games now require macOS 10.13 or later, up from macOS 10.10. On Android, iOS, and the web, Ren'Py now requires a GPU that supports OpenGL ES 3.0, which most devices with a GPU from 2013 or later have. Desktop requirements are unchanged: Ren'Py uses OpenGL 3.3 when it's available, and falls back to OpenGL 2.0. The new Live2D features require Cubism SDK for Native 5-r.5 or later, but older versions continue to work without them.
 
 Ren'Py 8.6 is the next step in our goal of providing tools that enable human creativity in the form of visual novels and similar styles
 of games. I'm proud to announce that more people than ever have contributed to this release of Ren'Py. Thanks to everyone that has contributed to this release, and to those of you who will create with it.
@@ -88,30 +93,35 @@ AxelBeary (2):
 Ayowel (4):
 Bkats (21):
 Chris Bier (1):
+Cosumicu (1):
 Devon Lewis (1):
 Dipesh Aggarwal (2):
 DublikuntMux (3):
 Elckarow (11):
 Erik Chou (8):
+Estelle Booher (1):
 Felipe Carvajal Brown (1):
 Galo223344 (1):
 Gio (1):
+Gouvernathor (1):
 HB38 (9):
 Hsandt (1):
 Izarii-dev (11):
+Jacob Grady (1):
 Jed (3):
 Joey luu (1):
 Juhani Krekelä (1):
 juperMonkey (2):
 Kassy (1):
+Kayenuonuo (1):
 Kyouryuukunn (3):
 Kyuiazusa (2):
 LaUwUrence (1):
 loviuz (4):
 Mal Graty (14):
 Matt Murdock (1):
-Merilynn Paisley (1):
-Moshibit (3):
+Merilynn Paisley (2):
+Moshibit (14):
 Mubashir78 (1):
 Naughty Road (1):
 Neyunse (10):
@@ -125,6 +135,7 @@ Ronchonbon (108):
 Rose20 (3):
 Saamkhaih Kyakya (5):
 Sab Pyrope (1):
+Saki (1):
 TDCMC (2):
 The66F95 (5):
 Tichq (7):
@@ -132,15 +143,15 @@ Totally a booplicate (1):
 Ulysses Zhan (4):
 Veydzh3r (3):
 VivianTu789 (1):
-Yorkyang2333 (13):
+Yorkyang2333 (16):
 Zaveshaa (8):
 """
 
 Release(
-    prerelease=True,
+    prerelease=False,
     invisible=False,
     version="8.6.0",
-    date="November xx, 2026",
+    date="November 14, 2026",
     patch=None,
     name="Real Artists Ship",
     world_order=16,
@@ -149,7 +160,7 @@ I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py tha
 """ + COMMON_8_6,
     history="",
     full_html="",
-    top_html="",
+    top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
     deprecations="",
     credits=CREDITS_8_6,
     extra_credits=""
