@@ -1,0 +1,15 @@
+[project]
+name = "renpy-web"
+version = "0"
+description = "The renpy.org website."
+requires-python = ">=3.7"
+dependencies = [
+    "docutils",
+    "feedgen",
+    "flask>=2.0.1",
+    "python-dateutil",
+    "pytz",
+]
+
+[tool.uv]
+package = false

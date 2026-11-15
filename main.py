@@ -18,7 +18,7 @@ from docutils.core import publish_parts
 import data
 from feedgen.feed import FeedGenerator
 
-from flask_recaptcha import ReCaptcha
+from recaptcha import ReCaptcha
 
 import sponsors
 
@@ -53,19 +53,27 @@ def release(name):
     return render_template('release.html', release=release, data=data)
 
 
-@app.route("/release/<name>.txt")
-def release_txt(name):
-    if name not in data.release_version:
-        abort(404)
+def is_list_item(l):
+    """
+    Returns true if the stripped line `l` starts a `*` list item. A bullet needs a space after the *, so lines
+    opening with *emphasis* or **bold** are not items.
+    """
 
-    release = data.release_version[name]
+    return l.startswith("* ") or l == "*"
 
-    rv = render_template('release.txt', release=release, data=data)
+
+def join_lines(text):
+    """
+    Unwraps the hard-wrapped plain text produced by the release.txt template.
+
+    Returns a list of logical lines: each paragraph and each `*` list item becomes a single line, with whitespace
+    stripped. Paragraphs are followed by an empty string, so runs of empty strings may occur.
+    """
 
     output = [ ]
     line = ""
 
-    for l in rv.split("\n"):
+    for l in text.split("\n"):
         l = l.strip()
 
         if not l:
@@ -73,7 +81,7 @@ def release_txt(name):
             output.append('')
             line = ""
 
-        elif l[0] == '*':
+        elif is_list_item(l):
             output.append(line)
             line = ""
 
@@ -83,6 +91,20 @@ def release_txt(name):
             line = l
 
     output.append(line)
+
+    return output
+
+
+@app.route("/release/<name>.txt")
+def release_txt(name):
+    if name not in data.release_version:
+        abort(404)
+
+    release = data.release_version[name]
+
+    rv = render_template('release.txt', release=release, data=data)
+
+    output = join_lines(rv)
 
     rv = [ ]
     in_list = False
@@ -97,7 +119,12 @@ def release_txt(name):
         else:
             last_empty = False
 
-        if l.startswith("*"):
+        is_item = is_list_item(l)
+
+        # Convert markdown bold to BBCode.
+        l = re.sub(r'\*\*(.+?)\*\*', r'[b]\1[/b]', l)
+
+        if is_item:
             if not in_list:
                 prefix = "[list]"
                 in_list = True
@@ -116,6 +143,49 @@ def release_txt(name):
     rv = "\n".join(rv)
 
     return Response(rv, mimetype="text/plain")
+
+
+@app.route("/release/<name>.md")
+def release_md(name):
+    """
+    Returns the release announcement as GitHub-flavored markdown, suitable for a GitHub release body.
+    """
+
+    if name not in data.release_version:
+        abort(404)
+
+    release = data.release_version[name]
+
+    text = render_template('release.txt', release=release, data=data, markdown=True)
+
+    rv = [ ]
+    in_list = False
+
+    for l in join_lines(text):
+
+        # Convert RST inline literals to markdown code spans.
+        l = re.sub(r'``(.+?)``', r'`\1`', l)
+
+        is_item = is_list_item(l)
+
+        # Separate lists from the surrounding paragraphs.
+        if is_item != in_list and rv and rv[-1]:
+            rv.append('')
+
+        in_list = is_item
+
+        # Use the more conventional - as the bullet marker.
+        if is_item:
+            l = "- " + l[1:].lstrip()
+
+        if not l and rv and not rv[-1]:
+            continue
+
+        rv.append(l)
+
+    rv = "\n".join(rv).strip() + "\n"
+
+    return Response(rv, mimetype="text/markdown")
 
 
 @app.route("/latest.html")

@@ -40,6 +40,14 @@ aliases = [ ]
 # scripts/add_all.sh --github
 # scripts/itch_upload.sh <version>
 
+# Socials.
+# - Patreon
+# - LSF
+# - Discord
+# - Github Release Markdown
+# - Twitter/Facebook (Fedica)
+# - Reddit
+
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 8.5.0.25111603..HEAD | grep -v ^\\s | sort -i | uniq
 
@@ -73,7 +81,6 @@ Other new features include:
 * It's now possible to specify more than one directory to search for images, audio, and/or fonts.
 * Font sizes can be adjusted per-font, without editing the font files.
 * Files created when a new project is made are now dedicated to the public domain.
-* Support for WOFF and WOFF2 font files has been added.
 
 There are also dozens of other features and fixes, please refer to the full changelog for a complete list.
 
@@ -163,7 +170,7 @@ I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py tha
     top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
     deprecations="",
     credits=CREDITS_8_6,
-    extra_credits=""
+    extra_credits="'Real Artists Ship' is inspired by a story from <a href=\"https://folklore.org/Real_Artists_Ship.html\">folklore.org</a>."
 )
 
 
@@ -412,7 +419,7 @@ including a problem that prevented creators on Windows from creating new games i
     deprecations="",
     credits=CREDITS_8_4,
     extra_credits="""
-I'd like to give a special thank you to Mal Graty, who contributed most of the fixes in this release.
+<p>I'd like to give a special thank you to Mal Graty, who contributed most of the fixes in this release.</p>
 """)
 
 

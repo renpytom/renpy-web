@@ -1,18 +1,30 @@
 # web-2011 agent guide
 
 This is the source of the renpy.org website: a small Flask app (Python 3, Jinja2 templates). It is **not** the Ren'Py
-engine. The `AGENTS.md` in the parent directory `/home/tom/ab` describes the engine checkout and does not apply here.
+engine.
+
+The code **must** run on both Python 3.7 and Python 3.15. Use only syntax and standard-library APIs available in both:
+for example, no walrus operator, positional-only parameters, `match`, `X | Y` type unions, or built-in generics such as
+`list[str]` in evaluated annotations, and nothing removed from the standard library by 3.15.
 
 ## Run
 
-There is no build step, test suite, or linter configuration. Use the `renpyweb` virtualenv
-(`/home/tom/.virtualenvs/renpyweb`, packages in `requirements.txt`).
+There is no build step, test suite, or linter configuration. Dependencies are declared in `pyproject.toml` and locked in
+`uv.lock`; the lock forks by Python version (e.g. Flask 2.2 on 3.7, Flask 3.x on newer Pythons), so code must work with
+both. Production still runs from the `renpyweb` virtualenv (`/home/tom/.virtualenvs/renpyweb`, Python 3.7, the older
+pins in `requirements.txt`), which is what `deploy.sh` copies.
 
 ```sh
-python main.py                    # dev server on :5000, debug + template auto-reload
-python main.py --public --port N  # bind 0.0.0.0
-MONTH=2024-05 python main.py      # force a specific sponsors/<MONTH>.tsv
+uv run main.py                    # dev server on :5000, debug + template auto-reload
+uv run main.py --public --port N  # bind 0.0.0.0
+MONTH=2024-05 uv run main.py      # force a specific sponsors/<MONTH>.tsv
 ```
+
+uv does not provide Python 3.7. To check 3.7, use a separate environment with the interpreter behind `renpyweb`:
+`UV_PROJECT_ENVIRONMENT=<dir> uv run -p /sa/py37-bionic/bin/python3 main.py`.
+
+reCAPTCHA (for `/email`) is implemented in [recaptcha.py](recaptcha.py), not the Flask-ReCaptcha package, which breaks
+with Jinja2 3.1+.
 
 `main.wsgi` imports `main.application` for mod_wsgi. [deploy.sh](deploy.sh) rsyncs the virtualenv and this directory
 (excluding dotfiles) to the production host and touches `main.wsgi` to reload it; it writes to a remote server, so only
@@ -35,8 +47,10 @@ run it when asked.
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
   columns (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
   new export changes the column layout, adjust the header detection there. Sponsors are keyed by email in `by_email`.
-- `templates/` extend `base.html`; `release.txt` is a BBCode-style template post-processed in `main.py`
-  (`release_txt`).
+- `templates/` extend `base.html`. `release.txt` holds the plain-text release announcement and is rendered two ways in
+  `main.py`: `/release/<name>.txt` (`release_txt`, BBCode for forum posts) and `/release/<name>.md` (`release_md`,
+  GitHub release body; the template gets `markdown=True`). Both unwrap hard-wrapped lines with `join_lines`, so a
+  `Release.announcement` should use blank lines between paragraphs, `* ` for list items, and `**bold**`.
 - `static/`: `featured/` (each `.jpg`/`.png` needs a same-named `.html` blurb; the index samples 5 of them),
   `artcard/` (per-month art, auto-detected), `sponsors/<W>x<H>/<credit name>.png` banners, `patreon/`.
 

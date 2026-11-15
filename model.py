@@ -45,6 +45,7 @@ class Release(Data):
 
     deprecations = None
 
+    # HTML appended to the end of the Credits section of the release page.
     extra_credits = None
 
     def __init__(self, **kwargs):

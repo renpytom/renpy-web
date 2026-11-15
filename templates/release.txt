@@ -22,5 +22,10 @@ Problems with Ren'Py can be reported at the Ren'Py issue tracker:
 
     https://github.com/renpy/renpy/issues
 
+{% if markdown -%}
+Please also check out the [credits]({{ doclink }}/credits.html) and
+[sponsor list]({{ doclink }}/sponsors.html).
+{%- else -%}
 Please also check out the [url={{ doclink }}/credits.html]credits[/url] and
 [url={{ doclink }}/sponsors.html]sponsor list[/url].
+{%- endif %}
