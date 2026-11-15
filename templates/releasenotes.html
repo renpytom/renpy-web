@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{#
+  The release checklist and announcements, for the author's use when releasing (main.releasenotes). Each entry in
+  `tabs` is a prerelease or final release with its announcement as BBCode, markdown, and rich HTML. The checklist is
+  saved in localStorage per full version, so a patch release starts with a fresh list.
+#}
+
+{% block title %}Release Notes - Ren'Py{% endblock %}
+
+{% block extra_head %}
+<meta name="robots" content="noindex, nofollow">
+<style>
+  .releasenotes .tab-content { padding-top: 1em; }
+  .releasenotes .checklist { list-style: none; padding-left: 0; }
+  .releasenotes .checklist label { font-weight: normal; }
+  .releasenotes .checklist input:checked + span { text-decoration: line-through; opacity: .6; }
+  .releasenotes pre { white-space: pre-wrap; word-wrap: break-word; max-height: 30em; overflow-y: auto; }
+  .releasenotes .rich { border: 1px solid #ccc; border-radius: 4px; padding: 1em; max-height: 30em; overflow-y: auto; }
+  .releasenotes .copy-status { margin-left: 1em; color: #888; }
+  .releasenotes h3 { margin-top: 1.5em; }
+</style>
+{% endblock %}
+
+{% macro copy_button(target, rich=False) -%}
+<button type="button" class="btn btn-default btn-sm copy" data-target="{{ target }}"{% if rich %} data-rich="1"{% endif %}>Copy</button>
+<span class="copy-status"></span>
+{%- endmacro %}
+
+{% block content %}
+<div class="releasenotes">
+
+<h1>Release Notes</h1>
+
+{% if not tabs %}
+<p>There is no release to announce.</p>
+{% else %}
+
+<ul class="nav nav-tabs" role="tablist">
+  {% for t in tabs %}
+  <li{% if loop.first %} class="active"{% endif %}>
+    <a href="#tab-{{ t.kind }}" role="tab" data-toggle="tab">
+      {{ "Prerelease" if t.kind == "prerelease" else "Release" }} {{ t.release.version }}
+      {%- if t.release.invisible %} (private){% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content">
+{% for t in tabs %}
+{% set r = t.release %}
+<div class="tab-pane{% if loop.first %} active{% endif %}" id="tab-{{ t.kind }}">
+
+  <h3>Checklist <small>{{ r.full_version }}</small></h3>
+
+  <ul class="checklist" data-key="releasenotes:{{ r.full_version }}">
+    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --{{ t.kind }}</code></span></label></li>
+    <li><label><input type="checkbox"> <span>Update and deploy website</span></label></li>
+    <li><label><input type="checkbox"> <span>Patreon announcement</span></label></li>
+    <li><label><input type="checkbox"> <span>Lemmasoft announcement</span></label></li>
+    <li><label><input type="checkbox"> <span>Discord announcement</span></label></li>
+    <li><label><input type="checkbox"> <span>Fedica (X and Facebook) announcement</span></label></li>
+    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --push-tags</code></span></label></li>
+    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --github</code></span></label></li>
+    {#- itch_upload.sh pushes to the stable itch.io channels, so it only applies to final releases. #}
+    {%- if t.kind == "release" %}
+    <li><label><input type="checkbox"> <span><code>scripts/itch_upload.sh {{ r.full_version }}</code></span></label></li>
+    {%- endif %}
+  </ul>
+
+  <button type="button" class="btn btn-default btn-sm clear-checklist">Clear checklist</button>
+
+  <h3>Title</h3>
+  <p>{{ copy_button("title-" ~ t.kind) }}</p>
+  <pre id="title-{{ t.kind }}">Ren'Py {{ r.version }} {{ "Prereleased" if r.prerelease else "Released" }}</pre>
+
+  <h3>Rich text <small>Patreon, Fedica</small></h3>
+  <p>{{ copy_button("rich-" ~ t.kind, rich=True) }}</p>
+  <div class="rich" id="rich-{{ t.kind }}">
+    {{ t.html }}
+  </div>
+
+  <h3>BBCode <small>Lemmasoft</small></h3>
+  <p>{{ copy_button("bbcode-" ~ t.kind) }}</p>
+  <pre id="bbcode-{{ t.kind }}">{{ t.bbcode }}</pre>
+
+  <h3>Markdown <small>GitHub, Discord &middot; <a href="/release/{{ r.version }}.md">.md</a></small></h3>
+  <p>{{ copy_button("markdown-" ~ t.kind) }}</p>
+  <pre id="markdown-{{ t.kind }}">{{ t.markdown }}</pre>
+
+</div>
+{% endfor %}
+</div>
+
+{% endif %}
+</div>
+
+<script>
+(function () {
+
+  // Returns the checked indices saved for a checklist, or [] when nothing is saved or storage is unavailable.
+  function loadChecked(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || "[]");
+    } catch (e) {
+      return [];
+    }
+  }
+
+  // Saves the checked indices of a checklist, or removes the entry when none are checked.
+  function saveChecked(key, checked) {
+    try {
+      if (checked.length) {
+        localStorage.setItem(key, JSON.stringify(checked));
+      } else {
+        localStorage.removeItem(key);
+      }
+    } catch (e) {
+      // Storage unavailable; the checklist still works for this visit.
+    }
+  }
+
+  document.querySelectorAll(".checklist").forEach(function (list) {
+    var key = list.dataset.key;
+    var boxes = Array.prototype.slice.call(list.querySelectorAll("input[type=checkbox]"));
+    var checked = loadChecked(key);
+
+    boxes.forEach(function (box, i) {
+      box.checked = checked.indexOf(i) >= 0;
+
+      box.addEventListener("change", function () {
+        var now = [];
+
+        boxes.forEach(function (b, j) {
+          if (b.checked) {
+            now.push(j);
+          }
+        });
+
+        saveChecked(key, now);
+      });
+    });
+
+    list.parentNode.querySelector(".clear-checklist").addEventListener("click", function () {
+      boxes.forEach(function (b) {
+        b.checked = false;
+      });
+
+      saveChecked(key, []);
+    });
+  });
+
+  // Copies the target element: as plain text, or for rich targets as both HTML and plain text, so rich-text editors
+  // keep the formatting. Falls back to selecting the element and using execCommand where the async clipboard API
+  // isn't available.
+  document.querySelectorAll("button.copy").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      var target = document.getElementById(button.dataset.target);
+      var status = button.nextElementSibling;
+
+      try {
+        if (button.dataset.rich) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([target.innerHTML], { type: "text/html" }),
+              "text/plain": new Blob([target.innerText], { type: "text/plain" })
+            })
+          ]);
+        } else {
+          await navigator.clipboard.writeText(target.textContent);
+        }
+
+        status.textContent = "Copied.";
+      } catch (e) {
+        var range = document.createRange();
+        range.selectNodeContents(target);
+
+        var selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        status.textContent = document.execCommand("copy") ? "Copied." : "Copy failed; the text is selected, press Ctrl+C.";
+      }
+    });
+  });
+
+})();
+</script>
+{% endblock %}

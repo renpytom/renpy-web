@@ -27,19 +27,9 @@ from model import *
 #
 # 1. Bump date.
 # 2. prerelease=False
-#
-# scripts/add_all.sh --release
-# scripts/add_all.sh --push-tags
-# scripts/add_all.sh --github
-# scripts/itch_upload.sh <version>
 
-# Socials.
-# - Patreon
-# - LSF
-# - Discord
-# - Github Release Markdown
-# - Twitter/Facebook (Fedica)
-# - Reddit
+# The release steps (scripts, website, socials) are a checklist on /releasenotes, which also has the announcement
+# text to copy.
 
 # To get the list of contributors to a release, we can use the command:
 # git shortlog 8.5.0.25111603..HEAD | grep -v ^\\s | sort -i | uniq

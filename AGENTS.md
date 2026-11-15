@@ -65,11 +65,13 @@ rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads sys
   columns (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
   new export changes the column layout, adjust the header detection there. Sponsors are keyed by email in `by_email`.
 - `templates/` extend `base.html`. `release.txt` holds the plain-text release announcement and is rendered three ways
-  in `main.py`: `/release/<name>.txt` (`release_txt`, BBCode for forum posts), `/release/<name>.md` (`release_md`,
-  GitHub release body; the template gets `markdown=True`), and `/release/<name>.update.html` (`release_update_html`,
-  rich HTML with a copy button for pasting into sites that take formatting; standalone `release_update.html`, marked
-  noindex). All unwrap hard-wrapped lines with `join_lines`, so `announcement`, `notes`, and `changes` should use
-  blank lines between paragraphs, `* ` for list items, `**bold**`, and `#1234` for issues (linked on the HTML pages).
+  by helpers in `main.py`: `render_release_bbcode` (forum posts), `render_release_markdown` (GitHub release body; the
+  template gets `markdown=True`), and `render_release_html` (rich HTML for sites that take formatting). Only the
+  markdown has its own route, `/release/<name>.md`, which release tooling fetches. `/releasenotes` (noindex, not
+  linked) shows all three with copy buttons, plus a release checklist kept in localStorage per full version, for the
+  current prerelease (public or private) and the newest public final release. All unwrap hard-wrapped lines with
+  `join_lines`, so `announcement`, `notes`, and `changes` should use blank lines between paragraphs, `* ` for list
+  items, `**bold**`, and `#1234` for issues (linked on the HTML pages).
 - `static/`: `featured/` (each `.jpg`/`.png` needs a same-named `.html` blurb; the index samples 5 of them),
   `artcard/` (per-month art, auto-detected), `sponsors/<W>x<H>/<credit name>.png` banners, `patreon/`.
 

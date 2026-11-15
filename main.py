@@ -114,12 +114,10 @@ def join_lines(text):
     return output
 
 
-@app.route("/release/<name>.txt")
-def release_txt(name):
-    if name not in data.release_version:
-        abort(404)
-
-    release = data.release_version[name]
+def render_release_bbcode(release):
+    """
+    Returns the announcement of `release` as BBCode, for forum posts.
+    """
 
     rv = render_template('release.txt', release=release, data=data)
 
@@ -159,21 +157,13 @@ def release_txt(name):
 
         rv.append(l)
 
-    rv = "\n".join(rv)
-
-    return Response(rv, mimetype="text/plain")
+    return "\n".join(rv)
 
 
-@app.route("/release/<name>.md")
-def release_md(name):
+def render_release_markdown(release):
     """
-    Returns the release announcement as GitHub-flavored markdown, suitable for a GitHub release body.
+    Returns the announcement of `release` as GitHub-flavored markdown, suitable for a GitHub release body.
     """
-
-    if name not in data.release_version:
-        abort(404)
-
-    release = data.release_version[name]
 
     text = render_template('release.txt', release=release, data=data, markdown=True)
 
@@ -202,9 +192,19 @@ def release_md(name):
 
         rv.append(l)
 
-    rv = "\n".join(rv).strip() + "\n"
+    return "\n".join(rv).strip() + "\n"
 
-    return Response(rv, mimetype="text/markdown")
+
+@app.route("/release/<name>.md")
+def release_md(name):
+    """
+    Serves the release announcement as markdown. Used by release tooling to fill in the GitHub release body.
+    """
+
+    if name not in data.release_version:
+        abort(404)
+
+    return Response(render_release_markdown(data.release_version[name]), mimetype="text/markdown")
 
 
 # Matches a markdown [text](url) link (groups 1 and 2) or a bare URL (group 3). A bare URL doesn't take trailing
@@ -281,22 +281,56 @@ def convert_lines_to_html(lines):
     return "\n".join(rv)
 
 
-@app.route("/release/<name>.update.html")
-def release_update_html(name):
+def render_release_html(release):
     """
-    Returns the release announcement as rich HTML, meant to be copied and pasted into sites that accept formatted
-    text. It has the same content as the .txt and .md versions, and asks search engines not to index it.
+    Returns the announcement of `release` as rich HTML, meant to be copied and pasted into sites that accept
+    formatted text. It has the same content as the BBCode and markdown versions.
     """
-
-    if name not in data.release_version:
-        abort(404)
-
-    release = data.release_version[name]
 
     text = render_template('release.txt', release=release, data=data, markdown=True)
-    post = Markup(convert_lines_to_html(join_lines(text)))
 
-    response = make_response(render_template('release_update.html', release=release, post=post))
+    return Markup(convert_lines_to_html(join_lines(text)))
+
+
+def get_releasenotes_releases():
+    """
+    Returns the (prerelease, final) releases the /releasenotes page offers. `final` is the newest public 8.x final
+    release. `prerelease` is the newest 8.x release if it's a prerelease, public or private (an announcement is
+    prepared before the prerelease is made public), and None otherwise.
+    """
+
+    releases_8 = [ i for i in data.releases if i.major >= 8 and not i.wiki ]
+
+    prerelease = releases_8[0] if releases_8 and releases_8[0].prerelease else None
+    final = next((i for i in releases_8 if not i.prerelease and not i.invisible), None)
+
+    return prerelease, final
+
+
+@app.route("/releasenotes")
+def releasenotes():
+    """
+    Renders the release checklist and copyable announcements (BBCode, markdown, rich HTML) for the current prerelease
+    and final release. A private tool, so it asks search engines not to index it.
+    """
+
+    prerelease, final = get_releasenotes_releases()
+
+    tabs = [ ]
+
+    for kind, release in (("prerelease", prerelease), ("release", final)):
+        if release is None:
+            continue
+
+        tabs.append(dict(
+            kind=kind,
+            release=release,
+            bbcode=render_release_bbcode(release),
+            markdown=render_release_markdown(release),
+            html=render_release_html(release),
+        ))
+
+    response = make_response(render_template('releasenotes.html', tabs=tabs))
     response.headers.set('X-Robots-Tag', 'noindex, nofollow')
 
     return response

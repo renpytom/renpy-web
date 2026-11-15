@@ -153,8 +153,8 @@ class Release:
     # The changes made in this release, using the announcement markup (paragraphs, "* " items, **bold**). Once any
     # release in an x.y series has non-empty changes, the series is "new-style" (see `series_has_changes`): its
     # release pages show `series_history` in place of `history`, and its x.y.0 release, which leaves this unset, is
-    # listed there as "* Initial release of Ren'Py x.y.". The social formats (.txt, .md, .update.html) show these
-    # changes, or the series notes when there are none.
+    # listed there as "* Initial release of Ren'Py x.y.". The social formats (on /releasenotes, and /release/<v>.md)
+    # show these changes, or the series notes when there are none.
     changes: str | None
 
     # The contributor list, one "Name (commits):" line per contributor. Series.
