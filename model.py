@@ -120,9 +120,9 @@ class Series:
 
 class Release:
     """
-    A non-wiki release. Creating one appends it to data.releases, so the order of the Release calls in data.py is
-    the order of the releases (newest first). Fields marked "series" below may be supplied by the Series for the
-    release's x.y version.
+    A non-wiki release. Creating one appends it to data.releases, so the order of the Release calls in the
+    releases/ modules (imported newest first by data.py) is the order of the releases. Fields marked "series" below
+    may be supplied by the Series for the release's x.y version.
     """
 
     wiki = False
@@ -198,7 +198,7 @@ class Release:
     # The version of the renpy-deps download, for old releases that have one.
     deps: str | None
 
-    # Accepted for old releases in data_old.py, but no longer used.
+    # Accepted for old releases in releases/, but no longer used.
     aside_html: str | None
     bugfix_date: str | None
     bugfix_revision: int | None

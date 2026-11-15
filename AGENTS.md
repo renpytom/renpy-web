@@ -35,19 +35,22 @@ rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads sys
   template adds a page. `/wiki/<path>` serves pre-rendered HTML from `wiki/page/`. `/feed/` builds the RSS feed from
   `data`. `/channels.json` serves the update channels. `/d/<name>` redirects to the matching docs page using [doc.py](doc.py), which reads
   Sphinx's `objects.inv` from the built Ren'Py docs.
-- [data.py](data.py) + [model.py](model.py): the "database" is code. `data.py` is a long list of `Release(...)`
-  calls (newest first) with changelog/credits text; `model.py` defines `Release`, which appends itself to
-  `data.releases` and, in `__init__`, reads file sizes and dates from the release download directories on disk.
-  `Release` takes keyword-only, annotated parameters, so an unknown keyword raises `TypeError` when `data.py` is
-  imported; a new field needs a parameter there. `Series("x.y", ...)` sets defaults for the fields shared by a
-  series (name, world_order, notes, credits, extra_credits, top_html, full_html, deprecations, pygame); a `Release`
-  finds its series by version and overrides any field it passes itself. A `Series` must come before its releases
-  (it raises `ValueError` otherwise). 8.6 is the first series to use one; older releases pass every field.
-  At the bottom of `data.py`, `current_8`/`prerelease_8` (and `_7`), `release_version`, and `final_releases` are derived
-  from list order and the `prerelease`/`invisible` flags, so **order and flags in `data.py` determine what the site
-  calls "latest"**. The release/patch checklists are in comments at the top of `data.py`. `data_old.py` holds
-  the releases from 7.4.11 back, in the same form; `data.py` imports it after its own entries, so they append to the end
-  of `data.releases`. Add new releases to `data.py`.
+- [data.py](data.py) + [model.py](model.py) + [releases/](releases/): the "database" is code. The `releases/`
+  package holds one module per major version (`v8`, `v7_8` for the years 7.x and 8.x were released together, `v7`,
+  `v6`, `v5`, `v4`), each a list of `Release(...)` calls (newest first) with changelog/credits text. `data.py` defines
+  the `releases` and `aliases` lists, then imports the modules newest first with `from releases import v8, ...`; keep
+  that form, since `import releases.v8` would rebind `data.releases` to the package. `model.py` defines `Release`,
+  which appends itself to `data.releases` and, in `__init__`, reads file sizes and dates from the release download
+  directories on disk. `Release` takes keyword-only, annotated parameters, so an unknown keyword raises `TypeError`
+  when the data is imported; a new field needs a parameter there. `Series("x.y", ...)` sets defaults for the fields
+  shared by a series (name, world_order, notes, credits, extra_credits, top_html, full_html, deprecations, pygame); a
+  `Release` finds its series by version and overrides any field it passes itself. A `Series` must come before its
+  releases (it raises `ValueError` otherwise). 8.6 is the first series to use one; older releases pass every field.
+  At the bottom of `data.py`, `current_8`/`prerelease_8` (and `_7`), `release_version`, and `final_releases` are
+  derived from list order and the `prerelease`/`invisible` flags, so **the order of releases within and across the
+  `releases/` modules, and their flags, determine what the site calls "latest"**. Add new releases to
+  `releases/v8.py`, which also holds the release/patch checklists in comments at its top; a 9.x series would go in a
+  new `releases/v9.py`, imported before `v8`.
 - Release text from 8.6 on: `announcement` is the release-specific intro, `notes` the series release notes (e.g.
   `COMMON_8_6`, set on the `Series`), and `changes` this release's release-note-level changes (left unset on an
   x.y.0). Once any release in an x.y series has non-empty `changes`, the series is "new-style"
