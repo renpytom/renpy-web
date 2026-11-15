@@ -1,18 +1,18 @@
 {#
   The history of a release series: the changes of each release in release.series_history, newest first. Used by
-  new-style releases (those with `changes`) on the release page and in the feed. `history(release)` falls back to the
-  old free-form release.history for older releases.
+  releases in new-style series (Release.series_has_changes) on the release page and in the feed.
+  `history(release)` falls back to the old free-form release.history for older releases.
 #}
 
 {% macro series_history(release) %}
 {% for r in release.series_history %}
 <h4 class="history-release"><a href="https://www.renpy.org/release/{{ r.version }}">Ren'Py {{ r.version }}</a>
   <small class="history-date">{% if r.prerelease %}prerelease{% else %}{{ r.date }}{% endif %}</small></h4>
-{{ r.changes|rst|issues|safe }}
+{{ r.history_changes|rst|issues|safe }}
 {% endfor %}
 {% endmacro %}
 
 {% macro history(release) %}
-{% if release.changes is not none %}{{ series_history(release) }}{% else %}{{ release.history|rst|safe }}{% endif %}
+{% if release.series_has_changes %}{{ series_history(release) }}{% else %}{{ release.history|rst|safe }}{% endif %}
 {% endmacro %}
 

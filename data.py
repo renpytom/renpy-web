@@ -188,7 +188,6 @@ Release(
 I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py that is the result of a year of work to add new features, fixes, optimizations, and other improvements.
 """,
     notes=COMMON_8_6,
-    changes="* Initial release of Ren'Py 8.6.",
     full_html="",
     top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
     deprecations="",

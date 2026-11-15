@@ -52,9 +52,11 @@ class Release(Data):
     # page, and in place of `changes` in the social formats when a release has no changes of its own.
     notes = None
 
-    # The changes made in this release, using the announcement markup (paragraphs, "* " items, **bold**). A release
-    # that sets this (even to "") is "new-style": its release page shows `series_history` in place of `history`,
-    # and its social formats (.txt, .md, .update.html) show these changes in place of the series notes.
+    # The changes made in this release, using the announcement markup (paragraphs, "* " items, **bold**). Once any
+    # release in an x.y series has non-empty changes, the series is "new-style" (see `series_has_changes`): its
+    # release pages show `series_history` in place of `history`, and its x.y.0 release, which leaves this unset, is
+    # listed there as "* Initial release of Ren'Py x.y.". The social formats (.txt, .md, .update.html) show these
+    # changes, or the series notes when there are none.
     changes = None
 
     def __init__(self, **kwargs):
@@ -122,16 +124,48 @@ class Release(Data):
 
 
     @property
+    def history_changes(self):
+        """
+        The changes shown for this release in a series history: `changes`, or, for an x.y.0 release without changes
+        in a new-style series, "* Initial release of Ren'Py x.y.". Empty when there is nothing to show.
+        """
+
+        if self.changes:
+            return self.changes
+
+        if self.version.split(".")[2:] in ([ ], [ "0" ]) and self.series_has_changes:
+            return "* Initial release of Ren'Py {}.".format(self.major_minor)
+
+        return ""
+
+    def series_releases(self):
+        """
+        Yields the non-wiki releases in the same x.y series as this one, newest first.
+        """
+
+        for r in data.releases:
+            if not r.wiki and r.major_minor == self.major_minor:
+                yield r
+
+    @property
+    def series_has_changes(self):
+        """
+        True if any release in this x.y series has non-empty `changes`, which makes the series "new-style".
+        """
+
+        return any(r.changes for r in self.series_releases())
+
+    @property
     def series_history(self):
         """
         The releases whose changes appear in this release's history section: every release in the same x.y series
-        that has non-empty `changes` and is either a public final release or this release itself. Newest first.
+        that has `history_changes` and is either a public final release or this release itself. Newest first.
         """
 
         rv = [ ]
 
-        for r in data.releases:
-            if r.wiki or r.major_minor != self.major_minor or not r.changes:
+        for r in self.series_releases():
+            if not r.history_changes:
                 continue
 
             if r is self or not (r.prerelease or r.invisible):
@@ -142,11 +176,12 @@ class Release(Data):
     @property
     def has_history(self):
         """
-        True if the release page and feed have a history section to show for this release.
+        True if the release page and feed have a history section to show for this release. In a new-style series,
+        that takes at least two releases, since a history of one release says nothing.
         """
 
-        if self.changes is not None:
-            return bool(self.series_history)
+        if self.series_has_changes:
+            return len(self.series_history) > 1
 
         return bool(getattr(self, "history", None))
 

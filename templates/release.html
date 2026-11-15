@@ -125,7 +125,7 @@
 
 <section style="clear: both">
     <h2>Announcement</h2>
-    {% if release.changes is not none %}
+    {% if release.notes is not none or release.series_has_changes %}
     {{release.announcement|rst|issues|safe}}
     {% if release.notes %}{{release.notes|rst|issues|safe}}{% endif %}
     {% else %}

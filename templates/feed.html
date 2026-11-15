@@ -44,12 +44,14 @@
   <li> <a href="https://www.renpy.org/release/{{release.version}}">https://www.renpy.org/release/{{release.version}}</a>
   </ul>
 
+{% if release.has_history %}
   <p>
     Here's the history of updates
     to Ren'Py {{release.version}}:
   </p>
 
   {{ history(release) }}
+{% endif %}
 
 {% else %}
   <p>

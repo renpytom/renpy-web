@@ -42,11 +42,13 @@ dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and en
   the releases from 7.4.11 back, in the same form; `data.py` imports it after its own entries, so they append to the end
   of `data.releases`. Add new releases to `data.py`.
 - Release text from 8.6 on: `announcement` is the release-specific intro, `notes` the series release notes (e.g.
-  `COMMON_8_6`), and `changes` this release's release-note-level changes (`""` for an x.y.0). A release that sets
-  `changes` is "new-style": its page shows `notes` after the announcement and a history built by
-  `Release.series_history` (the `changes` of every public release in the x.y series, plus the page's own prerelease)
-  instead of `history`, and its social formats post `changes` (or `notes` when `changes` is empty). Older releases
-  put the series notes in `announcement` and keep the free-form `history`.
+  `COMMON_8_6`), and `changes` this release's release-note-level changes (left unset on an x.y.0). Once any release
+  in an x.y series has non-empty `changes`, the series is "new-style" (`Release.series_has_changes`): its pages show a
+  history built by `Release.series_history` (the `changes` of every public release in the series, plus the page's own
+  prerelease; the x.y.0 is listed as "* Initial release of Ren'Py x.y.") instead of `history`, shown only when it
+  lists at least two releases. Pages show `notes` after the announcement, and the social formats post `changes` (or
+  `notes` when there are none). Older releases put the series notes in `announcement` and keep the free-form
+  `history`.
 - [sponsors.py](sponsors.py): loads monthly Patreon exports from `sponsors/YYYY-MM.tsv` plus
   `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
