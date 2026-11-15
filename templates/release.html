@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% set doclink = "https://www.renpy.org/dev-doc/html" if release.prerelease else "https://www.renpy.org/doc/html" %}
 {% set newest = release in (data.current_8, data.prerelease_8) %}
+{# The newest public final release. Not data.current_8, which is a private (invisible) prerelease while one exists. #}
+{% set latest = data.final_releases | rejectattr("prerelease") | selectattr("major", "ge", 8) | first %}
 
 {% block title %}Ren'Py {{release.version}}{% endblock %}
 
@@ -22,7 +24,6 @@
 
   {% if release.top_html %}{{ release.top_html|safe }}{% endif %}
 
-
     <h1>Ren'Py {{release.version}} <small>"{{release.name}}"</small></h1>
 
     <p>
@@ -39,6 +40,22 @@
 
         The main downloads of Ren'Py {{ release.version }} are:
     </p>
+
+  {% if release.prerelease %}
+  <div id="prerelease-warning" class="alert alert-warning">
+    <strong>This is a prerelease.</strong> Ren'Py {{ release.version }} is a preview for testing, and may change in
+    incompatible ways before release. Please test it and report issues you find.
+    {% if latest %}
+    The current release is
+    <a href="/release/{{ latest.version }}" class="alert-link">Ren'Py {{ latest.version }}</a>.
+    {% endif %}
+  </div>
+  {% elif latest and release is not sameas latest %}
+  <div id="old-version-warning" class="alert alert-danger">
+    <strong>This is an older version of Ren'Py.</strong> The latest release is
+    <a href="/release/{{ latest.version }}" class="alert-link">Ren'Py {{ latest.version }}</a>.
+  </div>
+  {% endif %}
 
     {% if release.world_order >= 7 %}
 
@@ -74,9 +91,6 @@
       </a>
   </div>
 
-  {% if release.prerelease %}
-  <div id="prerelease-warning" class="alert alert-danger">This is a pre-release version of Ren'Py. Please test it and report issues you find.</div>
-  {% endif %}
 
 
     <!-- <p style="margin-left: 20%; margin-right: 20%; text-align: center; font-size: 95%;">While waiting for Ren'Py to download, please take a <a href="https://docs.google.com/forms/d/1rfjuOKpOhRWIbDw9Tal_iyOHVRQRODBot-TqFjWCSqU/viewform">6-question demographic survey</a>, to help us understand who uses Ren'Py. Thanks!</p> -->
