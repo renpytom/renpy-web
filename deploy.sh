@@ -15,7 +15,7 @@ rsync --delete --exclude '.*' --progress -a ./static/featured/ tom@abagail.onege
 ssh -t tom@abagail.onegeek.org '
     set -e
     cd ~/wsgi.renpyorg
-    ~/.local/bin/uv sync --frozen -p 3.15
+    ~/.local/bin/uv sync --frozen --no-dev -p 3.15
     sudo install -m 644 -o root -g root renpyweb.service /etc/systemd/system/renpyweb.service
     sudo systemctl daemon-reload
     sudo systemctl enable renpyweb

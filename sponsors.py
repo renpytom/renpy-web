@@ -51,6 +51,34 @@ sponsors = [ ]
 
 
 class Sponsor(object):
+    """
+    A sponsor loaded from a Patreon export, with fields passed as keywords by the load_sponsorfn_* functions.
+    Registers itself in `by_email`, so a later row with the same email replaces an earlier one.
+    """
+
+    name: str
+    credit_name: str
+    url: str
+    email: str
+
+    # The current pledge and lifetime support, in dollars.
+    pledge: float
+    lifetime: float
+
+    # True if the pledge is currently paid.
+    status: bool
+
+    street: str
+    city: str
+    state: str
+    zip: str
+    country: str
+    start: str
+
+    level: Level
+
+    # True unless the sponsor declined a postcard.
+    raw_postcard: bool
 
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)

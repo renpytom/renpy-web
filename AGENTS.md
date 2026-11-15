@@ -8,9 +8,11 @@ Production runs on Python 3.15 (`requires-python = ">=3.15"` in `pyproject.toml`
 ## Run
 
 There is no build step, test suite, or linter configuration. Dependencies are declared in `pyproject.toml` and locked in
-`uv.lock`.
+`uv.lock`. Type checking uses ty, a dev dependency; keep `uv run ty check` passing. It can't see attributes set through
+`__dict__.update` (as in `Data` and `Sponsor`), so declare those as class-level annotations.
 
 ```sh
+uv run ty check                   # type check the project
 uv run main.py                    # dev server on :5000, debug + template auto-reload
 uv run main.py --public --port N  # bind 0.0.0.0
 MONTH=2024-05 uv run main.py      # force a specific sponsors/<MONTH>.tsv
@@ -22,8 +24,8 @@ with Jinja2 3.1+.
 Production uses [renpyweb.service](renpyweb.service): a hardened systemd unit running gunicorn (sync workers;
 `sponsors.init` mutates module globals per request, so no threads) on Python 3.15 at `127.0.0.1:38917`, behind nginx.
 The sandbox makes the filesystem read-only, so the app must not write files. [deploy.sh](deploy.sh) rsyncs the tree
-to the production host, runs `uv sync --frozen -p 3.15` there (the `.venv` is built on the server, since rsync skips
-dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
+to the production host, runs `uv sync --frozen --no-dev -p 3.15` there (the `.venv` is built on the server, since
+rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
 
 `deploy.sh` writes to a remote server, so only run it when asked.
 
@@ -36,19 +38,24 @@ dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and en
 - [data.py](data.py) + [model.py](model.py): the "database" is code. `data.py` is a long list of `Release(...)`
   calls (newest first) with changelog/credits text; `model.py` defines `Release`, which appends itself to
   `data.releases` and, in `__init__`, reads file sizes and dates from the release download directories on disk.
+  `Release` takes keyword-only, annotated parameters, so an unknown keyword raises `TypeError` when `data.py` is
+  imported; a new field needs a parameter there. `Series("x.y", ...)` sets defaults for the fields shared by a
+  series (name, world_order, notes, credits, extra_credits, top_html, full_html, deprecations, pygame); a `Release`
+  finds its series by version and overrides any field it passes itself. A `Series` must come before its releases
+  (it raises `ValueError` otherwise). 8.6 is the first series to use one; older releases pass every field.
   At the bottom of `data.py`, `current_8`/`prerelease_8` (and `_7`), `release_version`, and `final_releases` are derived
   from list order and the `prerelease`/`invisible` flags, so **order and flags in `data.py` determine what the site
   calls "latest"**. The release/patch checklists are in comments at the top of `data.py`. `data_old.py` holds
   the releases from 7.4.11 back, in the same form; `data.py` imports it after its own entries, so they append to the end
   of `data.releases`. Add new releases to `data.py`.
 - Release text from 8.6 on: `announcement` is the release-specific intro, `notes` the series release notes (e.g.
-  `COMMON_8_6`), and `changes` this release's release-note-level changes (left unset on an x.y.0). Once any release
-  in an x.y series has non-empty `changes`, the series is "new-style" (`Release.series_has_changes`): its pages show a
-  history built by `Release.series_history` (the `changes` of every public release in the series, plus the page's own
-  prerelease; the x.y.0 is listed as "* Initial release of Ren'Py x.y.") instead of `history`, shown only when it
-  lists at least two releases. Pages show `notes` after the announcement, and the social formats post `changes` (or
-  `notes` when there are none). Older releases put the series notes in `announcement` and keep the free-form
-  `history`.
+  `COMMON_8_6`, set on the `Series`), and `changes` this release's release-note-level changes (left unset on an
+  x.y.0). Once any release in an x.y series has non-empty `changes`, the series is "new-style"
+  (`Release.series_has_changes`): its pages show a history built by `Release.series_history` (the `changes` of every
+  public release in the series, plus the page's own prerelease; the x.y.0 is listed as "* Initial release of Ren'Py
+  x.y.") instead of `history`, shown only when it lists at least two releases. Pages show `notes` after the
+  announcement, and the social formats post `changes` (or `notes` when there are none). Older releases put the series
+  notes in `announcement` and keep the free-form `history`.
 - [sponsors.py](sponsors.py): loads monthly Patreon exports from `sponsors/YYYY-MM.tsv` plus
   `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional

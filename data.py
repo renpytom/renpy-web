@@ -12,6 +12,9 @@ releases = [ ]
 # All aliases.
 aliases = [ ]
 
+# A new x.y series starts with a Series("x.y", ...) above its first Release, holding the fields shared by every
+# release in the series (name, world_order, notes, credits, ...). See 8.6 below.
+
 # Private Prerelease checklist:
 #
 # 1. prerelease=True
@@ -19,7 +22,7 @@ aliases = [ ]
 # 3. version
 # 4. patch=0
 # 5. patch_date=None
-# 6. name
+# 6. name (on the Series, for a series that has one)
 # 7. sizes
 # 8. -
 # 9. announcement.
@@ -154,26 +157,30 @@ Yorkyang2333 (16):
 Zaveshaa (8):
 """
 
+Series(
+    "8.6",
+    name="Real Artists Ship",
+    world_order=16,
+    notes=COMMON_8_6,
+    credits=CREDITS_8_6,
+    extra_credits="'Real Artists Ship' is inspired by a story from <a href=\"https://folklore.org/Real_Artists_Ship.html\">folklore.org</a>.",
+    top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
+    full_html="",
+    deprecations="",
+)
+
 Release(
     prerelease=True,
     invisible=False,
     version="8.6.1",
     date="November xx, 2026",
     patch=None,
-    name="Real Artists Ship",
-    world_order=16,
     announcement="""
 I'd like to announce Ren'Py 8.6.1, a fix release of Ren'Py 8.6. This fixes a single issue with downloading Visual Studio Code from the launcher.
 """,
-    notes=COMMON_8_6,
     changes="""
 * Fixed downloading Visual Studio Code from the launcher by ensuring that the public key the downloader signatures rely on is properly supported. (#7522)
 """,
-    full_html="",
-    top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
-    deprecations="",
-    credits=CREDITS_8_6,
-    extra_credits="'Real Artists Ship' is inspired by a story from <a href=\"https://folklore.org/Real_Artists_Ship.html\">folklore.org</a>."
 )
 
 Release(
@@ -182,17 +189,9 @@ Release(
     version="8.6.0",
     date="November 14, 2026",
     patch=None,
-    name="Real Artists Ship",
-    world_order=16,
     announcement="""
 I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py that is the result of a year of work to add new features, fixes, optimizations, and other improvements.
 """,
-    notes=COMMON_8_6,
-    full_html="",
-    top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
-    deprecations="",
-    credits=CREDITS_8_6,
-    extra_credits="'Real Artists Ship' is inspired by a story from <a href=\"https://folklore.org/Real_Artists_Ship.html\">folklore.org</a>."
 )
 
 
