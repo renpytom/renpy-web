@@ -1,6 +1,6 @@
 # systemd unit that serves renpy.org with gunicorn on Python 3.15, behind nginx.
 #
-# deploy-uv.sh installs this file into /etc/systemd/system, reloads systemd, and enables and restarts the unit.
+# deploy.sh installs this file into /etc/systemd/system, reloads systemd, and enables and restarts the unit.
 # nginx should proxy to http://127.0.0.1:38917.
 
 [Unit]

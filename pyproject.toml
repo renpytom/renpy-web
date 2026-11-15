@@ -2,7 +2,7 @@
 name = "renpy-web"
 version = "0"
 description = "The renpy.org website."
-requires-python = ">=3.7"
+requires-python = ">=3.15"
 dependencies = [
     "docutils",
     "feedgen",

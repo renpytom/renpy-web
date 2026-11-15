@@ -3,16 +3,12 @@
 This is the source of the renpy.org website: a small Flask app (Python 3, Jinja2 templates). It is **not** the Ren'Py
 engine.
 
-The code **must** run on both Python 3.7 and Python 3.15. Use only syntax and standard-library APIs available in both:
-for example, no walrus operator, positional-only parameters, `match`, `X | Y` type unions, or built-in generics such as
-`list[str]` in evaluated annotations, and nothing removed from the standard library by 3.15.
+Production runs on Python 3.15 (`requires-python = ">=3.15"` in `pyproject.toml`).
 
 ## Run
 
 There is no build step, test suite, or linter configuration. Dependencies are declared in `pyproject.toml` and locked in
-`uv.lock`; the lock forks by Python version (e.g. Flask 2.2 on 3.7, Flask 3.x on newer Pythons), so code must work with
-both. Production still runs from the `renpyweb` virtualenv (`/home/tom/.virtualenvs/renpyweb`, Python 3.7, the older
-pins in `requirements.txt`), which is what `deploy.sh` copies.
+`uv.lock`.
 
 ```sh
 uv run main.py                    # dev server on :5000, debug + template auto-reload
@@ -20,22 +16,16 @@ uv run main.py --public --port N  # bind 0.0.0.0
 MONTH=2024-05 uv run main.py      # force a specific sponsors/<MONTH>.tsv
 ```
 
-uv does not provide Python 3.7. To check 3.7, use a separate environment with the interpreter behind `renpyweb`:
-`UV_PROJECT_ENVIRONMENT=<dir> uv run -p /sa/py37-bionic/bin/python3 main.py`.
-
 reCAPTCHA (for `/email`) is implemented in [recaptcha.py](recaptcha.py), not the Flask-ReCaptcha package, which breaks
 with Jinja2 3.1+.
 
-`main.wsgi` imports `main.application` for mod_wsgi. [deploy.sh](deploy.sh) rsyncs the virtualenv and this directory
-(excluding dotfiles) to the production host and touches `main.wsgi` to reload it.
-
-The replacement setup is [renpyweb.service](renpyweb.service): a hardened systemd unit running gunicorn (sync workers;
+Production uses [renpyweb.service](renpyweb.service): a hardened systemd unit running gunicorn (sync workers;
 `sponsors.init` mutates module globals per request, so no threads) on Python 3.15 at `127.0.0.1:38917`, behind nginx.
-The sandbox makes the filesystem read-only, so the app must not write files. [deploy-uv.sh](deploy-uv.sh) rsyncs the
-tree, runs `uv sync --frozen -p 3.15` on the server (the `.venv` is built there, since rsync skips dotfiles), installs
-the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
+The sandbox makes the filesystem read-only, so the app must not write files. [deploy.sh](deploy.sh) rsyncs the tree
+to the production host, runs `uv sync --frozen -p 3.15` there (the `.venv` is built on the server, since rsync skips
+dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
 
-Both deploy scripts write to a remote server, so only run them when asked.
+`deploy.sh` writes to a remote server, so only run it when asked.
 
 ## Architecture
 
