@@ -1,5 +1,10 @@
 {% set doclink = "https://www.renpy.org/dev-doc/html" if release.prerelease else "https://www.renpy.org/doc/html" %}
 {{release.announcement.strip()}}
+{#- A new-style release posts its own changes; an x.y.0 release, with no changes, posts the series notes. -#}
+{%- if release.changes or release.notes %}
+
+{{ (release.changes or release.notes).strip() }}
+{%- endif %}
 
 Downloads of {{release.version}} can be found at:
 

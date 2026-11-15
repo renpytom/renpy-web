@@ -1,4 +1,5 @@
-{% if mode == "prerelease" %}
+{% from "_history.html" import history %}
+{% if mode.startswith("prerelease") %}
   <p>
   Ren'Py {{release.version}} has been publicly prereleased. Prereleases are
   suitable for testing, but not for the release of final games. This pre-release
@@ -30,9 +31,10 @@
   </p>
 
   {{release.announcement|rst|safe}}
+  {% if release.changes %}{{release.changes|rst|issues|safe}}{% elif release.notes %}{{release.notes|rst|issues|safe}}{% endif %}
 
 
-{% elif mode == "update" %}
+{% elif mode.startswith("update") %}
 
   <p>
   Ren'Py {{release.full_version}} has been updated. The update can be downloaded from:
@@ -47,7 +49,7 @@
     to Ren'Py {{release.version}}:
   </p>
 
-  {{release.history|rst|safe}}
+  {{ history(release) }}
 
 {% else %}
   <p>
@@ -58,16 +60,17 @@
   <li> <a href="https://www.renpy.org/release/{{release.version}}">https://www.renpy.org/release/{{release.version}}</a>
   </ul>
 
-{% if release.history %}
+{% if release.has_history %}
   <p>
     Here's the history of updates to Ren'Py {{release.major_minor}}:
   </p>
 
-  {{release.history|rst|safe}}
+  {{ history(release) }}
 {% endif %}
 
   <p>Here's the Ren'Py {{release.major_minor}} release announcement:</p>
 
   {{release.announcement|rst|safe}}
+  {% if release.notes %}{{release.notes|rst|issues|safe}}{% endif %}
 
 {% endif %}

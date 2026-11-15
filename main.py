@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, render_template, abort, redirect, Response, request, abort, jsonify, make_response
 from docutils.core import publish_parts
+from markupsafe import escape, Markup
 import data
 from feedgen.feed import FeedGenerator
 
@@ -41,6 +42,24 @@ def before_request():
 def rst_filter(s):
     parts = publish_parts(s, writer_name='html4css1')
     return parts["fragment"]
+
+
+# Matches a GitHub issue reference like #7522. The lookbehind skips HTML entities (&#39;, or &amp;#3 after escaping),
+# URL fragments, and words.
+ISSUE_RE = re.compile(r'(?<![\w&/#;])#(\d+)\b')
+
+
+def link_issues(s):
+    """
+    Turns issue references like #7522 in the HTML or escaped text `s` into links to the Ren'Py issue tracker.
+    """
+
+    return ISSUE_RE.sub(r'<a href="https://github.com/renpy/renpy/issues/\1">#\1</a>', s)
+
+
+@app.template_filter('issues')
+def issues_filter(s):
+    return link_issues(s)
 
 
 @app.route("/release/<name>")
@@ -186,6 +205,101 @@ def release_md(name):
     rv = "\n".join(rv).strip() + "\n"
 
     return Response(rv, mimetype="text/markdown")
+
+
+# Matches a markdown [text](url) link (groups 1 and 2) or a bare URL (group 3). A bare URL doesn't take trailing
+# punctuation, so "see https://example.com." links without the period.
+LINK_RE = re.compile(r'\[([^\]]+)\]\((https?://[^)\s]+)\)|(https?://\S*[^\s.,;:!?)])')
+
+
+def convert_text_to_html(s):
+    """
+    Escapes the plain text `s`, then converts its **bold**, ``code``, and #NNNN issue references to HTML.
+    """
+
+    s = str(escape(s))
+    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+    s = re.sub(r'``(.+?)``', r'<code>\1</code>', s)
+
+    return link_issues(s)
+
+
+def convert_inline_to_html(l):
+    """
+    Converts one logical line of release.txt (markdown flavor) to HTML, including [text](url) links and bare URLs.
+    """
+
+    rv = [ ]
+    pos = 0
+
+    for m in LINK_RE.finditer(l):
+        rv.append(convert_text_to_html(l[pos:m.start()]))
+
+        if m.group(3):
+            text = url = m.group(3)
+        else:
+            text, url = m.group(1), m.group(2)
+
+        rv.append('<a href="{}">{}</a>'.format(escape(url), convert_text_to_html(text)))
+        pos = m.end()
+
+    rv.append(convert_text_to_html(l[pos:]))
+
+    return "".join(rv)
+
+
+def convert_lines_to_html(lines):
+    """
+    Converts the logical lines produced by `join_lines` to HTML: "* " items become a list, and other non-empty
+    lines become paragraphs.
+    """
+
+    rv = [ ]
+    in_list = False
+
+    for l in lines:
+        if not l:
+            continue
+
+        is_item = is_list_item(l)
+
+        if is_item and not in_list:
+            rv.append("<ul>")
+        elif in_list and not is_item:
+            rv.append("</ul>")
+
+        in_list = is_item
+
+        if is_item:
+            rv.append("<li>" + convert_inline_to_html(l[1:].strip()) + "</li>")
+        else:
+            rv.append("<p>" + convert_inline_to_html(l) + "</p>")
+
+    if in_list:
+        rv.append("</ul>")
+
+    return "\n".join(rv)
+
+
+@app.route("/release/<name>.update.html")
+def release_update_html(name):
+    """
+    Returns the release announcement as rich HTML, meant to be copied and pasted into sites that accept formatted
+    text. It has the same content as the .txt and .md versions, and asks search engines not to index it.
+    """
+
+    if name not in data.release_version:
+        abort(404)
+
+    release = data.release_version[name]
+
+    text = render_template('release.txt', release=release, data=data, markdown=True)
+    post = Markup(convert_lines_to_html(join_lines(text)))
+
+    response = make_response(render_template('release_update.html', release=release, post=post))
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow')
+
+    return response
 
 
 @app.route("/latest.html")
@@ -375,7 +489,7 @@ def feed():
         fe.id("http://www.renpy.org/release/" + version + suffix)
         fe.link(href="https://www.renpy.org/release/" + version + suffix, rel="alternate")
 
-        if mode == "prerelease":
+        if mode.startswith("prerelease"):
             fe.title(u"Ren'Py {} Pre-Released".format(version))
         else:
             fe.title(u"Ren'Py {} Released".format(version))
@@ -386,7 +500,8 @@ def feed():
         )
         fe.updated(parse_date(date))
 
-    if prerelease_8:
+    # The prerelease date comes from the SDK zip, so it's None until the prerelease has been uploaded.
+    if prerelease_8 and prerelease_8.prerelease_date:
         add(prerelease_8, prerelease_8.version, prerelease_8.prerelease_date, "prerelease-8")
 
     if current_8 and current_8.patch_date:

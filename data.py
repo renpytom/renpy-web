@@ -28,7 +28,7 @@ aliases = [ ]
 #
 # 1. Bump patch.
 # 2. Update patch_date.
-# 3. Add to history.
+# 3. Write changes. (From 8.6 on: a release-note-level list of the changes in this release.)
 
 # Final release checklist:
 #
@@ -56,7 +56,7 @@ aliases = [ ]
 
 COMMON_8_6 = """
 
-Some of the major features and improvements in Ren'Py 8.6 include:
+The major features and improvements in Ren'Py 8.6 include:
 
 **SDL3.** Perhaps the biggest change in Ren'Py 8.6 is the move to SDL3, the newest version of the Simple DirectMedia Layer library, which provides low-level access to audio, keyboard, mouse, controller and graphics hardware. SDL3 is where new platform support is being developed, so this lets Ren'Py take advantage of new hardware and operating systems. It also brings high-DPI support on Windows and support for the Nintendo Switch Pro Controller.
 
@@ -155,6 +155,28 @@ Zaveshaa (8):
 """
 
 Release(
+    prerelease=True,
+    invisible=False,
+    version="8.6.1",
+    date="November xx, 2026",
+    patch=None,
+    name="Real Artists Ship",
+    world_order=16,
+    announcement="""
+I'd like to announce Ren'Py 8.6.1, a fix release of Ren'Py 8.6. This fixes a single issue with downloading Visual Studio Code from the launcher.
+""",
+    notes=COMMON_8_6,
+    changes="""
+* Fixed downloading Visual Studio Code from the launcher by ensuring that the public key the downloader signatures rely on is properly supported. (#7522)
+""",
+    full_html="",
+    top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
+    deprecations="",
+    credits=CREDITS_8_6,
+    extra_credits="'Real Artists Ship' is inspired by a story from <a href=\"https://folklore.org/Real_Artists_Ship.html\">folklore.org</a>."
+)
+
+Release(
     prerelease=False,
     invisible=False,
     version="8.6.0",
@@ -164,8 +186,9 @@ Release(
     world_order=16,
     announcement="""
 I'm happy to announce the release of Ren'Py 8.6, a feature release of Ren'Py that is the result of a year of work to add new features, fixes, optimizations, and other improvements.
-""" + COMMON_8_6,
-    history="",
+""",
+    notes=COMMON_8_6,
+    changes="* Initial release of Ren'Py 8.6.",
     full_html="",
     top_html='<img src="/static/8.6.jpg" alt="" style="width: 100%">',
     deprecations="",

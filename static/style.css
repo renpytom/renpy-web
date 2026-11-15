@@ -148,3 +148,13 @@ dt {
     padding-left: 100px;
     padding-top: 16px;
 }
+
+/* The date after each release heading in the release history (templates/_history.html), at body text size. */
+h4 small.history-date {
+    font-size: 14px;
+}
+
+/* Each release heading in the release history: half a line (10px) more space above than Bootstrap's h4. */
+h4.history-release {
+    margin-top: 20px;
+}

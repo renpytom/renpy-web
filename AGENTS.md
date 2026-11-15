@@ -41,15 +41,23 @@ dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and en
   calls "latest"**. The release/patch checklists are in comments at the top of `data.py`. `data_old.py` holds
   the releases from 7.4.11 back, in the same form; `data.py` imports it after its own entries, so they append to the end
   of `data.releases`. Add new releases to `data.py`.
+- Release text from 8.6 on: `announcement` is the release-specific intro, `notes` the series release notes (e.g.
+  `COMMON_8_6`), and `changes` this release's release-note-level changes (`""` for an x.y.0). A release that sets
+  `changes` is "new-style": its page shows `notes` after the announcement and a history built by
+  `Release.series_history` (the `changes` of every public release in the x.y series, plus the page's own prerelease)
+  instead of `history`, and its social formats post `changes` (or `notes` when `changes` is empty). Older releases
+  put the series notes in `announcement` and keep the free-form `history`.
 - [sponsors.py](sponsors.py): loads monthly Patreon exports from `sponsors/YYYY-MM.tsv` plus
   `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
   columns (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
   new export changes the column layout, adjust the header detection there. Sponsors are keyed by email in `by_email`.
-- `templates/` extend `base.html`. `release.txt` holds the plain-text release announcement and is rendered two ways in
-  `main.py`: `/release/<name>.txt` (`release_txt`, BBCode for forum posts) and `/release/<name>.md` (`release_md`,
-  GitHub release body; the template gets `markdown=True`). Both unwrap hard-wrapped lines with `join_lines`, so a
-  `Release.announcement` should use blank lines between paragraphs, `* ` for list items, and `**bold**`.
+- `templates/` extend `base.html`. `release.txt` holds the plain-text release announcement and is rendered three ways
+  in `main.py`: `/release/<name>.txt` (`release_txt`, BBCode for forum posts), `/release/<name>.md` (`release_md`,
+  GitHub release body; the template gets `markdown=True`), and `/release/<name>.update.html` (`release_update_html`,
+  rich HTML with a copy button for pasting into sites that take formatting; standalone `release_update.html`, marked
+  noindex). All unwrap hard-wrapped lines with `join_lines`, so `announcement`, `notes`, and `changes` should use
+  blank lines between paragraphs, `* ` for list items, `**bold**`, and `#1234` for issues (linked on the HTML pages).
 - `static/`: `featured/` (each `.jpg`/`.png` needs a same-named `.html` blurb; the index samples 5 of them),
   `artcard/` (per-month art, auto-detected), `sponsors/<W>x<H>/<credit name>.png` banners, `patreon/`.
 

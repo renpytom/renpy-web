@@ -48,6 +48,15 @@ class Release(Data):
     # HTML appended to the end of the Credits section of the release page.
     extra_credits = None
 
+    # Release notes shared by the whole x.y series (e.g. COMMON_8_6). Shown after the announcement on the release
+    # page, and in place of `changes` in the social formats when a release has no changes of its own.
+    notes = None
+
+    # The changes made in this release, using the announcement markup (paragraphs, "* " items, **bold**). A release
+    # that sets this (even to "") is "new-style": its release page shows `series_history` in place of `history`,
+    # and its social formats (.txt, .md, .update.html) show these changes in place of the series notes.
+    changes = None
+
     def __init__(self, **kwargs):
 
         self.patch = None
@@ -111,6 +120,35 @@ class Release(Data):
 
         return credits[:split], credits[split:]
 
+
+    @property
+    def series_history(self):
+        """
+        The releases whose changes appear in this release's history section: every release in the same x.y series
+        that has non-empty `changes` and is either a public final release or this release itself. Newest first.
+        """
+
+        rv = [ ]
+
+        for r in data.releases:
+            if r.wiki or r.major_minor != self.major_minor or not r.changes:
+                continue
+
+            if r is self or not (r.prerelease or r.invisible):
+                rv.append(r)
+
+        return rv
+
+    @property
+    def has_history(self):
+        """
+        True if the release page and feed have a history section to show for this release.
+        """
+
+        if self.changes is not None:
+            return bool(self.series_history)
+
+        return bool(getattr(self, "history", None))
 
     @property
     def major(self):

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_history.html" import history %}
 {% set doclink = "https://www.renpy.org/dev-doc/html" if release.prerelease else "https://www.renpy.org/doc/html" %}
 {% set newest = release in (data.current_8, data.prerelease_8) %}
 {# The newest public final release. Not data.current_8, which is a private (invisible) prerelease while one exists. #}
@@ -115,16 +116,21 @@
 
 </section>
 
-{% if release.history %}
+{% if release.has_history %}
 <section style="clear: both">
-    <h2>Release History and Updates</h2>
-    {{release.history|rst|safe}}
+    <h2>Release History</h2>
+    {{ history(release) }}
 </section>
 {% endif %}
 
 <section style="clear: both">
     <h2>Announcement</h2>
+    {% if release.changes is not none %}
+    {{release.announcement|rst|issues|safe}}
+    {% if release.notes %}{{release.notes|rst|issues|safe}}{% endif %}
+    {% else %}
     {{release.announcement|rst|safe}}
+    {% endif %}
 
     <p>Downloads of Ren'Py {{release.version}} can be found at:</p>
 
