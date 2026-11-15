@@ -27,8 +27,15 @@ reCAPTCHA (for `/email`) is implemented in [recaptcha.py](recaptcha.py), not the
 with Jinja2 3.1+.
 
 `main.wsgi` imports `main.application` for mod_wsgi. [deploy.sh](deploy.sh) rsyncs the virtualenv and this directory
-(excluding dotfiles) to the production host and touches `main.wsgi` to reload it; it writes to a remote server, so only
-run it when asked.
+(excluding dotfiles) to the production host and touches `main.wsgi` to reload it.
+
+The replacement setup is [renpyweb.service](renpyweb.service): a hardened systemd unit running gunicorn (sync workers;
+`sponsors.init` mutates module globals per request, so no threads) on Python 3.15 at `127.0.0.1:38917`, behind nginx.
+The sandbox makes the filesystem read-only, so the app must not write files. [deploy-uv.sh](deploy-uv.sh) rsyncs the
+tree, runs `uv sync --frozen -p 3.15` on the server (the `.venv` is built there, since rsync skips dotfiles), installs
+the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
+
+Both deploy scripts write to a remote server, so only run them when asked.
 
 ## Architecture
 

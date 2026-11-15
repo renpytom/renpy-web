@@ -7,6 +7,7 @@ dependencies = [
     "docutils",
     "feedgen",
     "flask>=2.0.1",
+    "gunicorn",
     "python-dateutil",
     "pytz",
 ]

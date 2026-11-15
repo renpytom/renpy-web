@@ -1,0 +1,64 @@
+# systemd unit that serves renpy.org with gunicorn on Python 3.15, behind nginx.
+#
+# deploy-uv.sh installs this file into /etc/systemd/system, reloads systemd, and enables and restarts the unit.
+# nginx should proxy to http://127.0.0.1:38917.
+
+[Unit]
+Description=renpy.org website (gunicorn)
+After=network.target
+
+[Service]
+Type=simple
+User=tom
+Group=tom
+WorkingDirectory=/home/tom/wsgi.renpyorg
+Environment=PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
+
+# Sync (process) workers only: sponsors.init rewrites module globals on every request, so threads would race.
+# --no-control-socket (gunicorn 25.1+, which uv.lock selects on 3.15): the default socket in ~/.gunicorn is not
+# writable under ProtectHome=read-only.
+ExecStart=/home/tom/wsgi.renpyorg/.venv/bin/gunicorn \
+    --bind 127.0.0.1:38917 \
+    --workers 4 \
+    --timeout 30 \
+    --graceful-timeout 30 \
+    --max-requests 1000 \
+    --max-requests-jitter 100 \
+    --worker-tmp-dir /dev/shm \
+    --no-control-socket \
+    main:application
+ExecReload=/bin/kill -HUP $MAINPID
+
+Restart=on-failure
+RestartSec=2
+KillMode=mixed
+TimeoutStopSec=35
+
+# Sandboxing. The app only reads files (code, sponsors, /home/tom/WWW.*, uv's Python in ~/.local/share/uv) and
+# makes outbound HTTPS requests to Google for reCAPTCHA.
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectSystem=strict
+ProtectHome=read-only
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+ProtectProc=invisible
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
