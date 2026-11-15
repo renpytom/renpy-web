@@ -38,7 +38,9 @@ dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and en
   `data.releases` and, in `__init__`, reads file sizes and dates from the release download directories on disk.
   At the bottom of `data.py`, `current_8`/`prerelease_8` (and `_7`), `release_version`, and `final_releases` are derived
   from list order and the `prerelease`/`invisible` flags, so **order and flags in `data.py` determine what the site
-  calls "latest"**. The release/patch checklists are in comments at the top of `data.py`. `data_old.py` is legacy.
+  calls "latest"**. The release/patch checklists are in comments at the top of `data.py`. `data_old.py` holds
+  the releases from 7.4.11 back, in the same form; `data.py` imports it after its own entries, so they append to the end
+  of `data.releases`. Add new releases to `data.py`.
 - [sponsors.py](sponsors.py): loads monthly Patreon exports from `sponsors/YYYY-MM.tsv` plus
   `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
@@ -58,4 +60,3 @@ dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and en
 - Paths to release downloads and docs are hard-coded to the author's machine (`/home/tom/WWW.update/...`,
   `/home/tom/WWW.renpyorg/...`, with `/home/tom/ab/renpy/dl` as fallback); see `main.py` (`/channels.json`),
   `model.py` (`FILE_PATHS`), and `doc.py` (`PATHS`).
-- `.pyc` files and `data_old.py` in the tree are stale; ignore them.

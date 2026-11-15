@@ -541,7 +541,7 @@ def d(path):
         return f"Couldn't find {path}.", 404
 
 
-# For use under mod wsgi.
+# WSGI entry point, served by gunicorn as main:application (see renpyweb.service).
 application = app
 
 if __name__ == "__main__":
