@@ -54,17 +54,29 @@
   <h3>Checklist <small>{{ r.full_version }}</small></h3>
 
   <ul class="checklist" data-key="releasenotes:{{ r.full_version }}">
-    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --{{ t.kind }}</code></span></label></li>
+    <li><label><input type="checkbox"> <span>Update changelog</span></label></li>
+    <li><label><input type="checkbox"> <span>Update sponsors</span></label></li>
+    <li><label><input type="checkbox"> <span>Update credits</span></label></li>
+    <li><label><input type="checkbox"> <span>Fix translations</span></label></li>
+    <li><label><input type="checkbox"> <span><code>./scripts/distribute_all.sh</code></span></label></li>
+    <li><label><input type="checkbox"> <span><code>./scripts/run_testcases.py</code></span></label></li>
+    <li><label><input type="checkbox"> <span><code>./scripts/add_all.sh --{{ t.kind }}</code></span></label></li>
     <li><label><input type="checkbox"> <span>Update and deploy website</span></label></li>
     <li><label><input type="checkbox"> <span>Patreon announcement</span></label></li>
     <li><label><input type="checkbox"> <span>Lemmasoft announcement</span></label></li>
     <li><label><input type="checkbox"> <span>Discord announcement</span></label></li>
     <li><label><input type="checkbox"> <span>Fedica (X and Facebook) announcement</span></label></li>
-    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --push-tags</code></span></label></li>
-    <li><label><input type="checkbox"> <span><code>scripts/add_all.sh --github</code></span></label></li>
-    {#- itch_upload.sh pushes to the stable itch.io channels, so it only applies to final releases. #}
+    {%- set reddit_link = "https://www.renpy.org/release/" ~ r.version ~ ("?prerelease" if t.kind == "prerelease" else "") %}
+    <li>
+      <label><input type="checkbox"> <span>Post link to Reddit:</span></label>
+      <a id="reddit-link-{{ t.kind }}" href="{{ reddit_link }}">{{ reddit_link }}</a>
+      {{ copy_button("reddit-link-" ~ t.kind) }}
+    </li>
+    <li><label><input type="checkbox"> <span><code>./scripts/add_all.sh --push-tags</code></span></label></li>
+    {#- The GitHub release and itch.io upload (which pushes to the stable channels) only apply to final releases. #}
     {%- if t.kind == "release" %}
-    <li><label><input type="checkbox"> <span><code>scripts/itch_upload.sh {{ r.full_version }}</code></span></label></li>
+    <li><label><input type="checkbox"> <span><code>./scripts/add_all.sh --github</code></span></label></li>
+    <li><label><input type="checkbox"> <span><code>./scripts/itch_upload.sh</code></span></label></li>
     {%- endif %}
   </ul>
 
