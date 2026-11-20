@@ -33,9 +33,12 @@ recaptcha = ReCaptcha(app=app)
 BASE = os.path.dirname(__file__)
 
 
+sponsors.init()
+
+
 @app.before_request
 def before_request():
-    sponsors.init(os.environ.get("MONTH", None))
+    sponsors.ensure_loaded()
 
 
 @app.template_filter('rst')

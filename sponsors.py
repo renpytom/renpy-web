@@ -388,23 +388,50 @@ def load_sponsorfn(fn):
         return load_sponsorfn_old(fn)
 
 
-def init(month=None):
-    today = datetime.date.today()
+# The monthly export that `sponsors` was loaded from, or None before the first successful init.
+loaded_fn: str | None = None
+
+
+def month_filename():
+    """
+    Returns the path of the monthly export that applies today: the file for current_month(), or, if that doesn't
+    exist yet, the newest earlier month's file.
+
+    Raises FileNotFoundError when no file is found, either because the MONTH environment variable names a missing
+    file or because the search reached June 2017 (where current_month() stops going back).
+    """
 
     offset = 0
+    previous = None
 
     while True:
 
         month = current_month(offset)
 
+        if month == previous:
+            raise FileNotFoundError("No sponsors export found in {} (last tried {}.tsv).".format(SPONSORSDIR, month))
+
         month_fn = "{}/{}.tsv".format(SPONSORSDIR, month)
-        override_fn = "{}/overrides - main.tsv".format(SPONSORSDIR)
 
-        if not os.path.exists(month_fn):
-            offset -= 1
-            continue
+        if os.path.exists(month_fn):
+            return month_fn
 
-        break
+        previous = month
+        offset -= 1
+
+
+def init(month=None):
+    """
+    Loads the monthly export from month_filename() plus the overrides, replacing the contents of `by_email` and
+    `sponsors`. Raises if a file can't be loaded.
+    """
+
+    global loaded_fn
+
+    month_fn = month_filename()
+    override_fn = "{}/overrides - main.tsv".format(SPONSORSDIR)
+
+    by_email.clear()
 
     try:
 
@@ -422,10 +449,21 @@ def init(month=None):
 
     global sponsors
     sponsors = sl
+    loaded_fn = month_fn
 
     print([(i.credit_name, i.status) for i in sl if i.credit_name == "Fallen Eros"])
 
     return True
+
+
+def ensure_loaded():
+    """
+    Reloads the sponsors if the monthly export that applies has changed since the last init, as happens on the 15th
+    of each month. Cheap enough to call on every request.
+    """
+
+    if month_filename() != loaded_fn:
+        init()
 
 def banner():
     rv = [ i for i in sponsors if i.level.banner  ]

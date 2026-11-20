@@ -14,7 +14,8 @@ Group=tom
 WorkingDirectory=/home/tom/wsgi.renpyorg
 Environment=PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
 
-# Sync (process) workers only: sponsors.init rewrites module globals on every request, so threads would race.
+# Sync (process) workers only: sponsors.ensure_loaded rewrites module globals when the month changes, so threads
+# would race.
 # --no-control-socket (gunicorn 25.1+, which uv.lock selects on 3.15): the default socket in ~/.gunicorn is not
 # writable under ProtectHome=read-only.
 ExecStart=/home/tom/wsgi.renpyorg/.venv/bin/gunicorn \

@@ -22,10 +22,11 @@ reCAPTCHA (for `/email`) is implemented in [recaptcha.py](recaptcha.py), not the
 with Jinja2 3.1+.
 
 Production uses [renpyweb.service](renpyweb.service): a hardened systemd unit running gunicorn (sync workers;
-`sponsors.init` mutates module globals per request, so no threads) on Python 3.15 at `127.0.0.1:38917`, behind nginx.
-The sandbox makes the filesystem read-only, so the app must not write files. [deploy.sh](deploy.sh) rsyncs the tree
-to the production host, runs `uv sync --frozen --no-dev -p 3.15` there (the `.venv` is built on the server, since
-rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads systemd, and enables and restarts it.
+`sponsors.ensure_loaded` may rewrite module globals during a request, so no threads) on Python 3.15 at
+`127.0.0.1:38917`, behind nginx. The sandbox makes the filesystem read-only, so the app must not write files.
+[deploy.sh](deploy.sh) rsyncs the tree to the production host, runs `uv sync --frozen --no-dev -p 3.15` there (the
+`.venv` is built on the server, since rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads
+systemd, and enables and restarts it.
 
 `deploy.sh` writes to a remote server, so only run it when asked.
 
@@ -60,9 +61,13 @@ rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads sys
   announcement, and the social formats post `changes` (or `notes` when there are none). Older releases put the series
   notes in `announcement` and keep the free-form `history`.
 - [sponsors.py](sponsors.py): loads monthly Patreon exports from `sponsors/YYYY-MM.tsv` plus
-  `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
-  exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
-  columns (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
+  `sponsors/overrides - main.tsv` once at startup (`init`, called when `main.py` is imported); `before_request` calls
+  `ensure_loaded`, which reloads only when the applicable month file changes (on the 15th), so edits to an already
+  loaded file reach each worker only when it restarts (on a restart, or as gunicorn's `--max-requests` recycles it).
+  `month_filename` walks back month by month until a file exists, raising `FileNotFoundError` if none does (so the
+  app won't start without one). Files from
+  `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional columns
+  (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
   new export changes the column layout, adjust the header detection there (in `read_rows_new`). Sponsors are keyed by
   email in `by_email`. Patreon lists a sponsor who is changing tiers under several (e.g. `Platinum Sponsor, Gold
   Sponsor`, new tier first); such a row takes the first known listed tier, else the tier from the newest earlier
