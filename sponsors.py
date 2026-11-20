@@ -1,6 +1,7 @@
 import os
 import csv
 import datetime
+import functools
 import dateutil.relativedelta
 import random
 
@@ -92,9 +93,18 @@ class Sponsor(object):
             )
 
     @property
+    def banner_filename(self):
+        """
+        The banner image this sponsor's level calls for, relative to static/sponsors, such as
+        "740x100/Moonbox Games.png". It may not exist.
+        """
+
+        return "{}x{}/{}.png".format(self.level.width, self.level.height, self.credit_name)
+
+    @property
     def banner(self):
 
-        fn = "{}x{}/{}.png".format(self.level.width, self.level.height, self.credit_name)
+        fn = self.banner_filename
 
         if os.path.exists(os.path.join(STATICSPONSORS, fn)):
             return "/static/sponsors/" + fn
@@ -187,9 +197,11 @@ def load_sponsorfn_old(fn):
     return rv
 
 
-def load_sponsorfn_new(fn):
-
-    rv = [ ]
+def read_rows_new(fn):
+    """
+    Yields the data rows of a new-format (2020-07 on) Patreon export, normalized to a fixed column layout whatever
+    optional columns the export has: 1 and 6 are emails, 13 the tier, 24 the last charge status, and so on.
+    """
 
     with open(fn, "r", encoding="utf-8", newline="") as f:
 
@@ -211,8 +223,6 @@ def load_sponsorfn_new(fn):
         has_free = l[11] == "Free Member"
         has_free_trial = l[12] == "Free Trial"
 
-        level = ''
-
         for l in rows:
 
             if len(l) < 12 or not any(l):
@@ -231,55 +241,139 @@ def load_sponsorfn_new(fn):
                 l.pop(8)
                 l.insert(22, '')
 
-            if l[13] in level_by_name:
-                level = level_by_name[l[13]]
-            else:
-                continue
+            yield l
 
-            name = l[5]
 
-            url = l[3]
-            if url == 'n/a':
-                url = ""
+def single_level(tier):
+    """
+    Returns the Level named by a Patreon tier, or None when the tier is unknown or lists several tiers (as Patreon
+    does for a sponsor changing tiers, e.g. "Platinum Sponsor, Gold Sponsor").
+    """
 
-            # for i, s in enumerate(l):
-            #     print(i, s)
+    return level_by_name.get(tier)
 
-            status = (l[24] == "Paid" or l[24] == "Active patron")
 
-            if "Declined patron" in l:
-                status = False
+def first_level(tiers):
+    """
+    Returns the Level of the first known tier in a comma-separated list of Patreon tiers, or None if none is known.
+    """
 
-            if "Former patron" in l:
-                status = False
+    for tier in tiers.split(","):
+        tier = tier.strip()
 
-            while len(l) < 18:
-                l.append('')
+        # Skip empty entries, since "" names the No Reward level.
+        if not tier:
+            continue
 
-            def money(s):
-                s = s.replace("$", "")
-                s = s.replace(",", "")
-                return float(s)
+        level = level_by_name.get(tier)
 
-            s = Sponsor(
-                name=name,
-                credit_name=l[2] or name,
-                url=url,
-                email=l[1] or l[6],
-                pledge=money(l[11]),
-                lifetime=money(l[10]),
-                status=status,
-                street=l[15],
-                city=l[16],
-                state=l[17],
-                zip=l[18],
-                country=l[19],
-                start=l[21],
-                level=level,
-                raw_postcard=(l[4] != "No")
-                )
+        if level is not None:
+            return level
 
-            rv.append(s)
+    return None
+
+
+@functools.cache
+def levels_by_email(fn):
+    """
+    Maps each sponsor's email to their Level in the new-format export `fn`, leaving out rows without a single known
+    tier. Cached, since past exports don't change and lookups would otherwise reread them on every request.
+    """
+
+    rv = { }
+
+    for l in read_rows_new(fn):
+        level = single_level(l[13])
+
+        if level is not None:
+            rv[l[1] or l[6]] = level
+
+    return rv
+
+
+def previous_level(fn, email):
+    """
+    Returns the sponsor's Level in the newest monthly export before `fn` that gives them a single known tier, or
+    None if no new-format export does.
+    """
+
+    basefn = os.path.basename(fn)
+
+    older = [ i for i in os.listdir(SPONSORSDIR) if len(i) == 11 and i.endswith(".tsv") ]
+    older = [ i for i in older if "2020-07.tsv" <= i < basefn ]
+    older.sort(reverse=True)
+
+    for i in older:
+        level = levels_by_email(os.path.join(SPONSORSDIR, i)).get(email)
+
+        if level is not None:
+            return level
+
+    return None
+
+
+def load_sponsorfn_new(fn):
+
+    rv = [ ]
+
+    for l in read_rows_new(fn):
+
+        email = l[1] or l[6]
+
+        level = single_level(l[13])
+
+        # A sponsor changing tiers is listed under several, new tier first, e.g. "Platinum Sponsor, Gold Sponsor".
+        # Take the first known one, or else the tier from the newest earlier export that has them.
+        if level is None and "," in l[13]:
+            level = first_level(l[13]) or previous_level(fn, email)
+
+        if level is None:
+            continue
+
+        name = l[5]
+
+        url = l[3]
+        if url == 'n/a':
+            url = ""
+
+        # for i, s in enumerate(l):
+        #     print(i, s)
+
+        status = (l[24] == "Paid" or l[24] == "Active patron")
+
+        if "Declined patron" in l:
+            status = False
+
+        if "Former patron" in l:
+            status = False
+
+        while len(l) < 18:
+            l.append('')
+
+        def money(s):
+            s = s.replace("$", "")
+            s = s.replace(",", "")
+            return float(s)
+
+        s = Sponsor(
+            name=name,
+            credit_name=l[2] or name,
+            url=url,
+            email=email,
+            pledge=money(l[11]),
+            lifetime=money(l[10]),
+            status=status,
+            street=l[15],
+            city=l[16],
+            state=l[17],
+            zip=l[18],
+            country=l[19],
+            start=l[21],
+            level=level,
+            raw_postcard=(l[4] != "No")
+            )
+
+        rv.append(s)
 
     return rv
 

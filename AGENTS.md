@@ -63,7 +63,12 @@ rsync skips dotfiles), installs the unit into `/etc/systemd/system`, reloads sys
   `sponsors/overrides - main.tsv` on every request (`before_request`). `init` walks back month by month until a file
   exists. Files from `2020-07.tsv` on use `load_sponsorfn_new`, which parses by column position and adapts to optional
   columns (Twitter, Discord, free member/trial) by inspecting the header; older files use `load_sponsorfn_old`. When a
-  new export changes the column layout, adjust the header detection there. Sponsors are keyed by email in `by_email`.
+  new export changes the column layout, adjust the header detection there (in `read_rows_new`). Sponsors are keyed by
+  email in `by_email`. Patreon lists a sponsor who is changing tiers under several (e.g. `Platinum Sponsor, Gold
+  Sponsor`, new tier first); such a row takes the first known listed tier, else the tier from the newest earlier
+  export that gives that email a single known tier (`previous_level`, cached per file), and is skipped if neither
+  works. A banner sponsor without an image at `static/sponsors/<W>x<H>/<credit name>.png` gets a coloured placeholder
+  whose hover title is that expected path.
 - `templates/` extend `base.html`. `release.txt` holds the plain-text release announcement and is rendered three ways
   by helpers in `main.py`: `render_release_bbcode` (forum posts), `render_release_markdown` (GitHub release body; the
   template gets `markdown=True`), and `render_release_html` (rich HTML for sites that take formatting). Only the

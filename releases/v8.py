@@ -28,7 +28,7 @@ from model import *
 # 1. Bump date.
 # 2. prerelease=False
 
-# The release steps (scripts, website, socials) are a checklist on /releasenotes, which also has the announcement
+# The release steps are a checklist on /releasenotes, which also has the announcement
 # text to copy.
 
 # To get the list of contributors to a release, we can use the command:
@@ -153,14 +153,41 @@ Series(
 Release(
     prerelease=True,
     invisible=False,
-    version="8.6.1",
+    version="8.6.2",
     date="November xx, 2026",
     patch=None,
     announcement="""
-I'd like to announce Ren'Py 8.6.1, a fix release of Ren'Py 8.6. This fixes a single issue with downloading Visual Studio Code from the launcher.
+I'd like to announce Ren'Py 8.6.2, a fix release of Ren'Py 8.6. This fixes several issues found since the release of Ren'Py 8.6.1, including a green tinge on macOS and the Android 16 back button.
 """,
     changes="""
-* Fixed downloading Visual Studio Code from the launcher by ensuring that the public key the downloader signatures rely on is properly supported. (#7522)
+* On Android 16 and later, the back button and back gesture once again roll back, rather than closing the game. (This fix was incorrectly listed as part of 8.6.1, but was not in that release.) (#7533)
+* On macOS, colors are once again displayed as they were in Ren'Py 8.5, fixing a green tinge introduced in 8.6.0.
+* Scrying (which predicts things like extend and config.nvl_page_ctc) now takes translations into account, rather than skipping over them. (#7537)
+* On Windows, the list of input method (IME) candidates drawn by Ren'Py now highlights the selected candidate on every page of candidates, rather than only on the first. Pages of candidates also no longer repeat candidates from the previous page.
+* In the testing framework, a text selector matching dialogue now matches the translated dialogue being displayed, or with raw, the dialogue as written in the original-language script. Previously, which of the two was matched depended on how the line was translated, and some translated lines caused an error.
+* Setting the new RENPY_SCREENSHOT_CLIPBOARD environment variable to 0 stops the screenshot key from copying screenshots to the clipboard. (#7539)
+""",
+)
+
+Release(
+    prerelease=False,
+    invisible=False,
+    version="8.6.1",
+    date="November 17, 2026",
+    patch=None,
+    announcement="""
+I'd like to announce Ren'Py 8.6.1, a fix release of Ren'Py 8.6. This fixes several issues found since the release of Ren'Py 8.6.0, including some hardware-specific issues.
+""",
+    changes="""
+* The launcher can once again download and install Visual Studio Code, as support for the type of public key used to verify the downloader has been restored. (#7522)
+* Transforms that use the blur property are no longer affected by config.mesh_oversample. This fixes shaking when the zoom of a blurred displayable or layer is animated, and restores the strength of the blur to what it was in Ren'Py 8.5. (#7526)
+* A mesh that changes size after it is first shown is now rendered at the new size, rather than continuing to use a texture created for a smaller size.
+* Fixed a rounding issue with fractional display scaling that could cause a loop of window size updates, stopping Ren'Py from working correctly on scaled displays. (#7529)
+* Keysyms that consist of a single character, like key "i" in a screen, work again when no text input is active. (#7530)
+* The OpenGL state cache is now properly reset when a new context is created. This fixes a black screen on mobile devices after a shift+R reload or a call to renpy.utter_restart. (#7531)
+* The list of input method (IME) candidates drawn by Ren'Py on Windows no longer shows the number of each candidate twice. (#7535)
+* On Android, a game is once again told that it is entering the background when that happens, rather than when it returns to the foreground. This means the game is saved before Android can terminate it, and that Ren'Py no longer blocks for 8 seconds each time the game is sent to the background. (#7534)
+* On Android and iOS, a game that is terminated while in the background once again returns the player to where they were when it is started again, as described by config.save_on_mobile_background.
 """,
 )
 

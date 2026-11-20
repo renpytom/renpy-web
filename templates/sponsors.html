@@ -4,7 +4,7 @@
 {% if s.banner %}
 <a href="{{ s.url }}" rel="nofollow"><img src="{{ s.banner }}" alt="{{s.credit_name}}" width="{{ s.level.width }}"></a>
 {% else %}
-<div href="{{ s.url }}" style="display: table; background: #acd; width: {{ s.level.width }}px; height: {{ s.level.height }}px;'">
+<div href="{{ s.url }}" title="{{ s.banner_filename }}" style="display: table; background: #acd; width: {{ s.level.width }}px; height: {{ s.level.height }}px;'">
 <div style="display: table-cell; vertical-align: middle; font-size: 20px; color:#ffffff">
 {{ s.credit_name }}
 </div>
