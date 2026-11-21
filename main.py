@@ -7,7 +7,7 @@ import datetime
 import re
 import json
 import random
-from urllib.parse import quote
+from urllib.parse import unquote_plus, urlencode, urlsplit, urlunsplit
 import pytz
 import doc
 
@@ -453,17 +453,39 @@ def sponsors_page():
         )
 
 
+AGEGATE_PREFIX = "https://www.renpy.org/agegate?url="
+"""
+The start of a sponsor link that sends visitors through the age gate. The rest of the link is the destination.
+"""
+
+
+def agegate_destination(sponsor_url: str) -> str | None:
+    """
+    Returns the destination of a sponsor's age gate link, decoded, or None if the link doesn't go through the age
+    gate. Sponsors write the destination with or without encoding its ? and other characters, so everything after
+    the prefix is taken as the destination.
+    """
+
+    if not sponsor_url.startswith(AGEGATE_PREFIX):
+        return None
+
+    return unquote_plus(sponsor_url[len(AGEGATE_PREFIX):])
+
+
 @app.route("/agegate")
 def agegate():
     url = request.args.get("url", "/")
 
-    for i in sponsors.sponsors:
-        if i.url:
-            print(i.url, "https://www.renpy.org/agegate?url=" + quote(url, safe=""))
-        if i.url == "https://www.renpy.org/agegate?url=" + url.replace("?", "%3F"):
-            break
-    else:
+    if not any(agegate_destination(i.url) == url for i in sponsors.sponsors):
         abort(404)
+
+    # Pass query parameters other than url (like utm_source=) along to the destination.
+    extra = [ (k, v) for k, v in request.args.items(multi=True) if k != "url" ]
+
+    if extra:
+        parts = urlsplit(url)
+        query = "&".join(i for i in (parts.query, urlencode(extra)) if i)
+        url = urlunsplit(parts._replace(query=query))
 
     return render_template(
         "agegate.html",
